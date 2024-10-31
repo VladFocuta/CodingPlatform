@@ -1,0 +1,18 @@
+.nav {
+    position: fixed; /* Bara de navigare este fixată în partea de sus */
+    top: 0;
+    left: 0;
+    width: 100%; /* Să acopere întreaga lățime a paginii */
+    z-index: 1000; /* Să fie deasupra tuturor celorlalte elemente */
+    background: transparent;
+   
+  }
+
+  .text {
+    color: 'white'
+  }
+
+  .text:hover {
+    transform: translateY(-5px); /* Mișcați textul în sus cu 5px când se face hover */
+    color: rgb(199, 197, 197);
+  }
