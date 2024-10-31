@@ -1,33 +1,96 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { UserAuth } from '../../backend/firebaseConfig/authProvider';
+import { addComment, addReplyToComment, getComments } from '../../backend/functions/handleComments';
 
-function CommentsArea({ onAddComment }) {
-    const [comment, setComment] = useState('');
+function CommentsArea({ problemName }) {
+    const { user } = UserAuth();
+    const [commentsList, setCommentsList] = useState([]);
+    const [newCommentText, setNewCommentText] = useState('');
+    const [replyText, setReplyText] = useState({});
 
-  
-    const handleAdd = () => {
-        if (comment.trim()) {
-            onAddComment(comment);  // Trimitere comentariu către `ProblemPage`
-            setComment('');       // Resetare comentariu după trimitere
-        }
+    useEffect(() => {
+        const fetchComments = async () => {
+            const fetchedComments = await getComments(problemName);
+            setCommentsList(fetchedComments);
+        };
+        fetchComments();
+    }, [problemName]);
+
+    const handleAddComment = async () => {
+        if (!newCommentText.trim()) return;
+
+        const commentData = {
+            text: newCommentText,
+            userId: user?.uid,
+            userName: user?.displayName || 'Anonim',
+            replies: []
+        };
+        await addComment(problemName, commentData);
+        setCommentsList(await getComments(problemName));
+        setNewCommentText('');
+    };
+
+    const handleAddReply = async (commentId) => {
+        const text = replyText[commentId];
+        if (!text.trim()) return;
+
+        const replyData = {
+            text,
+            userId: user?.uid,
+            userName: user?.displayName || 'Anonim'
+        };
+        await addReplyToComment(problemName, commentId, replyData);
+        setCommentsList(await getComments(problemName));
+        setReplyText((prev) => ({ ...prev, [commentId]: '' }));
+    };
+
+    const handleReplyTextChange = (commentId, text) => {
+        setReplyText((prev) => ({ ...prev, [commentId]: text }));
     };
 
     return (
-        <>
-            <div className="form-floating">
-                <textarea 
-                    className="form-control" 
-                    placeholder="Leave a comment here" 
-                    id="floatingTextarea2" 
-                    style={{ height: '100px' }}
-                    value={comment}
-                    onChange={(e) => setComment(e.target.value)}
+        <div>
+            <h4>Intrebari recente</h4>
+            {commentsList.map((comment) => (
+                <div key={comment.id} style={{ background: 'grey', padding: '10px', marginBottom: '2px', borderRadius: '5px' }}>
+                    <strong>{comment.userName}</strong> - {comment.timestamp}
+                    <p>{comment.text}</p>
+
+                    {/* Reply input for each comment */}
+                    <input
+                        type="text"
+                        placeholder="Răspuns..."
+                        value={replyText[comment.id] || ''}
+                        onChange={(e) => handleReplyTextChange(comment.id, e.target.value)}
+                        style={{ marginBottom: '5px', width: '100%', padding: '3px' }}
+                    />
+                    <button onClick={() => handleAddReply(comment.id)} className="btn btn-secondary btn-sm">Răspunde</button>
+
+                    {/* Display replies */}
+                    {comment.replies.length > 0 && (
+                        <div style={{ marginLeft: '20px', marginTop: '10px' }}>
+                            {comment.replies.map((reply, idx) => (
+                                <div key={idx} style={{ background: '#ccc', padding: '5px', marginBottom: '2px', borderRadius: '5px', color:'black' }}>
+                                    <strong >{reply.userName}</strong> - {reply.timestamp}
+                                    <p style={{ color: 'black' }}>{reply.text}</p>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
+            ))}
+
+            <div style={{ marginTop: '20px' }}>
+                <textarea
+                    className="form-control"
+                    placeholder="Adauga comentariul tau aici"
+                    value={newCommentText}
+                    onChange={(e) => setNewCommentText(e.target.value)}
+                    style={{ height: '100px', marginBottom: '10px' }}
                 />
-                <label htmlFor="floatingTextarea2">Comments</label>
+                <button onClick={handleAddComment} className="btn btn-primary">Adaugă comentariu</button>
             </div>
-            <button onClick={handleAdd} className="btn btn-primary" style={{ marginTop: '10px' }}>
-                Add Comment
-            </button>
-        </>
+        </div>
     );
 }
 
