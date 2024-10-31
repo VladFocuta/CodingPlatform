@@ -14,6 +14,7 @@ function Introduction() {
             problemName="Introduction"
             problemPoints={1}
             problemHeader={problemHeader}
+            lecture={true}
             nextRoute="/Variables" />
     )
 }

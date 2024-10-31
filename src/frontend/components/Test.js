@@ -20,6 +20,7 @@ function Test({ testCases, correctFormula, testPassedSet, testCassesCount, retur
         if (userCode !== null) {
             setTestingResult(true);
             try {
+                // eslint-disable-next-line
                 const userFunction = new Function(`
                     ${userCode}
                     return ${userCode.match(/function\s+(\w+)/)[1]};
