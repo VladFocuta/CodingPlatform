@@ -4,7 +4,7 @@ function Home() {
     return (
         <div className='home-container'>
             <div className='center-content'>
-                <h1>Welcome Home</h1>
+                <h2>Welcome CODers</h2>
             </div>
             <div className='info-container'>
                 <div className='user-info'>
