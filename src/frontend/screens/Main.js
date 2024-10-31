@@ -90,19 +90,8 @@ function Main() {
                   <div className="accordion-body"><a style={{ textDecoration: 'none' }} href="/Ascending3">Ordonam crescator2.0</a></div>
                 </div>
               </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header">
-                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                    Operatori
-                  </button>
-                </h2>
-                <div id="flush-collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                  <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
-                </div>
-              </div>
+              {/*urmatorul criteriu*/}
             </div>
-
-
           </div>
 
         </div>
