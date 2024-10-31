@@ -78,9 +78,6 @@ function NavBar() {
                   </li>
                 )}
 
-                <li className="nav-item">
-                  <a className="nav-link" href="/ThirdPower">ThirdPower</a>
-                </li>
                 <li className="nav-item dropdown">
                   <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Dropdown
