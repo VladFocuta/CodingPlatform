@@ -6,39 +6,39 @@ function Main() {
   const { user, loggedIn } = UserAuth();
   const { userProgressPoints, problemsSolved } = UserProgressData();
 
- 
+
   const sections = [
     {
       title: "Introducere",
       lessons: [
-        { title: "Introducere", link: "/Introduction", icon: "fas fa-check" },
-        { title: "Variabile", link: "/Variables", icon: "fas fa-check" },
-        { title: "Operatori", link: "/Operators", icon: "fas fa-check" },
-        { title: "Functii", link: "/Functions", icon: "fas fa-check" },
-        { title: "Afisare", link: "/ConsoleLog", icon: "fas fa-check" },
-        { title: "Suma a doua numere", link: "/SumOfTwoNumbers", icon: "fas fa-check" },
-        { title: "Afisare text", link: "/WordsDisplay", icon: "fas fa-check" },
-        { title: "Note", link: "/Average", icon: "fas fa-check" }
+        { title: "Introducere", link: "/Introduction", icon: "fa-solid fa-circle-check" },
+        { title: "Variabile", link: "/Variables", icon: "fa-solid fa-circle-check" },
+        { title: "Operatori", link: "/Operators", icon: "fa-solid fa-circle-check" },
+        { title: "Functii", link: "/Functions", icon: "fa-solid fa-circle-check" },
+        { title: "Afisare", link: "/ConsoleLog", icon: "fa-solid fa-circle-check" },
+        { title: "Suma a doua numere", link: "/SumOfTwoNumbers", icon: "fa-solid fa-circle-check" },
+        { title: "Afisare text", link: "/WordsDisplay", icon: "fa-solid fa-circle-check" },
+        { title: "Note", link: "/Average", icon: "fa-solid fa-circle-check" }
       ]
     },
     {
       title: "If-structură de decizie",
       lessons: [
-        { title: "Instructiunea If", link: "/IfExplanation", icon: "fas fa-check" },
-        { title: "Fratii", link: "/Brothers", icon: "fas fa-check" },
-        { title: "Vacanta", link: "/Vacancy", icon: "fas fa-check" },
-        { title: "Numarul maxim", link: "/Maxim", icon: "fas fa-check" },
-        { title: "Ordonam crescator", link: "/Ascending", icon: "fas fa-check" },
-        { title: "Ordonam crescator2.0", link: "/Ascending3", icon: "fas fa-check" }
+        { title: "Instructiunea If", link: "/IfExplanation", icon: "fa-solid fa-circle-check" },
+        { title: "Fratii", link: "/Brothers", icon: "fa-solid fa-circle-check" },
+        { title: "Vacanta", link: "/Vacancy", icon: "fa-solid fa-circle-check" },
+        { title: "Numarul maxim", link: "/Maxim", icon: "fa-solid fa-circle-check" },
+        { title: "Ordonam crescator", link: "/Ascending", icon: "fa-solid fa-circle-check" },
+        { title: "Ordonam crescator2.0", link: "/Ascending3", icon: "fa-solid fa-circle-check" }
       ]
     },
     {
       title: "While-structură de control",
       lessons: [
-        { title: "Instructiunea while", link: "/While", icon: "fas fa-check" },
-        { title: "Numaratoare inversa", link: "/ReverseCounter", icon: "fas fa-check" },
-        { title: "Contor", link: "/Counter", icon: "fas fa-check" },
-        { title: "Numerele pare", link: "/EvenNumbers", icon: "fas fa-check" }
+        { title: "Instructiunea while", link: "/While", icon: "fa-solid fa-circle-check" },
+        { title: "Numaratoare inversa", link: "/ReverseCounter", icon: "fa-solid fa-circle-check" },
+        { title: "Contor", link: "/Counter", icon: "fa-solid fa-circle-check" },
+        { title: "Numerele pare", link: "/EvenNumbers", icon: "fa-solid fa-circle-check" }
       ]
     }
   ];
@@ -77,11 +77,16 @@ function Main() {
 
                   <div id={`flush-collapse${sectionIndex}`} className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                     {section.lessons.map((lesson, lessonIndex) => {
-                      const isSolved = problemsSolved.includes(lesson.title); // Verifică dacă lecția e rezolvată
+                      const isSolved = problemsSolved.includes(lesson.title);
                       return (
-                        <div key={lessonIndex} className="accordion-body">
-                          <a style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }} href={lesson.link}>
-                            <i className={`${lesson.icon} `} style={{ marginRight: '10px', color: `${isSolved ? 'green' : 'grey'}` }}></i> {/* Iconiță cu culoare în funcție de status */}
+                        <div key={lessonIndex} className="accordion-body" style={{ display: 'flex' }}>
+                          <div className="icon-container">
+                            <i className={`${lesson.icon}`} style={{ color: `${isSolved ? 'green' : 'grey'}` }}></i>
+
+                            {lessonIndex !== section.lessons.length - 1 && <div className="vertical-line" style={{ backgroundColor: `${isSolved ? 'green' : 'grey'}` }}></div>}
+
+                          </div>
+                          <a style={{ textDecoration: 'none', marginLeft: '10px' }} href={lesson.link}>
                             {lesson.title}
                           </a>
                         </div>

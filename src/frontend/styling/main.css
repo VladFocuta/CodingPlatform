@@ -56,3 +56,25 @@
     line-height: 1.5;
 }
 
+.icon-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .icon-container i {
+    font-size: 16px;
+  }
+  
+  .vertical-line {
+    position: absolute;
+    top: 100%;     /* Se plasează linia sub iconiță */
+    left: 50%;     /* Centru pe orizontală */
+    width: 2px;    /* Lățimea liniei */
+    height: 35px;  /* Înălțimea liniei */
+    background-color: grey;
+    transform: translateX(-50%);
+  }
