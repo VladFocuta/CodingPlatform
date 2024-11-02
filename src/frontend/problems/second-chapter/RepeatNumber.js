@@ -2,23 +2,23 @@ import React, { useState } from 'react'
 import ProblemPage from '../../components/functions/ProblemPage'
 import Test from '../../components/Test'
 
-function EvenNumbers() {
+function RepeatNumber() {
     const [testPassed, setTestPassed] = useState(false);
 
-    const correctFormula = (number) => {
-        if (typeof number === 'undefined') {
+    const correctFormula = (a, b) => {
+        if (typeof a === 'undefined' || typeof b === 'undefined') {
             return 'undefined';
         }
         let counter = 0;
-        while (number >= 1) {
-            if (number % 2 === 0) {
+        while (a >= 1) {
+            if (a % 2 === 0) {
                 ++counter;
             }
-            number -= 1;
+            a -= 1;
         }
         return counter;
     };
-  
+
     const testCases = [
         { params: [1] },
         { params: [122] },
@@ -30,24 +30,24 @@ function EvenNumbers() {
     const problemContent = (
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <h4>Se primeste un parametru, <strong style={{ color: '#00bfff' }}>number</strong>.
+                <h4>Se primesc ca parametri, doua numere. Trebuie sa aflam de cate ori se regaseste al doilea numar in primul.
                     <br />
-                    Trebuie sa aflam cate numere pare se regasesc intre 1 si <strong style={{ color: '#00bfff' }}>number</strong>.<br /> Sa se afiseze totalul de numere gasite.<br />
+                    Primul numar este reprezentat de variabila <strong style={{ color: '#00bfff' }}>a</strong>, iar al doilea de variabila <strong style={{ color: '#00bfff' }}>b</strong>. <br /> Sa se returneze numarul total de gasiri.<br />
                     <br />
                     Exemplu:
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
-                    <h4>Date de intrare: 23
+                    <h4>Date de intrare: 24321 2
                         <br />
                     </h4>
-                    <h4> Date de iesire: 11
+                    <h4> Date de iesire: 2
                     </h4>
                 </div> <br />
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
-                    <h4>Date de intrare: 1
+                    <h4>Date de intrare: 32982919 9
                         <br />
                     </h4>
-                    <h4> Date de iesire: 0
+                    <h4> Date de iesire: 3
                     </h4>
                 </div>
 
@@ -62,13 +62,13 @@ function EvenNumbers() {
     )
     return (
         <ProblemPage
-            problemName="Numerele pare"
+            problemName="Numere repetate"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Concatenation"
+            nextRoute="/Main"
             testPassed={testPassed}
         />
     )
 }
 
-export default EvenNumbers
+export default RepeatNumber

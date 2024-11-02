@@ -38,7 +38,10 @@ function Main() {
         { title: "Instructiunea while", link: "/While", icon: "fa-solid fa-circle-check" },
         { title: "Numaratoare inversa", link: "/ReverseCounter", icon: "fa-solid fa-circle-check" },
         { title: "Contor", link: "/Counter", icon: "fa-solid fa-circle-check" },
-        { title: "Numerele pare", link: "/EvenNumbers", icon: "fa-solid fa-circle-check" }
+        { title: "Numerele pare", link: "/EvenNumbers", icon: "fa-solid fa-circle-check" },
+        { title: "Concatenarea numerelor", link: "/Concatenation", icon: "fa-solid fa-circle-check" },
+        { title: "Concatenare 2", link: "/Concatenation2", icon: "fa-solid fa-circle-check" },
+        { title: "Numere repetate", link: "/RepeatNumber", icon: "fa-solid fa-circle-check" }
       ]
     }
   ];

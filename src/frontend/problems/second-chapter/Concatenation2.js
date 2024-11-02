@@ -2,52 +2,52 @@ import React, { useState } from 'react'
 import ProblemPage from '../../components/functions/ProblemPage'
 import Test from '../../components/Test'
 
-function EvenNumbers() {
+function Concatenation2() {
     const [testPassed, setTestPassed] = useState(false);
 
-    const correctFormula = (number) => {
-        if (typeof number === 'undefined') {
+    const correctFormula = (a, x) => {
+        if (typeof a === 'undefined' || typeof x === 'undefined') {
             return 'undefined';
         }
-        let counter = 0;
-        while (number >= 1) {
-            if (number % 2 === 0) {
-                ++counter;
-            }
-            number -= 1;
+        let xCopy = x;
+        while (x > 0) {
+            a *= 10;
+            x = Math.floor(x / 10);
         }
-        return counter;
+        a = a + xCopy;
+        return a;
     };
-  
+
     const testCases = [
-        { params: [1] },
-        { params: [122] },
-        { params: [45] },
-        { params: [34321] }
+        { params: [1, 10] },
+        { params: [122, 33] },
+        { params: [10, 99] },
     ];
     const testCasesCount = testCases.length;
 
     const problemContent = (
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <h4>Se primeste un parametru, <strong style={{ color: '#00bfff' }}>number</strong>.
+                <h4>Primim 2 parametri, <strong style={{ color: '#00bfff' }}>a</strong> si <strong style={{ color: '#00bfff' }}>x</strong>.
                     <br />
-                    Trebuie sa aflam cate numere pare se regasesc intre 1 si <strong style={{ color: '#00bfff' }}>number</strong>.<br /> Sa se afiseze totalul de numere gasite.<br />
+                    Sa se adauge <strong style={{ color: '#00bfff' }}>x</strong> lui <strong style={{ color: '#00bfff' }}>a</strong> si sa se returneze noul numar.<br />
+                    <br />
+                    Se garanteaza ca <strong style={{ color: '#00bfff' }}>x</strong> este format din 2 cifre si <strong style={{ color: '#00bfff' }}>a</strong> &lt; 0.
                     <br />
                     Exemplu:
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
-                    <h4>Date de intrare: 23
+                    <h4>Date de intrare: 1 44
                         <br />
                     </h4>
-                    <h4> Date de iesire: 11
+                    <h4> Date de iesire: 144
                     </h4>
                 </div> <br />
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
-                    <h4>Date de intrare: 1
+                    <h4>Date de intrare: 153 91
                         <br />
                     </h4>
-                    <h4> Date de iesire: 0
+                    <h4> Date de iesire: 15391
                     </h4>
                 </div>
 
@@ -62,13 +62,13 @@ function EvenNumbers() {
     )
     return (
         <ProblemPage
-            problemName="Numerele pare"
+            problemName="Concatenare 2"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Concatenation"
+            nextRoute="/RepeatNumber"
             testPassed={testPassed}
         />
     )
 }
 
-export default EvenNumbers
+export default Concatenation2

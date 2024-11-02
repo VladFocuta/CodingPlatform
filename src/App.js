@@ -26,6 +26,9 @@ import While from './frontend/problems/second-chapter/While';
 import ReverseCounter from './frontend/problems/second-chapter/ReverseCounter';
 import EvenNumbers from './frontend/problems/second-chapter/EvenNumbers';
 import Counter from './frontend/problems/second-chapter/Counter';
+import RepeatNumber from './frontend/problems/second-chapter/RepeatNumber';
+import Concatenation from './frontend/problems/second-chapter/Concatenation';
+import Concatenation2 from './frontend/problems/second-chapter/Concatenation2';
 
 
 function App() {
@@ -60,6 +63,9 @@ function App() {
             <Route path="/ReverseCounter" element={<ReverseCounter />} />
             <Route path="/EvenNumbers" element={<EvenNumbers />} />
             <Route path="/Counter" element={<Counter />} />
+            <Route path="/RepeatNumber" element={<RepeatNumber />} />
+            <Route path="/Concatenation" element={<Concatenation />} />
+            <Route path="/Concatenation2" element={<Concatenation2 />} />
 
           </Routes>
         </UserProgress>
