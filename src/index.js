@@ -13,6 +13,7 @@ import './frontend/styling/main.css';
 import './frontend/styling/problems.css';
 import './frontend/styling/test.css';
 import './frontend/styling/logo.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

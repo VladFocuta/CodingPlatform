@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.6.0",
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@monaco-editor/react": "^4.6.0",
     "@react-firebase/database": "^0.3.11",
     "@react-native-firebase/app": "^21.0.0",

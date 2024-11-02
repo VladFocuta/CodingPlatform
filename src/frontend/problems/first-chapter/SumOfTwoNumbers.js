@@ -53,7 +53,7 @@ function SumOfTwoNumbers() {
         </>
     )
     return (
-        <ProblemPage problemName="Adunarea a două numere"
+        <ProblemPage problemName="Suma a doua numere"
             problemPoints={2}
             problemContent={problemContent}
             nextRoute="/WordsDisplay"

@@ -71,7 +71,7 @@ while (contor <= 10) {
     )
     return (
         <ProblemPage
-            problemName="Counter"
+            problemName="Contor"
             problemPoints={1}
             problemHeader={problemHeader}
             problemContent={problemContent}

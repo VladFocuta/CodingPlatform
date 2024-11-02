@@ -8,10 +8,9 @@ function Introduction() {
         </h4>
     )
 
-
     return (
         <ProblemPage
-            problemName="Introduction"
+            problemName="Introducere"
             problemPoints={1}
             problemHeader={problemHeader}
             lecture={true}

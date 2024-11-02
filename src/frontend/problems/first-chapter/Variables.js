@@ -82,7 +82,7 @@ console.log(necunoscut); // undefined`} />
     return (
         <>
             <ProblemPage
-                problemName="Variables"
+                problemName="Variabile"
                 problemPoints={2}
                 problemEnd={problemEnd}
                 problemContent={problemContent}

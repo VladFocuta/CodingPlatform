@@ -87,7 +87,7 @@ console.log(calcul(2, 10));`} />
 
   return (
     <ProblemPage
-      problemName="ConsoleLog"
+      problemName="Afisare"
       problemPoints={2}
       problemHeader={problemHeader}
       problemContent={problemContent}

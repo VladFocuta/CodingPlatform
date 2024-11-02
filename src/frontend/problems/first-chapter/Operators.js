@@ -196,7 +196,7 @@ x--; // x devine 4`} />
         </h4>
     )
     return (
-        <ProblemPage problemName="Operators"
+        <ProblemPage problemName="Operatori"
             problemPoints={1}
             problemEnd={problemEnd}
             problemContent={problemContent}
