@@ -66,7 +66,7 @@ function Ascending3() {
             problemName="Ordonam crescator 2.0"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Maxim"
+            nextRoute="/Main"
             lecture={false}
             testPassed={testPassed}
         />

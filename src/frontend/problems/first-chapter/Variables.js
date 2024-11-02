@@ -1,5 +1,6 @@
 import React from 'react'
 import ProblemPage from '../../components/functions/ProblemPage'
+import CodeStyle from '../../components/CodeStyle'
 
 
 function Variables() {
@@ -19,10 +20,8 @@ function Variables() {
                 </strong>
                 <br />
                 Reprezintă text și este înconjurat de ghilimele simple (' ') sau duble (" ").
-                <br />
-                let nume = "Ana";
-                <br />
-                let mesaj = 'Salut, cum ești?';
+                <CodeStyle code={`let nume = "Ana";
+let mesaj = 'Salut, cum ești?';`} />
             </div>
 
             <div style={{ background: 'grey', padding: '10px', marginBottom: '10px', borderRadius: '5px' }}>
@@ -30,49 +29,42 @@ function Variables() {
                 </strong>
                 <br />
                 Pot fi atât întregi, cât și numere zecimale.
-                <br />
-                let varsta = 25;
-                <br />
-                let temperatura = 36.6;
+                <CodeStyle code={`let varsta = 25;
+let temperatura = 36.6;`} />
             </div>
 
             <div style={{ background: 'grey', padding: '10px', marginBottom: '10px', borderRadius: '5px' }}>
                 <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px' }}>3.boolean (adevărat sau fals) </strong>
                 <br />
                 Acest tip are doar două valori: true sau false, folosite de obicei pentru decizii logice.
-                <br />
-                let esteStudent = true;
-                <br />
-                let arePermis = false;
+                <CodeStyle code={`let esteStudent = true;
+let arePermis = false;`} />
             </div>
 
             <div style={{ background: 'grey', padding: '10px', marginBottom: '10px', borderRadius: '5px' }}>
                 <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px' }}>4. undefined </strong>
                 <br />
                 O variabilă căreia nu i s-a atribuit încă o valoare.
-                <br />
-                let necunoscut;
-                <br />
-                console.log(necunoscut); // undefined
+                <CodeStyle code={`let necunoscut;
+console.log(necunoscut); // undefined`} />
             </div>
 
             <div style={{ background: 'grey', padding: '10px', marginBottom: '10px', borderRadius: '5px' }}>
                 <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px' }}>5. null </strong>
                 <br />
                 Reprezintă intenționat o valoare "goală" sau "nulă".
-                <br />
-                let valoareNula = null;
+                <CodeStyle code={`let valoareNula = null;`} />  
             </div>
 
             <div style={{ background: 'grey', padding: '10px', marginBottom: '10px', borderRadius: '5px' }}>
                 <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px' }}>6. object (obiecte) </strong>
                 <br />
                 Obiectele stochează mai multe valori într-o singură structură, sub formă de perechi cheie-valoare.
-                <br />
-                let persoana = &#123; <br />
-                &nbsp;&nbsp;nume: "Ion",<br />
-                &nbsp;&nbsp;varsta: 30
-                &#125;
+                <CodeStyle code={`let persoana = {
+    nume: "Ion",
+    varsta: 30
+}`} /> 
+                
 
             </div>
 

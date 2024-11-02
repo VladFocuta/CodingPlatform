@@ -1,5 +1,6 @@
 import React from 'react'
 import ProblemPage from '../../components/functions/ProblemPage'
+import CodeStyle from '../../components/CodeStyle'
 
 function IfExplanation() {
     const problemHeader = (
@@ -17,9 +18,9 @@ function IfExplanation() {
                 <div style={{ background: 'grey', padding: '10px', marginBottom: '2px', borderRadius: '5px' }}>
                     <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px' }}> Sintaxa de bază:</strong>
                     <br />
-                    if (condiție) &#123; <br />
-                    &nbsp;codul care se execută dacă condiția este adevărată <br />
-                    &#125; <br />
+                    <CodeStyle code={`if (condiție) {
+    codul care se execută dacă condiția este adevărată
+}`} />
                     condiție: Este o expresie care este evaluată fie ca true (adevărat), fie ca false (fals).<br />
                     Codul din interiorul acoladelor &#123;
                     &#125; va fi executat numai dacă expresia din paranteze este true.<br />
@@ -28,38 +29,37 @@ function IfExplanation() {
                 <div style={{ background: 'grey', padding: '10px', marginBottom: '2px', borderRadius: '5px' }}>
                     <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px' }}> Exemple de bază:</strong>
                     <br />
-                    1. Exemplu simplu: <br />
-                    let numar = 10; <br />
-                    if (numar &gt; 5) &#123; <br />
-                    &nbsp;console.log("Numărul este mai mare decât 5"); <br />
-                    &#125;<br />
+                    1. Exemplu simplu:
+                    <CodeStyle code={`let numar = 10; 
+if (numar > 5) { 
+    console.log("Numărul este mai mare decât 5"); 
+}`} />
                     În acest exemplu, condiția verifică dacă variabila numar este mai mare decât 5. Deoarece condiția este adevărată (10 &gt; 5), mesajul "Numărul este mai mare decât 5" va fi afișat în consolă.<br /><br />
-
                     2. Dacă condiția este falsă:<br />
-                    let numar = 3;<br />
-                    if (numar &gt;5) &#123;<br />
-                    &nbsp; console.log("Numărul este mai mare decât 5");<br />
-                    &#125;<br />
-                    Aici, condiția numar &gt; 5 este falsă, deoarece 3 nu este mai mare decât 5. Prin urmare, codul din interiorul if nu va fi executat și nu se va afișa nimic în consolă.<br /><br />
+                    <CodeStyle code={`let numar = 3;
+if (numar > 5) {
+    console.log("Numărul este mai mare decât 5");
+}`} />
+                    Aici, condiția numar &gt; 5 este falsă, deoarece 3 nu este mai mare decât 5. Prin urmare, codul din interiorul if nu va fi executat și nu se va afișa nimic în consolă.
                 </div>
 
                 <div style={{ background: 'grey', padding: '10px', marginBottom: '2px', borderRadius: '5px' }}>
                     <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px' }}> if-else:</strong><br />
                     Uneori dorim să executăm un cod alternativ atunci când condiția este falsă. În acest caz, folosim blocul else.<br />
                     Sintaxa if-else:<br />
-                    if (condiție) &#123; <br />
-                    &nbsp; codul care se execută dacă condiția este adevărată<br />
-                    &#125; else &#123;<br />
-                    &nbsp;codul care se execută dacă condiția este falsă<br />
-                    &#125;<br />
-                    Exemplu:<br />
-                    let numar = 3;<br />
 
-                    if (numar &gt; 5) &#123;<br />
-                    &nbsp;console.log("Numărul este mai mare decât 5");<br />
-                    &#125; else &#123;<br />
-                    &nbsp;console.log("Numărul este mai mic sau egal cu 5");<br />
-                    &#125;<br />
+                    <CodeStyle code={`if (condiție) {
+    codul care se execută dacă condiția este adevărată
+} else {
+    codul care se execută dacă condiția este falsă
+}`} />
+                    Exemplu:<br />
+                    <CodeStyle code={`let numar = 3;
+if (numar > 5) {
+    console.log("Numărul este mai mare decât 5");
+} else {
+    console.log("Numărul este mai mic sau egal cu 5");
+}`} />                   
                     În acest caz, deoarece condiția numar &gt; 5 este falsă, se va executa secțiunea de cod din blocul else, iar consola va afișa "Numărul este mai mic sau egal cu 5".
                 </div>
 
@@ -67,14 +67,14 @@ function IfExplanation() {
                     <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px' }}> if-else if-else:</strong><br />
                     Dacă avem mai multe condiții de testat, putem folosi blocul else if pentru a adăuga mai multe verificări.<br />
                     Exemplu:<br />
-                    let numar = 5;<br />
-                    if (numar &gt; 10) &#123;<br />
-                    &nbsp;console.log("Numărul este mai mare decât 10");<br />
-                    &#125; else if (numar === 5) &#123;<br />
-                    &nbsp;console.log("Numărul este exact 5");<br />
-                    &#125; else &#123;<br />
-                    &nbsp;console.log("Numărul este mai mic decât 5");<br />
-                    &#125;<br />
+                    <CodeStyle code={`let numar = 5;
+if (numar > 10) {
+    console.log("Numărul este mai mare decât 10");
+} else if (numar === 5) {
+    console.log("Numărul este exact 5");
+} else {
+    console.log("Numărul este mai mic decât 5");
+}`} />
                     Dacă numar ar fi mai mare de 10, s-ar executa primul bloc if.<br />
                     Dacă numar este exact 5 (ca în exemplul nostru), se va executa blocul else if, afișând "Numărul este exact 5".<br />
                     Dacă niciuna dintre condiții nu este îndeplinită, se execută blocul final else.<br />
@@ -89,15 +89,14 @@ function IfExplanation() {
                     Dacă există un bloc else, acesta va fi executat numai dacă condiția este false.<br /><br />
                     Exemple practice:<br />
                     &nbsp; Verificarea unei variabile:<br />
-                    &nbsp;&nbsp;let esteVremeaFrumoasa = true;<br />
-
-                    &nbsp;&nbsp;if (esteVremeaFrumoasa) &#123;<br />
-                    &nbsp;&nbsp; &nbsp;console.log("Hai să mergem la plimbare!");<br />
-                    &nbsp; &#125; else &#123;<br />
-                    &nbsp;&nbsp; &nbsp;console.log("Rămânem în casă.");<br />
-                    &nbsp; &#125;<br />
+                    <CodeStyle code={`let esteVremeaFrumoasa = true;
+if (esteVremeaFrumoasa) {
+    console.log("Hai să mergem la plimbare!");
+} else {
+    console.log("Rămânem în casă.");
+}`} />
                     Aici, dacă variabila <strong className='highlight'>esteVremeaFrumoasa</strong> este true, va afișa "Hai să mergem la plimbare!", altfel, va afișa "Rămânem în casă."<br />
-                    <br /> Concluzie:<br /> 
+                    <br /> Concluzie:<br />
                     Instrucțiunea <strong className='highlight'>if </strong>este un instrument de bază pentru a lua decizii în programele JavaScript, permițându-ți să execuți cod diferit în funcție de condiții logice. Este una dintre cele mai frecvent utilizate structuri de control în orice limbaj de programare.
                 </div>
             </div>

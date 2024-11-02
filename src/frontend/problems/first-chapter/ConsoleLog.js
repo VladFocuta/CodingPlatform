@@ -1,5 +1,6 @@
 import React from 'react'
 import ProblemPage from '../../components/functions/ProblemPage'
+import CodeStyle from '../../components/CodeStyle'
 
 function ConsoleLog() {
 
@@ -23,31 +24,26 @@ function ConsoleLog() {
 
         <div style={{ background: 'grey', padding: '10px', marginBottom: '2px', borderRadius: '5px' }}>
           <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px' }}> Afișează un mesaj text:</strong>
-          <br />
-          console.log("Salut, lume!");
+          <CodeStyle code={`console.log("Salut, lume!");`} />
         </div>
 
         <div style={{ background: 'grey', padding: '10px', marginBottom: '2px', borderRadius: '5px' }}>
           <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px' }}> Afișează un număr:</strong>
-          <br />
-          console.log(42);
+          <CodeStyle code={`console.log(42);`} />
         </div>
 
         <div style={{ background: 'grey', padding: '10px', marginBottom: '2px', borderRadius: '5px' }}>
           <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px' }}> Afișează rezultatul unei operații:</strong>
-          <br />
-          console.log(5 + 3); // va afișa 8
+          <CodeStyle code={`console.log(5 + 3); // va afișa 8`} />
         </div>
 
         <div style={{ background: 'grey', padding: '10px', marginBottom: '2px', borderRadius: '5px' }}>
           <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px' }}> Afișează conținutul unui obiect:</strong>
-          <br />
-          let persoana = &#123; <br />
-          &nbsp;&nbsp;nume: "Ion",<br />
-          &nbsp;&nbsp;varsta: 30
-          &#125;
-          <br />
-          console.log(persoana);
+          <CodeStyle code={`let persoana = {
+  nume: "Ion",
+  varsta: 30
+}
+ console.log(persoana);`} />
         </div>
       </div>
 
@@ -58,16 +54,12 @@ function ConsoleLog() {
 
       <div style={{ background: 'grey', padding: '10px', marginBottom: '2px', borderRadius: '5px' }}>
         <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px' }}>Exemplu de functie:</strong>
-        <br />
-        function calcul(a, b) &#123;
-        <br />
-        &nbsp; let result = a + b;
-        <br />
-        &nbsp; return result;
-        <br />
-        &#125;
-        <br />
-        console.log(calcul(2, 10));
+        <CodeStyle code={`function calcul(a, b) {
+  let result = a + b; 
+  return result;    
+}
+console.log(calcul(2, 10));`} />
+
       </div>
       <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
 

@@ -68,7 +68,7 @@ function Main() {
               <div className="accordion-item">
                 <h2 className="accordion-header">
                   <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                    If-structura de decizie
+                    If-structură de decizie
                   </button>
                 </h2>
                 <div id="flush-collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
@@ -88,6 +88,26 @@ function Main() {
                 </div>
                 <div id="flush-collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                   <div className="accordion-body"><a style={{ textDecoration: 'none' }} href="/Ascending3">Ordonam crescator2.0</a></div>
+                </div>
+              </div>
+
+              <div className="accordion-item">
+                <h2 className="accordion-header">
+                  <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    While-structură de control
+                  </button>
+                </h2>
+                <div id="flush-collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div className="accordion-body"><a style={{ textDecoration: 'none' }} href="/While">Instructiunea while</a></div>
+                </div>
+                <div id="flush-collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div className="accordion-body"><a style={{ textDecoration: 'none' }} href="/ReverseCounter">Numaratoarea inversa</a></div>
+                </div>
+                <div id="flush-collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div className="accordion-body"><a style={{ textDecoration: 'none' }} href="/Counter">Contor</a></div>
+                </div>
+                <div id="flush-collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div className="accordion-body"><a style={{ textDecoration: 'none' }} href="/EvenNumbers">Numere pare</a></div>
                 </div>
               </div>
               {/*urmatorul criteriu*/}

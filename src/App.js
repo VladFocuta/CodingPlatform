@@ -22,6 +22,10 @@ import ResetPassword from './frontend/screens/ResetPassword';
 import Maxim from './frontend/problems/If-Instruction/Maxim';
 import Ascending from './frontend/problems/If-Instruction/Ascending';
 import Ascending3 from './frontend/problems/If-Instruction/Ascending3';
+import While from './frontend/problems/second-chapter/While';
+import ReverseCounter from './frontend/problems/second-chapter/ReverseCounter';
+import EvenNumbers from './frontend/problems/second-chapter/EvenNumbers';
+import Counter from './frontend/problems/second-chapter/Counter';
 
 
 function App() {
@@ -52,6 +56,11 @@ function App() {
             <Route path="/Maxim" element={<Maxim />} />
             <Route path="/Ascending" element={<Ascending />} />
             <Route path="/Ascending3" element={<Ascending3 />} />
+            <Route path="/While" element={<While />} />
+            <Route path="/ReverseCounter" element={<ReverseCounter />} />
+            <Route path="/EvenNumbers" element={<EvenNumbers />} />
+            <Route path="/Counter" element={<Counter />} />
+
           </Routes>
         </UserProgress>
       </AuthProvider>

@@ -1,5 +1,6 @@
 import React from 'react'
 import ProblemPage from '../../components/functions/ProblemPage'
+import CodeStyle from '../../components/CodeStyle'
 
 
 function Functions() {
@@ -17,17 +18,14 @@ function Functions() {
                 În JavaScript, o funcție este un bloc de cod reutilizabil care execută o anumită sarcină. În cazul nostru,<strong className='highlight'>funcția calcul(a, b)</strong>  este definită pentru a aduna două numere și a returna rezultatul.
                 In cazul in care trebuie sa returnam mai multe variabile, folosim parantezele patrate <strong className='highlight'>[ ]</strong>, si inauntru lor adaugam variabilele pe care dorim sa le returnam <strong className='highlight'>[a, b]</strong>.
                 <br /> <br />
-                <div style={{display: 'flex', justifyContent: 'space-around'}}>
-                    
-                    <strong className='highlight'>function calcul(a, b) &#123; <br />
-                        &nbsp; let result = a + b;  <br />
-                        &nbsp; return result; <br />
-                        &#125;</strong>
-
-                    <strong className='highlight'>function calcul(a, b) &#123; <br />
-                       
-                        &nbsp; return [a, b]; <br />
-                        &#125;</strong>
+                <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+                    <CodeStyle code={`function calcul(a, b) {
+    let result = a + b;
+    return result;
+}`} />
+                    <CodeStyle code={`function calcul(a, b) {
+    return [a, b];
+}`} />
                 </div>
 
                 <br /> <br />

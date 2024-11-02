@@ -2,51 +2,54 @@ import React, { useState } from 'react'
 import ProblemPage from '../../components/functions/ProblemPage'
 import Test from '../../components/Test'
 
-function Ascending() {
+function EvenNumbers() {
     const [testPassed, setTestPassed] = useState(false);
 
-    const correctFormula = (a, b) => {
-
-        if (typeof a === 'undefined' || typeof b === 'undefined') {
+    const correctFormula = (number) => {
+        if (typeof number === 'undefined') {
             return 'undefined';
         }
-        if (a > b) {
-            return [b, a];
+        let counter = 0;
+        while (number >= 1) {
+            if (number % 2 === 0) {
+                ++counter;
+            }
+            number -= 1;
         }
-        if (b === a) {
-            return [a, b];
-        }
-        if (a < b) {
-            return [a, b];
-        }
-
+        return counter;
     };
-
+  
     const testCases = [
-        { params: [202, -22] },
-        { params: [122, 122] },
-        { params: [10, 66] }
+        { params: [1] },
+        { params: [122] },
+        { params: [45] },
+        { params: [34321] }
     ];
     const testCasesCount = testCases.length;
+
     const problemContent = (
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <h4>Se primesc ca parametrii, doua numere <strong style={{ color: '#00bfff' }}>a</strong> si <strong style={{ color: '#00bfff' }}>b</strong>.
+                <h4>Se primeste un parametru, <strong style={{ color: '#00bfff' }}>number</strong>.
                     <br />
-                    Sa se afiseze numerele in ordine crescatoare, cu spatiu intre ele.<br />
-                    <br />
-                    Mentiuni: -1 000 000 ≤ a, b ≤ 1 000 000
+                    Trebuie sa aflam cate numere pare se regasesc intre 1 si <strong style={{ color: '#00bfff' }}>number</strong>.<br /> Sa se afiseze totalul de numere gasite.<br />
                     <br />
                     Exemplu:
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
-                    <h4>Date de intrare:  65 -32
+                    <h4>Date de intrare: 23
                         <br />
                     </h4>
-                    <h4> Date de iesire: -32, 65
-                        <br />
+                    <h4> Date de iesire: 11
                     </h4>
                 </div> <br />
+                <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
+                    <h4>Date de intrare: 1
+                        <br />
+                    </h4>
+                    <h4> Date de iesire: 0
+                    </h4>
+                </div>
 
             </div>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
@@ -57,17 +60,15 @@ function Ascending() {
             </div>
         </>
     )
-
     return (
         <ProblemPage
-            problemName="Ordonam crescator"
+            problemName="Numerele pare"
             problemPoints={1}
             problemContent={problemContent}
             nextRoute="/Ascending3"
-            lecture={false}
             testPassed={testPassed}
         />
     )
 }
 
-export default Ascending
+export default EvenNumbers
