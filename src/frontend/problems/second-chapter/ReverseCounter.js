@@ -28,7 +28,7 @@ function ReverseCounter() {
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
                 <h4>Se primeste un parametru, <strong style={{ color: '#00bfff' }}>number,</strong> cu valorea intre 1 si 10.
                     <br />
-                    Folosește o buclă while pentru a afișa numerele de la 10 la 1 în ordine descrescătoare.<br />
+                    Folosește o buclă while pentru a afișa numerele de la <strong style={{ color: '#00bfff' }}>number </strong> la 1 în ordine descrescătoare.<br />
                     <br />
                     Exemplu:
                 </h4>
