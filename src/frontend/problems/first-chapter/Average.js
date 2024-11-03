@@ -10,7 +10,7 @@ function Average() {
         if (typeof b === 'undefined' || typeof c === 'undefined' || typeof d === 'undefined') {
             return 'undefined';
         }
-       
+
         return (b + c + d) / 3;
     };
 

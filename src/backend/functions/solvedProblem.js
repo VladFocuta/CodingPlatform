@@ -12,19 +12,21 @@ const solvedProblem = async (data, user, progressPoints, problemsName) => {
             if (docSnapShot.exists()) {
                 const existingSolvedProblems = docSnapShot.data().solvedProblem || []; // Dacă array-ul nu există, inițializează-l cu unul gol
                 if (!existingSolvedProblems.includes(problemsName)) {
-                   
+
                     const updatedSolvedProblems = [...existingSolvedProblems, problemsName];
 
                     await updateDoc(solvedProblemsRef, {
                         solvedProblem: updatedSolvedProblems,
-                        pointsPerChapter: progressPoints
+                        pointsPerChapter: progressPoints,
                     });
                 }
             } else {
                 // Inițializează documentul cu un array gol la prima salvare
-                await setDoc(solvedProblemsRef, { 
-                    solvedProblem: [problemsName], 
-                    pointsPerChapter: progressPoints 
+                await setDoc(solvedProblemsRef, {
+                    solvedProblem: [problemsName],
+                    pointsPerChapter: progressPoints,
+                    userId: user?.uid,
+                    name: user?.displayName,
                 });
             }
 

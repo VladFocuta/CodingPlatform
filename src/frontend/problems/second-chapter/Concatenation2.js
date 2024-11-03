@@ -9,7 +9,7 @@ function Concatenation2() {
         if (typeof a === 'undefined' || typeof x === 'undefined') {
             return 'undefined';
         }
-        let xCopy = x;
+        const xCopy = x;
         while (x > 0) {
             a *= 10;
             x = Math.floor(x / 10);
