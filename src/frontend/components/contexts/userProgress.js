@@ -11,6 +11,22 @@ export const UserProgress = ({ children }) => {
     const [userProgressPoints, setUserProgressPoints] = useState(null);
     const [problemsSolved, setProblemsSolved] = useState([]);
 
+    const refreshProgressData  = async () => {
+       
+        try {
+            const userProgressRef = doc(db, 'solvedProblems', userId)
+            const docSnapshot = await getDoc(userProgressRef);
+            if (docSnapshot.exists()) {
+                setUserProgressPoints(docSnapshot.data().pointsPerChapter);
+                setProblemsSolved(docSnapshot.data().solvedProblem);
+           
+            }
+        } catch (error) {
+            console.error('Error while fetching user progress:', error);
+        }
+    }
+
+
     useLayoutEffect(() => {
         const fetchUserProgress = async () => {
             if (!userId) {
@@ -34,7 +50,7 @@ export const UserProgress = ({ children }) => {
     }, [userId])
 
     return (
-        <AuthContext.Provider value={{ userProgressPoints, problemsSolved, setUserProgressPoints }}>
+        <AuthContext.Provider value={{ userProgressPoints, problemsSolved, setUserProgressPoints, refreshProgressData }}>
             {children}
         </AuthContext.Provider>
     )

@@ -1,5 +1,12 @@
 // Înlocuiește globalThis cu self
 /* eslint-disable no-restricted-globals */
+
+function arraysEqual(arr1, arr2) {
+    if (arr1.length !== arr2.length) return false;
+    return arr1.every((value, index) => value === arr2[index]);
+}
+
+
 self.onmessage = async (e) => {
     const { code, testCases, maxExecutionTime } = e.data;
 
@@ -37,9 +44,13 @@ self.onmessage = async (e) => {
                 // Verificăm timpul de execuție
                 if (executionTime > maxExecutionTime) throw new Error("Depășire timp maxim de execuție");
 
+                const isCorrect = Array.isArray(userResult) && Array.isArray(expected)
+                ? arraysEqual(userResult, expected)
+                : userResult === expected;
+
                 results.push({
                     testCase: i + 1,
-                    result: userResult === expected ? 'Corect' : 'Incorect',
+                    result: isCorrect ? 'Corect' : 'Incorect',
                     userResult,
                     expected,
                 });

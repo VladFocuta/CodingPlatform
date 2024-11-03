@@ -1,47 +1,50 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { UserAuth } from "../../backend/firebaseConfig/authProvider";
 import { UserProgressData } from "../components/contexts/userProgress";
 
 function Main() {
   const { user, loggedIn } = UserAuth();
-  const { userProgressPoints, problemsSolved } = UserProgressData();
+  const { userProgressPoints, problemsSolved, refreshProgressData } = UserProgressData();
 
+  useEffect(() => {
+    refreshProgressData();
+  }, [refreshProgressData]);
 
   const sections = [
     {
       title: "Introducere",
       lessons: [
-        { title: "Introducere", link: "/Introduction", icon: "fa-solid fa-circle-check" },
-        { title: "Variabile", link: "/Variables", icon: "fa-solid fa-circle-check" },
-        { title: "Operatori", link: "/Operators", icon: "fa-solid fa-circle-check" },
-        { title: "Functii", link: "/Functions", icon: "fa-solid fa-circle-check" },
-        { title: "Afisare", link: "/ConsoleLog", icon: "fa-solid fa-circle-check" },
-        { title: "Suma a doua numere", link: "/SumOfTwoNumbers", icon: "fa-solid fa-circle-check" },
-        { title: "Afisare text", link: "/WordsDisplay", icon: "fa-solid fa-circle-check" },
-        { title: "Note", link: "/Average", icon: "fa-solid fa-circle-check" }
+        { title: "Introducere", link: "/Introduction", icon: "fa-solid fa-circle-check", index: 1 },
+        { title: "Variabile", link: "/Variables", icon: "fa-solid fa-circle-check", index: 2 },
+        { title: "Operatori", link: "/Operators", icon: "fa-solid fa-circle-check", index: 3 },
+        { title: "Functii", link: "/Functions", icon: "fa-solid fa-circle-check", index: 4 },
+        { title: "Afisare", link: "/ConsoleLog", icon: "fa-solid fa-circle-check", index: 5 },
+        { title: "Suma a doua numere", link: "/SumOfTwoNumbers", icon: "fa-solid fa-circle-check", index: 6 },
+        { title: "Afisare text", link: "/WordsDisplay", icon: "fa-solid fa-circle-check", index: 7 },
+        { title: "Note", link: "/Average", icon: "fa-solid fa-circle-check", index: 8 }
       ]
     },
     {
       title: "If-structură de decizie",
       lessons: [
-        { title: "Instructiunea If", link: "/IfExplanation", icon: "fa-solid fa-circle-check" },
-        { title: "Fratii", link: "/Brothers", icon: "fa-solid fa-circle-check" },
-        { title: "Vacanta", link: "/Vacancy", icon: "fa-solid fa-circle-check" },
-        { title: "Numarul maxim", link: "/Maxim", icon: "fa-solid fa-circle-check" },
-        { title: "Ordonam crescator", link: "/Ascending", icon: "fa-solid fa-circle-check" },
-        { title: "Ordonam crescator2.0", link: "/Ascending3", icon: "fa-solid fa-circle-check" }
+        { title: "Instructiunea If", link: "/IfExplanation", icon: "fa-solid fa-circle-check", index: 9 },
+        { title: "Fratii", link: "/Brothers", icon: "fa-solid fa-circle-check", index: 10 },
+        { title: "Vacanta", link: "/Vacancy", icon: "fa-solid fa-circle-check", index: 11 },
+        { title: "Numarul maxim", link: "/Maxim", icon: "fa-solid fa-circle-check", index: 12 },
+        { title: "Ordonam crescator", link: "/Ascending", icon: "fa-solid fa-circle-check", index: 13 },
+        { title: "Ordonam crescator2.0", link: "/Ascending3", icon: "fa-solid fa-circle-check", index: 14 }
       ]
     },
     {
       title: "While-structură de control",
       lessons: [
-        { title: "Instructiunea while", link: "/While", icon: "fa-solid fa-circle-check" },
-        { title: "Numaratoare inversa", link: "/ReverseCounter", icon: "fa-solid fa-circle-check" },
-        { title: "Contor", link: "/Counter", icon: "fa-solid fa-circle-check" },
-        { title: "Numerele pare", link: "/EvenNumbers", icon: "fa-solid fa-circle-check" },
-        { title: "Concatenarea numerelor", link: "/Concatenation", icon: "fa-solid fa-circle-check" },
-        { title: "Concatenare 2", link: "/Concatenation2", icon: "fa-solid fa-circle-check" },
-        { title: "Numere repetate", link: "/RepeatNumber", icon: "fa-solid fa-circle-check" }
+        { title: "Instructiunea while", link: "/While", icon: "fa-solid fa-circle-check", index: 15 },
+        { title: "Contor", link: "/Counter", icon: "fa-solid fa-circle-check", index: 16 },
+        { title: "Numaratoare inversa", link: "/ReverseCounter", icon: "fa-solid fa-circle-check", index: 17 },
+        { title: "Numerele pare", link: "/EvenNumbers", icon: "fa-solid fa-circle-check", index: 18 },
+        { title: "Concatenarea numerelor", link: "/Concatenation", icon: "fa-solid fa-circle-check", index: 19 },
+        { title: "Concatenare 2", link: "/Concatenation2", icon: "fa-solid fa-circle-check", index: 20 },
+        { title: "Numere repetate", link: "/RepeatNumber", icon: "fa-solid fa-circle-check", index: 21 }
       ]
     }
   ];
@@ -81,15 +84,24 @@ function Main() {
                   <div id={`flush-collapse${sectionIndex}`} className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                     {section.lessons.map((lesson, lessonIndex) => {
                       const isSolved = problemsSolved.includes(lesson.title);
+
                       return (
                         <div key={lessonIndex} className="accordion-body" style={{ display: 'flex' }}>
                           <div className="icon-container">
-                            <i className={`${lesson.icon}`} style={{ color: `${isSolved ? 'green' : 'grey'}` }}></i>
-
+                            <i
+                              className={
+                                isSolved
+                                  ? lesson.icon // Icon-ul verde pentru lecțiile rezolvate
+                                  : problemsSolved.length === lesson.index - 1 // Lecția curentă fără lacăt
+                                    ? lesson.icon // Icon-ul specific lecției
+                                    : "fa-solid fa-lock" // Icon-ul cu lacăt pentru restul lecțiilor
+                              }
+                              style={{ color: isSolved || problemsSolved.length === lesson.index ? 'green' : 'grey' }}
+                            ></i>
                             {lessonIndex !== section.lessons.length - 1 && <div className="vertical-line" style={{ backgroundColor: `${isSolved ? 'green' : 'grey'}` }}></div>}
 
                           </div>
-                          <a style={{ textDecoration: 'none', marginLeft: '10px' }} href={lesson.link}>
+                          <a style={{ textDecoration: 'none', marginLeft: '10px' }} href={isSolved || problemsSolved.length === lesson.index - 1 ? lesson.link : null}>
                             {lesson.title}
                           </a>
                         </div>

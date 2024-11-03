@@ -65,7 +65,7 @@ function Test({ testCases, correctFormula, maxExecutionTime, testPassedSet }) {
                     <ul>
                         {output.map((result, index) => (
                             <li key={index} style={{ marginTop: '10px', fontSize: '18px', fontWeight: 'bold' }}>
-                                Test {result.testCase}: {result.result} 
+                                Test {result.testCase}: {result.result}
                             </li>
                         ))}
                     </ul>

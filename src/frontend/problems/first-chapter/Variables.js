@@ -83,7 +83,7 @@ console.log(necunoscut); // undefined`} />
         <>
             <ProblemPage
                 problemName="Variabile"
-                problemPoints={2}
+                problemPoints={1}
                 problemEnd={problemEnd}
                 problemContent={problemContent}
                 problemHeader={problemHeader}
