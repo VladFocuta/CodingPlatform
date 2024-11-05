@@ -1,16 +1,36 @@
 import { useState } from 'react';
 import { Editor } from '@monaco-editor/react';
+import { useNavigate } from 'react-router-dom'
+import { storeCode } from '../../backend/functions/storeUserCode';
+import { UserAuth } from '../../backend/firebaseConfig/authProvider';
 
-function Test({ testCases, correctFormula, maxExecutionTime, testPassedSet }) {
+
+function Test({ testCases, correctFormula, maxExecutionTime, testPassedSet, problemName }) {
     const [userCode, setUserCode] = useState("");
+    const [codeSubmited, setCodeSubmited] = useState(false);
     const [output, setOutput] = useState(null);
     const [error, setError] = useState(null);
+    const navigate = useNavigate();
+    const { user } = UserAuth();
+    const userId = user?.uid;
 
-    const handleRunCode = () => {
+    const handleSubmitHistoryPage = () => {
+        navigate('/CodeSubmitHistory', { state: { data: problemName, codeSubmited } });
+    }
+
+    const handleRunCode = async () => {
+        setCodeSubmited(true);
+        const codeObject = {
+            userCode: userCode,
+            userId: userId,
+            name: user.displayName
+        }
         // Pregătește test cases cu valorile așteptate
+        await storeCode(codeObject, problemName)
         const preparedTestCases = testCases.map(testCase => ({
             ...testCase,
             expected: correctFormula(...testCase.params), // Folosește correctFormula pentru a obține rezultatul așteptat
+
         }));
 
         // Inițializează un nou worker
@@ -45,7 +65,11 @@ function Test({ testCases, correctFormula, maxExecutionTime, testPassedSet }) {
     return (
         <>
             <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '5px', alignItems: 'flex-start' }}>
-                <h1>Trimite codul tau</h1>
+                <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                    <h1>Trimite codul tau</h1>
+                    <button onClick={handleSubmitHistoryPage} className="btn btn-light" style={{ marginBottom: '10px' }} >Istoric</button>
+                </div>
+
 
                 <div style={{ height: '500px', width: '100%' }}>
                     <Editor

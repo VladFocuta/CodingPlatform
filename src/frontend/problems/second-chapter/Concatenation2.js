@@ -56,7 +56,8 @@ function Concatenation2() {
                 <Test correctFormula={correctFormula}
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    testCassesCount={testCasesCount} />
+                    testCassesCount={testCasesCount}
+                    problemName="Concatenare 2" />
             </div>
         </>
     )

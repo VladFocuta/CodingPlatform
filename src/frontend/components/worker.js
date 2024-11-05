@@ -11,7 +11,7 @@ self.onmessage = async (e) => {
     const { code, testCases, maxExecutionTime } = e.data;
 
     try {
-        // Creăm funcția utilizatorului
+
         // eslint-disable-next-line
         const userFunction = new Function(`
             ${code}

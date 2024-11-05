@@ -1,14 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { UserAuth } from "../../backend/firebaseConfig/authProvider";
 import { UserProgressData } from "../components/contexts/userProgress";
 
 function Main() {
   const { user, loggedIn } = UserAuth();
-  const { userProgressPoints, problemsSolved, refreshProgressData } = UserProgressData();
+  const { userProgressPoints, problemsSolved } = UserProgressData();
 
-  useEffect(() => {
-    refreshProgressData();
-  }, [refreshProgressData]);
+
 
   const sections = [
     {
@@ -101,7 +99,7 @@ function Main() {
                             {lessonIndex !== section.lessons.length - 1 && <div className="vertical-line" style={{ backgroundColor: `${isSolved ? 'green' : 'grey'}` }}></div>}
 
                           </div>
-                          <a style={{ textDecoration: 'none', marginLeft: '10px' }} href={isSolved || problemsSolved.length === lesson.index - 1 ? lesson.link : null}>
+                          <a style={{ textDecoration: 'none', marginLeft: '10px' }} href={isSolved || problemsSolved.length === lesson.index - 1 ? lesson.link : null }>
                             {lesson.title}
                           </a>
                         </div>

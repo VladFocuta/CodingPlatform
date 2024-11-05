@@ -62,7 +62,8 @@ function Vacancy() {
                 <Test correctFormula={correctFormula}
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    testCassesCount={testCasesCount} />
+                    testCassesCount={testCasesCount} 
+                    problemName="Vacanta"/>
             </div>
         </>
     )
