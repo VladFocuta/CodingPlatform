@@ -58,7 +58,7 @@ function ReverseCounter() {
             problemName="Numaratoare inversa"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Counter"
+            nextRoute="/EvenNumbers"
             testPassed={testPassed}
         />
     )

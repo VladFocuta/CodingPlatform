@@ -30,9 +30,11 @@ function EvenNumbers() {
     const problemContent = (
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <h4>Se primeste un parametru, <strong style={{ color: '#00bfff' }}>number</strong>.
+                <h4>Se primeste ca parametru, variabila  <strong style={{ color: '#00bfff' }}>number</strong>.
                     <br />
                     Trebuie sa aflam cate numere pare se regasesc intre 1 si <strong style={{ color: '#00bfff' }}>number</strong>.<br /> Sa se afiseze totalul de numere gasite.<br />
+                    <br />
+                    Mentiuni: 1 ≤ number ≤ 100 000 
                     <br />
                     Exemplu:
                 </h4>

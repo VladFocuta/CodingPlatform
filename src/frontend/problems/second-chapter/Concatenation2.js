@@ -30,7 +30,7 @@ function Concatenation2() {
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
                 <h4>Primim 2 parametri, <strong style={{ color: '#00bfff' }}>a</strong> si <strong style={{ color: '#00bfff' }}>x</strong>.
                     <br />
-                    Sa se adauge <strong style={{ color: '#00bfff' }}>x</strong> lui <strong style={{ color: '#00bfff' }}>a</strong> si sa se returneze noul numar.<br />
+                    Sa se adauge <strong style={{ color: '#00bfff' }}>x</strong> la <strong style={{ color: '#00bfff' }}>a</strong> si sa se returneze noul numar.<br />
                     <br />
                     Se garanteaza ca <strong style={{ color: '#00bfff' }}>x</strong> este format din 2 cifre si <strong style={{ color: '#00bfff' }}>a</strong> &lt; 0.
                     <br />

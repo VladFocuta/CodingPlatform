@@ -75,7 +75,7 @@ while (contor <= 10) {
             problemPoints={1}
             problemHeader={problemHeader}
             problemContent={problemContent}
-            nextRoute="/EvenNumbers"
+            nextRoute="/ReverseCounter"
             lecture={true}
         />
     )

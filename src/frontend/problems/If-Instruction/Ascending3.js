@@ -65,7 +65,7 @@ function Ascending3() {
     )
     return (
         <ProblemPage
-            problemName="Ordonam crescator 2.0"
+            problemName="Ordonam crescator2.0"
             problemPoints={1}
             problemContent={problemContent}
             nextRoute="/Main"

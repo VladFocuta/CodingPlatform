@@ -42,7 +42,8 @@ function Main() {
         { title: "Numerele pare", link: "/EvenNumbers", icon: "fa-solid fa-circle-check", index: 18 },
         { title: "Concatenarea numerelor", link: "/Concatenation", icon: "fa-solid fa-circle-check", index: 19 },
         { title: "Concatenare 2", link: "/Concatenation2", icon: "fa-solid fa-circle-check", index: 20 },
-        { title: "Numere repetate", link: "/RepeatNumber", icon: "fa-solid fa-circle-check", index: 21 }
+        { title: "Numere repetate", link: "/RepeatNumber", icon: "fa-solid fa-circle-check", index: 21 },
+        { title: "Instructiunea return", link: "/Return", icon: "fa-solid fa-circle-check", index: 22 }
       ]
     }
   ];

@@ -30,6 +30,7 @@ import RepeatNumber from './frontend/problems/second-chapter/RepeatNumber';
 import Concatenation from './frontend/problems/second-chapter/Concatenation';
 import Concatenation2 from './frontend/problems/second-chapter/Concatenation2';
 import CodeSubmitHistory from './frontend/components/CodeSubmitHistory';
+import Return from './frontend/problems/second-chapter/Return';
 
 
 function App() {
@@ -68,6 +69,7 @@ function App() {
             <Route path="/Concatenation" element={<Concatenation />} />
             <Route path="/Concatenation2" element={<Concatenation2 />} />
             <Route path="/CodeSubmitHistory" element={<CodeSubmitHistory />} />
+            <Route path="/Return" element={<Return />} />
 
           </Routes>
         </UserProgress>
