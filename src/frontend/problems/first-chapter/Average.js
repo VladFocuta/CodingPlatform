@@ -51,7 +51,8 @@ function Average() {
                 <Test correctFormula={correctFormula}
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    testCassesCount={testCasesCount} />
+                    testCassesCount={testCasesCount}
+                    problemName="Note" />
             </div>
         </>
     )

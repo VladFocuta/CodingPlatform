@@ -57,7 +57,9 @@ function Ascending3() {
                 <Test correctFormula={correctFormula}
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    testCassesCount={testCasesCount} />
+                    testCassesCount={testCasesCount}
+                    problemName="Ordonam crescator 2.0"
+                />
             </div>
         </>
     )

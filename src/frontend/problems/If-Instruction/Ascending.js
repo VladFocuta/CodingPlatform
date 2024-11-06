@@ -33,7 +33,7 @@ function Ascending() {
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
                 <h4>Se primesc ca parametrii, doua numere <strong style={{ color: '#00bfff' }}>a</strong> si <strong style={{ color: '#00bfff' }}>b</strong>.
                     <br />
-                    Sa se afiseze numerele in ordine crescatoare, cu spatiu intre ele.<br />
+                    Sa se afiseze numerele in ordine crescatoare, cu virgula intre ele.<br />
                     <br />
                     Mentiuni: -1 000 000 ≤ a, b ≤ 1 000 000
                     <br />
@@ -53,7 +53,8 @@ function Ascending() {
                 <Test correctFormula={correctFormula}
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    testCassesCount={testCasesCount} />
+                    testCassesCount={testCasesCount}
+                    problemName="Ordonam crescator" />
             </div>
         </>
     )
@@ -66,6 +67,7 @@ function Ascending() {
             nextRoute="/Ascending3"
             lecture={false}
             testPassed={testPassed}
+            
         />
     )
 }

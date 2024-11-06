@@ -72,7 +72,8 @@ function Brothers() {
                 <Test correctFormula={correctFormula}
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    testCassesCount={testCasesCount} />
+                    testCassesCount={testCasesCount}
+                    problemName="Fratii" />
             </div>
         </>
     )

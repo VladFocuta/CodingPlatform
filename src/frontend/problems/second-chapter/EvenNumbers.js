@@ -18,7 +18,7 @@ function EvenNumbers() {
         }
         return counter;
     };
-  
+
     const testCases = [
         { params: [1] },
         { params: [122] },
@@ -56,7 +56,8 @@ function EvenNumbers() {
                 <Test correctFormula={correctFormula}
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    testCassesCount={testCasesCount} />
+                    testCassesCount={testCasesCount}
+                    problemName="Numerele pare" />
             </div>
         </>
     )

@@ -7,7 +7,6 @@ import { UserAuth } from '../../backend/firebaseConfig/authProvider';
 
 function Test({ testCases, correctFormula, maxExecutionTime, testPassedSet, problemName }) {
     const [userCode, setUserCode] = useState("");
-    const [codeSubmited, setCodeSubmited] = useState(false);
     const [output, setOutput] = useState(null);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
@@ -15,18 +14,18 @@ function Test({ testCases, correctFormula, maxExecutionTime, testPassedSet, prob
     const userId = user?.uid;
 
     const handleSubmitHistoryPage = () => {
-        navigate('/CodeSubmitHistory', { state: { data: problemName, codeSubmited } });
+        navigate('/CodeSubmitHistory', { state: { data: problemName } });
     }
 
     const handleRunCode = async () => {
-        setCodeSubmited(true);
+        
         const codeObject = {
             userCode: userCode,
             userId: userId,
             name: user.displayName
         }
         // Pregătește test cases cu valorile așteptate
-        await storeCode(codeObject, problemName)
+        await storeCode(codeObject, problemName, userId)
         const preparedTestCases = testCases.map(testCase => ({
             ...testCase,
             expected: correctFormula(...testCase.params), // Folosește correctFormula pentru a obține rezultatul așteptat

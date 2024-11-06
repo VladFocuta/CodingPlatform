@@ -48,7 +48,8 @@ function SumOfTwoNumbers() {
                 <Test correctFormula={correctFormula}
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    testCassesCount={testCasesCount} />
+                    testCassesCount={testCasesCount}
+                    problemName="Suma a doua numere" />
             </div>
         </>
     )

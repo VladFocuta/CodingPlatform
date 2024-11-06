@@ -51,7 +51,8 @@ function Maxim() {
                 <Test correctFormula={correctFormula}
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    testCassesCount={testCasesCount} />
+                    testCassesCount={testCasesCount}
+                    problemName="Numarul maxim" />
             </div>
         </>
     )

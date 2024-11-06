@@ -1,12 +1,22 @@
 import { db } from "../firebaseConfig/firebaseConfig"
-import { getDocs, addDoc, collection, query, where } from "firebase/firestore";
+import { getDocs, addDoc, collection, query, where, orderBy,doc, deleteDoc, limit } from "firebase/firestore";
 
-export const storeCode = async (code, problemsName) => {
-    if (code && problemsName) {
+export const storeCode = async (code, problemsName, userId) => {
+    if (code && problemsName && userId) {
         try {
             const submitedCodeRef = collection(db, 'submitedCode', problemsName, 'submission');
+
+            const currentEntriesQuery = query(submitedCodeRef, where("userId", "==", userId), orderBy("timestamp", "asc"));
+            const currentEntriesSnapshot = await getDocs(currentEntriesQuery);
+
+            if (currentEntriesSnapshot.size >= 5) {
+                const oldestDoc = currentEntriesSnapshot.docs[0];
+                await deleteDoc(doc(db, 'submitedCode', problemsName, 'submission', oldestDoc.id));
+            }
+
             await addDoc(submitedCodeRef, {
                 ...code,
+                userId,
                 timestamp: new Date().toLocaleString()
             });
 
@@ -23,7 +33,7 @@ export const getSubmitedCode = async (problemsName, userId) => {
 
     try {
         const submitedCodeRef = collection(db, 'submitedCode', problemsName, 'submission');
-        const q = query(submitedCodeRef, where("userId", "==", userId))
+        const q = query(submitedCodeRef, where("userId", "==", userId), orderBy("timestamp", "desc", limit(5)))
         const querySnapshot = await getDocs(q);
 
         querySnapshot.forEach((doc) => {

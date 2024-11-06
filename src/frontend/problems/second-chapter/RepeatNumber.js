@@ -56,7 +56,8 @@ function RepeatNumber() {
                 <Test correctFormula={correctFormula}
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    testCassesCount={testCasesCount} />
+                    testCassesCount={testCasesCount}
+                    problemName="Numere repetate" />
             </div>
         </>
     )
