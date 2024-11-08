@@ -68,7 +68,7 @@ function EvenNumbers() {
             problemName="Numerele pare"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Concatenation"
+            nextRoute="/problems/Concatenare"
             testPassed={testPassed}
         />
     )

@@ -52,16 +52,16 @@ function Maxim() {
                     testCases={testCases}
                     testPassedSet={setTestPassed}
                     testCassesCount={testCasesCount}
-                    problemName="Numarul maxim" />
+                    problemName="Maxim" />
             </div>
         </>
     )
     return (
         <ProblemPage
-            problemName="Numarul maxim"
+            problemName="Maxim"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Ascending"
+            nextRoute="/problems/Crescator"
             lecture={false}
             testPassed={testPassed}
         />

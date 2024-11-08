@@ -3,11 +3,10 @@ import { TbLogout } from "react-icons/tb";
 import { RiHomeSmileLine } from "react-icons/ri";
 import { UserAuth } from "../../backend/firebaseConfig/authProvider";
 
-
 function NavBar() {
-
   const navigate = useNavigate();
   const { logout, loggedIn, setLoggedIn } = UserAuth();
+  const unreadMessages = 0;
 
   const handleNavigateHome = () => {
     navigate('/');
@@ -19,6 +18,10 @@ function NavBar() {
 
   const handleRegisterScreen = () => {
     navigate('/Register')
+  }
+
+  const handleMessagesScreen = () => {
+    navigate('/screens/Messages');
   }
 
   const handleLogOut = async () => {
@@ -47,13 +50,28 @@ function NavBar() {
             <button className='logo' style={{ border: 'none' }} onClick={loggedIn ? handleMainPressed : handleHomePressed}></button>
           </div>
           {loggedIn ? (
-            <h4 style={{ color: 'white' }}>CODers</h4>
+            <div style={{ display: 'flex', alignItems: 'center', flex: 1, justifyContent: 'center' }}>
+              <h4 style={{ color: 'white' }}>CODers</h4>
+            </div>
           ) : (
 
             <>
               <button onClick={handleRegisterScreen} className='costum-button'>Inregistreaza-te</button>
               <button onClick={handleLoginScreen} className='costum-button'>Logheaza-te</button>
             </>
+          )}
+
+          {loggedIn && (
+            <div style={{ display: 'flex', alignItems: 'center', marginRight: '20px' }}>
+              <button className='fa-solid fa-message messages-icon'
+              onClick={handleMessagesScreen} >
+                {unreadMessages > 0 && (
+                  <strong className="badge">
+                    {unreadMessages}
+                  </strong>
+                )}
+              </button>
+            </div>
           )}
 
           <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">

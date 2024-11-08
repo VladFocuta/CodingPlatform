@@ -18,7 +18,7 @@ function SumOfTwoNumbers() {
         { params: [6, 7] }
     ];
     const testCasesCount = testCases.length;
-   
+
 
     const problemContent = (
         <>
@@ -42,22 +42,22 @@ function SumOfTwoNumbers() {
                     </h4>
                 </div> <br />
                 Trimite functia completa ca in exemplul din lectia despre functii. <br />
-               
+
             </div>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
                 <Test correctFormula={correctFormula}
                     testCases={testCases}
                     testPassedSet={setTestPassed}
                     testCassesCount={testCasesCount}
-                    problemName="Suma a doua numere" />
+                    problemName="Suma" />
             </div>
         </>
     )
     return (
-        <ProblemPage problemName="Suma a doua numere"
+        <ProblemPage problemName="Suma"
             problemPoints={2}
             problemContent={problemContent}
-            nextRoute="/WordsDisplay"
+            nextRoute="/problems/Afisare text"
             testPassed={testPassed} />
 
     )

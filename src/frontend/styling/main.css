@@ -63,18 +63,44 @@
     justify-content: center;
     width: 30px;
     height: 30px;
-  }
-  
-  .icon-container i {
+}
+
+.icon-container i {
     font-size: 16px;
-  }
-  
-  .vertical-line {
+}
+
+.vertical-line {
     position: absolute;
-    top: 100%;     /* Se plasează linia sub iconiță */
-    left: 50%;     /* Centru pe orizontală */
-    width: 2px;    /* Lățimea liniei */
-    height: 35px;  /* Înălțimea liniei */
+    top: 100%;
+    /* Se plasează linia sub iconiță */
+    left: 50%;
+    /* Centru pe orizontală */
+    width: 2px;
+    /* Lățimea liniei */
+    height: 35px;
+    /* Înălțimea liniei */
     background-color: grey;
     transform: translateX(-50%);
-  }
+}
+
+.badge {
+    position: absolute;
+    top: 28px;
+    right: 84px;
+    background-color: transparent;
+    color: rgb(255, 14, 14);
+    border: none;
+    padding: 4px 8px;
+    font-size: 14px;
+}
+
+.messages-icon {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 22px
+}
+
+.messages-icon:hover {
+    color: grey;
+}

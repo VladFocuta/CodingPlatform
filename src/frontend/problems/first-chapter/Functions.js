@@ -75,7 +75,7 @@ function Functions() {
             problemPoints={1}
             problemHeader={problemHeader}
             problemContent={problemContent}
-            nextRoute="/ConsoleLog"
+            nextRoute="/problems/Afisare"
             lecture={true} />
 
     )

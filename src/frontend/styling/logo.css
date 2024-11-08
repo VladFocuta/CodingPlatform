@@ -6,5 +6,10 @@
     height: 70px; 
     margin: 0;
     border-radius: 50px;
-   
 }
+
+.logo:hover {
+    transform: translateY(-5px); /* Deplasează logo-ul cu 5px în sus */
+}
+
+

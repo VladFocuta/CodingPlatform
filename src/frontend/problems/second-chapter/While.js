@@ -82,11 +82,11 @@ while (numar &lt;= 5) {
     )
     return (
         <ProblemPage
-            problemName="Instructiunea while"
+            problemName="While"
             problemPoints={1}
             problemHeader={problemHeader}
             problemContent={problemContent}
-            nextRoute="/Counter"
+            nextRoute="/problems/Contor"
             lecture={true}
         />
     )

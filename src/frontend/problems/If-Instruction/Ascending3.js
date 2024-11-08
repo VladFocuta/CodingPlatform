@@ -58,14 +58,14 @@ function Ascending3() {
                     testCases={testCases}
                     testPassedSet={setTestPassed}
                     testCassesCount={testCasesCount}
-                    problemName="Ordonam crescator 2.0"
+                    problemName="Crescator2.0"
                 />
             </div>
         </>
     )
     return (
         <ProblemPage
-            problemName="Ordonam crescator2.0"
+            problemName="Crescator2.0"
             problemPoints={1}
             problemContent={problemContent}
             nextRoute="/Main"

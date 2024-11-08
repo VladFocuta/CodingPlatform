@@ -69,7 +69,7 @@ function RepeatNumber() {
             problemName="Numere repetate"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Return"
+            nextRoute="/problems/Return"
             testPassed={testPassed}
         />
     )

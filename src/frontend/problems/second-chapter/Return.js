@@ -68,7 +68,7 @@ function Return() {
 
     return (
         <ProblemPage
-            problemName="Instructiunea return"
+            problemName="Return"
             problemPoints={1}
             problemContent={problemContent}
             nextRoute="/Main"

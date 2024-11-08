@@ -108,7 +108,7 @@ if (esteVremeaFrumoasa) {
             problemPoints={1}
             problemHeader={problemHeader}
             problemContent={problemContent}
-            nextRoute="/Brothers"
+            nextRoute="/problems/Fratii"
             lecture={true}
         />
     )

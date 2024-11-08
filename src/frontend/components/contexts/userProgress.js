@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useLayoutEffect, useState } from 'react'
+import React, { createContext, useContext, useLayoutEffect, useState, useEffect } from 'react'
 import { db } from '../../../backend/firebaseConfig/firebaseConfig'
 import { UserAuth } from '../../../backend/firebaseConfig/authProvider'
 import { getDoc, doc } from 'firebase/firestore'
@@ -10,22 +10,7 @@ export const UserProgress = ({ children }) => {
     const userId = user?.uid;
     const [userProgressPoints, setUserProgressPoints] = useState(null);
     const [problemsSolved, setProblemsSolved] = useState([]);
-
-   /* const refreshProgressData  = async () => {
-       
-        try {
-            const userProgressRef = doc(db, 'solvedProblems', userId)
-            const docSnapshot = await getDoc(userProgressRef);
-            if (docSnapshot.exists()) {
-                setUserProgressPoints(docSnapshot.data().pointsPerChapter);
-                setProblemsSolved(docSnapshot.data().solvedProblem);
-           
-            }
-        } catch (error) {
-            console.error('Error while fetching user progress:', error);
-        }
-    }*/
-
+    const [admin, setAdmin] = useState(null);
 
     useLayoutEffect(() => {
         const fetchUserProgress = async () => {
@@ -39,7 +24,7 @@ export const UserProgress = ({ children }) => {
                 if (docSnapshot.exists()) {
                     setUserProgressPoints(docSnapshot.data().pointsPerChapter);
                     setProblemsSolved(docSnapshot.data().solvedProblem);
-               
+
                 }
             } catch (error) {
                 console.error('Error while fetching user progress:', error);
@@ -49,8 +34,31 @@ export const UserProgress = ({ children }) => {
         fetchUserProgress();
     }, [userId])
 
+    useEffect(() => {
+        const fetchAdmin = async () => {
+            if (!userId) {
+                return;
+            }
+
+            try {
+                const userProgressRef = doc(db, 'admins', userId)
+                
+                const docSnapshot = await getDoc(userProgressRef);
+                if (docSnapshot.exists()) {
+                    setAdmin(docSnapshot.data().admin);
+                   
+                }
+            } catch (error) {
+                console.error('Error while fetching admin:', error);
+            }
+        }
+
+        fetchAdmin();
+    }, [userId])
+
+
     return (
-        <AuthContext.Provider value={{ userProgressPoints, problemsSolved, setUserProgressPoints }}>
+        <AuthContext.Provider value={{ userProgressPoints, problemsSolved, setUserProgressPoints, admin }}>
             {children}
         </AuthContext.Provider>
     )

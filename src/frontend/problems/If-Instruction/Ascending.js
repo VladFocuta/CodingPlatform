@@ -54,17 +54,17 @@ function Ascending() {
                     testCases={testCases}
                     testPassedSet={setTestPassed}
                     testCassesCount={testCasesCount}
-                    problemName="Ordonam crescator" />
+                    problemName="Crescator" />
             </div>
         </>
     )
 
     return (
         <ProblemPage
-            problemName="Ordonam crescator"
+            problemName="Crescator"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Ascending3"
+            nextRoute="/problems/Crescator2.0"
             lecture={false}
             testPassed={testPassed}
             

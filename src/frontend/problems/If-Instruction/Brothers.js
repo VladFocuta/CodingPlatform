@@ -83,7 +83,7 @@ function Brothers() {
             problemName="Fratii"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Vacancy"
+            nextRoute="/problems/Vacanta"
             lecture={false}
             testPassed={testPassed}
         />

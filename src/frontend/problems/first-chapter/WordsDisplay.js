@@ -49,7 +49,8 @@ function WordsDisplay() {
                     testCases={testCases}
                     testPassedSet={setTestPassed}
                     testCassesCount={testCasesCount}
-                    returnString={true} />
+                    returnString={true}
+                    problemName="Afisare text" />
             </div>
         </>
     )
@@ -58,7 +59,7 @@ function WordsDisplay() {
         <ProblemPage problemName="Afisare text"
             problemPoints={2}
             problemContent={problemContent}
-            nextRoute="/Average"
+            nextRoute="/problems/Note"
             testPassed={testPassed} />
     )
 }

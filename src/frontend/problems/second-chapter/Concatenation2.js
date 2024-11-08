@@ -66,7 +66,7 @@ function Concatenation2() {
             problemName="Concatenare 2"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/RepeatNumber"
+            nextRoute="/problems/Numere repetate"
             testPassed={testPassed}
         />
     )

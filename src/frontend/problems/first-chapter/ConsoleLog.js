@@ -88,10 +88,10 @@ console.log(calcul(2, 10));`} />
   return (
     <ProblemPage
       problemName="Afisare"
-      problemPoints={2}
+      problemPoints={1}
       problemHeader={problemHeader}
       problemContent={problemContent}
-      nextRoute="/SumOfTwoNumbers"
+      nextRoute="/problems/Suma"
       lecture={true}
     />
 

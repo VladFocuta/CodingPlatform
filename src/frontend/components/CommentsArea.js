@@ -4,17 +4,19 @@ import { addComment, addReplyToComment, getComments } from '../../backend/functi
 
 function CommentsArea({ problemName }) {
     const { user } = UserAuth();
+    const usedId = user?.uid;
     const [commentsList, setCommentsList] = useState([]);
     const [newCommentText, setNewCommentText] = useState('');
     const [replyText, setReplyText] = useState({});
 
+
     useEffect(() => {
-        const fetchComments = async () => {
-            const fetchedComments = await getComments(problemName);
-            setCommentsList(fetchedComments);
-        };
-        fetchComments();
-    }, [problemName]);
+        // Ascultăm comentariile în timp real
+        const unsubscribe = getComments(problemName, usedId, setCommentsList);
+
+        // Dezabonăm la demontarea componentei
+        return () => unsubscribe && unsubscribe();
+    }, [problemName, usedId]);
 
     const handleAddComment = async () => {
         if (!newCommentText.trim()) return;
@@ -26,13 +28,12 @@ function CommentsArea({ problemName }) {
             replies: []
         };
         await addComment(problemName, commentData);
-        setCommentsList(await getComments(problemName));
         setNewCommentText('');
     };
 
     const handleAddReply = async (commentId) => {
         const text = replyText[commentId];
-        if (!text.trim()) return;
+        if (!text) return;
 
         const replyData = {
             text,
@@ -40,7 +41,6 @@ function CommentsArea({ problemName }) {
             userName: user?.displayName || 'Anonim'
         };
         await addReplyToComment(problemName, commentId, replyData);
-        setCommentsList(await getComments(problemName));
         setReplyText((prev) => ({ ...prev, [commentId]: '' }));
     };
 
@@ -70,7 +70,7 @@ function CommentsArea({ problemName }) {
                     {comment.replies.length > 0 && (
                         <div style={{ marginLeft: '20px', marginTop: '10px' }}>
                             {comment.replies.map((reply, idx) => (
-                                <div key={idx} style={{ background: '#ccc', padding: '5px', marginBottom: '2px', borderRadius: '5px', color:'black' }}>
+                                <div key={idx} style={{ background: '#ccc', padding: '5px', marginBottom: '2px', borderRadius: '5px', color: 'black' }}>
                                     <strong >{reply.userName}</strong> - {reply.timestamp}
                                     <p style={{ color: 'black' }}>{reply.text}</p>
                                 </div>

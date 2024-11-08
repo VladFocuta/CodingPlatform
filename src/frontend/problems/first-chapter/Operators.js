@@ -202,7 +202,7 @@ x--; // x devine 4`} />
             problemContent={problemContent}
             problemHeader={problemHeader}
             lecture={true}
-            nextRoute="/Functions" />
+            nextRoute="/problems/Functii" />
 
     )
 }

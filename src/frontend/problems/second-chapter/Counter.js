@@ -75,7 +75,7 @@ while (contor <= 10) {
             problemPoints={1}
             problemHeader={problemHeader}
             problemContent={problemContent}
-            nextRoute="/ReverseCounter"
+            nextRoute="/problems/Numaratoare inversa"
             lecture={true}
         />
     )

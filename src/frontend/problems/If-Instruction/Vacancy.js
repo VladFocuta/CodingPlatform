@@ -73,7 +73,7 @@ function Vacancy() {
             problemName="Vacanta"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Maxim"
+            nextRoute="/problems/Maxim"
             lecture={false}
             testPassed={testPassed}
         />

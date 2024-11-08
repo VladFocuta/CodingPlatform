@@ -88,7 +88,7 @@ console.log(necunoscut); // undefined`} />
                 problemContent={problemContent}
                 problemHeader={problemHeader}
                 lecture={true}
-                nextRoute="/Operators" />
+                nextRoute="/problems/Operatori" />
 
         </>
     )

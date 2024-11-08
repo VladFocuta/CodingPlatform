@@ -47,11 +47,11 @@ function Concatenation() {
 
     return (
         <ProblemPage
-            problemName="Concatenarea numerelor"
+            problemName="Concatenare"
             problemPoints={1}
             problemHeader={problemHeader}
             problemContent={problemContent}
-            nextRoute="/Concatenation2"
+            nextRoute="/problems/Concatenare 2"
             lecture={true}
         />
     )

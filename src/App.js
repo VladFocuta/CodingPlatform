@@ -31,6 +31,9 @@ import Concatenation from './frontend/problems/second-chapter/Concatenation';
 import Concatenation2 from './frontend/problems/second-chapter/Concatenation2';
 import CodeSubmitHistory from './frontend/components/CodeSubmitHistory';
 import Return from './frontend/problems/second-chapter/Return';
+import Messages from './frontend/screens/Messages';
+import ScrollToTop from './frontend/components/ScrollToTop';
+
 
 
 function App() {
@@ -39,40 +42,45 @@ function App() {
 
     <div >
       <AuthProvider>
+
         <UserProgress>
           <NavBar />
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Main" element={<Main />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/Register" element={<Register />} />
-            <Route path="/Introduction" element={<Introduction />} />
-            <Route path="/Variables" element={<Variables />} />
-            <Route path="/Operators" element={<Operators />} />
-            <Route path="/ConsoleLog" element={<ConsoleLog />} />
-            <Route path="/SumOfTwoNumbers" element={<SumOfTwoNumbers />} />
-            <Route path="/Functions" element={<Functions />} />
-            <Route path="/WordsDisplay" element={<WordsDisplay />} />
-            <Route path="/Average" element={<Average />} />
-            <Route path="/IfExplanation" element={<IfExplanation />} />
-            <Route path="/Brothers" element={<Brothers />} />
-            <Route path="/Vacancy" element={<Vacancy />} />
             <Route path="/ResetPassword" element={<ResetPassword />} />
-            <Route path="/Maxim" element={<Maxim />} />
-            <Route path="/Ascending" element={<Ascending />} />
-            <Route path="/Ascending3" element={<Ascending3 />} />
-            <Route path="/While" element={<While />} />
-            <Route path="/ReverseCounter" element={<ReverseCounter />} />
-            <Route path="/EvenNumbers" element={<EvenNumbers />} />
-            <Route path="/Counter" element={<Counter />} />
-            <Route path="/RepeatNumber" element={<RepeatNumber />} />
-            <Route path="/Concatenation" element={<Concatenation />} />
-            <Route path="/Concatenation2" element={<Concatenation2 />} />
             <Route path="/CodeSubmitHistory" element={<CodeSubmitHistory />} />
-            <Route path="/Return" element={<Return />} />
+            <Route path="/screens/Messages" element={<Messages />} />
 
+            <Route path="/problems/Introducere" element={<Introduction />} />
+            <Route path="/problems/Variabile" element={<Variables />} />
+            <Route path="/problems/Operatori" element={<Operators />} />
+            <Route path="/problems/Afisare" element={<ConsoleLog />} />
+            <Route path="/problems/Suma" element={<SumOfTwoNumbers />} />
+            <Route path="/problems/Functii" element={<Functions />} />
+            <Route path="/problems/Afisare text" element={<WordsDisplay />} />
+            <Route path="/problems/Note" element={<Average />} />
+            <Route path="/problems/Instructiunea If" element={<IfExplanation />} />
+            <Route path="/problems/Fratii" element={<Brothers />} />
+            <Route path="/problems/Vacanta" element={<Vacancy />} />
+            <Route path="/problems/Maxim" element={<Maxim />} />
+            <Route path="/problems/Crescator" element={<Ascending />} />
+            <Route path="/problems/Crescator2.0" element={<Ascending3 />} />
+            <Route path="/problems/While" element={<While />} />
+            <Route path="/problems/Contor" element={<Counter />} />
+            <Route path="/problems/Numaratoare inversa" element={<ReverseCounter />} />
+            <Route path="/problems/Numerele pare" element={<EvenNumbers />} />
+            <Route path="/problems/Numere repetate" element={<RepeatNumber />} />
+            <Route path="/problems/Concatenare" element={<Concatenation />} />
+            <Route path="/problems/Concatenare 2" element={<Concatenation2 />} />
+            <Route path="/problems/Return" element={<Return />} />
+            
           </Routes>
         </UserProgress>
+
       </AuthProvider>
     </div>
 
