@@ -1,5 +1,5 @@
 import { db } from "../firebaseConfig/firebaseConfig";
-import { collection, addDoc, doc, updateDoc, arrayUnion, onSnapshot, query, where } from 'firebase/firestore';
+import { collection, addDoc, doc, updateDoc, arrayUnion, onSnapshot, query, where, orderBy } from 'firebase/firestore';
 
 export const addComment = async (lessonId, commentData) => {
     try {
@@ -28,25 +28,35 @@ export const addReplyToComment = async (lessonId, commentId, replyData) => {
                 timestamp: new Date().toLocaleString()
             })
         });
-        
+
     } catch (error) {
         console.error("Error adding reply: ", error);
     }
 };
 
-export const getComments = (lessonId, userId, setCommentsList) => {
-    // Creăm referința și interogarea pentru comentarii
+export const getComments = (lessonId, userId, setCommentsList, asAdmin, setNewMessagesCount) => {
     const commentsRef = collection(db, 'lessons', lessonId, 'comments');
-    const q = query(commentsRef, where("userId", "==", userId));
+    const q = asAdmin ? query(commentsRef, orderBy("timestamp", "asc")) : query(commentsRef, where("userId", "==", userId), orderBy("timestamp", "asc"));
 
-    // Ascultăm modificările în timp real doar pentru comentariile utilizatorului curent
+    let initialLoad = true;
+
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
         const comments = [];
         querySnapshot.forEach((doc) => {
             comments.push({ id: doc.id, ...doc.data() });
         });
-        // Actualizăm lista de comentarii
+
+        if (!initialLoad) {
+            //const newComments = comments.filter(comment => comment.userId !== userId);
+            const newReplies = comments.filter(comment => comment.replies?.some(reply => reply.userId !== userId));
+        
+            if (newReplies.length > 0) {
+                setNewMessagesCount((prevCount) => prevCount + newReplies.length);
+            }
+        }
+
         setCommentsList(comments);
+        initialLoad = false;
     }, (error) => {
         console.error("Error getting comments: ", error);
     });
@@ -55,17 +65,20 @@ export const getComments = (lessonId, userId, setCommentsList) => {
     return unsubscribe;
 };
 
-export const getAllComments = (setCommentsList) => {
-    const commentsRef = collection(db, 'comments');
 
+export const getAllComments = (setCommentsList) => {
+
+    const commentsRef = collection(db, 'comments');
+    const q = query(commentsRef, orderBy("timestamp", "asc"));
     // Ascultă modificările în timp real pentru toate comentariile
-    const unsubscribe = onSnapshot(commentsRef, (querySnapshot) => {
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
         const comments = [];
         querySnapshot.forEach((doc) => {
             comments.push({ id: doc.id, ...doc.data() });
-
         });
+
         // Actualizăm lista de comentarii
+
         setCommentsList(comments);
     }, (error) => {
         console.error("Error getting all comments: ", error);

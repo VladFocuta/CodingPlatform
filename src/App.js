@@ -33,6 +33,7 @@ import CodeSubmitHistory from './frontend/components/CodeSubmitHistory';
 import Return from './frontend/problems/second-chapter/Return';
 import Messages from './frontend/screens/Messages';
 import ScrollToTop from './frontend/components/ScrollToTop';
+import { NotificationProvider } from './frontend/components/contexts/NewCommentsContext';
 
 
 
@@ -44,45 +45,48 @@ function App() {
       <AuthProvider>
 
         <UserProgress>
-          <NavBar />
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/Main" element={<Main />} />
-            <Route path="/Login" element={<Login />} />
-            <Route path="/Register" element={<Register />} />
-            <Route path="/ResetPassword" element={<ResetPassword />} />
-            <Route path="/CodeSubmitHistory" element={<CodeSubmitHistory />} />
-            <Route path="/screens/Messages" element={<Messages />} />
+          <NotificationProvider>
+            <NavBar />
+            <ScrollToTop />
 
-            <Route path="/problems/Introducere" element={<Introduction />} />
-            <Route path="/problems/Variabile" element={<Variables />} />
-            <Route path="/problems/Operatori" element={<Operators />} />
-            <Route path="/problems/Afisare" element={<ConsoleLog />} />
-            <Route path="/problems/Suma" element={<SumOfTwoNumbers />} />
-            <Route path="/problems/Functii" element={<Functions />} />
-            <Route path="/problems/Afisare text" element={<WordsDisplay />} />
-            <Route path="/problems/Note" element={<Average />} />
-            <Route path="/problems/Instructiunea If" element={<IfExplanation />} />
-            <Route path="/problems/Fratii" element={<Brothers />} />
-            <Route path="/problems/Vacanta" element={<Vacancy />} />
-            <Route path="/problems/Maxim" element={<Maxim />} />
-            <Route path="/problems/Crescator" element={<Ascending />} />
-            <Route path="/problems/Crescator2.0" element={<Ascending3 />} />
-            <Route path="/problems/While" element={<While />} />
-            <Route path="/problems/Contor" element={<Counter />} />
-            <Route path="/problems/Numaratoare inversa" element={<ReverseCounter />} />
-            <Route path="/problems/Numerele pare" element={<EvenNumbers />} />
-            <Route path="/problems/Numere repetate" element={<RepeatNumber />} />
-            <Route path="/problems/Concatenare" element={<Concatenation />} />
-            <Route path="/problems/Concatenare 2" element={<Concatenation2 />} />
-            <Route path="/problems/Return" element={<Return />} />
-            
-          </Routes>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/Main" element={<Main />} />
+              <Route path="/Login" element={<Login />} />
+              <Route path="/Register" element={<Register />} />
+              <Route path="/ResetPassword" element={<ResetPassword />} />
+              <Route path="/CodeSubmitHistory" element={<CodeSubmitHistory />} />
+              <Route path="/screens/Messages" element={<Messages />} />
+
+              <Route path="/problems/Introducere" element={<Introduction />} />
+              <Route path="/problems/Variabile" element={<Variables />} />
+              <Route path="/problems/Operatori" element={<Operators />} />
+              <Route path="/problems/Afisare" element={<ConsoleLog />} />
+              <Route path="/problems/Suma" element={<SumOfTwoNumbers />} />
+              <Route path="/problems/Functii" element={<Functions />} />
+              <Route path="/problems/Afisare text" element={<WordsDisplay />} />
+              <Route path="/problems/Note" element={<Average />} />
+              <Route path="/problems/Instructiunea If" element={<IfExplanation />} />
+              <Route path="/problems/Fratii" element={<Brothers />} />
+              <Route path="/problems/Vacanta" element={<Vacancy />} />
+              <Route path="/problems/Maxim" element={<Maxim />} />
+              <Route path="/problems/Crescator" element={<Ascending />} />
+              <Route path="/problems/Crescator2.0" element={<Ascending3 />} />
+              <Route path="/problems/While" element={<While />} />
+              <Route path="/problems/Contor" element={<Counter />} />
+              <Route path="/problems/Numaratoare inversa" element={<ReverseCounter />} />
+              <Route path="/problems/Numerele pare" element={<EvenNumbers />} />
+              <Route path="/problems/Numere repetate" element={<RepeatNumber />} />
+              <Route path="/problems/Concatenare" element={<Concatenation />} />
+              <Route path="/problems/Concatenare 2" element={<Concatenation2 />} />
+              <Route path="/problems/Return" element={<Return />} />
+
+            </Routes>
+          </NotificationProvider>
         </UserProgress>
 
       </AuthProvider>
-    </div>
+    </div >
 
   );
 }

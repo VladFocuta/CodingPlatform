@@ -2,11 +2,14 @@ import { useNavigate } from 'react-router-dom'
 import { TbLogout } from "react-icons/tb";
 import { RiHomeSmileLine } from "react-icons/ri";
 import { UserAuth } from "../../backend/firebaseConfig/authProvider";
+import { useNotification } from './contexts/NewCommentsContext';
+
 
 function NavBar() {
   const navigate = useNavigate();
   const { logout, loggedIn, setLoggedIn } = UserAuth();
-  const unreadMessages = 0;
+  const { newMessagesCount } = useNotification();
+  const displayCount = newMessagesCount || 0;
 
   const handleNavigateHome = () => {
     navigate('/');
@@ -64,10 +67,10 @@ function NavBar() {
           {loggedIn && (
             <div style={{ display: 'flex', alignItems: 'center', marginRight: '20px' }}>
               <button className='fa-solid fa-message messages-icon'
-              onClick={handleMessagesScreen} >
-                {unreadMessages > 0 && (
+                onClick={handleMessagesScreen} >
+                {displayCount > 0 && (
                   <strong className="badge">
-                    {unreadMessages}
+                    {displayCount}
                   </strong>
                 )}
               </button>

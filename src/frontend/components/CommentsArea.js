@@ -1,22 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { UserAuth } from '../../backend/firebaseConfig/authProvider';
 import { addComment, addReplyToComment, getComments } from '../../backend/functions/handleComments';
+import { UserProgressData } from './contexts/userProgress';
+import { useNotification } from './contexts/NewCommentsContext';
 
 function CommentsArea({ problemName }) {
     const { user } = UserAuth();
-    const usedId = user?.uid;
+    const { admin } = UserProgressData();
+    const adminId = "TApDY4IDxHQ4dC1sdjC4R0u4aP03";
+    const userdId = user?.uid;
     const [commentsList, setCommentsList] = useState([]);
+    const { setNewMessagesCount } = useNotification();
+
     const [newCommentText, setNewCommentText] = useState('');
     const [replyText, setReplyText] = useState({});
 
-
     useEffect(() => {
-        // Ascultăm comentariile în timp real
-        const unsubscribe = getComments(problemName, usedId, setCommentsList);
+        const unsubscribe = getComments(problemName, userdId, setCommentsList, admin, setNewMessagesCount);
 
-        // Dezabonăm la demontarea componentei
         return () => unsubscribe && unsubscribe();
-    }, [problemName, usedId]);
+    }, [problemName, userdId, admin, setNewMessagesCount]);
 
     const handleAddComment = async () => {
         if (!newCommentText.trim()) return;
@@ -51,34 +54,40 @@ function CommentsArea({ problemName }) {
     return (
         <div>
             <h4>Intrebari recente</h4>
-            {commentsList.map((comment) => (
-                <div key={comment.id} style={{ background: 'grey', padding: '10px', marginBottom: '2px', borderRadius: '5px' }}>
-                    <strong>{comment.userName}</strong> - {comment.timestamp}
-                    <p>{comment.text}</p>
+            <>
+                {
+                    commentsList.map((comment) => (
+                        <div key={comment.id} style={{ background: 'grey', padding: '10px', marginBottom: '2px', borderRadius: '5px' }}>
+                            {comment.userId === adminId && <small style={{ color: '#00bfff', marginRight: '3px', fontWeight: 'bold' }}> (Admin)</small>}
+                            <strong>{comment.userName}</strong> - {comment.timestamp}
+                            <p>{comment.text}</p>
 
-                    {/* Reply input for each comment */}
-                    <input
-                        type="text"
-                        placeholder="Răspuns..."
-                        value={replyText[comment.id] || ''}
-                        onChange={(e) => handleReplyTextChange(comment.id, e.target.value)}
-                        style={{ marginBottom: '5px', width: '100%', padding: '3px' }}
-                    />
-                    <button onClick={() => handleAddReply(comment.id)} className="btn btn-secondary btn-sm">Răspunde</button>
+                            {/* Reply input for each comment */}
+                            <input
+                                type="text"
+                                placeholder="Răspuns..."
+                                value={replyText[comment.id] || ''}
+                                onChange={(e) => handleReplyTextChange(comment.id, e.target.value)}
+                                style={{ marginBottom: '5px', width: '100%', padding: '3px' }}
+                            />
+                            <button onClick={() => handleAddReply(comment.id)} className="btn btn-secondary btn-sm">Răspunde</button>
 
-                    {/* Display replies */}
-                    {comment.replies.length > 0 && (
-                        <div style={{ marginLeft: '20px', marginTop: '10px' }}>
-                            {comment.replies.map((reply, idx) => (
-                                <div key={idx} style={{ background: '#ccc', padding: '5px', marginBottom: '2px', borderRadius: '5px', color: 'black' }}>
-                                    <strong >{reply.userName}</strong> - {reply.timestamp}
-                                    <p style={{ color: 'black' }}>{reply.text}</p>
+                            {/* Display replies */}
+                            {comment.replies.length > 0 && (
+                                <div style={{ marginLeft: '20px', marginTop: '10px' }}>
+                                    {comment.replies.map((reply, idx) => (
+                                        <div key={idx} style={{ background: '#ccc', padding: '5px', marginBottom: '2px', borderRadius: '5px', color: 'black' }}>
+                                            <strong >{reply.userName}</strong> - {reply.timestamp}
+                                            <p style={{ color: 'black' }}>{reply.text}</p>
+                                        </div>
+                                    ))}
                                 </div>
-                            ))}
+                            )}
                         </div>
-                    )}
-                </div>
-            ))}
+
+                    ))
+                }
+            </>
 
             <div style={{ marginTop: '20px' }}>
                 <textarea
