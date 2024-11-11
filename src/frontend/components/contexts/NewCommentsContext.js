@@ -8,35 +8,35 @@ export const NotificationProvider = ({ children }) => {
     const { user } = UserAuth();
     const userId = user?.uid;
     const [newMessagesCount, setNewMessagesCount] = useState(0);
-    const [lastViewed, setLastViewed] = useState(null);
-    const [commentsList, setCommentsList] = useState([]);
+    const [relevantReplies, setRelevantReplies] = useState([]);
 
-    const userComments = commentsList.filter(comm => comm.userId === userId);
-    const commentsLength = userComments.length;
-    const prevCommentsCountRef = useRef(0);
-console.log(commentsList)
+    const [lastViewed, setLastViewed] = useState(null);
+
+
+    const prevRepliesCountRef = useRef(0);
+
     useEffect(() => {
 
         // Ascultăm comentariile în timp real
-        const unsubscribe = getAllReplies(setCommentsList);
+        const unsubscribe = getAllReplies(userId, setRelevantReplies);
 
         // Dezabonăm la demontarea componentei
         return () => unsubscribe && unsubscribe();
-    }, []);
+    }, [userId]);
 
 
     useEffect(() => {
+        const repliesCount = relevantReplies.length;
         // Calculăm diferența doar dacă numărul de comentarii a crescut
-        if (commentsLength > prevCommentsCountRef.current) {
-            setNewMessagesCount(commentsLength - prevCommentsCountRef.current);
+        if (repliesCount > prevRepliesCountRef.current) {
+            setNewMessagesCount(repliesCount - prevRepliesCountRef.current);
         }
 
         // Actualizăm ref-ul pentru următoarea comparație
-        prevCommentsCountRef.current = commentsLength;
-    }, [commentsLength]);
-  
-    console.log('refCount:', prevCommentsCountRef.current);
-    console.log('allReplies:', commentsLength)
+        prevRepliesCountRef.current = repliesCount;
+    }, [relevantReplies]);
+
+ 
     return (
         <NotificationContext.Provider value={{ newMessagesCount, setNewMessagesCount, setLastViewed, lastViewed }}>
             {children}

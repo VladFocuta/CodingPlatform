@@ -1,5 +1,5 @@
 import { db } from "../firebaseConfig/firebaseConfig";
-import { collection, addDoc, doc, updateDoc, arrayUnion, onSnapshot, query, where, orderBy } from 'firebase/firestore';
+import { collection, addDoc, doc, updateDoc, arrayUnion, onSnapshot, query, where, orderBy, getDoc } from 'firebase/firestore';
 
 export const addComment = async (lessonId, commentData) => {
     try {
@@ -7,6 +7,7 @@ export const addComment = async (lessonId, commentData) => {
         const commentsCollection = collection(db, 'lessons', lessonId, 'comments');
         await addDoc(commentsCollection, {
             ...commentData,
+            userId: commentData.userId,
             timestamp: new Date().toLocaleString()
         });
         await addDoc(allCommentsCollection, {
@@ -21,20 +22,31 @@ export const addComment = async (lessonId, commentData) => {
 
 export const addReplyToComment = async (lessonId, commentId, replyData) => {
     try {
-        //handle all replies
-        const repliesRef = collection(db, 'allReplies');
-        await addDoc(repliesRef, {
-            ...replyData,
-            timestamp: new Date().toLocaleString()
-        });
-        //handle each reply
         const commentRef = doc(db, 'lessons', lessonId, 'comments', commentId);
-        await updateDoc(commentRef, {
-            replies: arrayUnion({
+        const commentSnapshot = await getDoc(commentRef);
+
+        if (commentSnapshot.exists()) {
+            const commentOwnerId = commentSnapshot.data().userId;
+            //handle all replies
+            const repliesRef = collection(db, 'allReplies');
+            await addDoc(repliesRef, {
                 ...replyData,
+                commentId: commentId,
+                commentOwnerId: commentOwnerId,
                 timestamp: new Date().toLocaleString()
-            })
-        });
+            });
+
+            //handle each reply
+            await updateDoc(commentRef, {
+                replies: arrayUnion({
+                    ...replyData,
+                    timestamp: new Date().toLocaleString()
+                })
+            });
+        } else {
+            console.error("Comment not found");
+        }
+
 
     } catch (error) {
         console.error("Error adding reply: ", error);
@@ -71,9 +83,9 @@ export const getAllComments = (setCommentsList) => {
         const comments = [];
         querySnapshot.forEach((doc) => {
             comments.push({ id: doc.id, ...doc.data() });
-            
+
         });
-        
+
         setCommentsList(comments);
     }, (error) => {
         console.error("Error getting all comments: ", error);
@@ -83,16 +95,17 @@ export const getAllComments = (setCommentsList) => {
     return unsubscribe;
 }
 
-export const getAllReplies = (setAllReplies) => {
+export const getAllReplies = (userId, setAllReplies) => {
     const repliesRef = collection(db, "allReplies");
-    const q = query(repliesRef, orderBy("timestamp", "desc"));
+    const q = query(repliesRef, where("commentOwnerId", "==", userId), orderBy("timestamp", "desc"));
+    
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
         const replies = [];
         querySnapshot.forEach((doc) => {
             replies.push({ id: doc.id, ...doc.data() });
-            
+
         });
-        console.log(replies)
+
         setAllReplies(replies);
     }, (error) => {
         console.error("Error getting all replies: ", error);
