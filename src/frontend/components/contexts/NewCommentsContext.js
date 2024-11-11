@@ -14,7 +14,13 @@ export const NotificationProvider = ({ children }) => {
 
 
     const prevRepliesCountRef = useRef(0);
- 
+
+    useEffect(() => {
+        const storedRepliesCount = localStorage.getItem("prevRepliesCount");
+        if (storedRepliesCount) {
+            prevRepliesCountRef.current = parseInt(storedRepliesCount, 10);
+        }
+    }, []);
 
     useEffect(() => {
         if (!userId) {
@@ -36,11 +42,13 @@ export const NotificationProvider = ({ children }) => {
             prevRepliesCountRef.current = repliesCount;
         } else if (commentChecked) { // mesajul a fost vazut. Setam counterul la 0
             prevRepliesCountRef.current = repliesCount;
-            setNewMessagesCount(0)
+            localStorage.setItem("prevRepliesCount", repliesCount); // Persist count in localStorage
+            setNewMessagesCount(0);
+            setCommentChecked(false); // Reset checked state if needed
         }
 
         // Actualizăm ref-ul pentru următoarea comparație
-       
+
     }, [relevantReplies, commentChecked]);
 
 
