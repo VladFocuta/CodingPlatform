@@ -33,13 +33,14 @@ export const NotificationProvider = ({ children }) => {
         // Calculăm diferența doar dacă numărul de comentarii a crescut
         if (repliesCount > prevRepliesCountRef.current) {
             setNewMessagesCount(repliesCount - prevRepliesCountRef.current);
+            prevRepliesCountRef.current = repliesCount;
         } else if (commentChecked) { // mesajul a fost vazut. Setam counterul la 0
             prevRepliesCountRef.current = repliesCount;
             setNewMessagesCount(0)
         }
 
         // Actualizăm ref-ul pentru următoarea comparație
-        prevRepliesCountRef.current = repliesCount;
+       
     }, [relevantReplies, commentChecked]);
 
 
