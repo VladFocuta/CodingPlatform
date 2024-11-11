@@ -1,5 +1,5 @@
 import { createContext, useState, useContext, useEffect, useRef } from "react";
-import { getAllComments } from "../../../backend/functions/handleComments";
+import { getAllReplies } from "../../../backend/functions/handleComments";
 import { UserAuth } from "../../../backend/firebaseConfig/authProvider";
 
 const NotificationContext = createContext();
@@ -18,7 +18,7 @@ export const NotificationProvider = ({ children }) => {
     useEffect(() => {
 
         // Ascultăm comentariile în timp real
-        const unsubscribe = getAllComments(setCommentsList);
+        const unsubscribe = getAllReplies(setCommentsList);
 
         // Dezabonăm la demontarea componentei
         return () => unsubscribe && unsubscribe();
@@ -34,6 +34,8 @@ export const NotificationProvider = ({ children }) => {
         // Actualizăm ref-ul pentru următoarea comparație
         prevCommentsCountRef.current = commentsLength;
     }, [commentsLength]);
+    console.log('refCount:', prevCommentsCountRef.current);
+    console.log('allReplies:', commentsLength)
     return (
         <NotificationContext.Provider value={{ newMessagesCount, setNewMessagesCount, setLastViewed, lastViewed }}>
             {children}

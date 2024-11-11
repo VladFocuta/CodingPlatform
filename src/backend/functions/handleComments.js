@@ -21,6 +21,15 @@ export const addComment = async (lessonId, commentData) => {
 
 export const addReplyToComment = async (lessonId, commentId, replyData) => {
     try {
+        //handle all replies
+        const repliesRef = doc(db, 'allReplies');
+        await updateDoc(repliesRef, {
+            replies: arrayUnion({
+                ...replyData,
+                timestamp: new Date().toLocaleString()
+            })
+        });
+        //handle each reply
         const commentRef = doc(db, 'lessons', lessonId, 'comments', commentId);
         await updateDoc(commentRef, {
             replies: arrayUnion({
@@ -72,5 +81,20 @@ export const getAllComments = (setCommentsList) => {
     });
 
     // Returnăm funcția de dezabonare
+    return unsubscribe;
+}
+
+export const getAllReplies = (setAllReplies) => {
+    const repliesRef = collection(db, "allReplies");
+    const q = query(repliesRef, orderBy("timestamp", "desc"));
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+        const replies = [];
+        querySnapshot.forEach((doc) => {
+            replies.push({ id: doc.id, ...doc.data() });
+        });
+        setAllReplies(replies);
+    }, (error) => {
+        console.error("Error getting all replies: ", error);
+    });
     return unsubscribe;
 }
