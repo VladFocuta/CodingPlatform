@@ -14,9 +14,12 @@ export const NotificationProvider = ({ children }) => {
 
 
     const prevRepliesCountRef = useRef(0);
+ 
 
     useEffect(() => {
-
+        if (!userId) {
+            return;
+        }
         // Ascultăm comentariile în timp real
         const unsubscribe = getAllReplies(userId, setRelevantReplies);
 
@@ -36,7 +39,7 @@ export const NotificationProvider = ({ children }) => {
         prevRepliesCountRef.current = repliesCount;
     }, [relevantReplies]);
 
- 
+
     return (
         <NotificationContext.Provider value={{ newMessagesCount, setNewMessagesCount, setLastViewed, lastViewed }}>
             {children}
