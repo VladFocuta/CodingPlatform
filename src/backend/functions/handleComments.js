@@ -22,8 +22,8 @@ export const addComment = async (lessonId, commentData) => {
 export const addReplyToComment = async (lessonId, commentId, replyData) => {
     try {
         //handle all replies
-        const repliesRef = doc(db, 'allReplies');
-        await updateDoc(repliesRef, {
+        const repliesRef = collection(db, 'allReplies');
+        await addDoc(repliesRef, {
             replies: arrayUnion({
                 ...replyData,
                 timestamp: new Date().toLocaleString()

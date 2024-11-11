@@ -34,6 +34,7 @@ export const NotificationProvider = ({ children }) => {
         // Actualizăm ref-ul pentru următoarea comparație
         prevCommentsCountRef.current = commentsLength;
     }, [commentsLength]);
+  
     console.log('refCount:', prevCommentsCountRef.current);
     console.log('allReplies:', commentsLength)
     return (
