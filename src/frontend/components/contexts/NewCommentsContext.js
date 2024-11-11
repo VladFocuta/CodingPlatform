@@ -10,7 +10,7 @@ export const NotificationProvider = ({ children }) => {
     const [newMessagesCount, setNewMessagesCount] = useState(0);
     const [relevantReplies, setRelevantReplies] = useState([]);
 
-    const [lastViewed, setLastViewed] = useState(null);
+    const [commentChecked, setCommentChecked] = useState(false);
 
 
     const prevRepliesCountRef = useRef(0);
@@ -33,15 +33,18 @@ export const NotificationProvider = ({ children }) => {
         // Calculăm diferența doar dacă numărul de comentarii a crescut
         if (repliesCount > prevRepliesCountRef.current) {
             setNewMessagesCount(repliesCount - prevRepliesCountRef.current);
+        } else if (commentChecked) { // mesajul a fost vazut. Setam counterul la 0
+            prevRepliesCountRef.current = repliesCount;
+            setNewMessagesCount(0)
         }
 
         // Actualizăm ref-ul pentru următoarea comparație
         prevRepliesCountRef.current = repliesCount;
-    }, [relevantReplies]);
+    }, [relevantReplies, commentChecked]);
 
 
     return (
-        <NotificationContext.Provider value={{ newMessagesCount, setNewMessagesCount, setLastViewed, lastViewed }}>
+        <NotificationContext.Provider value={{ newMessagesCount, setNewMessagesCount, commentChecked, setCommentChecked }}>
             {children}
         </NotificationContext.Provider>
     )
