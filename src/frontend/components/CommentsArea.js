@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { UserAuth } from '../../backend/firebaseConfig/authProvider';
 import { addComment, addReplyToComment, getComments } from '../../backend/functions/handleComments';
 import { UserProgressData } from './contexts/userProgress';
-import { useNotification } from './contexts/NewCommentsContext';
 
 function CommentsArea({ problemName }) {
     const { user } = UserAuth();
@@ -10,16 +9,14 @@ function CommentsArea({ problemName }) {
     const adminId = "TApDY4IDxHQ4dC1sdjC4R0u4aP03";
     const userdId = user?.uid;
     const [commentsList, setCommentsList] = useState([]);
-    const { setNewMessagesCount } = useNotification();
-
     const [newCommentText, setNewCommentText] = useState('');
     const [replyText, setReplyText] = useState({});
 
     useEffect(() => {
-        const unsubscribe = getComments(problemName, userdId, setCommentsList, admin, setNewMessagesCount);
+        const unsubscribe = getComments(problemName, userdId, setCommentsList, admin);
 
         return () => unsubscribe && unsubscribe();
-    }, [problemName, userdId, admin, setNewMessagesCount]);
+    }, [problemName, userdId, admin ]);
 
     const handleAddComment = async () => {
         if (!newCommentText.trim()) return;

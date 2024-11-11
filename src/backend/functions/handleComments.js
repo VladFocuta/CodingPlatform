@@ -34,11 +34,9 @@ export const addReplyToComment = async (lessonId, commentId, replyData) => {
     }
 };
 
-export const getComments = (lessonId, userId, setCommentsList, asAdmin, setNewMessagesCount) => {
+export const getComments = (lessonId, userId, setCommentsList, asAdmin) => {
     const commentsRef = collection(db, 'lessons', lessonId, 'comments');
-    const q = asAdmin ? query(commentsRef, orderBy("timestamp", "asc")) : query(commentsRef, where("userId", "==", userId), orderBy("timestamp", "asc"));
-
-    let initialLoad = true;
+    const q = asAdmin ? query(commentsRef, orderBy("timestamp", "desc")) : query(commentsRef, where("userId", "==", userId), orderBy("timestamp", "desc"));
 
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
         const comments = [];
@@ -46,17 +44,8 @@ export const getComments = (lessonId, userId, setCommentsList, asAdmin, setNewMe
             comments.push({ id: doc.id, ...doc.data() });
         });
 
-        if (!initialLoad) {
-            //const newComments = comments.filter(comment => comment.userId !== userId);
-            const newReplies = comments.filter(comment => comment.replies?.some(reply => reply.userId !== userId));
-        
-            if (newReplies.length > 0) {
-                setNewMessagesCount((prevCount) => prevCount + newReplies.length);
-            }
-        }
-
         setCommentsList(comments);
-        initialLoad = false;
+
     }, (error) => {
         console.error("Error getting comments: ", error);
     });
@@ -69,15 +58,13 @@ export const getComments = (lessonId, userId, setCommentsList, asAdmin, setNewMe
 export const getAllComments = (setCommentsList) => {
 
     const commentsRef = collection(db, 'comments');
-    const q = query(commentsRef, orderBy("timestamp", "asc"));
+    const q = query(commentsRef, orderBy("timestamp", "desc"));
     // Ascultă modificările în timp real pentru toate comentariile
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
         const comments = [];
         querySnapshot.forEach((doc) => {
             comments.push({ id: doc.id, ...doc.data() });
         });
-
-        // Actualizăm lista de comentarii
 
         setCommentsList(comments);
     }, (error) => {

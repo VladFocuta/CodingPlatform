@@ -3,8 +3,9 @@ import { getAllComments } from '../../backend/functions/handleComments'
 import { UserProgressData } from '../components/contexts/userProgress';
 import { UserAuth } from '../../backend/firebaseConfig/authProvider';
 
+
 function Messages() {
-    const [commentsList, setCommentsList] = useState([])
+    const [commentsList, setCommentsList] = useState([]);
     const { admin } = UserProgressData();
     const { user } = UserAuth();
     const userId = user?.uid;
@@ -12,6 +13,7 @@ function Messages() {
     const userComments = commentsList.filter(comm => comm.userId === userId);
 
     useEffect(() => {
+    
         // Ascultăm comentariile în timp real
         const unsubscribe = getAllComments(setCommentsList);
 
@@ -19,6 +21,7 @@ function Messages() {
         return () => unsubscribe && unsubscribe();
     }, []);
 
+    
     return (
         <div className='main-container'>
             <h1 className='home-container' style={{ color: 'white' }}>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { UserAuth } from "../../backend/firebaseConfig/authProvider";
 import { UserProgressData } from "../components/contexts/userProgress";
 
