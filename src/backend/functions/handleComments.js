@@ -24,10 +24,8 @@ export const addReplyToComment = async (lessonId, commentId, replyData) => {
         //handle all replies
         const repliesRef = collection(db, 'allReplies');
         await addDoc(repliesRef, {
-            replies: arrayUnion({
-                ...replyData,
-                timestamp: new Date().toLocaleString()
-            })
+            ...replyData,
+            timestamp: new Date().toLocaleString()
         });
         //handle each reply
         const commentRef = doc(db, 'lessons', lessonId, 'comments', commentId);
@@ -73,8 +71,9 @@ export const getAllComments = (setCommentsList) => {
         const comments = [];
         querySnapshot.forEach((doc) => {
             comments.push({ id: doc.id, ...doc.data() });
+            
         });
-
+        
         setCommentsList(comments);
     }, (error) => {
         console.error("Error getting all comments: ", error);
@@ -91,7 +90,9 @@ export const getAllReplies = (setAllReplies) => {
         const replies = [];
         querySnapshot.forEach((doc) => {
             replies.push({ id: doc.id, ...doc.data() });
+            
         });
+        console.log(replies)
         setAllReplies(replies);
     }, (error) => {
         console.error("Error getting all replies: ", error);

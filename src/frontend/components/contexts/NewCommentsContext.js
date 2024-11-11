@@ -14,7 +14,7 @@ export const NotificationProvider = ({ children }) => {
     const userComments = commentsList.filter(comm => comm.userId === userId);
     const commentsLength = userComments.length;
     const prevCommentsCountRef = useRef(0);
-
+console.log(commentsList)
     useEffect(() => {
 
         // Ascultăm comentariile în timp real
