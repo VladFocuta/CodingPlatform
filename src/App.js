@@ -34,6 +34,8 @@ import Return from './frontend/problems/second-chapter/Return';
 import Messages from './frontend/screens/Messages';
 import ScrollToTop from './frontend/components/ScrollToTop';
 import { NotificationProvider } from './frontend/components/contexts/NewCommentsContext';
+import Profile from './frontend/screens/Profile';
+import Infos from './frontend/screens/userProfileScreens/Infos';
 
 
 
@@ -54,9 +56,13 @@ function App() {
               <Route path="/Main" element={<Main />} />
               <Route path="/Login" element={<Login />} />
               <Route path="/Register" element={<Register />} />
+              <Route path="/Login" element={<Login />} />
               <Route path="/ResetPassword" element={<ResetPassword />} />
               <Route path="/CodeSubmitHistory" element={<CodeSubmitHistory />} />
               <Route path="/screens/Messages" element={<Messages />} />
+              <Route path="/user/Profile" element={<Profile />} />
+              <Route path="/user/Infos" element={<Infos />} />
+
 
               <Route path="/problems/Introducere" element={<Introduction />} />
               <Route path="/problems/Variabile" element={<Variables />} />

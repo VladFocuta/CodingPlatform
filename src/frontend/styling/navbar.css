@@ -16,3 +16,20 @@
     transform: translateY(-5px); /* Mișcați textul în sus cu 5px când se face hover */
     color: rgb(199, 197, 197);
   }
+
+  .profile-icon {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 22px
+  }
+
+  .profile-icon:hover {
+    color: grey;
+  }
+
+  .profile-user-name {
+    font-size: 16;
+    color: white;
+    margin-left: 5px;
+  }

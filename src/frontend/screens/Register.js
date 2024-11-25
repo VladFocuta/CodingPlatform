@@ -96,10 +96,8 @@ function Register() {
                 <div className='register-link'>
 
                     {errors.password && <span className='text-danger' >{errors.password}</span>}
-                    {loading && (
-                        <div className="spinner-grow text-danger" role="status">
-                            <span className="visually-hidden">Loading...</span>
-                        </div>
+                    {!loading && (
+                       <i className="fa-solid fa-gear fa-spin" style={{ position: 'absolute', color: '#00bfff', top: errors ? '565px' : '535px', left: errors ? '265px' : '265px', fontSize: '20px' }}></i>
                     )}
                     <p>Ai deja un cont? <button className="costumButton" onClick={handleNavigateToLogin} style={{ marginTop: 8 }}>Logheaza-te!</button>
                     </p>

@@ -7,7 +7,7 @@ import { useNotification } from './contexts/NewCommentsContext';
 
 function NavBar() {
   const navigate = useNavigate();
-  const { logout, loggedIn, setLoggedIn } = UserAuth();
+  const { logout, loggedIn, setLoggedIn, user } = UserAuth();
   const { newMessagesCount } = useNotification();
   const displayCount = newMessagesCount || 0;
 
@@ -25,6 +25,10 @@ function NavBar() {
 
   const handleMessagesScreen = () => {
     navigate('/screens/Messages');
+  }
+
+  const handleProfileScreen = () => {
+    navigate('/user/Profile');
   }
 
   const handleLogOut = async () => {
@@ -66,6 +70,7 @@ function NavBar() {
 
           {loggedIn && (
             <div style={{ display: 'flex', alignItems: 'center', marginRight: '20px' }}>
+
               <button className='fa-solid fa-message messages-icon'
                 onClick={handleMessagesScreen} >
                 {displayCount > 0 && (
@@ -74,8 +79,17 @@ function NavBar() {
                   </strong>
                 )}
               </button>
+            </div>)}
+
+          {loggedIn && (
+            <div style={{ display: 'flex', alignItems: 'center', marginRight: '20px' }}>
+              <button onClick={handleProfileScreen} className='fa-regular fa-user profile-icon' >
+                
+              </button >
+              <strong className='profile-user-name'>{user && (user.displayName)}</strong>
             </div>
           )}
+
 
           <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -120,7 +134,7 @@ function NavBar() {
             </div>
           </div>
         </div>
-      </nav>
+      </nav >
 
     </>
   )

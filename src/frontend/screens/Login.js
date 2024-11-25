@@ -11,9 +11,9 @@ function Login() {
         email: '',
         password: ''
     });
-
+    const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
-    const { signIn, loading, setLoggedIn, setLoading } = UserAuth();
+    const { signIn } = UserAuth();
 
     const handleRegisterAccount = () => {
         navigate('/Register');
@@ -32,7 +32,7 @@ function Login() {
         } else {
             try {
                 await signIn(values.email, values.password);
-                setLoggedIn(true);
+                setIsLoading(true);
                 navigate('/Main');
             } catch (error) {
                 console.log(error.message)
@@ -40,7 +40,7 @@ function Login() {
                     setWrongCredentials('Wrong credentials! Please check your password or email.');
                 }
             } finally {
-                setLoading(false);
+                setIsLoading(false);
             }
         }
 
@@ -72,17 +72,16 @@ function Login() {
                 </div>
                 <div>
                     <button type="submit" className="costumButton">Logheaza-ma</button>
-
+                    {isLoading && (
+                        <i className="fa-solid fa-gear fa-spin" style={{ position: 'absolute', color: '#00bfff', top: wrongCredentials ? '555px' : '535px', left: wrongCredentials ? '255px' : '255px', fontSize: '20px' }}></i>
+                    )}
                 </div>
 
                 <div className='register-link' style={{ marginTop: 5 }}>
-                    {loading && (
-                        <div className="spinner-grow text-danger" role="status">
-                            <span className="visually-hidden">Loading...</span>
-                        </div>
-                    )}
+                    <p >Nu ai un cont?
+                        <button onClick={handleRegisterAccount} className='costumButton' style={{ marginTop: 8 }}>Inregistreaza-te!</button>
 
-                    <p >Nu ai un cont? <button onClick={handleRegisterAccount} className='costumButton' style={{ marginTop: 8 }}>Inregistreaza-te!</button></p>
+                    </p>
                 </div>
             </form>
 

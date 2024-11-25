@@ -12,18 +12,48 @@ function Test({ testCases, correctFormula, maxExecutionTime, testPassedSet, prob
     const navigate = useNavigate();
     const { user } = UserAuth();
     const userId = user?.uid;
+    const [timeExceeded, setTimeExceeded] = useState("")
+
 
     const handleSubmitHistoryPage = () => {
         navigate('/CodeSubmitHistory', { state: { data: problemName } });
     }
 
+
+    function measurePerformance(func, args, iterations = 10000) {
+        const start = performance.now(); // Pornire cronometru
+        for (let i = 0; i < iterations; i++) {
+            func(...args); // Rulează funcția cu argumentele date
+        }
+        const end = performance.now(); // Oprire cronometru
+        return (end - start) / iterations; // Timp mediu pe execuție
+    }
+
     const handleRunCode = async () => {
-        
+
         const codeObject = {
             userCode: userCode,
             userId: userId,
             name: user.displayName
         }
+
+        // eslint-disable-next-line
+        const userFunction = new Function(`
+            ${userCode}
+            return ${userCode.match(/function\s+(\w+)/)[1]};
+        `)();
+
+        const averageTimeUserCode = testCases.reduce((totalTime, testCase) => {
+            return totalTime + measurePerformance(userFunction, testCase.params);
+        }, 0) / testCases.length;
+
+        const averageTimeCorrectFormula = testCases.reduce((totalTime, testCase) => {
+            return totalTime + measurePerformance(correctFormula, testCase.params);
+        }, 0) / testCases.length;
+
+        console.log(`User Execution Time: ${averageTimeUserCode.toFixed(6)} ms`);
+        console.log(`Correct Formula Execution Time: ${averageTimeCorrectFormula.toFixed(6)} ms`);
+
         // Pregătește test cases cu valorile așteptate
         await storeCode(codeObject, problemName, userId)
         const preparedTestCases = testCases.map(testCase => ({
@@ -45,8 +75,26 @@ function Test({ testCases, correctFormula, maxExecutionTime, testPassedSet, prob
                 setError(null);
                 setOutput(e.data.results);
                 const allTestsPassed = e.data.results.every(result => result.result === 'Corect');
-                if (allTestsPassed) {
+
+                //   if (allTestsPassed && timeExceeded.length <= 0) {
+                //     testPassedSet(true);
+                //} else {
+                //  testPassedSet(false);
+                //}
+
+                if (averageTimeUserCode > 10 * averageTimeCorrectFormula && !allTestsPassed) { // timp lung si nu a trecut testele
+                    setTimeExceeded("Limita de timp depasita.")
+                    testPassedSet(false);
+                    console.log("User function is significantly slower and didnt pass the tests.");
+                } else if (averageTimeUserCode > 10 * averageTimeCorrectFormula && allTestsPassed) { // timp lung si a trecut testele
+                    testPassedSet(false);
+                    setTimeExceeded("Limita de timp depasita.");
+                    console.log("User function is significantly slower and passed the tests.");
+                } else if (averageTimeUserCode < 10 * averageTimeCorrectFormula && allTestsPassed) { // timp scurt si a trecut si testele
                     testPassedSet(true);
+                    setTimeExceeded("");
+                } else if (averageTimeUserCode < 10 * averageTimeCorrectFormula && !allTestsPassed) {
+                    setTimeExceeded("");
                 }
 
             }
@@ -84,6 +132,7 @@ function Test({ testCases, correctFormula, maxExecutionTime, testPassedSet, prob
                 </div>
 
                 {error && <strong style={{ color: 'red', fontSize: '18px', fontWeight: 'bold' }}>{error}</strong>}
+                {timeExceeded && <strong style={{ color: 'red', fontSize: '18px', fontWeight: 'bold' }}>{timeExceeded}</strong>}
                 {output && (
                     <ul>
                         {output.map((result, index) => (

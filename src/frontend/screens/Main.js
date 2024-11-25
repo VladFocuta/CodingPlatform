@@ -49,8 +49,8 @@ function Main() {
     <>
       {loggedIn ? (
         <div className='main-container'>
-          <h1 style={{ color: 'white', marginRight: 15 }}>Bun venit</h1>
-          {user && <h1 style={{ color: 'white' }}>{user.displayName}!</h1>}
+          {user && <h1 style={{ color: 'white', marginTop: '30px', marginBottom: '20px'  }}>Bun venit {user.displayName}!</h1>}
+
 
           <div className='userInfo'>
             <div className='profile-picture'>picture</div>

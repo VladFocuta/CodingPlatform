@@ -16,7 +16,7 @@ function CommentsArea({ problemName }) {
         const unsubscribe = getComments(problemName, userdId, setCommentsList, admin);
 
         return () => unsubscribe && unsubscribe();
-    }, [problemName, userdId, admin ]);
+    }, [problemName, userdId, admin]);
 
     const handleAddComment = async () => {
         if (!newCommentText.trim()) return;
@@ -65,7 +65,7 @@ function CommentsArea({ problemName }) {
                                 placeholder="Răspuns..."
                                 value={replyText[comment.id] || ''}
                                 onChange={(e) => handleReplyTextChange(comment.id, e.target.value)}
-                                style={{ marginBottom: '5px', width: '100%', padding: '3px' }}
+                                style={{ marginBottom: '5px', width: '100%', padding: '3px', borderRadius: '5px' }}
                             />
                             <button onClick={() => handleAddReply(comment.id)} className="btn btn-secondary btn-sm">Răspunde</button>
 
@@ -73,7 +73,8 @@ function CommentsArea({ problemName }) {
                             {comment.replies.length > 0 && (
                                 <div style={{ marginLeft: '20px', marginTop: '10px' }}>
                                     {comment.replies.map((reply, idx) => (
-                                        <div key={idx} style={{ background: '#ccc', padding: '5px', marginBottom: '2px', borderRadius: '5px', color: 'black' }}>
+                                        <div key={idx} style={{ background: reply.userId === adminId ? 'rgb(240, 239, 239)' : '#ccc', padding: '5px', marginBottom: '2px', borderRadius: '5px', color: 'black' }}>
+                                            {reply.userId === adminId && <small style={{ color: '#00bfff', marginRight: '3px', fontWeight: 'bold' }}> (Admin)</small>}
                                             <strong >{reply.userName}</strong> - {reply.timestamp}
                                             <p style={{ color: 'black' }}>{reply.text}</p>
                                         </div>

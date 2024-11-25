@@ -41,12 +41,14 @@ self.onmessage = async (e) => {
                 });
 
                 const executionTime = Date.now() - startTime;
+
+
                 // Verificăm timpul de execuție
                 if (executionTime > maxExecutionTime) throw new Error("Depășire timp maxim de execuție");
 
                 const isCorrect = Array.isArray(userResult) && Array.isArray(expected)
-                ? arraysEqual(userResult, expected)
-                : userResult === expected;
+                    ? arraysEqual(userResult, expected)
+                    : userResult === expected;
 
                 results.push({
                     testCase: i + 1,
@@ -67,6 +69,6 @@ self.onmessage = async (e) => {
         // Trimitem rezultatele înapoi
         self.postMessage({ results });
     } catch (error) {
-        self.postMessage({ error: `Eroare în codul utilizatorului: ${error.message}` });
+        self.postMessage({ error: `Eroare în codul utilizatorului: ${error.message} ` });
     }
 };
