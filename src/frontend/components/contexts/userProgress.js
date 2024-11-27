@@ -11,6 +11,7 @@ export const UserProgress = ({ children }) => {
     const [userProgressPoints, setUserProgressPoints] = useState(null);
     const [problemsSolved, setProblemsSolved] = useState([]);
     const [admin, setAdmin] = useState(null);
+    const [capitols, setCapitols] = useState('');
 
     useLayoutEffect(() => {
         if (!userId) {
@@ -24,8 +25,10 @@ export const UserProgress = ({ children }) => {
                 const data = docSnapshot.data();
                 setUserProgressPoints(data.pointsPerChapter);
                 setProblemsSolved(data.solvedProblem);
+                setCapitols(data.capitols);
             } else {
                 setUserProgressPoints(null);
+                setCapitols("");
                 setProblemsSolved([]);
             }
         }, (error) => {
@@ -59,7 +62,7 @@ export const UserProgress = ({ children }) => {
 
 
     return (
-        <AuthContext.Provider value={{ userProgressPoints, problemsSolved, setUserProgressPoints, admin }}>
+        <AuthContext.Provider value={{ userProgressPoints, problemsSolved, setUserProgressPoints, admin, capitols }}>
             {children}
         </AuthContext.Provider>
     )

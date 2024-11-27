@@ -3,7 +3,9 @@ import { UserProgressData } from "../components/contexts/userProgress";
 
 function Main() {
   const { user, loggedIn } = UserAuth();
-  const { userProgressPoints, problemsSolved, admin } = UserProgressData();
+  const { userProgressPoints, problemsSolved, admin, capitols } = UserProgressData();
+
+  const currentCapitol = capitols ? capitols[0] : "admin";
 
   const sections = [
     {
@@ -49,7 +51,7 @@ function Main() {
     <>
       {loggedIn ? (
         <div className='main-container'>
-          {user && <h1 style={{ color: 'white', marginTop: '30px', marginBottom: '20px'  }}>Bun venit {user.displayName}!</h1>}
+          {user && <h1 style={{ color: 'white', marginTop: '30px', marginBottom: '20px' }}>Bun venit {user.displayName}!</h1>}
 
 
           <div className='userInfo'>
@@ -76,53 +78,106 @@ function Main() {
                       {section.title}
                     </button>
                   </h2>
+                  {!admin && currentCapitol !== section.title && (
 
-                  <div id={`flush-collapse${sectionIndex}`} className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    {section.lessons.map((lesson, lessonIndex) => {
-                      const isSolved = problemsSolved.includes(lesson.title);
+                    <div id={`flush-collapse${sectionIndex}`} className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      {section.lessons.map((lesson, lessonIndex) => {
+                        const isSolved = problemsSolved.includes(lesson.title);
 
-                      return (
-                        <div key={lessonIndex} className="accordion-body" style={{ display: 'flex' }}>
-                          <div className="icon-container">
+                        return (
+                          <div key={lessonIndex} className="accordion-body" style={{ display: 'flex' }}>
+                            <div className="icon-container">
+                              {!admin ? (
+                                <i
+                                  className={
+                                    isSolved
+                                      ? lesson.icon // Icon-ul verde pentru lecțiile rezolvate
+                                      : problemsSolved.length === lesson.index - 1 // Lecția curentă fără lacăt
+                                        ? lesson.icon // Icon-ul specific lecției
+                                        : "fa-solid fa-lock" // Icon-ul cu lacăt pentru restul lecțiilor
+                                  }
+                                  style={{ color: isSolved || problemsSolved.length === lesson.index ? 'green' : 'grey' }}
+                                ></i>
+                              ) : (
+                                <i
+                                  className={lesson.icon}
+
+
+                                  style={{ color: isSolved || problemsSolved.length === lesson.index ? 'green' : 'grey' }}
+                                ></i>
+                              )
+                              }
+
+                              {lessonIndex !== section.lessons.length - 1 && <div className="vertical-line" style={{ backgroundColor: `${isSolved ? 'green' : 'grey'}` }}></div>}
+
+                            </div>
                             {!admin ? (
-                              <i
-                                className={
-                                  isSolved
-                                    ? lesson.icon // Icon-ul verde pentru lecțiile rezolvate
-                                    : problemsSolved.length === lesson.index - 1 // Lecția curentă fără lacăt
-                                      ? lesson.icon // Icon-ul specific lecției
-                                      : "fa-solid fa-lock" // Icon-ul cu lacăt pentru restul lecțiilor
-                                }
-                                style={{ color: isSolved || problemsSolved.length === lesson.index ? 'green' : 'grey' }}
-                              ></i>
+                              <a style={{ textDecoration: 'none', marginLeft: '10px' }} href={isSolved || problemsSolved.length === lesson.index - 1 ? lesson.link : null}>
+                                {lesson.title}
+                              </a>
                             ) : (
-                              <i
-                                className={lesson.icon}
+                              <a style={{ textDecoration: 'none', marginLeft: '10px' }} href={lesson.link}>
+                                {lesson.title}
+                              </a>
+                            )}
 
-
-                                style={{ color: isSolved || problemsSolved.length === lesson.index ? 'green' : 'grey' }}
-                              ></i>
-                            )
-                            }
-
-                            {lessonIndex !== section.lessons.length - 1 && <div className="vertical-line" style={{ backgroundColor: `${isSolved ? 'green' : 'grey'}` }}></div>}
 
                           </div>
-                          {!admin ? (
-                            <a style={{ textDecoration: 'none', marginLeft: '10px' }} href={isSolved || problemsSolved.length === lesson.index - 1 ? lesson.link : null}>
-                              {lesson.title}
-                            </a>
-                          ) : (
-                            <a style={{ textDecoration: 'none', marginLeft: '10px' }} href={lesson.link}>
-                              {lesson.title}
-                            </a>
-                          )}
+                        );
+                      })}
+                    </div>
+                  )}
+
+                  {admin && (
+                    <div id={`flush-collapse${sectionIndex}`} className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      {section.lessons.map((lesson, lessonIndex) => {
+                        const isSolved = problemsSolved.includes(lesson.title);
+
+                        return (
+                          <div key={lessonIndex} className="accordion-body" style={{ display: 'flex' }}>
+                            <div className="icon-container">
+                              {!admin ? (
+                                <i
+                                  className={
+                                    isSolved
+                                      ? lesson.icon // Icon-ul verde pentru lecțiile rezolvate
+                                      : problemsSolved.length === lesson.index - 1 // Lecția curentă fără lacăt
+                                        ? lesson.icon // Icon-ul specific lecției
+                                        : "fa-solid fa-lock" // Icon-ul cu lacăt pentru restul lecțiilor
+                                  }
+                                  style={{ color: isSolved || problemsSolved.length === lesson.index ? 'green' : 'grey' }}
+                                ></i>
+                              ) : (
+                                <i
+                                  className={lesson.icon}
 
 
-                        </div>
-                      );
-                    })}
-                  </div>
+                                  style={{ color: isSolved || problemsSolved.length === lesson.index ? 'green' : 'grey' }}
+                                ></i>
+                              )
+                              }
+
+                              {lessonIndex !== section.lessons.length - 1 && <div className="vertical-line" style={{ backgroundColor: `${isSolved ? 'green' : 'grey'}` }}></div>}
+
+                            </div>
+                            {!admin ? (
+                              <a style={{ textDecoration: 'none', marginLeft: '10px' }} href={isSolved || problemsSolved.length === lesson.index - 1 ? lesson.link : null}>
+                                {lesson.title}
+                              </a>
+                            ) : (
+                              <a style={{ textDecoration: 'none', marginLeft: '10px' }} href={lesson.link}>
+                                {lesson.title}
+                              </a>
+                            )}
+
+
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+
+
                 </div>
               ))}
             </div>

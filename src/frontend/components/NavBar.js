@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { TbLogout } from "react-icons/tb";
 import { RiHomeSmileLine } from "react-icons/ri";
@@ -5,7 +6,10 @@ import { UserAuth } from "../../backend/firebaseConfig/authProvider";
 import { useNotification } from './contexts/NewCommentsContext';
 
 
+
 function NavBar() {
+  const [homeHovered, setHomeHovered] = useState(false);
+  const [logoutHovered, setLogoutHovered] = useState(false);
   const navigate = useNavigate();
   const { logout, loggedIn, setLoggedIn, user } = UserAuth();
   const { newMessagesCount } = useNotification();
@@ -84,7 +88,7 @@ function NavBar() {
           {loggedIn && (
             <div style={{ display: 'flex', alignItems: 'center', marginRight: '20px' }}>
               <button onClick={handleProfileScreen} className='fa-regular fa-user profile-icon' >
-                
+
               </button >
               <strong className='profile-user-name'>{user && (user.displayName)}</strong>
             </div>
@@ -101,36 +105,40 @@ function NavBar() {
             </div>
             <div className="offcanvas-body">
               <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li className="nav-item">
-                  <button onClick={loggedIn ? handleMainPressed : handleNavigateHome} className='costumButton'>Home</button>
-                  <RiHomeSmileLine size={20} style={{ marginLeft: 2 }} />
-                </li>
+                <button
+                  className={`costumButton ${homeHovered ? "animate-border-green" : ""
+                    }`}
+                  style={{ borderBottom: "1px solid white", marginBottom: "7px" }}
+                  onMouseEnter={() => setHomeHovered(true)}
+                  onMouseLeave={() => setHomeHovered(false)}
+                  onClick={loggedIn ? handleMainPressed : handleNavigateHome}
+                >
+                  Home
+                  <RiHomeSmileLine
+                    size={20}
+                    style={{ marginLeft: "3px", position: "absolute", top: "66px" }}
+                  />
+                </button>
                 {loggedIn && (
-                  <li className="nav-item">
-                    <button onClick={handleLogOut} className='costumButton'>Logout</button>
-                    <TbLogout size={20} style={{ marginLeft: 2 }} />
-
-                  </li>
+                  <button
+                    className={`costumButton ${logoutHovered ? "animate-border-red" : ""
+                      }`}
+                    style={{ borderBottom: "1px solid white", marginBottom: "7px" }}
+                    onMouseEnter={() => setLogoutHovered(true)}
+                    onMouseLeave={() => setLogoutHovered(false)}
+                    onClick={handleLogOut}
+                  >
+                    Logout
+                    <TbLogout
+                      size={20}
+                      style={{ marginLeft: "3px", position: "absolute", top: "100px" }}
+                    />
+                  </button>
                 )}
 
-                <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-                  </a>
-                  <ul className="dropdown-menu dropdown-menu-dark">
-                    <li><a className="dropdown-item" href="/">Action</a></li>
-                    <li><a className="dropdown-item" href="/">Another action</a></li>
-                    <li>
-                      <hr className="dropdown-divider" />
-                    </li>
-                    <li><a className="dropdown-item" href="/">Something else here</a></li>
-                  </ul>
-                </li>
+
               </ul>
-              <form className="d-flex mt-3" role="search">
-                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                <button className="btn btn-success" type="submit">Search</button>
-              </form>
+
             </div>
           </div>
         </div>

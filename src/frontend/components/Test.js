@@ -37,22 +37,42 @@ function Test({ testCases, correctFormula, maxExecutionTime, testPassedSet, prob
             name: user.displayName
         }
 
-        // eslint-disable-next-line
-        const userFunction = new Function(`
-            ${userCode}
-            return ${userCode.match(/function\s+(\w+)/)[1]};
-        `)();
+        const match = userCode.match(/function\s+(\w+)/);
+        if (!match) {
+            setError('Nu s-a găsit nicio funcție validă în codul introdus. Asigură-te că funcția este definită corect.');
+            return;
+        }
 
-        const averageTimeUserCode = testCases.reduce((totalTime, testCase) => {
+        const functionName = match[1]; // Numele funcției din codul utilizatorului
+        // eslint-disable-next-line
+        let userFunction;
+        try {
+            // eslint-disable-next-line
+            userFunction = new Function(`
+                ${userCode}
+                return ${functionName};
+            `)();
+        } catch (err) {
+            setError(`Eroare în codul utilizatorului: ${err.message}`);
+            return;
+        }
+
+        for (const testCase of testCases) {
+            try {
+                userFunction(...testCase.params);
+            } catch (err) {
+                setError(`Eroare la rularea funcției: ${err.message}`);
+                return;
+            }
+        }
+
+        const averageTimeUserCode = testCases.reduce((totalTime, testCase) => {  
             return totalTime + measurePerformance(userFunction, testCase.params);
         }, 0) / testCases.length;
 
         const averageTimeCorrectFormula = testCases.reduce((totalTime, testCase) => {
             return totalTime + measurePerformance(correctFormula, testCase.params);
         }, 0) / testCases.length;
-
-        console.log(`User Execution Time: ${averageTimeUserCode.toFixed(6)} ms`);
-        console.log(`Correct Formula Execution Time: ${averageTimeCorrectFormula.toFixed(6)} ms`);
 
         // Pregătește test cases cu valorile așteptate
         await storeCode(codeObject, problemName, userId)
@@ -75,12 +95,6 @@ function Test({ testCases, correctFormula, maxExecutionTime, testPassedSet, prob
                 setError(null);
                 setOutput(e.data.results);
                 const allTestsPassed = e.data.results.every(result => result.result === 'Corect');
-
-                //   if (allTestsPassed && timeExceeded.length <= 0) {
-                //     testPassedSet(true);
-                //} else {
-                //  testPassedSet(false);
-                //}
 
                 if (averageTimeUserCode > 10 * averageTimeCorrectFormula && !allTestsPassed) { // timp lung si nu a trecut testele
                     setTimeExceeded("Limita de timp depasita.")

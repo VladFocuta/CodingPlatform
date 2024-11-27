@@ -33,3 +33,29 @@
     color: white;
     margin-left: 5px;
   }
+
+  @keyframes border-to-green {
+    from {
+        border-bottom-color: white;
+    }
+    to {
+        border-bottom-color: green;
+    }
+}
+
+@keyframes border-to-red {
+    from {
+        border-bottom-color: white;
+    }
+    to {
+        border-bottom-color: red;
+    }
+}
+
+.animate-border-green {
+    animation: border-to-green 0.5s forwards;
+}
+
+.animate-border-red {
+    animation: border-to-red 0.5s forwards;
+}
