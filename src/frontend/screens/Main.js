@@ -55,7 +55,7 @@ function Main() {
 
 
           <div className='userInfo'>
-            <div className='profile-picture'>picture</div>
+            <div className='profile-picture'></div>
             <h3>Invata bazele programarii:</h3>
 
             <div style={{ width: '70%', alignSelf: 'center' }} className="progress" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
