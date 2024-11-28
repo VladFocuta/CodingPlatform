@@ -36,6 +36,7 @@ import ScrollToTop from './frontend/components/ScrollToTop';
 import { NotificationProvider } from './frontend/components/contexts/NewCommentsContext';
 import Profile from './frontend/screens/Profile';
 import Infos from './frontend/screens/userProfileScreens/Infos';
+import Stop from './frontend/problems/second-chapter/Stop';
 
 
 
@@ -86,6 +87,7 @@ function App() {
               <Route path="/problems/Concatenare" element={<Concatenation />} />
               <Route path="/problems/Concatenare 2" element={<Concatenation2 />} />
               <Route path="/problems/Return" element={<Return />} />
+              <Route path="/problems/Stop" element={<Stop />} />
 
             </Routes>
           </NotificationProvider>

@@ -42,7 +42,8 @@ function Main() {
         { title: "Concatenare", link: "/problems/Concatenare", icon: "fa-solid fa-circle-check", index: 19 },
         { title: "Concatenare 2", link: "/problems/Concatenare 2", icon: "fa-solid fa-circle-check", index: 20 },
         { title: "Numere repetate", link: "/problems/Numere repetate", icon: "fa-solid fa-circle-check", index: 21 },
-        { title: "Instructiunea return", link: "/problems/Return", icon: "fa-solid fa-circle-check", index: 22 }
+        { title: "Instructiunea return", link: "/problems/Return", icon: "fa-solid fa-circle-check", index: 22 },
+        { title: "Trenul", link: "/problems/Stop", icon: "fa-solid fa-circle-check", index: 23 }
       ]
     }
   ];

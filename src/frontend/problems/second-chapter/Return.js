@@ -71,7 +71,7 @@ function Return() {
             problemName="Return"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/Stop"
             lecture={true}
         />
     )
