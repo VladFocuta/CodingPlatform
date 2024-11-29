@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { UserAuth } from '../../../backend/firebaseConfig/authProvider';
 import { useNavigate } from 'react-router-dom';
 import { solvedProblem } from '../../../backend/functions/solvedProblem';
 import { UserProgressData } from '../contexts/userProgress';
 import CommentsArea from '../CommentsArea';
+import { countProblemSolved } from '../../../backend/functions/handleSolvedProbCounter';
 
 
 
@@ -12,6 +13,19 @@ function ProblemPage({ problemName, problemPoints, problemContent, nextRoute, pr
     const navigate = useNavigate();
     const { userProgressPoints, problemsSolved } = UserProgressData();
     const progressPoints = userProgressPoints + problemPoints;
+    const [counterSolvedProblem, setCounterSolvedProblem] = useState(0);
+
+
+    useEffect(() => {
+        countProblemSolved(problemName)
+            .then(counter => {
+                setCounterSolvedProblem(counter);
+            })
+            .catch(error => {
+                console.error('Error fetching problem count:', error);
+            })
+    }, [problemName])
+
 
     const data = {
         solvedProblem: problemName,
@@ -45,6 +59,13 @@ function ProblemPage({ problemName, problemPoints, problemContent, nextRoute, pr
                     <h1 className='home-container' style={{ color: 'white' }}>
                         {problemName}
                     </h1>
+                    <div>
+                    <strong style={{ color: 'white' }}>{counterSolvedProblem} </strong>
+                        <i className="fa-solid fa-users"
+                            title={`Rezolvat de: ${counterSolvedProblem} utilizatori`}
+                            style={{ color: 'white' }}></i>
+                    </div>
+
 
                     {problemHeader && (
                         <div className='userInfo' style={{ marginTop: '60px', width: '50%' }}>

@@ -45,12 +45,12 @@ export const UserProgress = ({ children }) => {
             }
 
             try {
+
                 const userProgressRef = doc(db, 'admins', userId)
 
                 const docSnapshot = await getDoc(userProgressRef);
                 if (docSnapshot.exists()) {
                     setAdmin(docSnapshot.data().admin);
-
                 }
             } catch (error) {
                 console.error('Error while fetching admin:', error);
