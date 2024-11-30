@@ -45,6 +45,13 @@ function Main() {
         { title: "Instructiunea return", link: "/problems/Return", icon: "fa-solid fa-circle-check", index: 22 },
         { title: "Trenul", link: "/problems/Stop", icon: "fa-solid fa-circle-check", index: 23 }
       ]
+    },
+    {
+      title: "Recapitulare While",
+      lessons: [
+        { title: "Numar maxim", link: "/problems/Numar maxim", icon: "fa-solid fa-circle-check", index: 24 },
+       
+      ]
     }
   ];
 

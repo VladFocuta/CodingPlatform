@@ -80,7 +80,7 @@ function Stop() {
             problemName="Trenul"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Return"
+            nextRoute="/Main"
             testPassed={testPassed}
         />
     )
