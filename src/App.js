@@ -38,6 +38,8 @@ import Profile from './frontend/screens/Profile';
 import Infos from './frontend/screens/userProfileScreens/Infos';
 import Stop from './frontend/problems/second-chapter/Stop';
 import MaxNumber from './frontend/problems/while-recap/MaxNumber';
+import Palindrom from './frontend/problems/while-recap/Palindrom';
+
 
 
 
@@ -89,9 +91,9 @@ function App() {
               <Route path="/problems/Concatenare 2" element={<Concatenation2 />} />
               <Route path="/problems/Return" element={<Return />} />
               <Route path="/problems/Stop" element={<Stop />} />
-
+              
               <Route path="/problems/Numar maxim" element={<MaxNumber />} />
-
+              <Route path="/problems/Palindrom" element={<Palindrom />} />
 
             </Routes>
           </NotificationProvider>

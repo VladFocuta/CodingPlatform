@@ -66,7 +66,7 @@ function MaxNumber() {
             problemName="Numar maxim"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Return"
+            nextRoute="/problems/Palindrom"
             testPassed={testPassed}
         />
     )
