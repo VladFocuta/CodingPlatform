@@ -75,7 +75,7 @@ function Palindrom() {
             problemName="Palindrom"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/MaxSum"
             testPassed={testPassed}
         />
     )

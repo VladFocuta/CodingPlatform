@@ -39,6 +39,7 @@ import Infos from './frontend/screens/userProfileScreens/Infos';
 import Stop from './frontend/problems/second-chapter/Stop';
 import MaxNumber from './frontend/problems/while-recap/MaxNumber';
 import Palindrom from './frontend/problems/while-recap/Palindrom';
+import MaxSum from './frontend/problems/while-recap/MaxSum';
 
 
 
@@ -94,6 +95,8 @@ function App() {
               
               <Route path="/problems/Numar maxim" element={<MaxNumber />} />
               <Route path="/problems/Palindrom" element={<Palindrom />} />
+              <Route path="/problems/Suma maxima" element={<MaxSum />} />
+              
 
             </Routes>
           </NotificationProvider>

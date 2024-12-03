@@ -55,6 +55,7 @@ function Main() {
       lessons: [
         { title: "Numar maxim", link: "/problems/Numar maxim", icon: "fa-solid fa-circle-check", index: 24 },
         { title: "Palindrom", link: "/problems/Palindrom", icon: "fa-solid fa-circle-check", index: 25 },
+        { title: "Suma maxima", link: "/problems/Suma maxima", icon: "fa-solid fa-circle-check", index: 26 },
 
       ]
     }
