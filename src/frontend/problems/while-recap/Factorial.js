@@ -2,55 +2,56 @@ import React, { useState } from 'react'
 import Test from '../../components/Test'
 import ProblemPage from '../../components/functions/ProblemPage'
 
-function MaxNumber() {
+
+function Factorial() {
     const [testPassed, setTestPassed] = useState(false);
 
     const testCases = [
-        { params: [98769], expected: 9},
-        { params: [1], expected: 1},
-        { params: [450100], expected: 5},
-        { params: [145], expected: 5}
+        { params: [0], expected: [1] },
+        { params: [1], expected: [1] },
+        { params: [16], expected: [2004189184] }
     ];
-
 
     const problemContent = (
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <h4>Scrie un program care gaseste cea mai mare cifra dintr-un numar natural.<br />
-                    Numarul se citeste de la tastatura si dupa ce este gasit, il vei afisa.<br />
+                <h4>Scrie un program care calculeaza factorialul unui numar intreg pozitiv n.
                     <br />
-                    Mentiuni: 1 ≤ numar ≤ 1 000 000
+                    Numarul se citeste de la tastatura.
                     <br />
+                    Sa se afiseze factorialul lui n.<br /><br />
+                    Mentiuni:<br />
+                    n &lt;= 16
+                    <br /><br />
                     Exemplu:
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
-                    <h4>Date de intrare: 173045
+                    <h4>Date de intrare: 5
                         <br />
                     </h4>
-                    <h4> Date de iesire: 7
+                    <h4> Date de iesire: 120
                     </h4>
-                </div> <br />
+                </div>
+
 
             </div>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <Test 
+                <Test
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    problemName="Numar maxim" />
+                    problemName="Factorialul unui numar" />
             </div>
         </>
     )
-
-
     return (
         <ProblemPage
-            problemName="Numar maxim"
+            problemName="Factorialul unui numar"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/CMMD"
+            nextRoute="/problems/MaxSum"
             testPassed={testPassed}
         />
     )
 }
 
-export default MaxNumber
+export default Factorial

@@ -8,76 +8,67 @@ function While() {
         <>
             <p>
                 Ce este mai exact while?<br />
-                Instrucțiunea while în JavaScript este o structură de control care permite repetarea unui bloc de cod atâta timp cât o condiție specificată este adevărată. Aceasta este utilă când vrei să rulezi aceleași instrucțiuni de mai multe ori, fără să scrii codul de mai multe ori.
+                Instrucțiunea while este o structură repetitivă care execută o secvență de cod atâta timp cât o condiție este adevărată. Se folosește atunci când numărul de repetări nu este cunoscut de la început.
             </p>
         </>
     )
 
     const problemContent = (
         <>
-            <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <div style={{ background: 'grey', padding: '10px', marginBottom: '2px', borderRadius: '5px' }}>
-                    <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px' }}> Cum funcționează while:</strong><br />
-                    Într-o buclă <strong className='highlight'>while</strong>, codul din interiorul buclei se va repeta în mod constant atâta timp cât condiția este <strong className='highlight'>true</strong>.<br />
-                    Odată ce condiția devine <strong className='highlight'>false</strong>, bucla se oprește.
-                </div>
-
-                <div style={{ background: 'grey', padding: '10px', marginBottom: '2px', borderRadius: '5px' }}>
-                    <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px' }}> Sintaxa de bază</strong>
-                    <CodeStyle code={`while (condiție) {
- // codul care se execută repetat
-}
-`} />
-                    <strong className='highlight'>condiție:</strong> Expresia care este verificată înainte de fiecare repetare. Dacă este <strong className='highlight'>true</strong>, codul din interiorul buclei se execută. Dacă este <strong className='highlight'>false</strong>, bucla se oprește.<br />
-                </div>
-
-
-                <div style={{ background: 'grey', padding: '10px', marginBottom: '2px', borderRadius: '5px' }}>
-                    <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px' }}> Exemplu simplu:</strong><br />
-                    Să afișăm numerele de la 1 la 5 folosind <strong className='highlight'>while</strong>:<br />
-
-                    <CodeStyle code={`let numar = 1; // Inițializăm o variabilă
-while (numar <= 5) { // Condiția buclei
-    console.log(numar); // Afișăm valoarea variabilei
-    numar = numar + 1; // Incrementăm variabila
+            <h4>
+                Sintaxa:
+            </h4>
+            <CodeStyle code={`while (condiție) {
+    // Instrucțiuni de executat
 }`} />
+            <p>
+                condiție este o expresie logică ce este evaluată la începutul fiecărei iterații.<br />
+                Dacă condiție este true, codul din interiorul blocului while se execută.<br />
+                Dacă condiție devine false, bucla se oprește.<br />
+            </p>
 
+            <h4>
+                Exemple de utilizare:<br />
+            </h4>
+            <p>
+                Exemplu simplu: Numărare de la 1 la 5
+            </p>
+            <CodeStyle code={`#include <iostream>
+using namespace std;
 
+int main() {
+    int i = 1;  // Inițializare
 
-                    <strong style={{ fontSize: 17, fontWeight: 'normal' }}>Ce face acest cod:</strong><br />
-                    &nbsp;Inițializare: Variabila numar este setată la 1.<br />
-                    &nbsp;Condiție: Bucla verifică dacă numar este mai mic sau egal cu 5. Dacă este adevărat, codul din buclă se execută.<br />
-                    &nbsp;Afișare: Afișează valoarea curentă a lui numar.<br />
-                    &nbsp;Incrementare: Crește valoarea lui numar cu 1.<br />
-                    &nbsp;Repetare: Procesul se repetă până când numar devine 6, moment în care condiția numar &lt;= 5 devine false, și bucla se oprește.<br />
-                    <CodeStyle code={`Ce se afișează:
-    1
-    2
-    3
-    4
-    5
-`} />
+    while (i <= 5) {  // Condiție
+        cout << i << " ";  // Afișează valoarea lui i
+        i++;  // Incrementare
+    }
 
-                    <strong style={{ fontSize: 17, fontWeight: 'normal' }}>Explicație ușoară:</strong><br />
-                    Gândește-te la <strong className='highlight'>while</strong> ca la o întrebare pe care programul o pune de fiecare dată înainte de a executa o acțiune: „Încă mai trebuie să fac asta?”. Cât timp răspunsul este „da” <strong className='highlight'>true</strong>, va continua să repete codul din interiorul buclei.<br />
-                </div>
+    return 0;
+}`} />
+            <h4>Output: 1 2 3 4 5</h4><br />
 
-                <div style={{ background: 'grey', padding: '10px', marginBottom: '2px', borderRadius: '5px' }}>
-                    <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px' }}> Atenție la bucle infinite</strong><br />
-                    Dacă condiția din <strong className='highlight'>while</strong> rămâne mereu <strong className='highlight'>true</strong>, bucla va rula la nesfârșit. Acest lucru se numește buclă infinită și poate bloca programul.<br /><br />
-                    <strong style={{ fontSize: 17, fontWeight: 'normal' }}>Exemplu de buclă infinită (de evitat):</strong><br />
-                    <CodeStyle code={`let numar = 1;
-while (numar &lt;= 5) {
-    console.log(numar);
-    // Lipsă de incrementare! ${'numar'} rămâne 1, bucla nu se va opri niciodată
-}
-`} />
+            <h4>Când să folosim while?</h4>
+            <p>
+                Când numărul exact de repetări nu este cunoscut de la început.<br />
+                Când dorim să repetăm o operație până când o condiție devine falsă.
+            </p>
 
-                    <strong style={{ fontSize: 17, fontWeight: 'normal' }}>Concluzie</strong><br />
-                    Bucla <strong className='highlight'>while</strong> este utilă atunci când nu știm de câte ori va trebui să repetăm codul și dorim ca acesta să se oprească atunci când o anumită condiție nu mai este îndeplinită.
-                </div>
-
-            </div>
+            <h4>Erori comune:</h4>
+            <p>
+                1. Buclă infinită:<br />
+                Dacă condiția nu devine niciodată falsă, bucla continuă să ruleze la nesfârșit.
+                <CodeStyle code={`int i = 1;
+while (i <= 5) {
+    cout << i;  // Lipsa incrementării lui i => buclă infinită
+}`} />
+                Rezolvare: Adăugați modificări asupra variabilelor care determină condiția.
+            </p>
+            
+            <p>
+                2. Condiție greșită:<br />
+                Dacă condiția este scrisă greșit, bucla poate să nu ruleze deloc sau să ruleze incorect.
+            </p>
         </>
     )
     return (

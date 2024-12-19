@@ -11,7 +11,7 @@ function CodeSubmitHistory() {
     const problemName = location.state.data;
     const { user } = UserAuth();
     const userId = user?.uid;
-
+   
     useEffect(() => {
         const fetchSubmittedCode = async () => {
             const fetchedCode = await getSubmitedCode(problemName, userId);

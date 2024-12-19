@@ -1,56 +1,54 @@
 import React, { useState } from 'react'
-import Test from '../../components/Test'
 import ProblemPage from '../../components/functions/ProblemPage'
+import Test from '../../components/Test'
 
-function MaxNumber() {
+function PalindromNum() {
     const [testPassed, setTestPassed] = useState(false);
 
     const testCases = [
-        { params: [98769], expected: 9},
-        { params: [1], expected: 1},
-        { params: [450100], expected: 5},
-        { params: [145], expected: 5}
+        { params: [111], expected: ["Numarul este palindrom"] },
+        { params: [122], expected: ["Numarul nu este palindrom"] },
+        { params: [121], expected: ["Numarul este palindrom"] },
     ];
-
 
     const problemContent = (
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <h4>Scrie un program care gaseste cea mai mare cifra dintr-un numar natural.<br />
-                    Numarul se citeste de la tastatura si dupa ce este gasit, il vei afisa.<br />
-                    <br />
-                    Mentiuni: 1 ≤ numar ≤ 1 000 000
+                <h4>Scrie un program care verifica daca un numar întreg de 3 cifre este palindrom.<br />
+                    Numarul se citeste de la tastatura si apoi se afiseaza <strong style={{ color: 'red' }}>Numarul este palindrom </strong>sau <strong style={{ color: 'red' }}>Numarul nu este palindrom</strong>.<br />
                     <br />
                     Exemplu:
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
-                    <h4>Date de intrare: 173045
+                    <h4>Date de intrare: 123
+
                         <br />
                     </h4>
-                    <h4> Date de iesire: 7
+                    <h4> Date de iesire: Numarul nu este palindrom
+                        <br />
                     </h4>
                 </div> <br />
 
             </div>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <Test 
+                <Test
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    problemName="Numar maxim" />
+                    problemName="Palindrom numeric"
+                />
             </div>
         </>
     )
-
-
     return (
         <ProblemPage
-            problemName="Numar maxim"
+            problemName="Palindrom numeric"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/CMMD"
+            nextRoute="/problems/Triunghi valid"
+            lecture={false}
             testPassed={testPassed}
         />
     )
 }
 
-export default MaxNumber
+export default PalindromNum

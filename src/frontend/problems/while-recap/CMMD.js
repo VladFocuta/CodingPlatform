@@ -2,55 +2,57 @@ import React, { useState } from 'react'
 import Test from '../../components/Test'
 import ProblemPage from '../../components/functions/ProblemPage'
 
-function MaxNumber() {
+function CMMD() {
     const [testPassed, setTestPassed] = useState(false);
 
     const testCases = [
-        { params: [98769], expected: 9},
-        { params: [1], expected: 1},
-        { params: [450100], expected: 5},
-        { params: [145], expected: 5}
+        { params: [48, 18], expected: [6] },
+        { params: [1, 1], expected: [1] },
+        { params: [4, 5], expected: [1] },
+        { params: [146, 1046], expected: [2] },
+        { params: [12, 21], expected: [3] }
     ];
 
 
     const problemContent = (
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <h4>Scrie un program care gaseste cea mai mare cifra dintr-un numar natural.<br />
-                    Numarul se citeste de la tastatura si dupa ce este gasit, il vei afisa.<br />
+                <h4>Scrie un program care calculeaza cel mai mare divizor comun (CMMD) a doua numere.
                     <br />
-                    Mentiuni: 1 ≤ numar ≤ 1 000 000
+                    Numerele se citesc de la tastatura.
+                    <br />
+                    Sa se afiseze cel mai mare divizor comun.<br />
+
                     <br />
                     Exemplu:
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
-                    <h4>Date de intrare: 173045
+                    <h4>Date de intrare: 48 18
                         <br />
                     </h4>
-                    <h4> Date de iesire: 7
+                    <h4> Date de iesire: 6
                     </h4>
-                </div> <br />
+                </div>
+
 
             </div>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <Test 
+                <Test
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    problemName="Numar maxim" />
+                    problemName="CMMD" />
             </div>
         </>
     )
-
-
     return (
         <ProblemPage
-            problemName="Numar maxim"
+            problemName="CMMD"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/CMMD"
+            nextRoute="/problems/MaxSum"
             testPassed={testPassed}
         />
     )
 }
 
-export default MaxNumber
+export default CMMD

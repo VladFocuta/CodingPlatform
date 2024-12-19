@@ -26,13 +26,13 @@ function Counter() {
                     <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px' }}> 2. Cum se inițializează și folosește un contor</strong><br />
                     De obicei, un contor este inițializat la <strong className='highlight'>0</strong> sau <strong className='highlight'>1</strong>, în funcție de scopul lui, și apoi este incrementat sau decrementat în funcție de operațiunea dorită.<br /><br />
                     Exemplu de contor inițializat la <strong className='highlight'>0</strong>:
-                    <SyntaxHighlighter language="javascript" style={tomorrow}>
-                        {`let contor = 0; // Inițializăm contorul la zero
+                    <SyntaxHighlighter language="cpp" style={tomorrow}>
+                        {`int contor = 0; // Inițializăm contorul la zero
 while (contor < 5) { // Bucla se va executa până când contorul ajunge la 5
-    console.log("Valoarea contorului este: " + contor);
+    cout << "Valoarea contorului este: " << contor << endl;
     contor = contor + 1; // Incrementăm contorul la fiecare iterație
 }
-console.log("Bucla s-a încheiat. Valoarea finală a contorului este: " + contor);`}
+cout << "Bucla s-a încheiat. Valoarea finală a contorului este: " << contor;`}
                     </SyntaxHighlighter>
                 </div>
 
@@ -50,7 +50,7 @@ console.log("Bucla s-a încheiat. Valoarea finală a contorului este: " + contor
                     <SyntaxHighlighter language="javascript" style={tomorrow}>
 {`let contor = 1;
 while (contor <= 10) {
-    console.log("Mesajul numărul " + contor);
+    cout << "Mesajul numărul " << contor << endl;
     contor = contor + 1;
 }`}
                     </SyntaxHighlighter>

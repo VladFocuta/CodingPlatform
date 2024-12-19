@@ -6,56 +6,61 @@ function Main() {
   const { userProgressPoints, problemsSolved, admin, capitols } = UserProgressData();
 
   const freeLessons = [
-    "If-structură de decizie",
-    "Introducere"
+    "Recapitulare algoritmi",
+    "Algoritmi"
   ]
   const combinedLessons = [...freeLessons, ...(capitols || [])];
 
   const sections = [
     {
-      title: "Introducere",
+      title: "Algoritmi",
       lessons: [
-        { title: "Introducere", link: "/problems/Introducere", icon: "fa-solid fa-circle-check", index: 1 },
-        { title: "Variabile", link: "/problems/Variabile", icon: "fa-solid fa-circle-check", index: 2 },
-        { title: "Operatori", link: "/problems/Operatori", icon: "fa-solid fa-circle-check", index: 3 },
-        { title: "Functii", link: "/problems/Functii", icon: "fa-solid fa-circle-check", index: 4 },
-        { title: "Afisare", link: "/problems/Afisare", icon: "fa-solid fa-circle-check", index: 5 },
-        { title: "Suma", link: "/problems/Suma", icon: "fa-solid fa-circle-check", index: 6 },
-        { title: "Afisare text", link: "/problems/Afisare text", icon: "fa-solid fa-circle-check", index: 7 },
-        { title: "Note", link: "/problems/Note", icon: "fa-solid fa-circle-check", index: 8 }
+        { title: "Notiunea de algoritm", link: "/problems/Notiunea de algoritm", icon: "fa-solid fa-circle-check", index: 1 },
+        { title: "Bazele programarii", link: "/problems/Bazele programarii", icon: "fa-solid fa-circle-check", index: 2 },
+        { title: "Rulare program", link: "/problems/Rulare program", icon: "fa-solid fa-circle-check", index: 3 },
+        { title: "Suma", link: "/problems/Suma", icon: "fa-solid fa-circle-check", index: 4 },
+        { title: "Aria unui dreptunghi", link: "/problems/Aria unui dreptunghi", icon: "fa-solid fa-circle-check", index: 5 },
+        { title: "Structuri de baze", link: "/problems/Structuri de baze", icon: "fa-solid fa-circle-check", index: 6 },
+        { title: "Interschimbare", link: "/problems/Interschimbare", icon: "fa-solid fa-circle-check", index: 7 },
+        { title: "Numarul maxim", link: "/problems/Numarul maxim", icon: "fa-solid fa-circle-check", index: 8 }
       ]
     },
     {
-      title: "If-structură de decizie",
+      title: "Recapitulare algoritmi",
       lessons: [
-        { title: "Instructiunea If", link: "/problems/Instructiunea If", icon: "fa-solid fa-circle-check", index: 9 },
-        { title: "Fratii", link: "/problems/Fratii", icon: "fa-solid fa-circle-check", index: 10 },
-        { title: "Vacanta", link: "/problems/Vacanta", icon: "fa-solid fa-circle-check", index: 11 },
-        { title: "Maxim", link: "/problems/Maxim", icon: "fa-solid fa-circle-check", index: 12 },
-        { title: "Crescator", link: "/problems/Crescator", icon: "fa-solid fa-circle-check", index: 13 },
-        { title: "Crescator2.0", link: "/problems/Crescator2.0", icon: "fa-solid fa-circle-check", index: 14 }
+        { title: "Temperatura corpului", link: "/problems/Temperatura corpului", icon: "fa-solid fa-circle-check", index: 9 },
+        { title: "Numar absolut", link: "/problems/Numar absolut", icon: "fa-solid fa-circle-check", index: 10 },
+        { title: "Conversia temperaturii", link: "/problems/Conversia temperaturii", icon: "fa-solid fa-circle-check", index: 11 },
+        { title: "Divizibilitate", link: "/problems/Divizibilitate", icon: "fa-solid fa-circle-check", index: 12 },
+        { title: "Media notelor", link: "/problems/Media notelor", icon: "fa-solid fa-circle-check", index: 13 },
+        { title: "Convertirea orelor", link: "/problems/Convertirea orelor", icon: "fa-solid fa-circle-check", index: 14 },
+        { title: "Palindrom numeric", link: "/problems/Palindrom numeric", icon: "fa-solid fa-circle-check", index: 15 },
+        { title: "Triunghi valid", link: "/problems/Triunghi valid", icon: "fa-solid fa-circle-check", index: 16 },
+        { title: "Calculator", link: "/problems/Calculator", icon: "fa-solid fa-circle-check", index: 17 }
       ]
     },
     {
       title: "While-structură de control",
       lessons: [
-        { title: "While", link: "/problems/While", icon: "fa-solid fa-circle-check", index: 15 },
-        { title: "Contor", link: "/problems/Contor", icon: "fa-solid fa-circle-check", index: 16 },
-        { title: "Numaratoare inversa", link: "/problems/Numaratoare inversa", icon: "fa-solid fa-circle-check", index: 17 },
-        { title: "Numerele pare", link: "/problems/Numerele pare", icon: "fa-solid fa-circle-check", index: 18 },
-        { title: "Concatenare", link: "/problems/Concatenare", icon: "fa-solid fa-circle-check", index: 19 },
-        { title: "Concatenare 2", link: "/problems/Concatenare 2", icon: "fa-solid fa-circle-check", index: 20 },
-        { title: "Numere repetate", link: "/problems/Numere repetate", icon: "fa-solid fa-circle-check", index: 21 },
-        { title: "Instructiunea return", link: "/problems/Return", icon: "fa-solid fa-circle-check", index: 22 },
-        { title: "Trenul", link: "/problems/Stop", icon: "fa-solid fa-circle-check", index: 23 }
+        { title: "While", link: "/problems/While", icon: "fa-solid fa-circle-check", index: 18 },
+        { title: "Contor", link: "/problems/Contor", icon: "fa-solid fa-circle-check", index: 19 },
+        { title: "Numaratoare inversa", link: "/problems/Numaratoare inversa", icon: "fa-solid fa-circle-check", index: 20 },
+        { title: "Suma cifrelor", link: "/problems/Suma cifrelor", icon: "fa-solid fa-circle-check", index: 21 },
+        { title: "Debugging", link: "/problems/Debugging", icon: "fa-solid fa-circle-check", index: 22 },
+        { title: "Ghicirea unui numar", link: "/problems/Ghicirea unui numar", icon: "fa-solid fa-circle-check", index: 23 },
+        { title: "Numar prim", link: "/problems/Numar prim", icon: "fa-solid fa-circle-check", index: 24 },
+        { title: "Concatenarea", link: "/problems/Concatenarea", icon: "fa-solid fa-circle-check", index: 25 },
+        { title: "Trenul", link: "/problems/Stop", icon: "fa-solid fa-circle-check", index: 26 }
       ]
     },
-    {
+    {       
       title: "Recapitulare While",
       lessons: [
-        { title: "Numar maxim", link: "/problems/Numar maxim", icon: "fa-solid fa-circle-check", index: 24 },
-        { title: "Palindrom", link: "/problems/Palindrom", icon: "fa-solid fa-circle-check", index: 25 },
-        { title: "Suma maxima", link: "/problems/Suma maxima", icon: "fa-solid fa-circle-check", index: 26 },
+        { title: "Numar maxim", link: "/problems/Numar maxim", icon: "fa-solid fa-circle-check", index: 27 },
+        { title: "CMMD", link: "/problems/CMMD", icon: "fa-solid fa-circle-check", index: 28 },
+        { title: "Suma maxima", link: "/problems/Suma maxima", icon: "fa-solid fa-circle-check", index: 29 },
+        { title: "Numar impar", link: "/problems/Numar impar", icon: "fa-solid fa-circle-check", index: 30 },
+        { title: "Factorialul unui numar", link: "/problems/Factorialul unui numar", icon: "fa-solid fa-circle-check", index: 31 },
 
       ]
     }
@@ -87,8 +92,8 @@ function Main() {
             <div className="accordion accordion-flush" id="accordionFlushExample">
               {sections.map((section, sectionIndex) => {
                 const shouldRender = !admin && combinedLessons.includes(section.title);
-                
-                
+
+
                 return (
                   <div key={sectionIndex} className="accordion-item">
                     <h2 className="accordion-header">

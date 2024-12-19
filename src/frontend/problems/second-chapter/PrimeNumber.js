@@ -1,56 +1,56 @@
 import React, { useState } from 'react'
-import Test from '../../components/Test'
 import ProblemPage from '../../components/functions/ProblemPage'
+import Test from '../../components/Test'
 
-function MaxNumber() {
+function PrimeNumber() {
     const [testPassed, setTestPassed] = useState(false);
 
     const testCases = [
-        { params: [98769], expected: 9},
-        { params: [1], expected: 1},
-        { params: [450100], expected: 5},
-        { params: [145], expected: 5}
+        { params: [2], expected: ["Numarul este prim"]},
+        { params: [4], expected: ["Nu este prim"] },
+        { params: [293], expected: ["Numarul este prim"] },
+        { params: [31], expected: ["Numarul este prim"] },
+        { params: [322], expected: ["Nu este prim"] },
     ];
 
 
     const problemContent = (
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <h4>Scrie un program care gaseste cea mai mare cifra dintr-un numar natural.<br />
-                    Numarul se citeste de la tastatura si dupa ce este gasit, il vei afisa.<br />
+                <h4>Scrie un program care verifica daca un numar este prim.
                     <br />
-                    Mentiuni: 1 ≤ numar ≤ 1 000 000
+                    Numarul se citeste de la tastatura si apoi se afiseaza <strong style={{color: 'red'}}>Numarul este prim</strong> sau <strong style={{color: 'red'}}>Nu este prim</strong>. <br />
                     <br />
+                    
                     Exemplu:
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
-                    <h4>Date de intrare: 173045
+                    <h4>Date de intrare: 7
                         <br />
                     </h4>
-                    <h4> Date de iesire: 7
+                    <h4> Date de iesire: Numarul este prim
                     </h4>
                 </div> <br />
+               
 
             </div>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
                 <Test 
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    problemName="Numar maxim" />
+                    problemName="Numar prim" />
             </div>
         </>
     )
-
-
     return (
         <ProblemPage
-            problemName="Numar maxim"
+            problemName="Numar prim"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/CMMD"
+            nextRoute="/problems/Concatenarea"
             testPassed={testPassed}
         />
     )
 }
 
-export default MaxNumber
+export default PrimeNumber

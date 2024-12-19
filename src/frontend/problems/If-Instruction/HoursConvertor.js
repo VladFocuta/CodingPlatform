@@ -1,33 +1,33 @@
 import React, { useState } from 'react'
-import Test from '../../components/Test'
 import ProblemPage from '../../components/functions/ProblemPage'
+import Test from '../../components/Test'
 
-function MaxNumber() {
+function HoursConvertor() {
     const [testPassed, setTestPassed] = useState(false);
 
     const testCases = [
-        { params: [98769], expected: 9},
-        { params: [1], expected: 1},
-        { params: [450100], expected: 5},
-        { params: [145], expected: 5}
+        { params: [50], expected: ["2 zile si 2 ore"] },
+        { params: [2], expected: ["0 zile si 2 ore"] },
+        { params: [0], expected: ["0 zile si 0 ore"] },
+        { params: [24], expected: ["1 zile si 0 ore"] }
     ];
-
-
+ 
     const problemContent = (
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <h4>Scrie un program care gaseste cea mai mare cifra dintr-un numar natural.<br />
-                    Numarul se citeste de la tastatura si dupa ce este gasit, il vei afisa.<br />
+                <h4>Scrie un program care primeste un numar de ore si îl converteste in zile si ore.
                     <br />
-                    Mentiuni: 1 ≤ numar ≤ 1 000 000
-                    <br />
+                    Numarul de ore este un numar natural si se citeste de la tastatura.<br />
+                    Sa se afiseze numarul de zile si ore ca in exemplul de mai jos.
+                    <br /> <br />
                     Exemplu:
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
-                    <h4>Date de intrare: 173045
+                    <h4>Date de intrare:  50
                         <br />
                     </h4>
-                    <h4> Date de iesire: 7
+                    <h4> Date de iesire: 2 zile si 2 ore
+                        <br />
                     </h4>
                 </div> <br />
 
@@ -36,21 +36,22 @@ function MaxNumber() {
                 <Test 
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    problemName="Numar maxim" />
+                    problemName="Convertirea orelor" />
             </div>
         </>
     )
 
-
     return (
         <ProblemPage
-            problemName="Numar maxim"
+            problemName="Convertirea orelor"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/CMMD"
+            nextRoute="/problems/Palindrom numeric"
+            lecture={false}
             testPassed={testPassed}
+            
         />
     )
 }
 
-export default MaxNumber
+export default HoursConvertor

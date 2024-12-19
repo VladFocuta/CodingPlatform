@@ -5,30 +5,20 @@ import Test from '../../components/Test'
 function ReverseCounter() {
     const [testPassed, setTestPassed] = useState(false);
 
-    const correctFormula = (number) => {
-        if (typeof number === 'undefined') {
-            return 'undefined';
-        }
-        while (number > 1) {
-            console.log(number);
-            number -= 1;
-        }
-        return number;
-    };
 
     const testCases = [
-        { params: [10] },
-        { params: [1] },
-        { params: [5] }
+        { params: [5], expected: [5, 4, 3, 2, 1, 0] },
+        { params: [1], expected: [1] },
+        { params: [12], expected: [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0] }
     ];
-    const testCasesCount = testCases.length;
+
 
     const problemContent = (
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <h4>Se primeste un parametru, <strong style={{ color: '#00bfff' }}>number,</strong> cu valorea intre 1 si 10.
+                <h4>Scrie un program care numara invers de la un numar dat pana la 0.
                     <br />
-                    Folosește o buclă while pentru a afișa numerele de la <strong style={{ color: '#00bfff' }}>number </strong> la 1 în ordine descrescătoare.<br />
+                    Numarul se citeste de la tastatura si apoi se va afisa numaratoarea cu spatiu intre numere.<br />
                     <br />
                     Exemplu:
                 </h4>
@@ -37,18 +27,17 @@ function ReverseCounter() {
                         <br />
                     </h4>
                     <h4> Date de iesire:<br />
-                        4<br />3<br />2<br />1
+                        4 3 2 1 0
 
                     </h4>
                 </div> <br />
 
             </div>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <Test correctFormula={correctFormula}
+                <Test
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    testCassesCount={testCasesCount}
-                    problemName="Numaratoare inversa"/>
+                    problemName="Numaratoare inversa" />
             </div>
         </>
     )

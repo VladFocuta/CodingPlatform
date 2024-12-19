@@ -5,123 +5,64 @@ import { storeCode } from '../../backend/functions/storeUserCode';
 import { UserAuth } from '../../backend/firebaseConfig/authProvider';
 
 
-function Test({ testCases, correctFormula, maxExecutionTime, testPassedSet, problemName }) {
+function Test({ testCases, testPassedSet, problemName }) {
     const [userCode, setUserCode] = useState("");
     const [output, setOutput] = useState(null);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
     const { user } = UserAuth();
     const userId = user?.uid;
-    const [timeExceeded, setTimeExceeded] = useState("")
+    const [loading, setLoading] = useState(false);
 
+    const codeObject = {
+        userCode: userCode,
+        userId: userId,
+        name: user.displayName
+    }
 
     const handleSubmitHistoryPage = () => {
         navigate('/CodeSubmitHistory', { state: { data: problemName } });
     }
 
 
-    function measurePerformance(func, args, iterations = 10000) {
-        const start = performance.now(); // Pornire cronometru
-        for (let i = 0; i < iterations; i++) {
-            func(...args); // Rulează funcția cu argumentele date
-        }
-        const end = performance.now(); // Oprire cronometru
-        return (end - start) / iterations; // Timp mediu pe execuție
-    }
+    const runCode = async () => {
 
-    const handleRunCode = async () => {
-
-        const codeObject = {
-            userCode: userCode,
-            userId: userId,
-            name: user.displayName
-        }
-
-        const match = userCode.match(/function\s+(\w+)/);
-        if (!match) {
-            setError('Nu s-a găsit nicio funcție validă în codul introdus. Asigură-te că funcția este definită corect.');
-            return;
-        }
-
-        const functionName = match[1]; // Numele funcției din codul utilizatorului
-        // eslint-disable-next-line
-        let userFunction;
+        setLoading(true);
         try {
-            // eslint-disable-next-line
-            userFunction = new Function(`
-                ${userCode}
-                return ${functionName};
-            `)();
-        } catch (err) {
-            setError(`Eroare în codul utilizatorului: ${err.message}`);
-            return;
-        }
+            await storeCode(codeObject, problemName, userId);
+            const response = await fetch('/.netlify/functions/execute', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    userCode: userCode,
+                    testCases: testCases,
+                }),
+            });
 
-        for (const testCase of testCases) {
-            try {
-                userFunction(...testCase.params);
-            } catch (err) {
-                setError(`Eroare la rularea funcției: ${err.message}`);
-                return;
-            }
-        }
-
-        const averageTimeUserCode = testCases.reduce((totalTime, testCase) => {  
-            return totalTime + measurePerformance(userFunction, testCase.params);
-        }, 0) / testCases.length;
-
-        const averageTimeCorrectFormula = testCases.reduce((totalTime, testCase) => {
-            return totalTime + measurePerformance(correctFormula, testCase.params);
-        }, 0) / testCases.length;
-
-        // Pregătește test cases cu valorile așteptate
-        await storeCode(codeObject, problemName, userId)
-        const preparedTestCases = testCases.map(testCase => ({
-            ...testCase,
-            expected: correctFormula(...testCase.params), // Folosește correctFormula pentru a obține rezultatul așteptat
-
-        }));
-
-        // Inițializează un nou worker
-        const worker = new Worker(new URL('./worker.js', import.meta.url));
-
-        worker.onmessage = (e) => {
-
-            if (e.data.error) {
-                setError(e.data.error);
-                setOutput(null);
-                testPassedSet(false);
+            const data = await response.json();
+            const allTestsPassed = data.results.every(result => result.result === 'Corect');
+            if (allTestsPassed) {
+                testPassedSet(true)
             } else {
-                setError(null);
-                setOutput(e.data.results);
-                const allTestsPassed = e.data.results.every(result => result.result === 'Corect');
-
-                if (averageTimeUserCode > 10 * averageTimeCorrectFormula && !allTestsPassed) { // timp lung si nu a trecut testele
-                    setTimeExceeded("Limita de timp depasita.")
-                    testPassedSet(false);
-                    console.log("User function is significantly slower and didnt pass the tests.");
-                } else if (averageTimeUserCode > 10 * averageTimeCorrectFormula && allTestsPassed) { // timp lung si a trecut testele
-                    testPassedSet(false);
-                    setTimeExceeded("Limita de timp depasita.");
-                    console.log("User function is significantly slower and passed the tests.");
-                } else if (averageTimeUserCode < 10 * averageTimeCorrectFormula && allTestsPassed) { // timp scurt si a trecut si testele
-                    testPassedSet(true);
-                    setTimeExceeded("");
-                } else if (averageTimeUserCode < 10 * averageTimeCorrectFormula && !allTestsPassed) {
-                    setTimeExceeded("");
-                }
-
+                testPassedSet(false);
             }
-            worker.terminate(); // Termină worker-ul pentru a elibera resursele
-        };
 
-        // Trimite codul utilizatorului și testele către worker
-        worker.postMessage({
-            code: userCode,
-            testCases: preparedTestCases, // Trimite test cases cu expected
-            maxExecutionTime: maxExecutionTime || 2000
-        });
+            if (response.ok) {
+                setOutput(data.results);  // Răspunsul corect
+            } else {
+                setError(data.error || 'A apărut o eroare necunoscută');
+            }
+        } catch (error) {
+            console.log('Error while running the user code', error);
+        } finally {
+            setLoading(false);
+        }
+
     };
+
+
 
     return (
         <>
@@ -135,7 +76,7 @@ function Test({ testCases, correctFormula, maxExecutionTime, testPassedSet, prob
                 <div style={{ height: '500px', width: '100%' }}>
                     <Editor
                         height="100%"
-                        defaultLanguage="javascript"
+                        defaultLanguage="cpp"
                         theme="vs-dark"
                         value={userCode}
                         onChange={value => setUserCode(value)}
@@ -146,7 +87,7 @@ function Test({ testCases, correctFormula, maxExecutionTime, testPassedSet, prob
                 </div>
 
                 {error && <strong style={{ color: 'red', fontSize: '18px', fontWeight: 'bold' }}>{error}</strong>}
-                {timeExceeded && <strong style={{ color: 'red', fontSize: '18px', fontWeight: 'bold' }}>{timeExceeded}</strong>}
+
                 {output && (
                     <ul>
                         {output.map((result, index) => (
@@ -157,7 +98,13 @@ function Test({ testCases, correctFormula, maxExecutionTime, testPassedSet, prob
                     </ul>
                 )}
             </div>
-            <button type="button" className="btn btn-light" onClick={handleRunCode}>Rulare Cod</button>
+            <button type="button" className="btn btn-light" onClick={runCode}>Rulare Cod</button>
+            {loading && (
+                <div className="spinner-border text-info" style={{ alignSelf: 'center' }} role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </div>
+            )}
+
 
 
         </>
