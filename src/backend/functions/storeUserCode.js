@@ -38,7 +38,7 @@ export const getSubmitedCode = async (problemsName, userId) => {
 
         querySnapshot.forEach((doc) => {
             code.push({ id: doc.id, ...doc.data() });
-            console.log(doc.data())
+          
         });
 
     } catch (error) {
