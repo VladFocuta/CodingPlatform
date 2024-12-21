@@ -9,6 +9,7 @@
     "@react-firebase/database": "^0.3.11",
     "@react-native-firebase/app": "^21.0.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
     "firebase": "^10.14.1",
     "firebase-auth": "^0.1.2",

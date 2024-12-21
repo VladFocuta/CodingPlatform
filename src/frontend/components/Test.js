@@ -42,7 +42,9 @@ function Test({ testCases, testPassedSet, problemName }) {
             });
 
             const data = await response.json();
-            const allTestsPassed = data.results.every(result => result.result === 'Corect');
+            //const allTestsPassed = data.results.every(result => result.result === 'Corect');
+            const allTestsPassed = data.results.every(result => result.passed);
+
             if (allTestsPassed) {
                 testPassedSet(true)
             } else {
@@ -92,7 +94,13 @@ function Test({ testCases, testPassedSet, problemName }) {
                     <ul>
                         {output.map((result, index) => (
                             <li key={index} style={{ marginTop: '10px', fontSize: '18px', fontWeight: 'bold' }}>
-                                Test {result.testCase}: {result.result}
+                                Test {index + 1}:
+                                <br />
+                                <strong>Status:</strong> {result.passed ? 'Corect' : 'Incorect'}
+                                <br />
+                                <strong>Output:</strong> {result.output || 'N/A'}
+                                <br />
+                                <strong>Expected:</strong> {Array.isArray(result.expected) ? result.expected.join(' ') : result.expected}
                             </li>
                         ))}
                     </ul>
