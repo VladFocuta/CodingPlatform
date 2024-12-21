@@ -8,7 +8,7 @@ function ReverseCounter() {
 
     const testCases = [
         { params: [5], expected: [5, 4, 3, 2, 1, 0] },
-        { params: [1], expected: [1] },
+        { params: [1, 0], expected: [1, 0] },
         { params: [12], expected: [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0] }
     ];
 
