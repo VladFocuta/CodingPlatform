@@ -63,9 +63,12 @@ export const updateLimitAccess = async (userId, newLimit) => {
         const userDocRef = doc(db, 'solvedProblems', userId);
         const userDocSnapshot = await getDoc(userDocRef);
 
+        const timeZone = 'Europe/Berlin';
+        const formattedDate = format(newLimit, 'yyyy-MM-dd HH:mm:ss', { timeZone });
+        
         if (userDocSnapshot.exists()) {
             await updateDoc(userDocRef, {
-                accessExpiration: newLimit,
+                accessExpiration: formattedDate,
             });
         }
         console.log('upadeLimitAccess has worked successfully.')
