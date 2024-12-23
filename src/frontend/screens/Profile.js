@@ -7,6 +7,7 @@ import EmailChange from './userProfileScreens/EmailChange';
 import { UserProgressData } from '../components/contexts/userProgress';
 import AdminUsers from './userProfileScreens/AdminUsers';
 
+
 function Profile() {
     const { loggedIn } = UserAuth();
     const { admin } = UserProgressData();
@@ -45,7 +46,7 @@ function Profile() {
         setInfosIsClicked(false)
         setChangePasswordIsClicked(false);
         setAdminUsersIsClicked(false);
-        setChangeEmailIsClicked(false)
+        setChangeEmailIsClicked(false)    
         setSecretQuestionIsClicked(true);
     }
 
@@ -72,8 +73,12 @@ function Profile() {
                             <button onClick={handleChangePassword} className='button' style={{ background: changePasswordIsClicked ? '#e4dddd' : 'transparent', color: changePasswordIsClicked ? '#747373' : '#fff' }}>Schimba parola</button>
                             <button onClick={handleSecretQuestion} className='button' style={{ background: secretQuestionIsClicked ? '#e4dddd' : 'transparent', color: secretQuestionIsClicked ? '#747373' : '#fff' }}>Intrebare secreta</button>
                             {admin && (
-                                <button onClick={handleAdminUsers} className='button' style={{ background: adminUsersIsClicked ? '#e4dddd' : 'transparent', color: adminUsersIsClicked ? '#747373' : '#fff' }}>Administrare utilizatori</button>
+                                <>
+                                    <button onClick={handleAdminUsers} className='button' style={{ background: adminUsersIsClicked ? '#e4dddd' : 'transparent', color: adminUsersIsClicked ? '#747373' : '#fff' }}>Administrare utilizatori</button>
+                                    
+                                </>
                             )}
+
                         </div>
 
                         <div className='infos' >

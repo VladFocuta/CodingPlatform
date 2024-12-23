@@ -45,6 +45,7 @@ import AbsoluteNumber from './frontend/problems/If-Instruction/AbsoluteNumber';
 import Calculator from './frontend/problems/If-Instruction/Calculator';
 import OddNumber from './frontend/problems/while-recap/OddNumber';
 import Factorial from './frontend/problems/while-recap/Factorial';
+import MagicNumber from './frontend/problems/while-recap/MagicNumber';
 
 
 
@@ -107,6 +108,8 @@ function App() {
               <Route path="/problems/Suma maxima" element={<MaxSum />} />
               <Route path="/problems/Numar impar" element={<OddNumber />} />
               <Route path="/problems/Factorialul unui numar" element={<Factorial />} />
+              <Route path="/problems/Numarul magic" element={<MagicNumber />} />
+
 
             </Routes>
           </NotificationProvider>

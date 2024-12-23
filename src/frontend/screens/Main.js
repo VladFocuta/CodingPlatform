@@ -1,10 +1,56 @@
+import { useEffect, useState } from "react";
 import { UserAuth } from "../../backend/firebaseConfig/authProvider";
 import { UserProgressData } from "../components/contexts/userProgress";
+import { updateLimitAccess } from "../../backend/functions/handleAccess";
 
 function Main() {
-  const { user, loggedIn } = UserAuth();
-  const { userProgressPoints, problemsSolved, admin, capitols } = UserProgressData();
+  const { user, loggedIn, logout } = UserAuth();
+  const { userProgressPoints, problemsSolved, admin, capitols, limitAccess } = UserProgressData();
+  const [timeRemaining, setTimeRemaining] = useState(limitAccess || null);
 
+  const userId = user?.uid
+
+  useEffect(() => {
+    if (user && limitAccess) {
+      const expirationDate = new Date(limitAccess);
+
+      const intervalId = setInterval(() => {
+        const now = new Date();
+        const timeLeft = expirationDate - now;
+
+        if (timeLeft <= 0) {
+          clearInterval(intervalId);
+          alert("Timpul de acces a expirat. Veți fi delogat.");
+          logout();
+          window.location.href = "/login";
+        } else {
+          const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+          const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+          setTimeRemaining(`${hours}h ${minutes}m ${seconds}s`);
+        }
+      }, 1000); // Actualizează la fiecare secundă
+
+      return () => clearInterval(intervalId);
+    }
+  }, [user, limitAccess, logout]);
+
+
+  useEffect(() => {
+    const saveTimeOnUnload = () => {
+      if (timeRemaining !== null) {
+        const remainingHours = new Date(timeRemaining);
+        updateLimitAccess(userId, remainingHours); // Salvează timpul rămas în ore
+      }
+    };
+  
+    window.addEventListener("beforeunload", saveTimeOnUnload);
+    return () => {
+      window.removeEventListener("beforeunload", saveTimeOnUnload);
+    };
+  }, [timeRemaining, userId]);
+  
   const freeLessons = [
     "Recapitulare algoritmi",
     "Algoritmi"
@@ -53,7 +99,7 @@ function Main() {
         { title: "Trenul", link: "/problems/Stop", icon: "fa-solid fa-circle-check", index: 26 }
       ]
     },
-    {       
+    {
       title: "Recapitulare While",
       lessons: [
         { title: "Numar maxim", link: "/problems/Numar maxim", icon: "fa-solid fa-circle-check", index: 27 },
@@ -61,6 +107,7 @@ function Main() {
         { title: "Suma maxima", link: "/problems/Suma maxima", icon: "fa-solid fa-circle-check", index: 29 },
         { title: "Numar impar", link: "/problems/Numar impar", icon: "fa-solid fa-circle-check", index: 30 },
         { title: "Factorialul unui numar", link: "/problems/Factorialul unui numar", icon: "fa-solid fa-circle-check", index: 31 },
+        { title: "Numarul magic", link: "/problems/Numarul magic", icon: "fa-solid fa-circle-check", index: 32 },
 
       ]
     }
@@ -82,6 +129,10 @@ function Main() {
                 {userProgressPoints}%
               </div>
             </div>
+          </div>
+
+          <div>
+            <strong style={{ color: 'white' }}>Timp ramas: {timeRemaining} </strong>
           </div>
 
           <div className='problems' style={{ background: 'white', opacity: 0.8 }}>

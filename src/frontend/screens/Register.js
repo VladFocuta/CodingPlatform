@@ -30,7 +30,7 @@ function Register() {
             updateProfile(auth.currentUser, {
                 displayName: values.name
             }).then(() => {
-                console.log('profile updated')
+                
             }).catch((error) => {
                 console.log('error while updating profile', error)
             })

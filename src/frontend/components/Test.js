@@ -42,8 +42,8 @@ function Test({ testCases, testPassedSet, problemName }) {
             });
 
             const data = await response.json();
-            //const allTestsPassed = data.results.every(result => result.result === 'Corect');
-            const allTestsPassed = data.results.every(result => result.passed);
+            const allTestsPassed = data.results.every(result => result.result === 'Corect');
+            //  const allTestsPassed = data.results.every(result => result.passed);
 
             if (allTestsPassed) {
                 testPassedSet(true)
@@ -90,7 +90,7 @@ function Test({ testCases, testPassedSet, problemName }) {
 
                 {error && <strong style={{ color: 'red', fontSize: '18px', fontWeight: 'bold' }}>{error}</strong>}
 
-                {output && (
+                {/** {output && (
                     <ul>
                         {output.map((result, index) => (
                             <li key={index} style={{ marginTop: '10px', fontSize: '18px', fontWeight: 'bold' }}>
@@ -104,7 +104,17 @@ function Test({ testCases, testPassedSet, problemName }) {
                             </li>
                         ))}
                     </ul>
+                )}*/}
+                {output && (
+                    <ul>
+                        {output.map((result, index) => (
+                            <li key={index} style={{ marginTop: '10px', fontSize: '18px', fontWeight: 'bold' }}>
+                                Test {result.testCase}: {result.result}
+                            </li>
+                        ))}
+                    </ul>
                 )}
+
             </div>
             <button type="button" className="btn btn-light" onClick={runCode}>Rulare Cod</button>
             {loading && (

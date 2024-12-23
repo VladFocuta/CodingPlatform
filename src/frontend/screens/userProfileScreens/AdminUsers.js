@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { deleteUserChapter, getAllUsers, updateUserChapter } from '../../../backend/functions/handleGetUsers';
+import { setAccessExpiration } from '../../../backend/functions/handleAccess';
 
 function AdminUsers() {
     const [users, setUsers] = useState([]);
     const [selectedCapitol, setSelectedCapitol] = useState({});
     const [userId, setUserId] = useState('');
     const [userMessages, setUserMessages] = useState({});
+    const [hours, setHours] = useState(0);
+
 
     const handleSelectCapitol = (event, userId) => {
         const text = event.target.options[event.target.selectedIndex].text;
@@ -19,15 +22,34 @@ function AdminUsers() {
         }));
     };
 
+    const handleGetHours = (event, userId) => {
+        const hours = event.target.value;
+        setHours(hours);
+        setUserId(userId);
+    }
+
+    const handleCofirmLimit = async () => {
+        if (hours > 0) {
+            try {
+                await setAccessExpiration(userId, hours);
+                console.log("Limita a fost actualizata cu:", hours)
+            } catch (error) {
+                console.error("Limita nu a putut fi actualizata", error);
+            }
+        } else {
+
+        }
+    }
+
     const handleConfirm = async () => {
-        if (selectedCapitol && selectedCapitol !== 'Capitol:') {
+        if (Object.keys(selectedCapitol).length > 0 && selectedCapitol !== 'Capitol:') {
             try {
                 await updateUserChapter(userId, selectedCapitol);
                 setUserMessages((prev) => ({
                     ...prev,
                     [userId]: { success: 'Capitolul a fost actualizat.', error: '' }
                 }));
-                
+
             } catch (error) {
                 setUserMessages((prev) => ({
                     ...prev,
@@ -51,7 +73,7 @@ function AdminUsers() {
                     ...prev,
                     [userId]: { success: 'Capitolul a fost șters.', error: '' }
                 }));
-                
+
             } catch (error) {
                 setUserMessages((prev) => ({
                     ...prev,
@@ -84,16 +106,18 @@ function AdminUsers() {
             {users.map((user, index) => {
                 const messages = userMessages[user.userId] || { success: '', error: '' }; // Mesaje specifice utilizatorului curent
                 return (
-                    <ul key={index} style={{ width: '100%' }}>
+                    <ul key={index} style={{ width: '100%', fontSize: '20px' }} >
                         <li
                             style={{
                                 padding: '5px',
                                 borderBottom: '1px solid white',
                                 display: 'flex',
-                                justifyContent: 'space-around'
+                                justifyContent: 'space-between',
+                                flexDirection: 'column'
                             }}
                         >
                             {user.name}{' '}
+
                             <select
                                 onChange={(event) => handleSelectCapitol(event, user.userId)}
                                 className="form-select"
@@ -106,6 +130,9 @@ function AdminUsers() {
                                 <option value="1">While-structură de control</option>
                                 <option value="2">Recapitulare While</option>
                             </select>{' '}
+
+
+
                             <button
                                 onClick={handleConfirm}
                                 className="costumButton"
@@ -113,14 +140,46 @@ function AdminUsers() {
                                     background: '#00bfff',
                                     padding: '3px',
                                     borderRadius: '10px',
-                                    marginRight: '5px'
+                                    marginRight: '5px',
+                                    width: '10%',
+                                    alignSelf: 'center',
+                                    marginTop: '5px',
+                                    marginBottom: '5px'
                                 }}
                             >
                                 Confirmă
                             </button>
-                            <button onClick={handleDelete} className="btn btn-danger">
+                            <button onClick={handleDelete} className="btn btn-danger"
+                                style={{
+                                    width: '10%',
+                                    alignSelf: 'center',
+                                    marginTop: '5px',
+                                    marginBottom: '5px'
+                                }}>
                                 Șterge
                             </button>
+                            <div className="input-group mb-3">
+                                <span className="input-group-text" id="basic-addon1">Limita de ore</span>
+                                <input type="text" className="form-control" placeholder="Ore" aria-label="Username" aria-describedby="basic-addon1"
+                                    onChange={(event) => handleGetHours(event, user.userId)} />
+                            </div>
+                            <button
+                                onClick={handleCofirmLimit}
+                                className="costumButton"
+                                style={{
+                                    background: '#00bfff',
+                                    padding: '3px',
+                                    borderRadius: '10px',
+                                    marginRight: '5px',
+                                    width: '10%',
+                                    alignSelf: 'center',
+
+                                    marginBottom: '5px'
+                                }}
+                            >
+                                Confirmă limita
+                            </button>
+
                         </li>
                         {messages.success && <div style={{ color: 'green' }}>{messages.success}</div>}
                         {messages.error && <div style={{ color: 'red' }}>{messages.error}</div>}

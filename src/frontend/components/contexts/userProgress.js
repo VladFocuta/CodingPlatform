@@ -12,6 +12,8 @@ export const UserProgress = ({ children }) => {
     const [problemsSolved, setProblemsSolved] = useState([]);
     const [admin, setAdmin] = useState(null);
     const [capitols, setCapitols] = useState('');
+    const [limitAccess, setLimitAccess] = useState(null);
+
 
     useLayoutEffect(() => {
         if (!userId) {
@@ -26,10 +28,12 @@ export const UserProgress = ({ children }) => {
                 setUserProgressPoints(data.pointsPerChapter);
                 setProblemsSolved(data.solvedProblem);
                 setCapitols(data.capitols);
+                setLimitAccess(data.accessExpiration)
             } else {
                 setUserProgressPoints(null);
                 setCapitols("");
                 setProblemsSolved([]);
+                setLimitAccess("");
             }
         }, (error) => {
             console.error('Error while fetching user progress:', error);
@@ -62,7 +66,7 @@ export const UserProgress = ({ children }) => {
 
 
     return (
-        <AuthContext.Provider value={{ userProgressPoints, problemsSolved, setUserProgressPoints, admin, capitols }}>
+        <AuthContext.Provider value={{ userProgressPoints, problemsSolved, setUserProgressPoints, admin, capitols, limitAccess }}>
             {children}
         </AuthContext.Provider>
     )
