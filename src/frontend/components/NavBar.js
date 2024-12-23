@@ -4,8 +4,8 @@ import { TbLogout } from "react-icons/tb";
 import { RiHomeSmileLine } from "react-icons/ri";
 import { UserAuth } from "../../backend/firebaseConfig/authProvider";
 import { useNotification } from './contexts/NewCommentsContext';
-
-
+import { UserProgressData } from './contexts/userProgress';
+import { storeLeftMinutes } from '../../backend/functions/handleAccess';
 
 function NavBar() {
   const [homeHovered, setHomeHovered] = useState(false);
@@ -13,7 +13,10 @@ function NavBar() {
   const navigate = useNavigate();
   const { logout, loggedIn, setLoggedIn, user } = UserAuth();
   const { newMessagesCount } = useNotification();
+  const { leftMinutes } = UserProgressData() || {};
+  const minutes = leftMinutes || 0;
   const displayCount = newMessagesCount || 0;
+  const userId = user?.uid;
 
   const handleNavigateHome = () => {
     navigate('/');
@@ -36,7 +39,9 @@ function NavBar() {
   }
 
   const handleLogOut = async () => {
+
     try {
+      await storeLeftMinutes(userId, minutes);
       await logout();
       setLoggedIn(false);
       navigate('/');

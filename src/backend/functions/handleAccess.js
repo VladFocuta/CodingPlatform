@@ -58,22 +58,51 @@ export const setAccessExpiration = async (userId, durationInHours) => {
 
 
 export const updateLimitAccess = async (userId, newLimit) => {
-    // Salvează noul timp în baza de date
     try {
         const userDocRef = doc(db, 'solvedProblems', userId);
         const userDocSnapshot = await getDoc(userDocRef);
 
-        const timeZone = 'Europe/Berlin';
-        const formattedDate = format(newLimit, 'yyyy-MM-dd HH:mm:ss', { timeZone });
-        
         if (userDocSnapshot.exists()) {
+            const timeZone = 'Europe/Berlin';
+
+            // Calcularea timpului de expirare
+            const now = new Date();
+            const newExpirationTime = new Date(now.getTime() + newLimit * 60000); // Adăugăm minutele (newLimit)
+
+            // Formatarea datei corecte în funcție de fusul orar
+            const formattedDate = format(newExpirationTime, 'yyyy-MM-dd HH:mm:ss', { timeZone });
+
             await updateDoc(userDocRef, {
                 accessExpiration: formattedDate,
             });
+            console.log(formattedDate);
+            console.log('updateLimitAccess has worked successfully.');
+        } else {
+            throw new Error('Invalid date or user does not exist.');
         }
-        console.log('upadeLimitAccess has worked successfully.')
     } catch (error) {
-        console.error('upadeLimitAccess has an error: ', error);
+        console.error('updateLimitAccess has an error: ', error);
+    }
+};
+
+
+export const storeLeftMinutes = async (userId, minutes) => {
+    try {
+        const userDocRef = doc(db, 'solvedProblems', userId);
+        const userDocSnapshot = await getDoc(userDocRef);
+
+        if (userDocSnapshot.exists()) {
+            await updateDoc(userDocRef, {
+                leftTime: minutes
+            });
+        } else {
+            setDoc(userDocRef, {
+                leftTime: minutes
+            })
+        }
+        console.log("Left minutes stored successfully", minutes);
+    } catch (error) {
+        console.error("Error while storing left minutes", error);
     }
 
-};
+}

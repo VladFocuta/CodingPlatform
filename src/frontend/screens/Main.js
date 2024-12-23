@@ -1,60 +1,23 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { UserAuth } from "../../backend/firebaseConfig/authProvider";
 import { UserProgressData } from "../components/contexts/userProgress";
 import { updateLimitAccess } from "../../backend/functions/handleAccess";
 
 function Main() {
-  const { user, loggedIn, logout } = UserAuth();
-  const { userProgressPoints, problemsSolved, admin, capitols, limitAccess } = UserProgressData();
-  const [timeRemaining, setTimeRemaining] = useState(limitAccess || null);
-
-  const userId = user?.uid
-
-  useEffect(() => {
-    if (user && limitAccess) {
-      const expirationDate = new Date(limitAccess);
-
-      const intervalId = setInterval(() => {
-        const now = new Date();
-        const timeLeft = expirationDate - now;
-
-        if (timeLeft <= 0) {
-          clearInterval(intervalId);
-          alert("Timpul de acces a expirat. Veți fi delogat.");
-          logout();
-          window.location.href = "/login";
-        } else {
-          const hours = Math.floor(timeLeft / (1000 * 60 * 60));
-          const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-          setTimeRemaining(`${hours}h ${minutes}m ${seconds}s`);
-        }
-      }, 1000); // Actualizează la fiecare secundă
-
-      return () => clearInterval(intervalId);
-    }
-  }, [user, limitAccess, logout]);
-
+  const { user, loggedIn } = UserAuth();
+  const { userProgressPoints, problemsSolved, admin, capitols, timeRemaining, getLeftMinutes } = UserProgressData() || {};
+  const timer = timeRemaining || 0;
+  const userId = user?.uid;
 
   useEffect(() => {
-    const saveTimeOnUnload = () => {
-      if (timeRemaining !== null) {
-        const remainingHours = new Date(timeRemaining);
-        updateLimitAccess(userId, remainingHours); // Salvează timpul rămas în ore
-      }
-    };
-  
-    window.addEventListener("beforeunload", saveTimeOnUnload);
-    return () => {
-      window.removeEventListener("beforeunload", saveTimeOnUnload);
-    };
-  }, [timeRemaining, userId]);
-  
+    updateLimitAccess(userId, getLeftMinutes);
+  }, [userId, getLeftMinutes])
+
   const freeLessons = [
     "Recapitulare algoritmi",
     "Algoritmi"
   ]
+
   const combinedLessons = [...freeLessons, ...(capitols || [])];
 
   const sections = [
@@ -132,7 +95,7 @@ function Main() {
           </div>
 
           <div>
-            <strong style={{ color: 'white' }}>Timp ramas: {timeRemaining} </strong>
+            <strong style={{ color: 'white' }}>Timp ramas: {timer} </strong>
           </div>
 
           <div className='problems' style={{ background: 'white', opacity: 0.8 }}>

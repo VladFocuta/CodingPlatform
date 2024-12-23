@@ -6,14 +6,16 @@ import { getDoc, doc, onSnapshot } from 'firebase/firestore'
 const AuthContext = createContext();
 
 export const UserProgress = ({ children }) => {
-    const { user } = UserAuth();
+    const { user, logout } = UserAuth();
     const userId = user?.uid;
     const [userProgressPoints, setUserProgressPoints] = useState(null);
     const [problemsSolved, setProblemsSolved] = useState([]);
     const [admin, setAdmin] = useState(null);
     const [capitols, setCapitols] = useState('');
     const [limitAccess, setLimitAccess] = useState(null);
-
+    const [timeRemaining, setTimeRemaining] = useState(null);
+    const [leftMinutes, setLeftMinutes] = useState(null);
+    const [getLeftMinutes, setGetLeftMinutes] = useState(null);
 
     useLayoutEffect(() => {
         if (!userId) {
@@ -29,6 +31,7 @@ export const UserProgress = ({ children }) => {
                 setProblemsSolved(data.solvedProblem);
                 setCapitols(data.capitols);
                 setLimitAccess(data.accessExpiration)
+                setGetLeftMinutes(data.leftTime);
             } else {
                 setUserProgressPoints(null);
                 setCapitols("");
@@ -64,9 +67,40 @@ export const UserProgress = ({ children }) => {
         fetchAdmin();
     }, [userId])
 
+    useEffect(() => {
+        if (user && limitAccess) {
+            const expirationDate = new Date(limitAccess);
+
+            const intervalId = setInterval(() => {
+                const now = new Date();
+                const timeLeft = expirationDate - now;
+
+                if (timeLeft <= 0) {
+                    clearInterval(intervalId);
+                    alert("Timpul de acces a expirat. Veți fi delogat.");
+                    logout();
+                } else {
+                    const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+
+                    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+
+                    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                    const totalMinutes = Math.floor(timeLeft / (1000 * 60)); // Calcul total minute rămase
+                    setLeftMinutes(totalMinutes);
+
+                    setTimeRemaining(`${hours}h ${minutes}m ${seconds}s`);
+                }
+            }, 1000); // Actualizează la fiecare secundă
+
+            return () => clearInterval(intervalId);
+        }
+    }, [user, limitAccess, logout]);
+
+
 
     return (
-        <AuthContext.Provider value={{ userProgressPoints, problemsSolved, setUserProgressPoints, admin, capitols, limitAccess }}>
+        <AuthContext.Provider value={{ userProgressPoints, problemsSolved, setUserProgressPoints, admin, capitols, timeRemaining, leftMinutes, getLeftMinutes }}>
             {children}
         </AuthContext.Provider>
     )
