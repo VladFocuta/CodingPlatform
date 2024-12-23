@@ -1,17 +1,30 @@
 import { useEffect } from "react";
 import { UserAuth } from "../../backend/firebaseConfig/authProvider";
 import { UserProgressData } from "../components/contexts/userProgress";
-import { updateLimitAccess } from "../../backend/functions/handleAccess";
+import { storeLeftMinutes, updateLimitAccess } from "../../backend/functions/handleAccess";
 
 function Main() {
   const { user, loggedIn } = UserAuth();
-  const { userProgressPoints, problemsSolved, admin, capitols, timeRemaining, getLeftMinutes } = UserProgressData() || {};
+  const { userProgressPoints, problemsSolved, admin, capitols, timeRemaining, getLeftMinutes, leftMinutes } = UserProgressData() || {};
   const timer = timeRemaining || 0;
   const userId = user?.uid;
 
   useEffect(() => {
     updateLimitAccess(userId, getLeftMinutes);
   }, [userId, getLeftMinutes])
+
+  useEffect(() => {
+    const handleBeforeUnload = (event) => {
+      storeLeftMinutes(userId, leftMinutes)
+      event.returnValue = ''; // Necesită pentru unele browsere
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, []);
 
   const freeLessons = [
     "Recapitulare algoritmi",
