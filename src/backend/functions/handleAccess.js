@@ -106,3 +106,19 @@ export const storeLeftMinutes = async (userId, minutes) => {
     }
 
 }
+
+export const getLeftMinutes = async (userId) => {
+    let leftMinutes;
+    try {
+        const userDocRef = doc(db, 'solvedProblems', userId);
+        const userDocSnapshot = await getDoc(userDocRef);
+        
+        if (userDocSnapshot.exists()) {
+            const data = userDocSnapshot.data();
+            leftMinutes = data.leftTime;
+        }
+    } catch (error) {
+        console.error("Error while getting left minutes", error);
+    }
+    return leftMinutes;
+}

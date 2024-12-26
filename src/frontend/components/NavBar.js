@@ -5,7 +5,7 @@ import { RiHomeSmileLine } from "react-icons/ri";
 import { UserAuth } from "../../backend/firebaseConfig/authProvider";
 import { useNotification } from './contexts/NewCommentsContext';
 import { UserProgressData } from './contexts/userProgress';
-import { storeLeftMinutes } from '../../backend/functions/handleAccess';
+import { storeLeftMinutes, updateLimitAccess } from '../../backend/functions/handleAccess';
 
 function NavBar() {
   const [homeHovered, setHomeHovered] = useState(false);
@@ -42,6 +42,7 @@ function NavBar() {
 
     try {
       await storeLeftMinutes(userId, minutes);
+      await updateLimitAccess(userId, minutes)
       await logout();
       setLoggedIn(false);
       navigate('/');

@@ -3,6 +3,8 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { UserAuth } from "../../backend/firebaseConfig/authProvider";
 import Logo from "../components/Logo";
+import { getLeftMinutes, updateLimitAccess } from "../../backend/functions/handleAccess";
+import { auth } from "../../backend/firebaseConfig/firebaseConfig";
 
 function Login() {
 
@@ -14,6 +16,7 @@ function Login() {
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
     const { signIn } = UserAuth();
+
 
     const handleRegisterAccount = () => {
         navigate('/Register');
@@ -31,8 +34,22 @@ function Login() {
             return;
         } else {
             try {
-                await signIn(values.email, values.password);
                 setIsLoading(true);
+                await signIn(values.email, values.password);
+
+                const currentUserId = auth.currentUser?.uid;
+                if (!currentUserId) {
+                    console.error("User ID not found after login.");
+                    return;
+                }
+
+                const minutes = await getLeftMinutes(currentUserId);
+                if (minutes) {
+                    await updateLimitAccess(currentUserId, minutes);
+                } else {
+                    console.log("Minutes not found.");
+                }
+
                 navigate('/Main');
             } catch (error) {
                 console.log(error.message)

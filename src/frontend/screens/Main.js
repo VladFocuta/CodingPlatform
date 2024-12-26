@@ -1,31 +1,11 @@
-import { useEffect } from "react";
 import { UserAuth } from "../../backend/firebaseConfig/authProvider";
 import { UserProgressData } from "../components/contexts/userProgress";
-import { storeLeftMinutes, updateLimitAccess } from "../../backend/functions/handleAccess";
 
 function Main() {
   const { user, loggedIn } = UserAuth();
-  const { userProgressPoints, problemsSolved, admin, capitols, timeRemaining, getLeftMinutes, leftMinutes } = UserProgressData() || {};
+  const { userProgressPoints, problemsSolved, admin, capitols, timeRemaining } = UserProgressData() || {};
   const timer = timeRemaining || 0;
-  const userId = user?.uid;
-
-  useEffect(() => {
-    updateLimitAccess(userId, getLeftMinutes);
-  }, [userId, getLeftMinutes])
-
-  useEffect(() => {
-    const handleBeforeUnload = (event) => {
-      storeLeftMinutes(userId, leftMinutes)
-      event.returnValue = ''; // Necesită pentru unele browsere
-    };
-
-    window.addEventListener('beforeunload', handleBeforeUnload);
-
-    return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload);
-    };
-  }, []);
-
+ 
   const freeLessons = [
     "Recapitulare algoritmi",
     "Algoritmi"
@@ -82,8 +62,15 @@ function Main() {
         { title: "CMMD", link: "/problems/CMMD", icon: "fa-solid fa-circle-check", index: 28 },
         { title: "Suma maxima", link: "/problems/Suma maxima", icon: "fa-solid fa-circle-check", index: 29 },
         { title: "Numar impar", link: "/problems/Numar impar", icon: "fa-solid fa-circle-check", index: 30 },
-        { title: "Factorialul unui numar", link: "/problems/Factorialul unui numar", icon: "fa-solid fa-circle-check", index: 31 },
-        { title: "Numarul magic", link: "/problems/Numarul magic", icon: "fa-solid fa-circle-check", index: 32 },
+        { title: "Maxim si minim", link: "/problems/Maxim si minim", icon: "fa-solid fa-circle-check", index: 31 },
+        { title: "Produsul", link: "/problems/Produsul", icon: "fa-solid fa-circle-check", index: 32 },
+        { title: "Numere perfecte", link: "/problems/Numere perfecte", icon: "fa-solid fa-circle-check", index: 33 },
+        { title: "Eliminarea", link: "/problems/Eliminarea", icon: "fa-solid fa-circle-check", index: 34 },
+        { title: "Generare numere", link: "/problems/Generare numere", icon: "fa-solid fa-circle-check", index: 35 },
+        { title: "Numere prietenoase", link: "/problems/Numere prietenoase", icon: "fa-solid fa-circle-check", index: 36 },
+        { title: "Factorialul unui numar", link: "/problems/Factorialul unui numar", icon: "fa-solid fa-circle-check", index: 37 },
+        { title: "Numarul magic", link: "/problems/Numarul magic", icon: "fa-solid fa-circle-check", index: 38 },
+        { title: "Oglindire", link: "/problems/Oglindire", icon: "fa-solid fa-circle-check", index: 39 },
 
       ]
     }

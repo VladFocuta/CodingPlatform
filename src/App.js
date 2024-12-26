@@ -46,6 +46,13 @@ import Calculator from './frontend/problems/If-Instruction/Calculator';
 import OddNumber from './frontend/problems/while-recap/OddNumber';
 import Factorial from './frontend/problems/while-recap/Factorial';
 import MagicNumber from './frontend/problems/while-recap/MagicNumber';
+import MirrorNumber from './frontend/problems/while-recap/MirrorNumber';
+import MaxAndMin from './frontend/problems/while-recap/MaxAndMin';
+import Product from './frontend/problems/while-recap/Product';
+import Elimination from './frontend/problems/while-recap/Elimination';
+import GeneratePrimeNumbers from './frontend/problems/while-recap/GeneratePrimeNumbers';
+import PerfectNumbers from './frontend/problems/while-recap/PerfectNumbers';
+import AmicableNumbers from './frontend/problems/while-recap/AmicableNumbers';
 
 
 
@@ -109,12 +116,19 @@ function App() {
               <Route path="/problems/Numar impar" element={<OddNumber />} />
               <Route path="/problems/Factorialul unui numar" element={<Factorial />} />
               <Route path="/problems/Numarul magic" element={<MagicNumber />} />
+              <Route path="/problems/Oglindire" element={<MirrorNumber />} />
+              <Route path="/problems/Maxim si minim" element={<MaxAndMin />} />
+              <Route path="/problems/Produsul" element={<Product />} />
+              <Route path="/problems/Eliminarea" element={<Elimination />} />
+              <Route path="/problems/Generare numere" element={<GeneratePrimeNumbers />} />
+              <Route path="/problems/Numere perfecte" element={<PerfectNumbers />} />
+              <Route path="/problems/Numere prietenoase" element={<AmicableNumbers />} />
 
 
             </Routes>
           </NotificationProvider>
         </UserProgress>
-
+        
       </AuthProvider>
     </div >
 

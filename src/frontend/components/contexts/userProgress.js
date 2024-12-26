@@ -3,6 +3,7 @@ import { db } from '../../../backend/firebaseConfig/firebaseConfig'
 import { UserAuth } from '../../../backend/firebaseConfig/authProvider'
 import { getDoc, doc, onSnapshot } from 'firebase/firestore'
 
+
 const AuthContext = createContext();
 
 export const UserProgress = ({ children }) => {
@@ -53,8 +54,8 @@ export const UserProgress = ({ children }) => {
 
             try {
 
-                const userProgressRef = doc(db, 'admins', userId)
-
+                const userProgressRef = doc(db, 'admins', userId);
+               
                 const docSnapshot = await getDoc(userProgressRef);
                 if (docSnapshot.exists()) {
                     setAdmin(docSnapshot.data().admin);
