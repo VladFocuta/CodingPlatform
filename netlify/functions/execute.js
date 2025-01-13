@@ -1,14 +1,14 @@
 const axios = require('axios');
 
-const REACT_APP_JDOODLECLIENTID = process.env.JDOODLECLIENTID;
-const REACT_APP_JDOODLECLIENTSECRET = process.env.JDOODLECLIENTSECRET;
+const JDoodleClientID = process.env.REACT_APP_JDOODLECLIENTID;
+const JDoodleClientSecret = process.env.REACT_APP_JDOODLECLIENTSECRET;
 
 
 async function executeCodeJDoodle(script, language, versionIndex, input) {
     const url = 'https://api.jdoodle.com/v1/execute';
     const payload = {
-        clientId: REACT_APP_JDOODLECLIENTID,
-        clientSecret: REACT_APP_JDOODLECLIENTSECRET,
+        clientId: JDoodleClientID,
+        clientSecret: JDoodleClientSecret,
         script,
         language,
         versionIndex,
