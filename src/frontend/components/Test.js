@@ -42,8 +42,8 @@ function Test({ testCases, testPassedSet, problemName }) {
             });
 
             const data = await response.json();
-            const allTestsPassed = data.results.every(result => result.result === 'Corect');
-            //  const allTestsPassed = data.results.every(result => result.passed);
+            //const allTestsPassed = data.results.every(result => result.result === 'Corect');
+              const allTestsPassed = data.results.every(result => result.passed);
 
             if (allTestsPassed) {
                 testPassedSet(true)
