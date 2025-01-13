@@ -47,13 +47,31 @@ import OddNumber from './frontend/problems/while-recap/OddNumber';
 import Factorial from './frontend/problems/while-recap/Factorial';
 import MagicNumber from './frontend/problems/while-recap/MagicNumber';
 import MirrorNumber from './frontend/problems/while-recap/MirrorNumber';
-import MaxAndMin from './frontend/problems/while-recap/MaxAndMin';
+import MaxAndMin from './frontend/problems/while-recap/MaxAndMin.js';
 import Product from './frontend/problems/while-recap/Product';
 import Elimination from './frontend/problems/while-recap/Elimination';
 import GeneratePrimeNumbers from './frontend/problems/while-recap/GeneratePrimeNumbers';
 import PerfectNumbers from './frontend/problems/while-recap/PerfectNumbers';
-import AmicableNumbers from './frontend/problems/while-recap/AmicableNumbers';
-
+import InterchangeHalfNumber from './frontend/problems/while-recap/InterchangeHalfNumber';
+import ForLecture from './frontend/problems/for/ForLecture';
+import Arrays from './frontend/problems/for/Arrays';
+import ArrayProduct from './frontend/problems/for/ArrayProduct';
+import EvenPositions from './frontend/problems/for/EvenPositions';
+import Decrement from './frontend/problems/for/Decrement';
+import ElementDelete from './frontend/problems/for/ElementDelete';
+import ElementDelete2 from './frontend/problems/for/ElementDelete2';
+import ElementInsert from './frontend/problems/for/ElementInsert';
+import ElementInsert2 from './frontend/problems/for/ElementInsert2';
+import BubbleSort from './frontend/problems/for/BubbleSort';
+import InsertionSort from './frontend/problems/for/InsertionSort';
+import SelectionSort from './frontend/problems/for/SelectionSort';
+import LinearSearch from './frontend/problems/for/LinearSearch';
+import BinarySearch from './frontend/problems/for/BinarySearch';
+import DescendingSort from './frontend/problems/for-recap/DescendingSort';
+import SortAndDelete from './frontend/problems/for-recap/SortAndDelete';
+import MaxAndMinFor from './frontend/problems/for-recap/MaxAndMinFor';
+import SortAndInterchange from './frontend/problems/for-recap/SortAndInterchange.js';
+import ElementSearch from './frontend/problems/for-recap/ElementSearch.js';
 
 
 
@@ -109,7 +127,7 @@ function App() {
               <Route path="/problems/Debugging" element={<Debugging />} />
               <Route path="/problems/Concatenarea" element={<Concatenation />} />
               <Route path="/problems/Stop" element={<Stop />} />
-              
+
               <Route path="/problems/Numar maxim" element={<MaxNumber />} />
               <Route path="/problems/CMMD" element={<CMMD />} />
               <Route path="/problems/Suma maxima" element={<MaxSum />} />
@@ -122,7 +140,30 @@ function App() {
               <Route path="/problems/Eliminarea" element={<Elimination />} />
               <Route path="/problems/Generare numere" element={<GeneratePrimeNumbers />} />
               <Route path="/problems/Numere perfecte" element={<PerfectNumbers />} />
-              <Route path="/problems/Numere prietenoase" element={<AmicableNumbers />} />
+              <Route path="/problems/Interschimbare doua jumatati" element={<InterchangeHalfNumber />} />
+
+              <Route path="/problems/Structura Repetitiva for" element={<ForLecture />} />
+              <Route path="/problems/Siruri de numere" element={<Arrays />} />
+              <Route path="/problems/Produsul numerelor" element={<ArrayProduct />} />
+              <Route path="/problems/Pozitii pare" element={<EvenPositions />} />
+              <Route path="/problems/Afisam descrescator" element={<Decrement />} />
+              <Route path="/problems/Stergerea unui element" element={<ElementDelete />} />
+              <Route path="/problems/Stergerea unui element 2.0" element={<ElementDelete2 />} />
+              <Route path="/problems/Inserarea unui element" element={<ElementInsert />} />
+              <Route path="/problems/Inserarea unui element 2.0" element={<ElementInsert2 />} />
+              <Route path="/problems/Bubble Sort" element={<BubbleSort />} />
+              <Route path="/problems/Insertion Sort" element={<InsertionSort />} />
+              <Route path="/problems/Selection Sort" element={<SelectionSort />} />
+              <Route path="/problems/Linear Search" element={<LinearSearch />} />
+              <Route path="/problems/Binary Search" element={<BinarySearch />} />
+
+              <Route path="/problems/Sortare descrescatoare" element={<DescendingSort />} />
+              <Route path="/problems/Sortare si eliminare duplicate" element={<SortAndDelete />} />
+              <Route path="/problems/Nota maxima si minima" element={<MaxAndMinFor />} />
+              <Route path="/problems/Sortare si interschimbare" element={<SortAndInterchange />} />
+              <Route path="/problems/Cautarea unui element" element={<ElementSearch />} />
+
+
 
 
             </Routes>

@@ -90,7 +90,7 @@ function Test({ testCases, testPassedSet, problemName }) {
 
                 {error && <strong style={{ color: 'red', fontSize: '18px', fontWeight: 'bold' }}>{error}</strong>}
 
-                {/** {output && (
+               {output && (
                     <ul>
                         {output.map((result, index) => (
                             <li key={index} style={{ marginTop: '10px', fontSize: '18px', fontWeight: 'bold' }}>
@@ -104,8 +104,8 @@ function Test({ testCases, testPassedSet, problemName }) {
                             </li>
                         ))}
                     </ul>
-                )}*/}
-                {output && (
+                )}
+                {/**  {output && (
                     <ul>
                         {output.map((result, index) => (
                             <li key={index} style={{ marginTop: '10px', fontSize: '18px', fontWeight: 'bold' }}>
@@ -113,7 +113,7 @@ function Test({ testCases, testPassedSet, problemName }) {
                             </li>
                         ))}
                     </ul>
-                )}
+                )}*/}
 
             </div>
             <button type="button" className="btn btn-light" onClick={runCode}>Rulare Cod</button>

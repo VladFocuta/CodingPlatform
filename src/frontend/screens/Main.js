@@ -5,7 +5,7 @@ function Main() {
   const { user, loggedIn } = UserAuth();
   const { userProgressPoints, problemsSolved, admin, capitols, timeRemaining } = UserProgressData() || {};
   const timer = timeRemaining || 0;
- 
+
   const freeLessons = [
     "Recapitulare algoritmi",
     "Algoritmi"
@@ -67,13 +67,43 @@ function Main() {
         { title: "Numere perfecte", link: "/problems/Numere perfecte", icon: "fa-solid fa-circle-check", index: 33 },
         { title: "Eliminarea", link: "/problems/Eliminarea", icon: "fa-solid fa-circle-check", index: 34 },
         { title: "Generare numere", link: "/problems/Generare numere", icon: "fa-solid fa-circle-check", index: 35 },
-        { title: "Numere prietenoase", link: "/problems/Numere prietenoase", icon: "fa-solid fa-circle-check", index: 36 },
-        { title: "Factorialul unui numar", link: "/problems/Factorialul unui numar", icon: "fa-solid fa-circle-check", index: 37 },
-        { title: "Numarul magic", link: "/problems/Numarul magic", icon: "fa-solid fa-circle-check", index: 38 },
-        { title: "Oglindire", link: "/problems/Oglindire", icon: "fa-solid fa-circle-check", index: 39 },
+        { title: "Factorialul unui numar", link: "/problems/Factorialul unui numar", icon: "fa-solid fa-circle-check", index: 36 },
+        { title: "Numarul magic", link: "/problems/Numarul magic", icon: "fa-solid fa-circle-check", index: 37 },
+        { title: "Oglindire", link: "/problems/Oglindire", icon: "fa-solid fa-circle-check", index: 38 },
+        { title: "Interschimbare doua jumatati", link: "/problems/Interschimbare doua jumatati", icon: "fa-solid fa-circle-check", index: 39 },
 
       ]
-    }
+    },
+    {
+      title: "Structura repetitiva for",
+      lessons: [
+        { title: "Structura Repetitiva for", link: "/problems/Structura Repetitiva for", icon: "fa-solid fa-circle-check", index: 40 },
+        { title: "Siruri de numere", link: "/problems/Siruri de numere", icon: "fa-solid fa-circle-check", index: 41 },
+        { title: "Produsul numerelor", link: "/problems/Produsul numerelor", icon: "fa-solid fa-circle-check", index: 42 },
+        { title: "Pozitii pare", link: "/problems/Pozitii pare", icon: "fa-solid fa-circle-check", index: 43 },
+        { title: "Afisam descrescator", link: "/problems/Afisam descrescator", icon: "fa-solid fa-circle-check", index: 44 },
+        { title: "Stergerea unui element", link: "/problems/Stergerea unui element", icon: "fa-solid fa-circle-check", index: 45 },
+        { title: "Stergerea unui element 2.0", link: "/problems/Stergerea unui element 2.0", icon: "fa-solid fa-circle-check", index: 46 },
+        { title: "Inserarea unui element", link: "/problems/Inserarea unui element", icon: "fa-solid fa-circle-check", index: 47 },
+        { title: "Inserarea unui element 2.0", link: "/problems/Inserarea unui element 2.0", icon: "fa-solid fa-circle-check", index: 48 },
+        { title: "Bubble Sort", link: "/problems/Bubble Sort", icon: "fa-solid fa-circle-check", index: 49 },
+        { title: "Insertion Sort", link: "/problems/Insertion Sort", icon: "fa-solid fa-circle-check", index: 50 },
+        { title: "Selection Sort", link: "/problems/Selection Sort", icon: "fa-solid fa-circle-check", index: 51 },
+        { title: "Linear Search", link: "/problems/Linear Search", icon: "fa-solid fa-circle-check", index: 52 },
+        { title: "Binary Search", link: "/problems/Binary Search", icon: "fa-solid fa-circle-check", index: 53 }
+      ]
+    }, {
+      title: "Recapitulare For",
+      lessons: [
+        { title: "Sortare descrescatoare", link: "/problems/Sortare descrescatoare", icon: "fa-solid fa-circle-check", index: 54 },
+        { title: "Sortare si eliminare duplicate", link: "/problems/Sortare si eliminare duplicate", icon: "fa-solid fa-circle-check", index: 55 },
+        { title: "Nota maxima si minima", link: "/problems/Nota maxima si minima", icon: "fa-solid fa-circle-check", index: 56 },
+        { title: "Sortare si interschimbare", link: "/problems/Sortare si interschimbare", icon: "fa-solid fa-circle-check", index: 57 },
+        { title: "Cautarea unui element", link: "/problems/Cautarea unui element", icon: "fa-solid fa-circle-check", index: 58 },
+
+      ]
+    },
+   
   ];
 
   return (
