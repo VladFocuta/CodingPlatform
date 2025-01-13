@@ -20,6 +20,7 @@ function ProblemPage({ problemName, problemPoints, problemContent, nextRoute, pr
         countProblemSolved(problemName)
             .then(counter => {
                 setCounterSolvedProblem(counter);
+                
             })
             .catch(error => {
                 console.error('Error fetching problem count:', error);
@@ -60,7 +61,7 @@ function ProblemPage({ problemName, problemPoints, problemContent, nextRoute, pr
                         {problemName}
                     </h1>
                     <div>
-                    <strong style={{ color: 'white' }}>{counterSolvedProblem} </strong>
+                    {/*<strong style={{ color: 'white' }}>{counterSolvedProblem} </strong>*/}
                         <i className="fa-solid fa-users"
                             title={`Rezolvat de: ${counterSolvedProblem} utilizatori`}
                             style={{ color: 'white' }}></i>

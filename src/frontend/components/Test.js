@@ -4,30 +4,42 @@ import { useNavigate } from 'react-router-dom'
 import { storeCode } from '../../backend/functions/storeUserCode';
 import { UserAuth } from '../../backend/firebaseConfig/authProvider';
 
-
 function Test({ testCases, testPassedSet, problemName }) {
     const [userCode, setUserCode] = useState("");
     const [output, setOutput] = useState(null);
     const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [lastSubmitTime, setLastSubmitTime] = useState(null); // Timpul ultimei submisii
+    const [isButtonDisabled, setIsButtonDisabled] = useState(false); // Starea butonului
+    const [submitError, setSubmitError] = useState(''); // Mesaj de eroare pentru submisie
+
     const navigate = useNavigate();
     const { user } = UserAuth();
     const userId = user?.uid;
-    const [loading, setLoading] = useState(false);
 
     const codeObject = {
         userCode: userCode,
         userId: userId,
         name: user.displayName
     }
- 
+
     const handleSubmitHistoryPage = () => {
         navigate('/CodeSubmitHistory', { state: { data: problemName } });
     }
 
-
     const runCode = async () => {
+        // Verificăm dacă au trecut 30 de secunde
+        const currentTime = new Date().getTime();
+        if (lastSubmitTime && currentTime - lastSubmitTime < 30000) {
+            const remainingTime = 30 - Math.floor((currentTime - lastSubmitTime) / 1000);
+            setSubmitError(`Trebuie să aștepți ${remainingTime} secunde înainte de a trimite din nou.`);
+            return;
+        }
 
+        setSubmitError(''); // Resetăm mesajul de eroare
+        setIsButtonDisabled(true); // Dezactivăm butonul
         setLoading(true);
+
         try {
             await storeCode(codeObject, problemName, userId);
             const response = await fetch('/.netlify/functions/execute', {
@@ -42,11 +54,10 @@ function Test({ testCases, testPassedSet, problemName }) {
             });
 
             const data = await response.json();
-            //const allTestsPassed = data.results.every(result => result.result === 'Corect');
-              const allTestsPassed = data.results.every(result => result.passed);
+            const allTestsPassed = data.results.every(result => result.passed);
 
             if (allTestsPassed) {
-                testPassedSet(true)
+                testPassedSet(true);
             } else {
                 testPassedSet(false);
             }
@@ -56,15 +67,15 @@ function Test({ testCases, testPassedSet, problemName }) {
             } else {
                 setError(data.error || 'A apărut o eroare necunoscută');
             }
+
+            setLastSubmitTime(currentTime); // Setăm timpul ultimei submisii
         } catch (error) {
             console.log('Error while running the user code', error);
         } finally {
+            setIsButtonDisabled(false); // Reactivăm butonul
             setLoading(false);
         }
-
     };
-
-
 
     return (
         <>
@@ -73,7 +84,6 @@ function Test({ testCases, testPassedSet, problemName }) {
                     <h1>Trimite codul tau</h1>
                     <button onClick={handleSubmitHistoryPage} className="btn btn-light" style={{ marginBottom: '10px' }} >Istoric</button>
                 </div>
-
 
                 <div style={{ height: '500px', width: '100%' }}>
                     <Editor
@@ -90,7 +100,7 @@ function Test({ testCases, testPassedSet, problemName }) {
 
                 {error && <strong style={{ color: 'red', fontSize: '18px', fontWeight: 'bold' }}>{error}</strong>}
 
-               {output && (
+                {output && (
                     <ul>
                         {output.map((result, index) => (
                             <li key={index} style={{ marginTop: '10px', fontSize: '18px', fontWeight: 'bold' }}>
@@ -105,26 +115,26 @@ function Test({ testCases, testPassedSet, problemName }) {
                         ))}
                     </ul>
                 )}
-                {/**  {output && (
-                    <ul>
-                        {output.map((result, index) => (
-                            <li key={index} style={{ marginTop: '10px', fontSize: '18px', fontWeight: 'bold' }}>
-                                Test {result.testCase}: {result.result}
-                            </li>
-                        ))}
-                    </ul>
-                )}*/}
 
+                {submitError && (
+                    <div style={{ color: 'red', fontWeight: 'bold', marginTop: '10px' }}>
+                        {submitError}
+                    </div>
+                )}
             </div>
-            <button type="button" className="btn btn-light" onClick={runCode}>Rulare Cod</button>
+            <button
+                type="button"
+                className="btn btn-light"
+                onClick={runCode}
+                disabled={isButtonDisabled} // Dezactivăm butonul dacă e în perioada de 30 de secunde
+            >
+                Rulare Cod
+            </button>
             {loading && (
                 <div className="spinner-border text-info" style={{ alignSelf: 'center' }} role="status">
                     <span className="visually-hidden">Loading...</span>
                 </div>
             )}
-
-
-
         </>
     );
 }
