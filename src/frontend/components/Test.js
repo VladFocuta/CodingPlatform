@@ -19,7 +19,7 @@ function Test({ testCases, testPassedSet, problemName }) {
         userId: userId,
         name: user.displayName
     }
-
+ 
     const handleSubmitHistoryPage = () => {
         navigate('/CodeSubmitHistory', { state: { data: problemName } });
     }
