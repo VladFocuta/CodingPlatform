@@ -66,6 +66,7 @@ export const UserProgress = ({ children }) => {
         }
 
         fetchAdmin();
+       
     }, [userId])
 
     useEffect(() => {

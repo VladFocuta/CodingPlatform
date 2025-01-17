@@ -1,0 +1,46 @@
+.progress-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .progress-item {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .progress-bar-container {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .progress-line-container {
+    height: 4px;
+    background-color: #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 10px;
+   
+  }
+  
+  .progress-line {
+    height: 100%;
+    background-color: rgb(233, 214, 46);
+    transition: width 0.3s ease;
+  }
+  
+  .progress-line.second {
+    background-color: orange;
+  }
+@keyframes in-line {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}

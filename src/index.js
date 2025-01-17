@@ -14,6 +14,7 @@ import './frontend/styling/problems.css';
 import './frontend/styling/test.css';
 import './frontend/styling/logo.css';
 import './frontend/styling/profile.css';
+import './frontend/styling/progress.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

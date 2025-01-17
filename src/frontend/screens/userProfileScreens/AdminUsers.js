@@ -9,13 +9,22 @@ function AdminUsers() {
     const [userMessages, setUserMessages] = useState({});
     const [hours, setHours] = useState(0);
 
+    useEffect(() => {
+        const fetchUsers = async () => {
+            try {
+                const users = await getAllUsers();
+                setUsers(users);
+            } catch (error) {
+                console.error('Error fetching users:', error);
+            }
+        };
+        fetchUsers();
+    }, []);
 
     const handleSelectCapitol = (event, userId) => {
         const text = event.target.options[event.target.selectedIndex].text;
         setUserId(userId);
         setSelectedCapitol(text);
-
-        // Reset specific user messages
         setUserMessages((prev) => ({
             ...prev,
             [userId]: { success: '', error: '' }
@@ -23,39 +32,34 @@ function AdminUsers() {
     };
 
     const handleGetHours = (event, userId) => {
-        const hours = event.target.value;
-        setHours(hours);
+        setHours(event.target.value);
         setUserId(userId);
-    }
+    };
 
-    const handleCofirmLimit = async () => {
+    const handleConfirmLimit = async () => {
         if (hours > 0) {
             try {
                 await setAccessExpiration(userId, hours);
-                console.log("Limita a fost actualizata cu:", hours)
+                console.log("Limita a fost actualizată cu:", hours);
             } catch (error) {
-                console.error("Limita nu a putut fi actualizata", error);
+                console.error("Limita nu a putut fi actualizată", error);
             }
-        } else {
-
         }
-    }
+    };
 
     const handleConfirm = async () => {
-        if (Object.keys(selectedCapitol).length > 0 && selectedCapitol !== 'Capitol:') {
+        if (selectedCapitol && selectedCapitol !== 'Capitol:') {
             try {
                 await updateUserChapter(userId, selectedCapitol);
                 setUserMessages((prev) => ({
                     ...prev,
                     [userId]: { success: 'Capitolul a fost actualizat.', error: '' }
                 }));
-
             } catch (error) {
                 setUserMessages((prev) => ({
                     ...prev,
                     [userId]: { success: '', error: 'Capitolul nu se poate actualiza.' }
                 }));
-                console.error('Capitolul nu se poate actualiza.', error);
             }
         } else {
             setUserMessages((prev) => ({
@@ -73,13 +77,11 @@ function AdminUsers() {
                     ...prev,
                     [userId]: { success: 'Capitolul a fost șters.', error: '' }
                 }));
-
             } catch (error) {
                 setUserMessages((prev) => ({
                     ...prev,
                     [userId]: { success: '', error: 'Capitolul nu poate fi șters.' }
                 }));
-                console.error('Capitolul nu poate fi șters', error);
             }
         } else {
             setUserMessages((prev) => ({
@@ -89,100 +91,99 @@ function AdminUsers() {
         }
     };
 
-    useEffect(() => {
-        const fetchUsers = async () => {
-            try {
-                const users = await getAllUsers();
-                setUsers(users);
-            } catch (error) {
-                console.error('Error fetching users:', error);
-            }
-        };
-        fetchUsers();
-    }, []);
-
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
             {users.map((user, index) => {
-                const messages = userMessages[user.userId] || { success: '', error: '' }; // Mesaje specifice utilizatorului curent
+                const messages = userMessages[user.userId] || { success: '', error: '' };
+
                 return (
-                    <ul key={index} style={{ width: '100%', fontSize: '20px' }} >
+                    <ul key={index} style={{ width: '90%', fontSize: '20px', padding: '10px', listStyleType: 'none' }}>
                         <li
                             style={{
-                                padding: '5px',
+                                padding: '15px',
                                 borderBottom: '1px solid white',
                                 display: 'flex',
-                                justifyContent: 'space-between',
-                                flexDirection: 'column'
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                background: '#222',
+                                color: 'white',
+                                borderRadius: '10px',
+                                marginBottom: '10px'
                             }}
                         >
-                            {user.name}{' '}
+                            <div style={{ fontWeight: 'bold', marginBottom: '10px' }}>{user.name}</div>
 
-                            <select
-                                onChange={(event) => handleSelectCapitol(event, user.userId)}
-                                className="form-select"
-                                aria-label="Default select example"
-                                style={{ marginRight: '5px' }}
-                            >
-                                <option value="">
-                                    Capitol:
-                                </option>
-                                <option value="1">While-structură de control</option>
-                                <option value="2">Recapitulare While</option>
-                            </select>{' '}
+                            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '10px', width: '100%' }}>
+                                <select
+                                    onChange={(event) => handleSelectCapitol(event, user.userId)}
+                                    className="form-select"
+                                    style={{ width: '250px', padding: '5px' }}
+                                >
+                                    <option value="">Capitol:</option>
+                                    <option value="1">While-structură de control</option>
+                                    <option value="2">Recapitulare While</option>
+                                    <option value="2">Structura repetitiva for</option>
+                                    <option value="2">Recapitulare For</option>
+                                </select>
 
+                                <button
+                                    onClick={handleConfirm}
+                                    className="costumButton"
+                                    style={{
+                                        background: '#00bfff',
+                                        padding: '5px',
+                                        borderRadius: '10px',
+                                        width: '150px',
+                                        color: 'white',
+                                        border: 'none'
+                                    }}
+                                >
+                                    Confirmă
+                                </button>
 
-
-                            <button
-                                onClick={handleConfirm}
-                                className="costumButton"
-                                style={{
-                                    background: '#00bfff',
-                                    padding: '3px',
-                                    borderRadius: '10px',
-                                    marginRight: '5px',
-                                    width: '10%',
-                                    alignSelf: 'center',
-                                    marginTop: '5px',
-                                    marginBottom: '5px'
-                                }}
-                            >
-                                Confirmă
-                            </button>
-                            <button onClick={handleDelete} className="btn btn-danger"
-                                style={{
-                                    width: '10%',
-                                    alignSelf: 'center',
-                                    marginTop: '5px',
-                                    marginBottom: '5px'
-                                }}>
-                                Șterge
-                            </button>
-                            <div className="input-group mb-3">
-                                <span className="input-group-text" id="basic-addon1">Limita de ore</span>
-                                <input type="text" className="form-control" placeholder="Ore" aria-label="Username" aria-describedby="basic-addon1"
-                                    onChange={(event) => handleGetHours(event, user.userId)} />
+                                <button
+                                    onClick={handleDelete}
+                                    className="btn btn-danger"
+                                    style={{
+                                        width: '150px',
+                                        padding: '5px',
+                                        borderRadius: '10px',
+                                    }}
+                                >
+                                    Șterge
+                                </button>
                             </div>
+
+                            <div style={{ marginTop: '10px', width: '100%', textAlign: 'center' }}>
+                                <label style={{ marginRight: '10px' }}>Limita de ore:</label>
+                                <input
+                                    type="number"
+                                    className="form-control"
+                                    placeholder="Ore"
+                                    onChange={(event) => handleGetHours(event, user.userId)}
+                                    style={{ width: '100px', padding: '5px', textAlign: 'center' }}
+                                />
+                            </div>
+
                             <button
-                                onClick={handleCofirmLimit}
+                                onClick={handleConfirmLimit}
                                 className="costumButton"
                                 style={{
                                     background: '#00bfff',
-                                    padding: '3px',
+                                    padding: '5px',
                                     borderRadius: '10px',
-                                    marginRight: '5px',
-                                    width: '10%',
-                                    alignSelf: 'center',
-
-                                    marginBottom: '5px'
+                                    width: '150px',
+                                    color: 'white',
+                                    border: 'none',
+                                    marginTop: '10px'
                                 }}
                             >
                                 Confirmă limita
                             </button>
 
+                            {messages.success && <div style={{ color: 'green', marginTop: '10px' }}>{messages.success}</div>}
+                            {messages.error && <div style={{ color: 'red', marginTop: '10px' }}>{messages.error}</div>}
                         </li>
-                        {messages.success && <div style={{ color: 'green' }}>{messages.success}</div>}
-                        {messages.error && <div style={{ color: 'red' }}>{messages.error}</div>}
                     </ul>
                 );
             })}
