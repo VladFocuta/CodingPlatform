@@ -4,8 +4,8 @@ import Progress from "../components/Progress";
 
 function Main() {
   const { user, loggedIn } = UserAuth();
-  const { userProgressPoints, problemsSolved, admin, capitols, timeRemaining } = UserProgressData() || {};
-  const timer = timeRemaining || 0;
+  const { userProgressPoints, problemsSolved, admin, capitols, timeRemaining, credits } = UserProgressData() || {};
+ // const timer = timeRemaining || 0;
 
   const freeLessons = [
     "Recapitulare algoritmi",
@@ -125,10 +125,10 @@ function Main() {
             </div>
           </div>
 
-          <div>
-            <strong style={{ color: 'white' }}>Timp ramas: {timer} </strong>
+          <div style={{display: 'flex', flexDirection: 'column'}}>
+            {/*<strong style={{ color: 'white' }}>Timp ramas: {timer} </strong>}*/}
+            <strong style={{ color: 'white' }}>Credite ramase: {credits} </strong>
           </div>
-
 
 
           <div className='problems'>

@@ -15,12 +15,11 @@ function ProblemPage({ problemName, problemPoints, problemContent, nextRoute, pr
     const progressPoints = userProgressPoints + problemPoints;
     const [counterSolvedProblem, setCounterSolvedProblem] = useState(0);
 
-
     useEffect(() => {
         countProblemSolved(problemName)
             .then(counter => {
                 setCounterSolvedProblem(counter);
-                
+
             })
             .catch(error => {
                 console.error('Error fetching problem count:', error);
@@ -61,7 +60,7 @@ function ProblemPage({ problemName, problemPoints, problemContent, nextRoute, pr
                         {problemName}
                     </h1>
                     <div>
-                    {/*<strong style={{ color: 'white' }}>{counterSolvedProblem} </strong>*/}
+                        {/*<strong style={{ color: 'white' }}>{counterSolvedProblem} </strong>*/}
                         <i className="fa-solid fa-users"
                             title={`Rezolvat de: ${counterSolvedProblem} utilizatori`}
                             style={{ color: 'white' }}></i>
@@ -90,26 +89,26 @@ function ProblemPage({ problemName, problemPoints, problemContent, nextRoute, pr
                         </div>
                     )}
 
-                    <div>
+                    <div style={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
+                        {testPassed && (
+                            <div className="congratulations-message" style={{ margin: '20px 0', color: 'green', fontWeight: 'bold' }}>
+                                Felicitări, {user?.displayName || 'Utilizator'}! Ai rezolvat această problemă!
+                            </div>
+                        )}
                         {isProblemSolved ? (
                             <>
                                 <button onClick={handleNextPage} type="button" className="btn btn-light" style={{ marginTop: '10px', marginBottom: '30px' }}>
-                                    Urmatoarea problema
+                                    Următoarea problemă
                                 </button>
-
                             </>
                         ) : (
                             <>
-                                < button onClick={handleGoToNext} type="button" className="btn btn-success" style={{ marginTop: '10px', marginBottom: '30px' }} disabled={!testPassed && !lecture} >
-                                    Am inteles
+                                <button onClick={handleGoToNext} type="button" className="btn btn-success" style={{ marginTop: '10px', marginBottom: '30px' }} disabled={!testPassed && !lecture}>
+                                    Am înțeles
                                 </button>
-
-
                             </>
                         )}
-
                     </div>
-
                     <div className='userInfo' style={{ marginTop: '20px', width: '50%', flexDirection: 'column' }}>
                         <div style={{ marginBottom: '40px' }}>
                             <CommentsArea

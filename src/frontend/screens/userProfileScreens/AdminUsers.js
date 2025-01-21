@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { deleteUserChapter, getAllUsers, updateUserChapter } from '../../../backend/functions/handleGetUsers';
 import { setAccessExpiration } from '../../../backend/functions/handleAccess';
+import { fetchCredits, updateCredits } from '../../../backend/functions/handleCredits';
 
 function AdminUsers() {
     const [users, setUsers] = useState([]);
@@ -8,7 +9,9 @@ function AdminUsers() {
     const [userId, setUserId] = useState('');
     const [userMessages, setUserMessages] = useState({});
     const [hours, setHours] = useState(0);
-
+    const [newCredits, setNewCredits] = useState(0);
+    
+    // trebuie sa fetchuiesc creditele utilizatorlui selectat,nu pe ale mele
     useEffect(() => {
         const fetchUsers = async () => {
             try {
@@ -20,6 +23,11 @@ function AdminUsers() {
         };
         fetchUsers();
     }, []);
+
+    const handleGetNewCredits = (event, userId) => {
+        setNewCredits(event.target.value);
+        setUserId(userId);
+    }
 
     const handleSelectCapitol = (event, userId) => {
         const text = event.target.options[event.target.selectedIndex].text;
@@ -36,15 +44,39 @@ function AdminUsers() {
         setUserId(userId);
     };
 
-    const handleConfirmLimit = async () => {
-        if (hours > 0) {
-            try {
-                await setAccessExpiration(userId, hours);
-                console.log("Limita a fost actualizată cu:", hours);
-            } catch (error) {
-                console.error("Limita nu a putut fi actualizată", error);
-            }
+    const handleCreditsUpdate = async () => {
+        try {
+            const credits = await fetchCredits(userId);
+            const updatedCredits = parseInt(credits) + parseInt(newCredits);
+            await updateCredits(updatedCredits, userId);
+            setUserMessages((prev) => ({
+                ...prev,
+                [userId]: { success: 'Creditele au fost actualizate.', error: '' }
+            }));
+
+        } catch (error) {
+            setUserMessages((prev) => ({
+                ...prev,
+                [userId]: { success: '', error: 'Creditele nu pot fi actualizate.' }
+            }));
+
         }
+    }
+
+    const handleConfirmLimit = async () => {
+        try {
+            await setAccessExpiration(userId, hours);
+            setUserMessages((prev) => ({
+                ...prev,
+                [userId]: { success: 'Limita orelor a fost actualizata.', error: '' }
+            }));
+        } catch (error) {
+            setUserMessages((prev) => ({
+                ...prev,
+                [userId]: { success: '', error: 'Limita orelor nu poate fi actualizata. ' }
+            }));
+        }
+
     };
 
     const handleConfirm = async () => {
@@ -178,7 +210,34 @@ function AdminUsers() {
                                     marginTop: '10px'
                                 }}
                             >
-                                Confirmă limita
+                                Confirmă limita ore
+                            </button>
+
+                            <div style={{ marginTop: '10px', width: '100%', textAlign: 'center' }}>
+                                <label style={{ marginRight: '10px' }}>Credite:</label>
+                                <input
+                                    type="number"
+                                    className="form-control"
+                                    placeholder="Credite"
+                                    onChange={(event) => handleGetNewCredits(event, user.userId)}
+                                    style={{ width: '100px', padding: '5px', textAlign: 'center' }}
+                                />
+                            </div>
+
+                            <button
+                                onClick={handleCreditsUpdate}
+                                className="costumButton"
+                                style={{
+                                    background: '#00bfff',
+                                    padding: '5px',
+                                    borderRadius: '10px',
+                                    width: '150px',
+                                    color: 'white',
+                                    border: 'none',
+                                    marginTop: '10px'
+                                }}
+                            >
+                                Confirmă noile credite
                             </button>
 
                             {messages.success && <div style={{ color: 'green', marginTop: '10px' }}>{messages.success}</div>}

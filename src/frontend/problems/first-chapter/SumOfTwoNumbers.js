@@ -28,7 +28,7 @@ function SumOfTwoNumbers() {
                         <br />
                     </h4>
                 </div> <br />
-                
+
 
             </div>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
@@ -44,7 +44,8 @@ function SumOfTwoNumbers() {
             problemPoints={2}
             problemContent={problemContent}
             nextRoute="/problems/Aria unui dreptunghi"
-            testPassed={testPassed} />
+            testPassed={testPassed}
+        />
 
     )
 }

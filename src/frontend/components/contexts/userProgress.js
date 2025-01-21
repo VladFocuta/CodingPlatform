@@ -17,6 +17,7 @@ export const UserProgress = ({ children }) => {
     const [timeRemaining, setTimeRemaining] = useState(null);
     const [leftMinutes, setLeftMinutes] = useState(null);
     const [getLeftMinutes, setGetLeftMinutes] = useState(null);
+    const [credits, setCredits] = useState(0);
 
     useLayoutEffect(() => {
         if (!userId) {
@@ -33,6 +34,7 @@ export const UserProgress = ({ children }) => {
                 setCapitols(data.capitols);
                 setLimitAccess(data.accessExpiration)
                 setGetLeftMinutes(data.leftTime);
+                setCredits(data.credits);
             } else {
                 setUserProgressPoints(null);
                 setCapitols("");
@@ -55,7 +57,7 @@ export const UserProgress = ({ children }) => {
             try {
 
                 const userProgressRef = doc(db, 'admins', userId);
-               
+
                 const docSnapshot = await getDoc(userProgressRef);
                 if (docSnapshot.exists()) {
                     setAdmin(docSnapshot.data().admin);
@@ -66,10 +68,10 @@ export const UserProgress = ({ children }) => {
         }
 
         fetchAdmin();
-       
+
     }, [userId])
 
-    useEffect(() => {
+   /* useEffect(() => {
         if (user && limitAccess) {
             const expirationDate = new Date(limitAccess);
 
@@ -97,12 +99,12 @@ export const UserProgress = ({ children }) => {
 
             return () => clearInterval(intervalId);
         }
-    }, [user, limitAccess, logout]);
+    }, [user, limitAccess, logout]);*/
 
 
 
     return (
-        <AuthContext.Provider value={{ userProgressPoints, problemsSolved, setUserProgressPoints, admin, capitols, timeRemaining, leftMinutes, getLeftMinutes }}>
+        <AuthContext.Provider value={{ userProgressPoints, problemsSolved, setUserProgressPoints, admin, capitols, timeRemaining, leftMinutes, getLeftMinutes, credits}}>
             {children}
         </AuthContext.Provider>
     )

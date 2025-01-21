@@ -75,8 +75,8 @@ export const updateLimitAccess = async (userId, newLimit) => {
             await updateDoc(userDocRef, {
                 accessExpiration: formattedDate,
             });
-            console.log(formattedDate);
-            console.log('updateLimitAccess has worked successfully.');
+          
+            
         } else {
             throw new Error('Invalid date or user does not exist.');
         }
