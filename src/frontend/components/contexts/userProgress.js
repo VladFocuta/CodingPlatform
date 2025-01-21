@@ -7,7 +7,7 @@ import { getDoc, doc, onSnapshot } from 'firebase/firestore'
 const AuthContext = createContext();
 
 export const UserProgress = ({ children }) => {
-    const { user, logout } = UserAuth();
+    const { user } = UserAuth();
     const userId = user?.uid;
     const [userProgressPoints, setUserProgressPoints] = useState(null);
     const [problemsSolved, setProblemsSolved] = useState([]);
