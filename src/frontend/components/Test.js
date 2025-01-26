@@ -63,7 +63,7 @@ function Test({ testCases, testPassedSet, problemName }) {
                 });
 
                 const data = await response.json();
-                const allTestsPassed = data.results.every(result => result.passed);
+                const allTestsPassed = data.results?.every(result => result.passed) || false;
 
                 if (allTestsPassed) {
                     testPassedSet(true);
