@@ -6,13 +6,11 @@ function Triangle() {
     const [testPassed, setTestPassed] = useState(false);
 
     const testCases = [
-        { params: [5, 5, 5], expected: 'Echilateral' },
-
-        { params: [5, 5, 3], expected: 'Isoscel' },
-        { params: [3, 5, 5], expected: 'Isoscel' },
-        { params: [5, 3, 5], expected: 'Isoscel' },
-
-        { params: [7, 8, 10], expected: 'Scalene' },
+        { params: [5, 5, 5], expected: "Echilateral" },
+        { params: [5, 5, 3], expected: "Isoscel" },
+        { params: [3, 5, 5], expected: "Isoscel" },
+        { params: [5, 3, 5], expected: "Isoscel" },
+        { params: [7, 8, 10], expected: "Scalene" },
     ];
 
     const problemContent = (
