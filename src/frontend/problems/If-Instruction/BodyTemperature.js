@@ -5,27 +5,11 @@ import Test from '../../components/Test'
 function BodyTemperature() {
     const [testPassed, setTestPassed] = useState(false);
 
-    /*function generateTestCases(start, end, step) {
-        const testCases = [];
-        for (let temp = start; temp <= end; temp += step) {
-            let expected;
-            if (temp < 36.1) {
-                expected = "Temperatura este scazuta";
-            } else if (temp <= 37.2) {
-                expected = "Temperatura este normala";
-            } else {
-                expected = "Febra";
-            }
-            testCases.push({ params: [temp], expected: expected});
-        }
-        return testCases;
-    }*/
-
-        const testCases = [
-            { params: [36.1], expected: 'Temperatura este normala' },
-            { params: [37.3], expected: 'Febra' },
-            { params: [36], expected: 'Temperatura scazuta' },
-        ];
+    const testCases = [
+        { params: [36.1], expected: 'Temperatura este normala' },
+        { params: [37.3], expected: 'Febra' },
+        { params: [36], expected: 'Temperatura scazuta' },
+    ];
 
     const problemContent = (
         <>

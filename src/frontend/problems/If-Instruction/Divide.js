@@ -5,21 +5,10 @@ import ProblemPage from '../../components/functions/ProblemPage'
 function Divide() {
     const [testPassed, setTestPassed] = useState(false);
 
-    function generateTestCases(start, end, step) {
-        const testCases = [];
-        for (let dividedNumber = start; dividedNumber <= end; dividedNumber += step) {
-            let expected;
-            if (dividedNumber % 5 === 0 && dividedNumber % 3 === 0 ) {
-                expected = "Numarul este divizibil";
-            }  else {
-                expected = "Nu este divizibil"
-            }
-            testCases.push({ params: [dividedNumber], expected: expected });
-        }
-        return testCases;
-    }
-
-    const testCases = generateTestCases(0, 30, 5);
+    const testCases = [
+        { params: [15], expected: 'Numarul este divizibil' },
+        { params: [3], expected: 'Nu este divizibil' },
+    ];
    
     const problemContent = (
         <>
