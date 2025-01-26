@@ -6,8 +6,8 @@ function ElementsSum() {
     const [testPassed, setTestPassed] = useState(false);
 // def teste
     const testCases = [
-        { params: ['3', '1 2 3 4 5 6 7 8 9 10'], expected: ['45'] },
-        { params: ['1', '3'], expected: ['3'] },
+        { params: ['3', '1 2 3 4 5 6 7 8 9 10'], expected: '45' },
+        { params: ['1', '3'], expected: '3' },
     ];
 
 
