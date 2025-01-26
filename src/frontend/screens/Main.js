@@ -120,7 +120,33 @@ function Main() {
        
 
       ]
+    },{
+      title: "Subprograme",
+      lessons: [
+       
+      ]
+    },{
+      title: "Siruri de caractere",
+      lessons: [
+       
+      ]
+    },{
+      title: "Fisiere text",
+      lessons: [
+       
+      ]
+    },{
+      title: "Recursivitate & Metoda backtracking",
+      lessons: [
+       
+      ]
+    },{
+      title: "Grafuri",
+      lessons: [
+       
+      ]
     }
+
 
   ];
   

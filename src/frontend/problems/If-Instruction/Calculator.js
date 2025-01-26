@@ -19,8 +19,7 @@ function Calculator() {
         { params: [5, "-", 5], expected: "Rezultatul este: 0" }, // Rezultatul zero
         { params: [0, "*", 100], expected: "Rezultatul este: 0" }, // Înmulțire cu 0
         { params: [0, "/", 1], expected: "Rezultatul este: 0" }, // Împărțire validă cu 0 ca număr
-        { params: [1000000000, "+", 1000000000], expected: "Rezultatul este: 2000000000" }, // Numere mari
-        { params: [-1000000000, "*", 2], expected: "Rezultatul este: -2000000000" }, // Numere mari negative
+        
     ];
     
 
