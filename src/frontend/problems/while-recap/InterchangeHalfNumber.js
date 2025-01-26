@@ -46,7 +46,7 @@ function InterchangeHalfNumber() {
             problemName="Interschimbare doua jumatati"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Factorialul unui numar"
+            nextRoute="/Main"
             testPassed={testPassed}
         />
     )

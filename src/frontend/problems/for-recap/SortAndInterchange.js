@@ -47,7 +47,7 @@ function SortAndInterchange() {
             problemName="Sortare si interschimbare"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Stergerea unui element"
+            nextRoute="/problems/Cautarea unui element"
             testPassed={testPassed}
         />
     )

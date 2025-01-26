@@ -47,7 +47,7 @@ function ElementSearch() {
             problemName="Cautarea unui element"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Stergerea unui element"
+            nextRoute="/problems/Numar lipsa"
             testPassed={testPassed}
         />
     )

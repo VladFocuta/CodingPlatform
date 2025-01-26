@@ -7,10 +7,10 @@ function GuessNumber() {
     const [testPassed, setTestPassed] = useState(false);
 
     const testCases = [
-        { params: [50, 33], expected: ["Mai incearca!", "Felicitari!"] },
-        { params: [33], expected: ["Felicitari!"] },
-        { params: [50, 40, 25], expected: ["Mai incearca!", "Mai incearca!", "Ai pierdut!"] },
-        { params: [12, 26, 33], expected: ["Mai incearca!", "Mai incearca!", "Felicitari!"] },
+        { params: [50, 33], expected: "Mai incearca! Felicitari!" },
+        { params: [33], expected: "Felicitari!" },
+        { params: [50, 40, 25], expected: "Mai incearca! Mai incearca! Ai pierdut!" },
+        { params: [12, 26, 33], expected: "Mai incearca! Mai incearca! Felicitari!" },
     ];
 
 
@@ -52,7 +52,7 @@ function GuessNumber() {
             problemName="Ghicirea unui numar"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Concatenare"
+            nextRoute="/problems/Numar prim"
             testPassed={testPassed}
         />
     )

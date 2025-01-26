@@ -6,9 +6,9 @@ function PalindromNum() {
     const [testPassed, setTestPassed] = useState(false);
 
     const testCases = [
-        { params: [111], expected: ["Numarul este palindrom"] },
-        { params: [122], expected: ["Numarul nu este palindrom"] },
-        { params: [121], expected: ["Numarul este palindrom"] },
+        { params: [111], expected: "Numarul este palindrom" },
+        { params: [122], expected: "Numarul nu este palindrom" },
+        { params: [121], expected: "Numarul este palindrom" },
     ];
 
     const problemContent = (

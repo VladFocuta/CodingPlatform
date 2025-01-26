@@ -100,7 +100,7 @@ int main() {
             problemName="Debugging"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Stop"
+            nextRoute="/problems/Ghicirea unui numar"
             lecture={true}
         />
     )

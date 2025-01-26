@@ -52,10 +52,15 @@ exports.handler = async (event, context) => {
 
             const isCorrect = (() => {
                 const output = result.output.trim();
+
+                const normalize = (str) => str.trim().replace(/\s+/g, ' ').replace(/\n/g, ' ').trim();
+                const outputNormalized = normalize(result.output);
+                
+
                 if (Array.isArray(testCase.expected)) {
-                    return output === testCase.expected.join(' ');
+                    return output.split(' ').map(Number).join(' ') === testCase.expected.join(' ');
                 } else if (typeof testCase.expected === 'string') {
-                    return output === testCase.expected.trim();
+                    return outputNormalized === normalize(testCase.expected);
                 } else if (typeof testCase.expected === 'number') {
                     return parseFloat(output) === testCase.expected;
                 }

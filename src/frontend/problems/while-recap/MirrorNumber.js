@@ -48,7 +48,7 @@ function MirrorNumber() {
             problemName="Oglindire"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/MaxSum"
+            nextRoute="/problems/Interschimbare doua jumatati"
             testPassed={testPassed}
         />
     )

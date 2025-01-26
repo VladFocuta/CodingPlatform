@@ -49,7 +49,7 @@ function OddNumber() {
                 problemName="Numar impar"
                 problemPoints={1}
                 problemContent={problemContent}
-                nextRoute="/problems/MaxSum"
+                nextRoute="/problems/Maxim si minim"
                 testPassed={testPassed}
             />
         )

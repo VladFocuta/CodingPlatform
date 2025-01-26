@@ -6,10 +6,10 @@ function HoursConvertor() {
     const [testPassed, setTestPassed] = useState(false);
 
     const testCases = [
-        { params: [50], expected: ["2 zile si 2 ore"] },
-        { params: [2], expected: ["0 zile si 2 ore"] },
-        { params: [0], expected: ["0 zile si 0 ore"] },
-        { params: [24], expected: ["1 zile si 0 ore"] }
+        { params: [50], expected: "2 zile si 2 ore" },
+        { params: [2], expected: "0 zile si 2 ore" },
+        { params: [0], expected: "0 zile si 0 ore" },
+        { params: [24], expected: "1 zile si 0 ore" }
     ];
  
     const problemContent = (

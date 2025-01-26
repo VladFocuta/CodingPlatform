@@ -7,9 +7,9 @@ function Average() {
 
 
     const testCases = [
-        { params: [1, 1, 1], expected: ["Respins"] },
-        { params: [10, 10, 10], expected: ["Admis cu media 10"] },
-        { params: [9, 8, 5], expected: ["Admis cu media 7"] }
+        { params: [1, 1, 1], expected: "Respins" },
+        { params: [10, 10, 10], expected: "Admis cu media 10" },
+        { params: [9, 8, 5], expected: "Admis cu media 7" }
     ];
 
     const problemContent = (

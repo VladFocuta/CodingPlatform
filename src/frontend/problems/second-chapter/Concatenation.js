@@ -53,7 +53,7 @@ function Concatenation() {
             problemName="Concatenarea"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Return"
+            nextRoute="/problems/Trenul"
             testPassed={testPassed}
         />
     )

@@ -43,7 +43,7 @@ function GeneratePrimeNumbers() {
             problemName="Generare numere"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Numere prietenoase"
+            nextRoute="/problems/Factorialul unui numar"
             testPassed={testPassed}
         />
     )

@@ -7,7 +7,7 @@ function Max() {
 
    
     const testCases = [
-        { params: [15, 15], expected: ["SUNT EGALE"] },
+        { params: [15, 15], expected: "SUNT EGALE" },
         { params: [5, 7], expected: [7] },
         { params: [32523, 1200], expected: [32523] },
     ];
@@ -48,7 +48,7 @@ function Max() {
         <ProblemPage problemName="Numarul maxim"
             problemPoints={2}
             problemContent={problemContent}
-            nextRoute="/problems/Note"
+            nextRoute="/Main"
             testPassed={testPassed} />
     )
 }

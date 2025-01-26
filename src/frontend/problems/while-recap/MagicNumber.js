@@ -7,11 +7,11 @@ function MagicNumber() {
     const [testPassed, setTestPassed] = useState(false);
 
     const testCases = [
-        { params: [1, 103, 999, 15, 16], expected: ["Mai incearca!", "Mai incearca!", "Mai incearca!", "Mai incearca!", "Ai gasit numarul magic!"] },
-        { params: [0, 23, 14, 7], expected: ["Mai incearca!", "Mai incearca!", "Mai incearca!", "Ai gasit numarul magic!"] },
-        { params: [1000, 6003, 70], expected: ["Mai incearca!", "Mai incearca!", "Ai gasit numarul magic!"] },
-        { params: [8, 43], expected: ["Mai incearca!", "Ai gasit numarul magic!"] },
-        { params: [1231], expected: ["Ai gasit numarul magic!"] },
+        { params: [1, 103, 999, 15, 16], expected: "Mai incearca! Mai incearca! Mai incearca! Mai incearca! Ai gasit numarul magic!" },
+        { params: [0, 23, 14, 7], expected: "Mai incearca! Mai incearca! Mai incearca! Ai gasit numarul magic!" },
+        { params: [1000, 6003, 70], expected: "Mai incearca! Mai incearca! Ai gasit numarul magic!" },
+        { params: [8, 43], expected: "Mai incearca! Ai gasit numarul magic!" },
+        { params: [1231], expected: "Ai gasit numarul magic!" },
     ];
 
     const problemContent = (

@@ -46,7 +46,7 @@ function NumbersSum() {
             problemName="Suma cifrelor"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Concatenare"
+            nextRoute="/problems/Debugging"
             testPassed={testPassed}
         />
     )

@@ -6,11 +6,11 @@ function PrimeNumber() {
     const [testPassed, setTestPassed] = useState(false);
 
     const testCases = [
-        { params: [2], expected: ["Numarul este prim"]},
-        { params: [4], expected: ["Nu este prim"] },
-        { params: [293], expected: ["Numarul este prim"] },
-        { params: [31], expected: ["Numarul este prim"] },
-        { params: [322], expected: ["Nu este prim"] },
+        { params: [2], expected: "Numarul este prim"},
+        { params: [4], expected: "Nu este prim" },
+        { params: [293], expected: "Numarul este prim" },
+        { params: [31], expected: "Numarul este prim" },
+        { params: [322], expected: "Nu este prim" },
     ];
 
 

@@ -14,7 +14,7 @@ function Divide() {
             }  else {
                 expected = "Nu este divizibil"
             }
-            testCases.push({ params: [dividedNumber], expected: [expected] });
+            testCases.push({ params: [dividedNumber], expected: expected });
         }
         return testCases;
     }

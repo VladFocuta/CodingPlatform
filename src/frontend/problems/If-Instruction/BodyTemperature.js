@@ -16,7 +16,7 @@ function BodyTemperature() {
             } else {
                 expected = "Febra";
             }
-            testCases.push({ params: [temp], expected: [expected] });
+            testCases.push({ params: [temp], expected: expected});
         }
         return testCases;
     }

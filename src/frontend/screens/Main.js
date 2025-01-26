@@ -5,7 +5,8 @@ import Progress from "../components/Progress";
 function Main() {
   const { user, loggedIn } = UserAuth();
   const { userProgressPoints, problemsSolved, admin, capitols, credits } = UserProgressData() || {};
-
+  //trecerea de la o problema la alta
+  // titlurile sa fie cuprinse in chenar
 
   const freeLessons = [
     "Recapitulare algoritmi",
@@ -101,12 +102,28 @@ function Main() {
         { title: "Nota maxima si minima", link: "/problems/Nota maxima si minima", icon: "fa-solid fa-circle-check", index: 56 },
         { title: "Sortare si interschimbare", link: "/problems/Sortare si interschimbare", icon: "fa-solid fa-circle-check", index: 57 },
         { title: "Cautarea unui element", link: "/problems/Cautarea unui element", icon: "fa-solid fa-circle-check", index: 58 },
+        { title: "Numar lipsa", link: "/problems/Numar lipsa", icon: "fa-solid fa-circle-check", index: 59 },
+        { title: "Element majoritar", link: "/problems/Element majoritar", icon: "fa-solid fa-circle-check", index: 60 },
+        { title: "Vecini pari", link: "/problems/Vecini pari", icon: "fa-solid fa-circle-check", index: 61 },
+        { title: "Sub-secventa array", link: "/problems/Sub-secventa array", icon: "fa-solid fa-circle-check", index: 62 },
+        { title: "Suma a doua siruri", link: "/problems/Suma a doua siruri", icon: "fa-solid fa-circle-check", index: 63 },
+        { title: "Suma a doua siruri2.0", link: "/problems/Suma a doua siruri2.0", icon: "fa-solid fa-circle-check", index: 64 },
+        { title: "Sirul lui Fibonacci", link: "/problems/Sirul lui Fibonacci", icon: "fa-solid fa-circle-check", index: 65 },
 
       ]
-    },
+    }, {
+      title: "Matrici",
+      lessons: [
+        { title: "Matrici", link: "/problems/Matrici", icon: "fa-solid fa-circle-check", index: 66 },
+        { title: "Declarare/Citire/Afisare", link: "/problems/Declarare/Citire/Afisare", icon: "fa-solid fa-circle-check", index: 67 },
+        { title: "Suma elementelor", link: "/problems/Suma elementelor", icon: "fa-solid fa-circle-check", index: 68 },
+       
+
+      ]
+    }
 
   ];
-
+  
   return (
     <>
       {loggedIn ? (
@@ -125,14 +142,17 @@ function Main() {
             </div>
           </div>
 
-          <div style={{display: 'flex', flexDirection: 'column'}}>
-        
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+
             <strong style={{ color: 'white' }}>Credite ramase: {credits} </strong>
           </div>
 
 
           <div className='problems'>
-            <Progress exp={userProgressPoints} />
+            <div>
+              <Progress exp={userProgressPoints} />
+            </div>
+
             <div style={{ background: 'white', opacity: 0.8, marginTop: '10px' }}>
               <div style={{ color: 'black', width: '100%', padding: '10px', marginBottom: '5px' }}>
                 <h4 style={{ color: 'black' }}>Problemele curente:</h4>

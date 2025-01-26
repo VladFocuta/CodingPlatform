@@ -6,11 +6,11 @@ function PerfectNumbers() {
     const [testPassed, setTestPassed] = useState(false);
 
     const testCases = [
-        { params: [28], expected: ["Numarul este perfect"] },
-        { params: [3], expected: ["Numarul nu este perfect"] },
-        { params: [56], expected: ["Numarul nu este perfect"] },
-        { params: [1000], expected: ["Numarul nu este perfect"] },
-        { params: [6], expected: ["Numarul este perfect"] }
+        { params: [28], expected: "Numarul este perfect" },
+        { params: [3], expected: "Numarul nu este perfect" },
+        { params: [56], expected: "Numarul nu este perfect" },
+        { params: [1000], expected: "Numarul nu este perfect" },
+        { params: [6], expected: "Numarul este perfect" }
     ];
 
     const problemContent = (

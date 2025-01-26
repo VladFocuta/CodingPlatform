@@ -47,7 +47,7 @@ function ReverseCounter() {
             problemName="Numaratoare inversa"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Numerele pare"
+            nextRoute="/problems/Suma cifrelor"
             testPassed={testPassed}
         />
     )

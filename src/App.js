@@ -72,6 +72,16 @@ import SortAndDelete from './frontend/problems/for-recap/SortAndDelete';
 import MaxAndMinFor from './frontend/problems/for-recap/MaxAndMinFor';
 import SortAndInterchange from './frontend/problems/for-recap/SortAndInterchange.js';
 import ElementSearch from './frontend/problems/for-recap/ElementSearch.js';
+import MissingNumber from './frontend/problems/for-recap/MissingNumber.js';
+import MajorityElement from './frontend/problems/for-recap/MajorityElement.js';
+import EvenNeighbors from './frontend/problems/for-recap/EvenNeighbors.js';
+import Subsequence from './frontend/problems/for-recap/Subsequence.js';
+import TwoArraysSum from './frontend/problems/for-recap/TwoArraysSum.js';
+import TwoArraysSum2 from './frontend/problems/for-recap/TwoArraysSum2.js';
+import Fibonacci from './frontend/problems/for-recap/Fibonacci.js';
+import Matrix from './frontend/problems/matrix/Matrix.js';
+import MatrixDetails from './frontend/problems/matrix/MatrixDetails.js';
+import ElementsSum from './frontend/problems/matrix/ElementsSum.js';
 
 
 
@@ -162,10 +172,19 @@ function App() {
               <Route path="/problems/Nota maxima si minima" element={<MaxAndMinFor />} />
               <Route path="/problems/Sortare si interschimbare" element={<SortAndInterchange />} />
               <Route path="/problems/Cautarea unui element" element={<ElementSearch />} />
+              <Route path="/problems/Numar lipsa" element={<MissingNumber />} />
+              <Route path="/problems/Element majoritar" element={<MajorityElement />} />
+              <Route path="/problems/Vecini pari" element={<EvenNeighbors />} />
+              <Route path="/problems/Sub-secventa array" element={<Subsequence />} />
+              <Route path="/problems/Suma a doua siruri" element={<TwoArraysSum />} />
+              <Route path="/problems/Suma a doua siruri2.0" element={<TwoArraysSum2 />} />
+              <Route path="/problems/Sirul lui Fibonacci" element={<Fibonacci />} />
 
-
-
-
+              <Route path="/problems/Matrici" element={<Matrix />} />
+              <Route path="/problems/Declarare/Citire/Afisare" element={<MatrixDetails />} />
+              <Route path="/problems/Suma elementelor" element={<ElementsSum />} />
+              
+              
             </Routes>
           </NotificationProvider>
         </UserProgress>

@@ -8,23 +8,14 @@ function Triangle() {
     function generateTestCases() {
         const testCases = [];
 
-        // Teste pentru laturi care NU formează triunghiuri
-        testCases.push({ params: [1, 2, 3], expected: "Laturile nu formeaza un triunghi" });
-        testCases.push({ params: [5, 1, 1], expected: "Laturile nu formeaza un triunghi" }); 
-        testCases.push({ params: [1, 10, 2], expected: "Laturile nu formeaza un triunghi" });
-
-        // Teste pentru triunghiuri echilaterale
         testCases.push({ params: [5, 5, 5], expected: "Echilateral" });
 
-        // Teste pentru triunghiuri isoscele
         testCases.push({ params: [5, 5, 3], expected: "Isoscel" });
         testCases.push({ params: [3, 5, 5], expected: "Isoscel" });
         testCases.push({ params: [5, 3, 5], expected: "Isoscel" });
 
-        // Teste pentru triunghiuri scalene
         testCases.push({ params: [7, 8, 10], expected: "Scalene" });
         testCases.push({ params: [6, 7, 9], expected: "Scalene" });
-
         return testCases;
     }
 
@@ -39,7 +30,6 @@ function Triangle() {
                     <strong style={{ color: 'red' }}>Isoscel </strong>(două laturi sunt egale).<br />
                     <strong style={{ color: 'red' }}>Scalene </strong>(toate laturile sunt diferite).<br />
                     <br />
-                    Daca nu, sa se afiseze <strong style={{ color: 'red' }}>Laturile nu formeaza un triunghi</strong>.<br />
                     Numerele sunt pozitive si rationale si vor fi citite de la tastatura.<br /><br />
                     Exemplu:
                 </h4>
@@ -48,7 +38,7 @@ function Triangle() {
 
                         <br />
                     </h4>
-                    <h4> Date de iesire: Laturile nu formeaza un triunghi
+                    <h4> Date de iesire: Scalene
                         <br />
                     </h4>
                 </div> <br />
@@ -68,7 +58,7 @@ function Triangle() {
             problemName="Triunghi valid"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/Calculator"
             lecture={false}
             testPassed={testPassed}
         />

@@ -8,19 +8,19 @@ function Calculator() {
     const [testPassed, setTestPassed] = useState(false);
 
     const testCases = [
-        { params: [11, "+", 18], expected: ["Rezultatul este: 29"] }, // Adunare normală
-        { params: [22, "/", 0], expected: ["Eroare: Impartirea la zero nu este permisa!"] }, // Împărțire la 0
-        { params: [15, "%", 2], expected: ["Eroare: Operator invalid!"] }, // Operator invalid
-        { params: [55, "-", 10], expected: ["Rezultatul este: 45"] }, // Scădere validă
-        { params: [3, "*", 7], expected: ["Rezultatul este: 21"] }, // Înmulțire validă
-        { params: [20, "/", 4], expected: ["Rezultatul este: 5"] }, // Împărțire validă
-        { params: [-5, "+", 10], expected: ["Rezultatul este: 5"] }, // Adunare cu număr negativ
-        { params: [-10, "/", 2], expected: ["Rezultatul este: -5"] }, // Împărțire cu număr negativ
-        { params: [5, "-", 5], expected: ["Rezultatul este: 0"] }, // Rezultatul zero
-        { params: [0, "*", 100], expected: ["Rezultatul este: 0"] }, // Înmulțire cu 0
-        { params: [0, "/", 1], expected: ["Rezultatul este: 0"] }, // Împărțire validă cu 0 ca număr
-        { params: [1000000000, "+", 1000000000], expected: ["Rezultatul este: 2000000000"] }, // Numere mari
-        { params: [-1000000000, "*", 2], expected: ["Rezultatul este: -2000000000"] }, // Numere mari negative
+        { params: [11, "+", 18], expected: "Rezultatul este: 29" }, // Adunare normală
+        { params: [22, "/", 0], expected: "Eroare: Impartirea la zero nu este permisa!" }, // Împărțire la 0
+        { params: [15, "%", 2], expected: "Eroare: Operator invalid!" }, // Operator invalid
+        { params: [55, "-", 10], expected: "Rezultatul este: 45" }, // Scădere validă
+        { params: [3, "*", 7], expected: "Rezultatul este: 21" }, // Înmulțire validă
+        { params: [20, "/", 4], expected: "Rezultatul este: 5" }, // Împărțire validă
+        { params: [-5, "+", 10], expected: "Rezultatul este: 5" }, // Adunare cu număr negativ
+        { params: [-10, "/", 2], expected: "Rezultatul este: -5" }, // Împărțire cu număr negativ
+        { params: [5, "-", 5], expected: "Rezultatul este: 0" }, // Rezultatul zero
+        { params: [0, "*", 100], expected: "Rezultatul este: 0" }, // Înmulțire cu 0
+        { params: [0, "/", 1], expected: "Rezultatul este: 0" }, // Împărțire validă cu 0 ca număr
+        { params: [1000000000, "+", 1000000000], expected: "Rezultatul este: 2000000000" }, // Numere mari
+        { params: [-1000000000, "*", 2], expected: "Rezultatul este: -2000000000" }, // Numere mari negative
     ];
     
 
@@ -83,7 +83,7 @@ if (opr == '+') {
             problemName="Calculator"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Conversia temperaturii"
+            nextRoute="/Main"
             lecture={false}
             testPassed={testPassed}
         />

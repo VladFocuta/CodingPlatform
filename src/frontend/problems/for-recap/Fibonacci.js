@@ -2,35 +2,31 @@ import React, { useState } from 'react'
 import Test from '../../components/Test'
 import ProblemPage from '../../components/functions/ProblemPage'
 
-function CMMD() {
+function Fibonacci() {
     const [testPassed, setTestPassed] = useState(false);
 
     const testCases = [
-        { params: [48, 18], expected: [6] },
-        { params: [1, 1], expected: [1] },
-        { params: [4, 5], expected: [1] },
-        { params: [146, 1046], expected: [2] },
-        { params: [12, 21], expected: [3] }
-    ];
+        { params: ['7'], expected: '0 1 1 2 3 5 8' },
+        { params: ['10'], expected: '0 1 1 2 3 5 8 13 21 34' },
+        { params: ['1'], expected: '0' },
 
+    ];
 
     const problemContent = (
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <h4>Scrie un program care calculeaza cel mai mare divizor comun (CMMD) a doua numere.
-                    <br />
-                    Numerele se citesc de la tastatura.
-                    <br />
-                    Sa se afiseze cel mai mare divizor comun.<br />
+                <h4>Se da un numar intreg N (1 ≤ N ≤ 50). Scrie un program care sa genereze si sa afiseze primii N termeni ai sirului lui Fibonacci.<br />
 
-                    <br />
+                    Sirul lui Fibonacci incepe cu valorile 0 si 1, iar fiecare termen ulterior este suma celor doua termene precedente.<br />
+                    Pe prima linie se citeste un numar intreg N, numarul de termeni din sirul lui Fibonacci care trebuie generati.
+                    Programul trebuie sa afiseze termenii sirului pe o singura linie, separati prin spatii.
+                    <br /><br />
                     Exemplu:
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
-                    <h4>Date de intrare: 48 18
-                        <br />
+                    <h4>Date de intrare: 7  
                     </h4>
-                    <h4> Date de iesire: 6
+                    <h4> Date de iesire: 0 1 1 2 3 5 8
                     </h4>
                 </div>
 
@@ -40,19 +36,19 @@ function CMMD() {
                 <Test
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    problemName="CMMD" />
+                    problemName="Sirul lui Fibonacci" />
             </div>
         </>
     )
     return (
         <ProblemPage
-            problemName="CMMD"
+            problemName="Sirul lui Fibonacci"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Suma maxima"
+            nextRoute="/Main"
             testPassed={testPassed}
         />
     )
 }
 
-export default CMMD
+export default Fibonacci

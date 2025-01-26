@@ -6,8 +6,8 @@ function MaxSum() {
     const [testPassed, setTestPassed] = useState(false);
 
     const testCases = [
-        { params: [1, 1], expected: ["SUMELE SUNT EGALE"] },
-        { params: [101, 1001], expected: ["SUMELE SUNT EGALE"] },
+        { params: [1, 1], expected: "SUMELE SUNT EGALE" },
+        { params: [101, 1001], expected: "SUMELE SUNT EGALE" },
         { params: [9229, 982], expected: [9229] },
         { params: [1000000000, 83138], expected: [83138] }
     ];
@@ -48,7 +48,7 @@ function MaxSum() {
             problemName="Suma maxima"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/Numar impar"
             testPassed={testPassed}
         />
     )
