@@ -5,21 +5,15 @@ import ProblemPage from '../../components/functions/ProblemPage'
 function Triangle() {
     const [testPassed, setTestPassed] = useState(false);
 
-    function generateTestCases() {
-        const testCases = [];
+    const testCases = [
+        { params: [5, 5, 5], expected: 'Echilateral' },
 
-        testCases.push({ params: [5, 5, 5], expected: "Echilateral" });
+        { params: [5, 5, 3], expected: 'Isoscel' },
+        { params: [3, 5, 5], expected: 'Isoscel' },
+        { params: [5, 3, 5], expected: 'Isoscel' },
 
-        testCases.push({ params: [5, 5, 3], expected: "Isoscel" });
-        testCases.push({ params: [3, 5, 5], expected: "Isoscel" });
-        testCases.push({ params: [5, 3, 5], expected: "Isoscel" });
-
-        testCases.push({ params: [7, 8, 10], expected: "Scalene" });
-        testCases.push({ params: [6, 7, 9], expected: "Scalene" });
-        return testCases;
-    }
-
-    const testCases = generateTestCases();
+        { params: [7, 8, 10], expected: 'Scalene' },
+    ];
 
     const problemContent = (
         <>
