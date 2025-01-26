@@ -1,6 +1,7 @@
 const axios = require('axios');
 
 const JDoodleClientID = '9ce995c32cba039871309c68822c96cd';
+
 const JDoodleClientSecret = 'be858d14a67460efcad582aee73067b62ef586ba1ed9495e4aba068fc86f1838';
 
 async function executeCodeJDoodle(script, language, versionIndex, input) {
@@ -23,8 +24,7 @@ async function executeCodeJDoodle(script, language, versionIndex, input) {
     }
 }
 
-
-exports.handler = async (event, context) => {
+exports.handler = async (event) => {
     if (event.httpMethod !== 'POST') {
         return {
             statusCode: 405,
@@ -41,49 +41,52 @@ exports.handler = async (event, context) => {
         };
     }
 
-    const language = 'cpp'; // Limba codului trimis (C++)
-    const versionIndex = '5'; // Versiunea limbajului C++ suportată de JDoodle
-    const results = [];
+    const language = 'cpp';
+    const versionIndex = '5';
 
-    for (const testCase of testCases) {
-        try {
-            // Apelează JDoodle pentru fiecare caz de test
-            const result = await executeCodeJDoodle(userCode, language, versionIndex, testCase.params.join(' '));
+    try {
+        const results = await Promise.all(
+            testCases.map(async (testCase) => {
+                try {
+                    const result = await executeCodeJDoodle(userCode, language, versionIndex, testCase.params.join(' '));
+                    const normalize = (str) => str.trim().replace(/\s+/g, ' ').replace(/\n/g, ' ').trim();
 
-            const isCorrect = (() => {
-                const output = result.output.trim();
+                    const isCorrect = (() => {
+                        const outputNormalized = normalize(result.output);
+                        if (Array.isArray(testCase.expected)) {
+                            return outputNormalized === normalize(testCase.expected.join(' '));
+                        } else if (typeof testCase.expected === 'string') {
+                            return outputNormalized === normalize(testCase.expected);
+                        } else if (typeof testCase.expected === 'number') {
+                            return parseFloat(outputNormalized) === testCase.expected;
+                        }
+                        return false;
+                    })();
 
-                const normalize = (str) => str.trim().replace(/\s+/g, ' ').replace(/\n/g, ' ').trim();
-                const outputNormalized = normalize(result.output);
-                
-
-                if (Array.isArray(testCase.expected)) {
-                    return output.split(' ').map(Number).join(' ') === testCase.expected.join(' ');
-                } else if (typeof testCase.expected === 'string') {
-                    return outputNormalized === normalize(testCase.expected);
-                } else if (typeof testCase.expected === 'number') {
-                    return parseFloat(output) === testCase.expected;
+                    return {
+                        testCase: testCase.params,
+                        output: result.output.trim(),
+                        expected: testCase.expected,
+                        passed: isCorrect,
+                    };
+                } catch (error) {
+                    return {
+                        testCase: testCase.params,
+                        error: error.message,
+                        passed: false,
+                    };
                 }
-                return false;
-            })();
+            })
+        );
 
-            results.push({
-                testCase: testCase.params,
-                output: result.output.trim(),
-                expected: testCase.expected,
-                passed: isCorrect
-            });
-        } catch (error) {
-            results.push({
-                testCase: testCase.params,
-                error: error.message,
-                passed: false
-            });
-        }
+        return {
+            statusCode: 200,
+            body: JSON.stringify({ results }),
+        };
+    } catch (error) {
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ error: 'Eroare internă a serverului' }),
+        };
     }
-
-    return {
-        statusCode: 200,
-        body: JSON.stringify({ results }),
-    };
 };

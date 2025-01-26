@@ -50,7 +50,7 @@ function Test({ testCases, testPassedSet, problemName }) {
             try {
                 await storeCode(codeObject, problemName, userId);
                 await updateCredits(leftCredits, userId);
-                console.log('credite ramase: ', leftCredits)
+                
                 const response = await fetch('/.netlify/functions/execute', {
                     method: 'POST',
                     headers: {
