@@ -15,7 +15,7 @@ function ElementsSum() {
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
                 <h4>Se da o matrice patratica n x n (cu n ≤10). Scrie un program care citeste matricea si afiseaza suma elementelor.
-                    <br /> <br />
+                    <br />
                     Pe prima linie se citeste numarul n, dimensiunea matricei.<br />
                     Urmatoarele n linii contin cate n numere intregi, reprezentand elementele matricei.<br />
                     Programul va afisa suma elementelor.

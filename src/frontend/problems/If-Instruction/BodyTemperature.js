@@ -5,7 +5,7 @@ import Test from '../../components/Test'
 function BodyTemperature() {
     const [testPassed, setTestPassed] = useState(false);
 
-    function generateTestCases(start, end, step) {
+    /*function generateTestCases(start, end, step) {
         const testCases = [];
         for (let temp = start; temp <= end; temp += step) {
             let expected;
@@ -19,9 +19,13 @@ function BodyTemperature() {
             testCases.push({ params: [temp], expected: expected});
         }
         return testCases;
-    }
+    }*/
 
-    const testCases = generateTestCases(35.0, 40.0, 0.5);
+        const testCases = [
+            { params: ['36.1'], expected: ['Temperatura este normala'] },
+            { params: ['37.3'], expected: ['Febra'] },
+            { params: ['36'], expected: ['Temperatura scazuta'] },
+        ];
 
     const problemContent = (
         <>
