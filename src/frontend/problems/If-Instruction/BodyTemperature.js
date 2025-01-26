@@ -22,9 +22,9 @@ function BodyTemperature() {
     }*/
 
         const testCases = [
-            { params: ['36.1'], expected: ['Temperatura este normala'] },
-            { params: ['37.3'], expected: ['Febra'] },
-            { params: ['36'], expected: ['Temperatura scazuta'] },
+            { params: [36.1], expected: ['Temperatura este normala'] },
+            { params: [37.3], expected: ['Febra'] },
+            { params: [36], expected: ['Temperatura scazuta'] },
         ];
 
     const problemContent = (
