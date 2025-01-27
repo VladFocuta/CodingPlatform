@@ -27,7 +27,7 @@ const solvedProblem = async (data, user, progressPoints, problemsName) => {
                     pointsPerChapter: progressPoints,
                     userId: user?.uid,
                     name: user?.displayName,
-                    credits: 200
+                    credits: 100
                 });
             }
 
