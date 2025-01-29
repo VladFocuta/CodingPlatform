@@ -82,6 +82,13 @@ import Fibonacci from './frontend/problems/for-recap/Fibonacci.js';
 import Matrix from './frontend/problems/matrix/Matrix.js';
 import MatrixDetails from './frontend/problems/matrix/MatrixDetails.js';
 import ElementsSum from './frontend/problems/matrix/ElementsSum.js';
+import SubmatrixAndDiagonals from './frontend/problems/matrix/SubmatrixAndDiagonals.js';
+import PrinDiagDiff from './frontend/problems/matrix/PrinDiagDiff.js';
+import SecondaryDiagonal from './frontend/problems/matrix/SecondaryDiagonal.js';
+import Submatrix from './frontend/problems/matrix/Submatrix.js';
+import IdentityMatrix from './frontend/problems/matrix/IdentityMatrix.js';
+import ColumnReplace from './frontend/problems/matrix/ColumnReplace.js';
+import MaxRow from './frontend/problems/matrix/MaxRow.js';
 
 
 
@@ -108,7 +115,6 @@ function App() {
               <Route path="/screens/Messages" element={<Messages />} />
               <Route path="/user/Profile" element={<Profile />} />
               <Route path="/user/Infos" element={<Infos />} />
-
 
               <Route path="/problems/Notiunea de algoritm" element={<AlgorithmNotion />} />
               <Route path="/problems/Bazele programarii" element={<ProgramBase />} />
@@ -183,8 +189,14 @@ function App() {
               <Route path="/problems/Matrici" element={<Matrix />} />
               <Route path="/problems/Declarare/Citire/Afisare" element={<MatrixDetails />} />
               <Route path="/problems/Suma elementelor" element={<ElementsSum />} />
-              
-              
+              <Route path="/problems/Diagonale si submatrici" element={<SubmatrixAndDiagonals />} />
+              <Route path="/problems/Diferenta diagonalei principale" element={<PrinDiagDiff />} />
+              <Route path="/problems/Minim pe diagonala secundara" element={<SecondaryDiagonal />} />
+              <Route path="/problems/Extragerea unei submatrici" element={<Submatrix />} />
+              <Route path="/problems/Matrice de identitate" element={<IdentityMatrix />} />
+              <Route path="/problems/Inlocuirea unei coloane" element={<ColumnReplace />} />
+              <Route path="/problems/Cel mai mare de pe rand" element={<MaxRow />} />
+
             </Routes>
           </NotificationProvider>
         </UserProgress>

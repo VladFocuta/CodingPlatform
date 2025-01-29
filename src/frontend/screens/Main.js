@@ -117,39 +117,46 @@ function Main() {
         { title: "Matrici", link: "/problems/Matrici", icon: "fa-solid fa-circle-check", index: 66 },
         { title: "Declarare/Citire/Afisare", link: "/problems/Declarare/Citire/Afisare", icon: "fa-solid fa-circle-check", index: 67 },
         { title: "Suma elementelor", link: "/problems/Suma elementelor", icon: "fa-solid fa-circle-check", index: 68 },
-       
+        { title: "Diagonale si submatrici", link: "/problems/Diagonale si submatrici", icon: "fa-solid fa-circle-check", index: 69 },
+        { title: "Diferenta diagonalei principale", link: "/problems/Diferenta diagonalei principale", icon: "fa-solid fa-circle-check", index: 70 },
+        { title: "Minim pe diagonala secundara", link: "/problems/Minim pe diagonala secundara", icon: "fa-solid fa-circle-check", index: 71 },
+        { title: "Extragerea unei submatrici", link: "/problems/Extragerea unei submatrici", icon: "fa-solid fa-circle-check", index: 72 },
+        { title: "Matrice de identitate", link: "/problems/Matrice de identitate", icon: "fa-solid fa-circle-check", index: 73 },
+        { title: "Inlocuirea unei coloane", link: "/problems/Inlocuirea unei coloane", icon: "fa-solid fa-circle-check", index: 74 },
+        { title: "Cel mai mare de pe rand", link: "/problems/Cel mai mare de pe rand", icon: "fa-solid fa-circle-check", index: 75 },
+
 
       ]
-    },{
+    }, {
       title: "Subprograme",
       lessons: [
-       
+
       ]
-    },{
+    }, {
       title: "Siruri de caractere",
       lessons: [
-       
+
       ]
-    },{
+    }, {
       title: "Fisiere text",
       lessons: [
-       
+
       ]
-    },{
+    }, {
       title: "Recursivitate & Metoda backtracking",
       lessons: [
-       
+
       ]
-    },{
+    }, {
       title: "Grafuri",
       lessons: [
-       
+
       ]
     }
 
 
   ];
-  
+
   return (
     <>
       {loggedIn ? (
@@ -209,20 +216,18 @@ function Main() {
                                   {!admin ? (
                                     <i
                                       className={
-                                        isSolved
-                                          ? lesson.icon // Icon-ul verde pentru lecțiile rezolvate
-                                          : problemsSolved.length === lesson.index - 1 // Lecția curentă fără lacăt
-                                            ? lesson.icon // Icon-ul specific lecției
-                                            : "fa-solid fa-lock" // Icon-ul cu lacăt pentru restul lecțiilor
+                                        isSolved ? lesson.icon : problemsSolved.length === lesson.index - 1
+                                            ? lesson.icon 
+                                            : lesson.icon 
                                       }
-                                      style={{ color: isSolved || problemsSolved.length === lesson.index ? 'green' : 'grey' }}
+                                      style={{ color: isSolved ? 'green' : 'grey' }}
                                     ></i>
                                   ) : (
                                     <i
                                       className={lesson.icon}
 
 
-                                      style={{ color: isSolved || problemsSolved.length === lesson.index ? 'green' : 'grey' }}
+                                      style={{ color: isSolved ? 'green' : 'grey' }}
                                     ></i>
                                   )
                                   }
@@ -231,7 +236,7 @@ function Main() {
 
                                 </div>
                                 {!admin ? (
-                                  <a style={{ textDecoration: 'none', marginLeft: '10px' }} href={isSolved || problemsSolved.length === lesson.index - 1 ? lesson.link : null}>
+                                  <a style={{ textDecoration: 'none', marginLeft: '10px' }} href={lesson.link}>
                                     {lesson.title}
                                   </a>
                                 ) : (

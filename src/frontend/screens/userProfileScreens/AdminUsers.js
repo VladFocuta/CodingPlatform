@@ -154,8 +154,9 @@ function AdminUsers() {
                                     <option value="">Capitol:</option>
                                     <option value="1">While-structură de control</option>
                                     <option value="2">Recapitulare While</option>
-                                    <option value="2">Structura repetitiva for</option>
-                                    <option value="2">Recapitulare For</option>
+                                    <option value="3">Structura repetitiva for</option>
+                                    <option value="4">Recapitulare For</option>
+                                    <option value="5">Matrici</option>
                                 </select>
 
                                 <button

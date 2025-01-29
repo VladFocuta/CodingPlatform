@@ -6,6 +6,7 @@
     height: 70px; 
     margin: 0;
     border-radius: 50px;
+    transition: transform 0.3s ease-in-out; /* Tranziție mai lină */
 }
 
 .logo:hover {

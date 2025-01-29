@@ -2,31 +2,31 @@ import React, { useState } from 'react'
 import ProblemPage from '../../components/functions/ProblemPage'
 import Test from '../../components/Test';
 
-function ElementsSum() {
+function IdentityMatrix() {
     const [testPassed, setTestPassed] = useState(false);
 
     const testCases = [
-        { params: ['3', '1 2 3 4 5 6 7 8 9'], expected: '45' },
-        { params: ['1', '3'], expected: '3' },
+        { params: ['4'], expected: '1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1' },
+        { params: ['1'], expected: '1' },
     ];
 
 
     const problemContent = (
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <h4>Se da o matrice patratica n x n (cu n ≤10). Scrie un program care citeste matricea si afiseaza suma elementelor.
-                    <br />
-                    Pe prima linie se citeste numarul n, dimensiunea matricei.<br />
-                    Urmatoarele n linii contin cate n numere intregi, reprezentand elementele matricei.<br />
-                    Programul va afisa suma elementelor.
+                <h4>Se da o matrice patratica N x N de identitate. O matrice de identitate are valoarea 1 pe diagonala principala si 0 in rest.<br />
+               
+                    Pe prima linie se citeste numarul intreg N (1 ≤ N ≤ 100), reprezentand dimensiunile matricei.<br />
+                    Programul va afisa matricea generata.
                     <br /><br />
+ 
                     Exemplu:
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
-                    <h4>Date de intrare: 3 <br /> 1 2 3 <br /> 4 5 6 <br /> 7 8 9
+                    <h4>Date de intrare:<br /> 4
                         <br />
                     </h4>
-                    <h4> Date de iesire: 45
+                    <h4> Date de iesire:<br /> 1 0 0 0<br /> 0 1 0 0 <br />0 0 1 0 <br /> 0 0 0 1
                     </h4>
                 </div>
 
@@ -35,19 +35,19 @@ function ElementsSum() {
                 <Test
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    problemName="Suma elementelor" />
+                    problemName="Matrice de identitate" />
             </div>
         </>
     )
     return (
         <ProblemPage
-            problemName="Suma elementelor"
+            problemName="Matrice de identitate"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Diagonale si submatrici"
+            nextRoute="/problems/Inlocuirea unei coloane"
             testPassed={testPassed}
         />
     )
 }
 
-export default ElementsSum
+export default IdentityMatrix

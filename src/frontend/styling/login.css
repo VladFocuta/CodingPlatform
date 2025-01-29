@@ -116,6 +116,7 @@ html, body {
     cursor: pointer;
     font-size: 18px;
     font-weight: 400;
+    transition: transform 0.3s ease-in-out;
 }
 
 .costum-button:hover {
