@@ -128,11 +128,31 @@ function Main() {
 
       ]
     }, {
+      title: "Recapitulare Matrici",
+      lessons: [
+        { title: "Contorizarea valorilor", link: "/problems/Contorizarea valorilor", icon: "fa-solid fa-circle-check", index: 76 },
+        { title: "Matrice simetrica", link: "/problems/Matrice simetrica", icon: "fa-solid fa-circle-check", index: 77 },
+        { title: "Vecinii", link: "/problems/Vecinii", icon: "fa-solid fa-circle-check", index: 78 },
+        { title: "Generare matrice", link: "/problems/Generare matrice", icon: "fa-solid fa-circle-check", index: 79 },
+        { title: "Interschimbare linii", link: "/problems/Interschimbare linii", icon: "fa-solid fa-circle-check", index: 80 },
+        { title: "Gaseste elementii", link: "/problems/Gaseste elementii", icon: "fa-solid fa-circle-check", index: 81 },
+        { title: "Rotire la 90 de grade", link: "/problems/Rotire la 90 de grade", icon: "fa-solid fa-circle-check", index: 82 },
+        { title: "Permutari la stanga", link: "/problems/Permutari la stanga", icon: "fa-solid fa-circle-check", index: 83 },
+        { title: "Triunghi inferior", link: "/problems/Triunghi inferior", icon: "fa-solid fa-circle-check", index: 84 },
+
+      ] 
+    }, {
       title: "Subprograme",
       lessons: [
+        { title: "Functii", link: "/problems/Functii", icon: "fa-solid fa-circle-check", index: 85 },
+        { title: "Verificare numar prim", link: "/problems/Verificare numar prim", icon: "fa-solid fa-circle-check", index: 86 },
+        { title: "Afisare mesaj", link: "/problems/Afisare mesaj", icon: "fa-solid fa-circle-check", index: 87 },
+        { title: "Schimbarea valorilor", link: "/problems/Schimbarea valorilor", icon: "fa-solid fa-circle-check", index: 88 },
+        { title: "Modificarea unui tablou", link: "/problems/Modificarea unui tablou", icon: "fa-solid fa-circle-check", index: 89 },
+
 
       ]
-    }, {
+    }, { 
       title: "Siruri de caractere",
       lessons: [
 
@@ -217,8 +237,8 @@ function Main() {
                                     <i
                                       className={
                                         isSolved ? lesson.icon : problemsSolved.length === lesson.index - 1
-                                            ? lesson.icon 
-                                            : lesson.icon 
+                                          ? lesson.icon
+                                          : lesson.icon
                                       }
                                       style={{ color: isSolved ? 'green' : 'grey' }}
                                     ></i>

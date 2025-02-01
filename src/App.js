@@ -89,6 +89,20 @@ import Submatrix from './frontend/problems/matrix/Submatrix.js';
 import IdentityMatrix from './frontend/problems/matrix/IdentityMatrix.js';
 import ColumnReplace from './frontend/problems/matrix/ColumnReplace.js';
 import MaxRow from './frontend/problems/matrix/MaxRow.js';
+import ValuesCounter from './frontend/problems/matrix-recap/ValuesCounter.js';
+import SymmetricMatrix from './frontend/problems/matrix-recap/SymmetricMatrix.js';
+import Neighbours from './frontend/problems/matrix-recap/Neighbours.js';
+import GenerateMatrix from './frontend/problems/matrix-recap/GenerateMatrix.js';
+import InterchangeMinAndMax from './frontend/problems/matrix-recap/InterchangeMinAndMax.js';
+import FindElements from './frontend/problems/matrix-recap/FindElements.js';
+import MatrixRotate from './frontend/problems/matrix-recap/MatrixRotate.js';
+import LeftPermutation from './frontend/problems/matrix-recap/LeftPermutation.js';
+import TriangleInferior from './frontend/problems/matrix-recap/TriangleInferior.js';
+import Functions from './frontend/problems/functions/Functions.js';
+import FunctionPrimeNumber from './frontend/problems/functions/FunctionPrimeNumber.js';
+import VoidMessage from './frontend/problems/functions/VoidMessage.js';
+import SwapNumbers from './frontend/problems/functions/SwapNumbers.js';
+import ArrayModify from './frontend/problems/functions/ArrayModify.js';
 
 
 
@@ -197,13 +211,28 @@ function App() {
               <Route path="/problems/Inlocuirea unei coloane" element={<ColumnReplace />} />
               <Route path="/problems/Cel mai mare de pe rand" element={<MaxRow />} />
 
+              <Route path="/problems/Contorizarea valorilor" element={<ValuesCounter />} />
+              <Route path="/problems/Matrice simetrica" element={<SymmetricMatrix />} />
+              <Route path="/problems/Vecinii" element={<Neighbours />} />
+              <Route path="/problems/Generare matrice" element={<GenerateMatrix />} />
+              <Route path="/problems/Interschimbare linii" element={<InterchangeMinAndMax />} />
+              <Route path="/problems/Gaseste elementii" element={<FindElements />} />
+              <Route path="/problems/Rotire la 90 de grade" element={<MatrixRotate />} />
+              <Route path="/problems/Permutari la stanga" element={<LeftPermutation />} />
+              <Route path="/problems/Triunghi inferior" element={<TriangleInferior />} />
+
+              <Route path="/problems/Functii" element={<Functions />} />
+              <Route path="/problems/Verificare numar prim" element={<FunctionPrimeNumber />} />
+              <Route path="/problems/Afisare mesaj" element={<VoidMessage />} />
+              <Route path="/problems/Schimbarea valorilor" element={<SwapNumbers />} />
+              <Route path="/problems/Modificarea unui tablou" element={<ArrayModify />} />
+
             </Routes>
           </NotificationProvider>
         </UserProgress>
         
       </AuthProvider>
     </div >
-
   );
 }
 
