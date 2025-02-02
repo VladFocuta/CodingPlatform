@@ -156,7 +156,7 @@ function App() {
               <Route path="/problems/Ghicirea unui numar" element={<GuessNumber />} />
               <Route path="/problems/Debugging" element={<Debugging />} />
               <Route path="/problems/Concatenarea" element={<Concatenation />} />
-              <Route path="/problems/Stop" element={<Stop />} />
+              <Route path="/problems/Trenul" element={<Stop />} />
 
               <Route path="/problems/Numar maxim" element={<MaxNumber />} />
               <Route path="/problems/CMMD" element={<CMMD />} />
