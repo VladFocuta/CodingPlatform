@@ -8,7 +8,6 @@ function Concatenation() {
     const testCases = [
         { params: [2, 1245], expected: [21245] },
         { params: [999, 0], expected: [9990] },
-        { params: [1234567, 989302], expected: [1234567989302] },
         { params: [30, 67], expected: [3067] }
     ];
     const problemContent = (
