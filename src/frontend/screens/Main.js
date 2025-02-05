@@ -54,7 +54,7 @@ function Main() {
         { title: "Ghicirea unui numar", link: "/problems/Ghicirea unui numar", icon: "fa-solid fa-circle-check", index: 23 },
         { title: "Numar prim", link: "/problems/Numar prim", icon: "fa-solid fa-circle-check", index: 24 },
         { title: "Concatenarea", link: "/problems/Concatenarea", icon: "fa-solid fa-circle-check", index: 25 },
-        { title: "Trenul", link: "/problems/Stop", icon: "fa-solid fa-circle-check", index: 26 }
+        { title: "Trenul", link: "/problems/Trenul", icon: "fa-solid fa-circle-check", index: 26 }
       ]
     },
     {
@@ -149,15 +149,22 @@ function Main() {
         { title: "Afisare mesaj", link: "/problems/Afisare mesaj", icon: "fa-solid fa-circle-check", index: 87 },
         { title: "Schimbarea valorilor", link: "/problems/Schimbarea valorilor", icon: "fa-solid fa-circle-check", index: 88 },
         { title: "Modificarea unui tablou", link: "/problems/Modificarea unui tablou", icon: "fa-solid fa-circle-check", index: 89 },
-
-
+        { title: "Fibonacci recursiv", link: "/problems/Fibonacci recursiv", icon: "fa-solid fa-circle-check", index: 90 },
+        { title: "Functie-Factorialul unui numar", link: "/problems/Functie-Factorialul unui numar", icon: "fa-solid fa-circle-check", index: 91 },
       ]
     }, { 
       title: "Siruri de caractere",
       lessons: [
+        { title: "Siruri de caractere", link: "/problems/Siruri de caractere", icon: "fa-solid fa-circle-check", index: 92 },
+        { title: "ASCII", link: "/problems/ASCII", icon: "fa-solid fa-circle-check", index: 93 },
+        { title: "Functii predefinite", link: "/problems/Functii predefinite", icon: "fa-solid fa-circle-check", index: 94 },
+        { title: "Palindrom-siruri de caractere", link: "/problems/Palindrom-siruri de caractere", icon: "fa-solid fa-circle-check", index: 95 },
+        { title: "Numarul total de vocale", link: "/problems/Numarul total de vocale", icon: "fa-solid fa-circle-check", index: 96 },
+        { title: "Convertirea literelor mari sau mici", link: "/problems/Convertirea literelor mari sau mici", icon: "fa-solid fa-circle-check", index: 97 },
 
-      ]
-    }, {
+
+      ] 
+    }, { 
       title: "Fisiere text",
       lessons: [
 
@@ -181,7 +188,7 @@ function Main() {
     <>
       {loggedIn ? (
         <div className='main-container'>
-          {user && <h1 style={{ color: 'white', marginTop: '30px', marginBottom: '20px' }}>Bun venit {user.displayName}!</h1>}
+          {user && <h1 style={{ color: 'white', marginTop: '30px', marginBottom: '20px' }}>Bun venit, {user.displayName}!</h1>}
 
 
           <div className='userInfo'>

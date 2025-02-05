@@ -2,27 +2,33 @@ import React, { useState } from 'react'
 import ProblemPage from '../../components/functions/ProblemPage'
 import Test from '../../components/Test';
 
-function ArrayModify() {
+function FactorialNumber() {
     const [testPassed, setTestPassed] = useState(false);
 
     const testCases = [
-        { params: ['5', '1 2 3 4 5'], expected: '1 4 9 16 25' }
+        { params: ['5'], expected: '120' },
+        { params: ['1'], expected: '1' },
+        { params: ['0'], expected: '1' },
+        { params: ['7'], expected: '5040' },
+
     ];
 
 
     const problemContent = (
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <h4>Se citeste un tablou (vector) cu n elemente. Scrie o functie care primeste acest tablou prin referinta si modifica fiecare element astfel incat sa fie egal cu patratul sau.<br />
-                    In main() vom citi numarul n si elementele sale. Apoi folosim functia scrisa de noi si afisam noul vector.
-                    <br /><br />
+                <h4>Sa se creeze o functie recursiva care calculeaza factorialul unui numar.
+                    <br />
+                    Numarul n se citeste in main() de la tastatura si apoi se apeleaza functia creata de noi.<br />
+                    La final afisam factorialul lui n. <br />
+
                     Exemplu:
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
-                    <h4>Date de intrare: <br />5 <br /> 1 2 3 4 5
-
+                    <h4>Date de intrare: 5
+                        
                     </h4>
-                    <h4> Date de iesire: 1 4 9 16 25 </h4>
+                    <h4> Date de iesire: 120 </h4>
 
                 </div>
 
@@ -31,19 +37,19 @@ function ArrayModify() {
                 <Test
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    problemName="Modificarea unui tablou" />
+                    problemName="Functie-Factorialul unui numar" />
             </div>
         </>
     )
     return (
         <ProblemPage
-            problemName="Modificarea unui tablou"
+            problemName="Functie-Factorialul unui numar"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Fibonacci recursiv"
+            nextRoute="/problems/Factorialul unui numar"
             testPassed={testPassed}
         />
     )
 }
 
-export default ArrayModify
+export default FactorialNumber

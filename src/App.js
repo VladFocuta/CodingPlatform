@@ -103,6 +103,14 @@ import FunctionPrimeNumber from './frontend/problems/functions/FunctionPrimeNumb
 import VoidMessage from './frontend/problems/functions/VoidMessage.js';
 import SwapNumbers from './frontend/problems/functions/SwapNumbers.js';
 import ArrayModify from './frontend/problems/functions/ArrayModify.js';
+import FibonacciRecursiv from './frontend/problems/functions/FibonacciRecursiv.js';
+import FactorialNumber from './frontend/problems/functions/FactorialNumber.js';
+import Char from './frontend/problems/char/Char.js';
+import ASCII from './frontend/problems/char/ASCII.js';
+import PredefinedFunctions from './frontend/problems/char/PredefinedFunctions.js';
+import CharPalindrom from './frontend/problems/char/CharPalindrom.js';
+import VowsCounter from './frontend/problems/char/VowsCounter.js';
+import Conversion from './frontend/problems/char/Conversion.js';
 
 
 
@@ -226,6 +234,15 @@ function App() {
               <Route path="/problems/Afisare mesaj" element={<VoidMessage />} />
               <Route path="/problems/Schimbarea valorilor" element={<SwapNumbers />} />
               <Route path="/problems/Modificarea unui tablou" element={<ArrayModify />} />
+              <Route path="/problems/Fibonacci recursiv" element={<FibonacciRecursiv />} />
+              <Route path="/problems/Functie-Factorialul unui numar" element={<FactorialNumber />} />
+
+              <Route path="/problems/Siruri de caractere" element={<Char />} />
+              <Route path="/problems/ASCII" element={<ASCII />} />
+              <Route path="/problems/Functii predefinite" element={<PredefinedFunctions />} />
+              <Route path="/problems/Palindrom-siruri de caractere" element={<CharPalindrom />} />
+              <Route path="/problems/Numarul total de vocale" element={<VowsCounter />} />
+              <Route path="/problems/Convertirea literelor mari sau mici" element={<Conversion />} />
 
             </Routes>
           </NotificationProvider>
