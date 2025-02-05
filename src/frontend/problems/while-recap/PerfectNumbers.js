@@ -28,7 +28,7 @@ function PerfectNumbers() {
                     <h4>Date de intrare: 28
                         <br />
                     </h4>
-                    <h4> Date de iesire: 2 3 5 7
+                    <h4> Date de iesire: Numarul este perfect
                     </h4>
                 </div>
 

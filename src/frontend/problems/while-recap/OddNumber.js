@@ -27,10 +27,10 @@ function OddNumber() {
                         Exemplu:
                     </h4>
                     <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
-                        <h4>Date de intrare: 48 18
+                        <h4>Date de intrare: 48 
                             <br />
                         </h4>
-                        <h4> Date de iesire: 6
+                        <h4> Date de iesire: 3
                         </h4>
                     </div>
     
