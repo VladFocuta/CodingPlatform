@@ -17,7 +17,7 @@ function MaxNumber() {
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
                 <h4>Scrie un program care gaseste cea mai mare cifra dintr-un numar natural.<br />
-                    Numarul se citeste de la tastatura si dupa ce este gasit, il vei afisa.<br />
+                    Numarul se citeste de la tastatura si dupa ce cifra a fost gasita, se va afisa.<br />
                     <br />
                     Mentiuni: 1 ≤ numar ≤ 1 000 000
                     <br />
