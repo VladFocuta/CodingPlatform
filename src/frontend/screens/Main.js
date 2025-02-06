@@ -10,7 +10,11 @@ function Main() {
 
   const freeLessons = [
     "Recapitulare algoritmi",
-    "Algoritmi"
+    "Algoritmi",
+    "While-structură de control",
+    "Recapitulare While",
+    "Structura repetitiva for",
+    "Recapitulare For"
   ]
 
   const combinedLessons = [...freeLessons, ...(capitols || [])];
@@ -161,7 +165,9 @@ function Main() {
         { title: "Palindrom-siruri de caractere", link: "/problems/Palindrom-siruri de caractere", icon: "fa-solid fa-circle-check", index: 95 },
         { title: "Numarul total de vocale", link: "/problems/Numarul total de vocale", icon: "fa-solid fa-circle-check", index: 96 },
         { title: "Convertirea literelor mari sau mici", link: "/problems/Convertirea literelor mari sau mici", icon: "fa-solid fa-circle-check", index: 97 },
-
+        { title: "Stergerea unui caracter dat", link: "/problems/Stergerea unui caracter dat", icon: "fa-solid fa-circle-check", index: 98 },
+        { title: "Inversarea unui sir de caractere", link: "/problems/Inversarea unui sir de caractere", icon: "fa-solid fa-circle-check", index: 99 },
+        { title: "Copia unui sir de caractere", link: "/problems/Copia unui sir de caractere", icon: "fa-solid fa-circle-check", index: 100 },
 
       ] 
     }, { 

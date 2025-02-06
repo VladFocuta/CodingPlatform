@@ -45,7 +45,7 @@ function Conversion() {
             problemName="Convertirea literelor mari sau mici"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Convertirea literelor mari sau mici"
+            nextRoute="/problems/Stergerea unui caracter dat"
             testPassed={testPassed}
         />
     )

@@ -111,6 +111,9 @@ import PredefinedFunctions from './frontend/problems/char/PredefinedFunctions.js
 import CharPalindrom from './frontend/problems/char/CharPalindrom.js';
 import VowsCounter from './frontend/problems/char/VowsCounter.js';
 import Conversion from './frontend/problems/char/Conversion.js';
+import CharDelete from './frontend/problems/char/CharDelete.js';
+import ReversedArray from './frontend/problems/char/ReversedArray.js';
+import StrCopy from './frontend/problems/char/StrCopy.js';
 
 
 
@@ -243,6 +246,9 @@ function App() {
               <Route path="/problems/Palindrom-siruri de caractere" element={<CharPalindrom />} />
               <Route path="/problems/Numarul total de vocale" element={<VowsCounter />} />
               <Route path="/problems/Convertirea literelor mari sau mici" element={<Conversion />} />
+              <Route path="/problems/Stergerea unui caracter dat" element={<CharDelete />} />
+              <Route path="/problems/Inversarea unui sir de caractere" element={<ReversedArray />} />
+              <Route path="/problems/Copia unui sir de caractere" element={<StrCopy />} />
 
             </Routes>
           </NotificationProvider>
