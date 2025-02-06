@@ -8,7 +8,7 @@ function ElementSearch() {
     const testCases = [
         { params: [5, 7, 3, 5, 7, 7, 9], expected: [2] },
         { params: [4, 3, 3, 8, 9, 100], expected: [0] },
-        { params: [6, 0, 2, 12, 3, 43, 100, 399], expected: [-1] },
+        { params: [6, 0, 2, 3, 12, 43, 100, 399], expected: [-1] },
         { params: [10, 100, -2, 0, 1, 2, 3, 32, 66, 77, 83, 100], expected: [9] },
     ];
 
