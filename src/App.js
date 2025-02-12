@@ -114,6 +114,15 @@ import Conversion from './frontend/problems/char/Conversion.js';
 import CharDelete from './frontend/problems/char/CharDelete.js';
 import ReversedArray from './frontend/problems/char/ReversedArray.js';
 import StrCopy from './frontend/problems/char/StrCopy.js';
+import LongestSentence from './frontend/problems/char/LongestSentence.js';
+import CatConsonant from './frontend/problems/char/CatConsonant.js';
+import Cenzor from './frontend/problems/char/Cenzor.js';
+import WordsCounter from './frontend/problems/char/WordsCounter.js';
+import Anagrams from './frontend/problems/char/Anagrams.js';
+import Backtracking from './frontend/problems/backtracking/Backtracking.js';
+import GenerateArrangements from './frontend/problems/backtracking/GenerateArrangements.js';
+import ThreeTermsSum from './frontend/problems/backtracking/ThreeTermsSum.js';
+import FruitsAndVegetables from './frontend/problems/backtracking/FruitsAndVegetables.js';
 
 
 
@@ -249,6 +258,16 @@ function App() {
               <Route path="/problems/Stergerea unui caracter dat" element={<CharDelete />} />
               <Route path="/problems/Inversarea unui sir de caractere" element={<ReversedArray />} />
               <Route path="/problems/Copia unui sir de caractere" element={<StrCopy />} />
+              <Route path="/problems/Cea mai lunga propozitie" element={<LongestSentence />} />
+              <Route path="/problems/Concatenarea a doua siruri" element={<CatConsonant />} />
+              <Route path="/problems/Cenzurarea unui cuvant" element={<Cenzor />} />
+              <Route path="/problems/Numararea cuvintelor" element={<WordsCounter />} />
+              <Route path="/problems/Anagrame" element={<Anagrams />} />
+
+              <Route path="/problems/Ce este backtracking?" element={<Backtracking />} />
+              <Route path="/problems/Generare aranjamente" element={<GenerateArrangements />} />
+              <Route path="/problems/Suma de numere naturale" element={<ThreeTermsSum />} />
+              <Route path="/problems/Fructe si legume" element={<FruitsAndVegetables />} />
 
             </Routes>
           </NotificationProvider>

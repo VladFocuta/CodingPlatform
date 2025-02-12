@@ -168,15 +168,24 @@ function Main() {
         { title: "Stergerea unui caracter dat", link: "/problems/Stergerea unui caracter dat", icon: "fa-solid fa-circle-check", index: 98 },
         { title: "Inversarea unui sir de caractere", link: "/problems/Inversarea unui sir de caractere", icon: "fa-solid fa-circle-check", index: 99 },
         { title: "Copia unui sir de caractere", link: "/problems/Copia unui sir de caractere", icon: "fa-solid fa-circle-check", index: 100 },
+        { title: "Cea mai lunga propozitie", link: "/problems/Cea mai lunga propozitie", icon: "fa-solid fa-circle-check", index: 101 },
+        { title: "Concatenarea a doua siruri", link: "/problems/Concatenarea a doua siruri", icon: "fa-solid fa-circle-check", index: 102 },
+        { title: "Cenzurarea unui cuvant", link: "/problems/Cenzurarea unui cuvant", icon: "fa-solid fa-circle-check", index: 103 },
+        { title: "Numararea cuvintelor", link: "/problems/Numararea cuvintelor", icon: "fa-solid fa-circle-check", index: 104 },
+        { title: "Anagrame", link: "/problems/Anagrame", icon: "fa-solid fa-circle-check", index: 105 },
 
       ] 
-    }, { 
-      title: "Fisiere text",
-      lessons: [
-
-      ]
-    }, {
+    },{
       title: "Recursivitate & Metoda backtracking",
+      lessons: [
+        { title: "Ce este backtracking?", link: "/problems/Ce este backtracking?", icon: "fa-solid fa-circle-check", index: 106 },
+        { title: "Generare aranjamente", link: "/problems/Generare aranjamente", icon: "fa-solid fa-circle-check", index: 107 },
+        { title: "Suma de numere naturale", link: "/problems/Suma de numere naturale", icon: "fa-solid fa-circle-check", index: 108 },
+        { title: "Fructe si legume", link: "/problems/Fructe si legume", icon: "fa-solid fa-circle-check", index: 109 },
+      ]
+    }
+     , { 
+      title: "Fisiere text",
       lessons: [
 
       ]

@@ -1,54 +1,52 @@
 import React, { useState } from 'react'
 import ProblemPage from '../../components/functions/ProblemPage'
-import Test from '../../components/Test';
+import Test from '../../components/Test'
 
-function MaxAndMinFor() {
+function GenerateArrangements() {
     const [testPassed, setTestPassed] = useState(false);
 
     const testCases = [
-        { params: [7, 10, 5, 7, 9, 6, 4, 8], expected: [4, 10] },
-        { params: [3, 10, 10, 10], expected: [10, 10] },
-        { params: [5, 3, 1, 3, 2, 10], expected: [1, 10] }
+        { params: ['4', '2'], expected: '1 2 \n 1 3 \n 1 4 \n 2 1 \n 2 3 \n 2 4 \n 3 1 \n 3 2 \n 3 4 \n 4 1 \n 4 2 \n 4 3' },
+        { params: ['3', '3'], expected: '1 2 3 \n 1 3 2 \n 2 1 3 \n 2 3 1 \n 3 1 2 \n 3 2 1' },
     ];
 
 
     const problemContent = (
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <h4>Se citesc notele a N elevi si trebuie sa le sortezi in ordine crescatoare pentru a vedea cine are cele mai mici si cele mai mari note.
-                    <br /> <br />
-                    Pe prima linie se citeste un numar întreg N (1 ≤ N ≤ 50), reprezentand numarul de elevi.<br />
-                    Pe a doua linie se citesc N numere intregi separate prin spatiu, notele elevilor.<br />
-                    Programul va afisa cea mai mica si ce mai mare nota.
+                <h4>Sa se genereze toate aranjamentele de k elemente din multimea (1, 2, ..., n).<br />
+                    Se citesc doua numere naturale n si k (1 ≤ k ≤ n ≤ 10).<br />
+                    Fiecare aranjament trebuie afisat pe un rand, iar elementele sa fie afisate in ordine de generare.
                     <br /><br />
                     Exemplu:
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
-                    <h4>Date de intrare: 7 <br /> 10 5 7 9 6 4 8
+                    <h4>Date de intrare: 4 2
                         <br />
                     </h4>
-                    <h4> Date de iesire: 4 10
+                    <h4> Date de iesire:<br /> 1 2<br />1 3<br /> 1 4<br />2 1<br />2 3<br /> 2 4<br />3 1 <br /> 3 2 <br /> 3 4<br />4 1 <br />4 2 <br /> 4 3
                     </h4>
                 </div>
+
 
             </div>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
                 <Test
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    problemName="Nota maxima si minima" />
+                    problemName="Generare aranjamente" />
             </div>
         </>
     )
     return (
         <ProblemPage
-            problemName="Nota maxima si minima"
+            problemName="Generare aranjamente"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Sortare si interschimbare"
+            nextRoute="/problems/Suma de numere naturale"
             testPassed={testPassed}
         />
     )
 }
 
-export default MaxAndMinFor
+export default GenerateArrangements
