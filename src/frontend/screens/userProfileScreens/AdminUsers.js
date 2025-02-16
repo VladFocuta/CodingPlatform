@@ -157,6 +157,13 @@ function AdminUsers() {
                                     <option value="3">Structura repetitiva for</option>
                                     <option value="4">Recapitulare For</option>
                                     <option value="5">Matrici</option>
+                                    <option value="6">Recapitulare Matrici</option>
+                                    <option value="7">Subprograme</option>
+                                    <option value="8">Siruri de caractere</option>
+                                    <option value="9">Recursivitate & Metoda backtracking</option>
+                                    <option value="10">Struct</option>
+                                    <option value="11">Fisiere text</option>
+                                    <option value="12">Grafuri</option>
                                 </select>
 
                                 <button

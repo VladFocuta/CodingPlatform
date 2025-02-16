@@ -144,7 +144,7 @@ function Main() {
         { title: "Permutari la stanga", link: "/problems/Permutari la stanga", icon: "fa-solid fa-circle-check", index: 83 },
         { title: "Triunghi inferior", link: "/problems/Triunghi inferior", icon: "fa-solid fa-circle-check", index: 84 },
 
-      ] 
+      ]
     }, {
       title: "Subprograme",
       lessons: [
@@ -156,7 +156,7 @@ function Main() {
         { title: "Fibonacci recursiv", link: "/problems/Fibonacci recursiv", icon: "fa-solid fa-circle-check", index: 90 },
         { title: "Functie-Factorialul unui numar", link: "/problems/Functie-Factorialul unui numar", icon: "fa-solid fa-circle-check", index: 91 },
       ]
-    }, { 
+    }, {
       title: "Siruri de caractere",
       lessons: [
         { title: "Siruri de caractere", link: "/problems/Siruri de caractere", icon: "fa-solid fa-circle-check", index: 92 },
@@ -174,8 +174,8 @@ function Main() {
         { title: "Numararea cuvintelor", link: "/problems/Numararea cuvintelor", icon: "fa-solid fa-circle-check", index: 104 },
         { title: "Anagrame", link: "/problems/Anagrame", icon: "fa-solid fa-circle-check", index: 105 },
 
-      ] 
-    },{
+      ]
+    }, {
       title: "Recursivitate & Metoda backtracking",
       lessons: [
         { title: "Ce este backtracking?", link: "/problems/Ce este backtracking?", icon: "fa-solid fa-circle-check", index: 106 },
@@ -184,7 +184,19 @@ function Main() {
         { title: "Fructe si legume", link: "/problems/Fructe si legume", icon: "fa-solid fa-circle-check", index: 109 },
       ]
     }
-     , { 
+    , {
+      title: "Struct",
+      lessons: [
+        { title: "Struct", link: "/problems/Struct", icon: "fa-solid fa-circle-check", index: 110 },
+        { title: "Vector de structuri", link: "/problems/Vector de structuri", icon: "fa-solid fa-circle-check", index: 111 },
+        { title: "Gestionarea unei liste de persoane", link: "/problems/Gestionarea unei liste de persoane", icon: "fa-solid fa-circle-check", index: 112 },
+        { title: "Sortarea unei liste de persoane", link: "/problems/Sortarea unei liste de persoane", icon: "fa-solid fa-circle-check", index: 113 },
+        { title: "Gestionarea unui vector de structuri", link: "/problems/Gestionarea unui vector de structuri", icon: "fa-solid fa-circle-check", index: 114 },
+        { title: "Cautarea unei persoane", link: "/problems/Cautarea unei persoane", icon: "fa-solid fa-circle-check", index: 115 },
+        { title: "Cea mai mare medie", link: "/problems/Cea mai mare medie", icon: "fa-solid fa-circle-check", index: 116 },
+      ]
+    },
+    {
       title: "Fisiere text",
       lessons: [
 

@@ -123,6 +123,13 @@ import Backtracking from './frontend/problems/backtracking/Backtracking.js';
 import GenerateArrangements from './frontend/problems/backtracking/GenerateArrangements.js';
 import ThreeTermsSum from './frontend/problems/backtracking/ThreeTermsSum.js';
 import FruitsAndVegetables from './frontend/problems/backtracking/FruitsAndVegetables.js';
+import Struct from './frontend/problems/struct/Struct.js';
+import StructVector from './frontend/problems/struct/StructVector.js';
+import InsertData from './frontend/problems/struct/InsertData.js';
+import ListSort from './frontend/problems/struct/ListSort.js';
+import StructAddRemoveSearch from './frontend/problems/struct/StructAddRemoveSearch.js';
+import SearchData from './frontend/problems/struct/SearchData.js';
+import AverageNote from './frontend/problems/struct/AverageNote.js';
 
 
 
@@ -268,6 +275,15 @@ function App() {
               <Route path="/problems/Generare aranjamente" element={<GenerateArrangements />} />
               <Route path="/problems/Suma de numere naturale" element={<ThreeTermsSum />} />
               <Route path="/problems/Fructe si legume" element={<FruitsAndVegetables />} />
+
+              <Route path="/problems/Struct" element={<Struct />} />
+              <Route path="/problems/Vector de structuri" element={<StructVector />} />
+              <Route path="/problems/Gestionarea unei liste de persoane" element={<InsertData />} />
+              <Route path="/problems/Sortarea unei liste de persoane" element={<ListSort />} />
+              <Route path="/problems/Gestionarea unui vector de structuri" element={<StructAddRemoveSearch />} />
+              <Route path="/problems/Cautarea unei persoane" element={<SearchData />} />
+              <Route path="/problems/Cea mai mare medie" element={<AverageNote />} />
+
 
             </Routes>
           </NotificationProvider>

@@ -48,7 +48,7 @@ function FruitsAndVegetables() {
             problemName="Fructe si legume"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Bubble Sort"
+            nextRoute="/Main"
             testPassed={testPassed}
         />
     )

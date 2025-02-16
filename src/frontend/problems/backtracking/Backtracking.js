@@ -4,7 +4,6 @@ import CodeStyle from '../../components/CodeStyle'
 
 function Backtracking() {
 
-
     const problemContent = (
         <>
             <h4 >
