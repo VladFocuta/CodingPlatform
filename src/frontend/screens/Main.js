@@ -197,12 +197,13 @@ function Main() {
       ]
     },
     {
-      title: "Fisiere text",
-      lessons: [
-
-      ]
-    }, {
       title: "Grafuri",
+      lessons: [
+        { title: "Grafuri", link: "/problems/Grafuri", icon: "fa-solid fa-circle-check", index: 117 },
+      ]
+    },
+    {
+      title: "Fisiere text",
       lessons: [
 
       ]

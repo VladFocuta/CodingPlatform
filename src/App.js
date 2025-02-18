@@ -130,6 +130,7 @@ import ListSort from './frontend/problems/struct/ListSort.js';
 import StructAddRemoveSearch from './frontend/problems/struct/StructAddRemoveSearch.js';
 import SearchData from './frontend/problems/struct/SearchData.js';
 import AverageNote from './frontend/problems/struct/AverageNote.js';
+import Graphs from './frontend/problems/graphs/Graphs.js';
 
 
 
@@ -283,7 +284,7 @@ function App() {
               <Route path="/problems/Gestionarea unui vector de structuri" element={<StructAddRemoveSearch />} />
               <Route path="/problems/Cautarea unei persoane" element={<SearchData />} />
               <Route path="/problems/Cea mai mare medie" element={<AverageNote />} />
-
+              <Route path="/problems/Grafuri" element={<Graphs />} />
 
             </Routes>
           </NotificationProvider>

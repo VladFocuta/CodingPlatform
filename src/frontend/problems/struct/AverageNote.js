@@ -49,7 +49,7 @@ function AverageNote() {
             problemName="Cea mai mare medie"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Generare numere"
+            nextRoute="/Main"
             testPassed={testPassed}
         />
     )
