@@ -8,7 +8,7 @@ import { countProblemSolved } from '../../../backend/functions/handleSolvedProbC
 
 
 
-function ProblemPage({ problemName, problemPoints, problemContent, nextRoute, problemHeader, problemEnd, testPassed, lecture }) {
+function ProblemPage({ problemName, problemPoints, problemContent, nextRoute, problemHeader, problemEnd, testPassed, lecture, quiz }) {
     const { loggedIn, user } = UserAuth();
     const navigate = useNavigate();
     const { userProgressPoints, problemsSolved } = UserProgressData();
