@@ -54,42 +54,58 @@ function ProblemPage({ problemName, problemPoints, problemContent, nextRoute, pr
         <>
             {loggedIn ? (
                 <div className='main-container'>
+                    {!quiz ? (
+                        <>
+                            <h1 className='home-container' style={{ color: 'white' }}>
+                                {problemName}
+                            </h1>
+                            <div>
+                                {/*<strong style={{ color: 'white' }}>{counterSolvedProblem} </strong>*/}
+                                <i className="fa-solid fa-users"
+                                    title={`Rezolvat de: ${counterSolvedProblem} utilizatori`}
+                                    style={{ color: 'white' }}></i>
+                            </div>
 
 
-                    <h1 className='home-container' style={{ color: 'white' }}>
-                        {problemName}
-                    </h1>
-                    <div>
-                        {/*<strong style={{ color: 'white' }}>{counterSolvedProblem} </strong>*/}
-                        <i className="fa-solid fa-users"
-                            title={`Rezolvat de: ${counterSolvedProblem} utilizatori`}
-                            style={{ color: 'white' }}></i>
-                    </div>
+                            {problemHeader && (
+                                <div className='userInfo' style={{ marginTop: '60px', width: '50%' }}>
+                                    <strong className='common-text'>
+                                        {problemHeader}
+                                    </strong>
+                                </div>
+                            )}
 
 
-                    {problemHeader && (
-                        <div className='userInfo' style={{ marginTop: '60px', width: '50%' }}>
-                            <strong className='common-text'>
-                                {problemHeader}
-                            </strong>
-                        </div>
+                            {problemContent && (
+                                <div className='userInfo' style={{ marginTop: '20px', width: '50%', flexDirection: 'column' }}>
+                                    {problemContent}
+                                </div>
+                            )}
+
+
+                            {problemEnd && (
+                                <div className='userInfo' style={{ marginTop: '20px', width: '50%', alignSelf: 'flex-start' }}>
+                                    {problemEnd}
+                                </div>
+                            )}
+                        </>
+                    ) : (
+                        <>
+                            <h1 className='home-container' style={{ color: 'white' }}>
+                                Quiz
+                            </h1>
+                            {problemContent && (
+                                <div className='userInfo' style={{ marginTop: '20px', width: '50%', flexDirection: 'column' }}>
+                                    {problemContent}
+                                </div>
+                            )}
+
+                        </>
                     )}
 
 
-                    {problemContent && (
-                        <div className='userInfo' style={{ marginTop: '20px', width: '50%', flexDirection: 'column' }}>
-                            {problemContent}
-                        </div>
-                    )}
 
-
-                    {problemEnd && (
-                        <div className='userInfo' style={{ marginTop: '20px', width: '50%', alignSelf: 'flex-start' }}>
-                            {problemEnd}
-                        </div>
-                    )}
-
-                    <div style={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
+                    <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
                         {testPassed && (
                             <div className="congratulations-message" style={{ margin: '20px 0', color: 'green', fontWeight: 'bold' }}>
                                 Felicitări, {user?.displayName || 'Utilizator'}! Ai rezolvat această problemă!

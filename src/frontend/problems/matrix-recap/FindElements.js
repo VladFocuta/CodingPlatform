@@ -20,16 +20,16 @@ function FindElements() {
                     <br />
                     Pe prima linie se citeste numarul n, apoi m.<br />
                     Pe a doua linie se citesc elementele matricei.<br />
-                    Pe a treia linie se va citi numarul q.<br />
+                    Pe a treia linie se va citi numarul q, urmat de q numere.<br />
                     Pentru fiecare dintre cele q numere intregi, sa se afiseze <strong style={{ color: 'red' }}>DA</strong> daca se regasesc in matrice sau <strong style={{ color: 'red' }}>NU</strong> in caz contrar.
                     <br /><br />
                     Exemplu:
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
-                    <h4>Date de intrare:<br /> 3 3 <br /> 1 20 21 <br /> 4 30 5 <br /> 7 8 40
+                    <h4>Date de intrare:<br /> 3 3 <br /> 1 20 21 <br /> 4 30 5 <br /> 7 8 40<br /> 3 <br /> 2 40 21
 
                     </h4>
-                    <h4> Date de iesire: <br /> 7 8 40 <br /> 4 30 5 <br /> 1 20 21</h4>
+                    <h4> Date de iesire: <br /> NU <br /> DA <br /> DA</h4>
 
                 </div>
 

@@ -131,6 +131,43 @@ import StructAddRemoveSearch from './frontend/problems/struct/StructAddRemoveSea
 import SearchData from './frontend/problems/struct/SearchData.js';
 import AverageNote from './frontend/problems/struct/AverageNote.js';
 import Graphs from './frontend/problems/graphs/Graphs.js';
+import RepGraph from './frontend/problems/graphs/quiz/RepGraph.js';
+import RepAndDegree from './frontend/problems/graphs/RepAndDegree.js';
+import GraphDegree from './frontend/problems/graphs/quiz/GraphDegree.js';
+import ListAndMatrixDiff from './frontend/problems/graphs/quiz/ListAndMatrixDiff.js';
+import PartialSubgraphComp from './frontend/problems/graphs/PartialSubgraphComp.js';
+import Partial from './frontend/problems/graphs/quiz/Partial.js';
+import Subgraf from './frontend/problems/graphs/quiz/Subgraf.js';
+import Complementar from './frontend/problems/graphs/quiz/Complementar.js';
+import NullCompletRegBip from './frontend/problems/graphs/NullCompletRegBip.js';
+import NulGraph from './frontend/problems/graphs/quiz/NulGraph.js';
+import GraphComplet from './frontend/problems/graphs/quiz/GraphComplet.js';
+import GraphRegulat from './frontend/problems/graphs/quiz/GraphRegulat.js';
+import GraphBipartit from './frontend/problems/graphs/quiz/GraphBipartit.js';
+import ChainAndCicle from './frontend/problems/graphs/ChainAndCicle.js';
+import Chain from './frontend/problems/graphs/quiz/Chain.js';
+import Cicle from './frontend/problems/graphs/quiz/Cicle.js';
+import ConexComponentsBiconex from './frontend/problems/graphs/ConexComponentsBiconex.js';
+import Conex from './frontend/problems/graphs/quiz/Conex.js';
+import ConexComponents from './frontend/problems/graphs/quiz/ConexComponents.js';
+import Biconex from './frontend/problems/graphs/quiz/Biconex.js';
+import ArborHamilEuler from './frontend/problems/graphs/ArborHamilEuler.js';
+import Arbore from './frontend/problems/graphs/quiz/Arbore.js';
+import Hamiltonian from './frontend/problems/graphs/quiz/Hamiltonian.js';
+import Eulerian from './frontend/problems/graphs/quiz/Eulerian.js';
+import AdiacentMatrix from './frontend/problems/graphs-problems/AdiacentMatrix.js';
+import TopDegree from './frontend/problems/graphs-problems/TopDegree.js';
+import MaxAndMinKnots from './frontend/problems/graphs-problems/MaxAndMinKnots.js';
+import EdgesDelete from './frontend/problems/graphs-problems/EdgesDelete.js';
+import SubGraph from './frontend/problems/graphs-problems/SubGraph.js';
+import ComplementGraph from './frontend/problems/graphs-problems/ComplementGraph.js';
+import CompletGraph from './frontend/problems/graphs-problems/CompletGraph.js';
+import GraphBipartitProblem from './frontend/problems/graphs-problems/GraphBipartitProblem.js';
+import ChainProblem from './frontend/problems/graphs-problems/ChainProblem.js';
+import ConexComponentsProblem from './frontend/problems/graphs-problems/ConexComponentsProblem.js';
+import GraphTreeProblem from './frontend/problems/graphs-problems/GraphTreeProblem.js';
+import HamiltonianGraphProblem from './frontend/problems/graphs-problems/HamiltonianGraphProblem.js';
+import EulerianGraphProblem from './frontend/problems/graphs-problems/EulerianGraphProblem.js';
 
 
 
@@ -284,12 +321,51 @@ function App() {
               <Route path="/problems/Gestionarea unui vector de structuri" element={<StructAddRemoveSearch />} />
               <Route path="/problems/Cautarea unei persoane" element={<SearchData />} />
               <Route path="/problems/Cea mai mare medie" element={<AverageNote />} />
+
               <Route path="/problems/Grafuri" element={<Graphs />} />
+              <Route path="/problems/Reprezentare si graduri" element={<RepAndDegree />} />
+              <Route path="/quiz/Reprezentarea unui graf" element={<RepGraph />} />
+              <Route path="/quiz/Graduri" element={<GraphDegree />} />
+              <Route path="/quiz/Diferenta dintre matricea si lista de adiacenta" element={<ListAndMatrixDiff />} />
+              <Route path="/problems/Partial-Subgraf-Complementar" element={<PartialSubgraphComp />} />
+              <Route path="/quiz/Partial" element={<Partial />} />
+              <Route path="/quiz/Subgraf" element={<Subgraf />} />
+              <Route path="/quiz/Complementar" element={<Complementar />} />
+              <Route path="/problems/Nul-Complet-Regulat-Bipartit" element={<NullCompletRegBip />} />
+              <Route path="/quiz/Nul" element={<NulGraph />} />
+              <Route path="/quiz/Complet" element={<GraphComplet />} />
+              <Route path="/quiz/Regulat" element={<GraphRegulat />} />
+              <Route path="/quiz/Bipartit" element={<GraphBipartit />} />
+              <Route path="/problems/Conexitate-Lant-Ciclu" element={<ChainAndCicle />} />
+              <Route path="/quiz/Lant" element={<Chain />} />
+              <Route path="/quiz/Ciclu" element={<Cicle />} />
+              <Route path="/problems/Conex-Componente conexe-Biconex" element={<ConexComponentsBiconex />} />
+              <Route path="/quiz/Conex" element={<Conex />} />
+              <Route path="/quiz/Componente conexe" element={<ConexComponents />} />
+              <Route path="/quiz/Biconex" element={<Biconex />} />
+              <Route path="/problems/Arbore-Hamiltonian-Eulerian" element={<ArborHamilEuler />} />
+              <Route path="/quiz/Arbore" element={<Arbore />} />
+              <Route path="/quiz/Hamiltonian" element={<Hamiltonian />} />
+              <Route path="/quiz/Eulerian" element={<Eulerian />} />
+
+              <Route path="/problems/Matrice de adiacenta" element={<AdiacentMatrix />} />
+              <Route path="/problems/Calculul gradului unui varf" element={<TopDegree />} />
+              <Route path="/problems/Nodurile cu grad maxim si minim" element={<MaxAndMinKnots />} />
+              <Route path="/problems/Eliminarea muchiilor" element={<EdgesDelete />} />
+              <Route path="/problems/Subgraf conex" element={<SubGraph />} />
+              <Route path="/problems/Graf complementar" element={<ComplementGraph />} />
+              <Route path="/problems/Graf complet" element={<CompletGraph />} />
+              <Route path="/problems/Graf bipartit" element={<GraphBipartitProblem />} />
+              <Route path="/problems/Determinarea tipului de lant" element={<ChainProblem />} />
+              <Route path="/problems/Numarul de componente conexe" element={<ConexComponentsProblem />} />
+              <Route path="/problems/Verificare graf arbore" element={<GraphTreeProblem />} />
+              <Route path="/problems/Verificare graf Hamiltonian" element={<HamiltonianGraphProblem />} />
+              <Route path="/problems/Verificare graf Eulerian" element={<EulerianGraphProblem />} />
 
             </Routes>
           </NotificationProvider>
         </UserProgress>
-        
+
       </AuthProvider>
     </div >
   );

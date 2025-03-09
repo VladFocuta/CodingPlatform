@@ -197,9 +197,56 @@ function Main() {
       ]
     },
     {
-      title: "Grafuri",
+      title: "Grafuri",// trebuie sa schimb index-ul
       lessons: [
         { title: "Grafuri", link: "/problems/Grafuri", icon: "fa-solid fa-circle-check", index: 117 },
+        { title: "Reprezentare si graduri", link: "/problems/Reprezentare si graduri", icon: "fa-solid fa-circle-check", index: 118 },
+        { title: "Reprezentarea unui graf", link: "/quiz/Reprezentarea unui graf", icon: "fa-solid fa-circle-check", index: 119 },
+        { title: "Graduri", link: "/quiz/Graduri", icon: "fa-solid fa-circle-check", index: 120 },
+        { title: "Diferenta dintre matricea si lista de adiacenta", link: "/quiz/Diferenta dintre matricea si lista de adiacenta", icon: "fa-solid fa-circle-check", index: 121 },
+        { title: "Matrice de adiacenta", link: "/problems/Matrice de adiacenta", icon: "fa-solid fa-circle-check", index: 122 },
+        { title: "Calculul gradului unui varf", link: "/problems/Calculul gradului unui varf", icon: "fa-solid fa-circle-check", index: 123 },
+        { title: "Nodurile cu grad maxim si minim", link: "/problems/Nodurile cu grad maxim si minim", icon: "fa-solid fa-circle-check", index: 124 },
+
+
+        { title: "Partial-Subgraf-Complementar", link: "/problems/Partial-Subgraf-Complementar", icon: "fa-solid fa-circle-check", index: 125 },
+        { title: "Partial", link: "/quiz/Partial", icon: "fa-solid fa-circle-check", index: 126 },
+        { title: "Subgraf", link: "/quiz/Subgraf", icon: "fa-solid fa-circle-check", index: 127 },
+        { title: "Complementar", link: "/quiz/Complementar", icon: "fa-solid fa-circle-check", index: 128 },
+        { title: "Eliminarea muchiilor", link: "/problems/Eliminarea muchiilor", icon: "fa-solid fa-circle-check", index: 129 },
+        { title: "Subgraf conex", link: "/problems/Subgraf conex", icon: "fa-solid fa-circle-check", index: 130 },
+        { title: "Graf complementar", link: "/problems/Graf complementar", icon: "fa-solid fa-circle-check", index: 131 },
+        
+
+        { title: "Nul-Complet-Regulat-Bipartit", link: "/problems/Nul-Complet-Regulat-Bipartit", icon: "fa-solid fa-circle-check", index: 132 },
+        { title: "Nul", link: "/quiz/Nul", icon: "fa-solid fa-circle-check", index: 133 },
+        { title: "Complet", link: "/quiz/Complet", icon: "fa-solid fa-circle-check", index: 134 },
+        { title: "Regulat", link: "/quiz/Regulat", icon: "fa-solid fa-circle-check", index: 135 },
+        { title: "Bipartit", link: "/quiz/Bipartit", icon: "fa-solid fa-circle-check", index: 136 },
+        { title: "Graf complet", link: "/problems/Graf complet", icon: "fa-solid fa-circle-check", index: 137 },
+        { title: "Graf bipartit", link: "/problems/Graf bipartit", icon: "fa-solid fa-circle-check", index: 138 },
+
+
+        { title: "Conexitate-Lant-Ciclu", link: "/problems/Conexitate-Lant-Ciclu", icon: "fa-solid fa-circle-check", index: 139 },
+        { title: "Lant", link: "/quiz/Lant", icon: "fa-solid fa-circle-check", index: 140 },
+        { title: "Ciclu", link: "/quiz/Ciclu", icon: "fa-solid fa-circle-check", index: 141 },
+        { title: "Determinarea tipului de lant", link: "/problems/Determinarea tipului de lant", icon: "fa-solid fa-circle-check", index: 142 },
+
+        { title: "Conex-Componente conexe-Biconex", link: "/problems/Conex-Componente conexe-Biconex", icon: "fa-solid fa-circle-check", index: 143 },
+        { title: "Conex", link: "/quiz/Conex", icon: "fa-solid fa-circle-check", index: 144 },
+        { title: "Componente conexe", link: "/quiz/Componente conexe", icon: "fa-solid fa-circle-check", index: 145 },
+        { title: "Biconex", link: "/quiz/Biconex", icon: "fa-solid fa-circle-check", index: 146 },
+        { title: "Numarul de componente conexe", link: "/problems/Numarul de componente conexe", icon: "fa-solid fa-circle-check", index: 147 },
+
+
+
+        { title: "Arbore-Hamiltonian-Eulerian", link: "/problems/Arbore-Hamiltonian-Eulerian", icon: "fa-solid fa-circle-check", index: 148 },
+        { title: "Arbore", link: "/quiz/Arbore", icon: "fa-solid fa-circle-check", index: 149 },
+        { title: "Hamiltonian", link: "/quiz/Hamiltonian", icon: "fa-solid fa-circle-check", index: 150 },
+        { title: "Verificare graf arbore", link: "/problems/Verificare graf arbore", icon: "fa-solid fa-circle-check", index: 151 },
+        { title: "Verificare graf Hamiltonian", link: "/problems/Verificare graf Hamiltonian", icon: "fa-solid fa-circle-check", index: 152 },
+        { title: "Verificare graf Eulerian", link: "/problems/Verificare graf Eulerian", icon: "fa-solid fa-circle-check", index: 153 },
+
       ]
     },
     {
