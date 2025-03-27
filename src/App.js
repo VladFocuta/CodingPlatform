@@ -168,6 +168,7 @@ import ConexComponentsProblem from './frontend/problems/graphs-problems/ConexCom
 import GraphTreeProblem from './frontend/problems/graphs-problems/GraphTreeProblem.js';
 import HamiltonianGraphProblem from './frontend/problems/graphs-problems/HamiltonianGraphProblem.js';
 import EulerianGraphProblem from './frontend/problems/graphs-problems/EulerianGraphProblem.js';
+import TextFile from './frontend/problems/text/TextFile.js';
 
 
 
@@ -361,6 +362,8 @@ function App() {
               <Route path="/problems/Verificare graf arbore" element={<GraphTreeProblem />} />
               <Route path="/problems/Verificare graf Hamiltonian" element={<HamiltonianGraphProblem />} />
               <Route path="/problems/Verificare graf Eulerian" element={<EulerianGraphProblem />} />
+
+              <Route path="/problems/Fisiere text" element={<TextFile />} />
 
             </Routes>
           </NotificationProvider>

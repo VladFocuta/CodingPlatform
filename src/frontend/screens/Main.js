@@ -252,6 +252,7 @@ function Main() {
     {
       title: "Fisiere text",
       lessons: [
+        { title: "Fisiere text", link: "/problems/Fisiere text", icon: "fa-solid fa-circle-check", index: 154 },
 
       ]
     }
