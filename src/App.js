@@ -169,6 +169,9 @@ import GraphTreeProblem from './frontend/problems/graphs-problems/GraphTreeProbl
 import HamiltonianGraphProblem from './frontend/problems/graphs-problems/HamiltonianGraphProblem.js';
 import EulerianGraphProblem from './frontend/problems/graphs-problems/EulerianGraphProblem.js';
 import TextFile from './frontend/problems/text/TextFile.js';
+import HighNumbersSum from './frontend/problems/for-recap/HighNumbersSum.js';
+import HighNumbersProduct from './frontend/problems/for-recap/HighNumbersProduct.js';
+import TemporarlyFriends from './frontend/problems/for-recap/TemporarlyFriends.js';
 
 
 
@@ -265,6 +268,11 @@ function App() {
               <Route path="/problems/Suma a doua siruri" element={<TwoArraysSum />} />
               <Route path="/problems/Suma a doua siruri2.0" element={<TwoArraysSum2 />} />
               <Route path="/problems/Sirul lui Fibonacci" element={<Fibonacci />} />
+              <Route path="/problems/Suma a doua numere mari" element={<HighNumbersSum />} />
+              <Route path="/problems/Produsul a doua numere mari" element={<HighNumbersProduct />} />
+              <Route path="/problems/Analiza cercului prietenilor" element={<TemporarlyFriends />} />
+              
+              
 
               <Route path="/problems/Matrici" element={<Matrix />} />
               <Route path="/problems/Declarare/Citire/Afisare" element={<MatrixDetails />} />

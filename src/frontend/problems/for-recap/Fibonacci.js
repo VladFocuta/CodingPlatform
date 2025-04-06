@@ -45,7 +45,7 @@ function Fibonacci() {
             problemName="Sirul lui Fibonacci"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/Suma a doua numere mari"
             testPassed={testPassed}
         />
     )
