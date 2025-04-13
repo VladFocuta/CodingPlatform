@@ -49,7 +49,7 @@ function TemporarlyFriends() {
             problemName="Analiza cercului prietenilor"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Sirul lui Fibonacci"
+            nextRoute="/problems/Numere speciale palindromizate"
             testPassed={testPassed}
         />
     )

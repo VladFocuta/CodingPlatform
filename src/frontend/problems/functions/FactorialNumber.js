@@ -46,7 +46,7 @@ function FactorialNumber() {
             problemName="Functie-Factorialul unui numar"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Factorialul unui numar"
+            nextRoute="/problems/Simularea unei stive"
             testPassed={testPassed}
         />
     )

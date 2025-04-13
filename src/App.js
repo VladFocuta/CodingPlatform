@@ -172,6 +172,10 @@ import TextFile from './frontend/problems/text/TextFile.js';
 import HighNumbersSum from './frontend/problems/for-recap/HighNumbersSum.js';
 import HighNumbersProduct from './frontend/problems/for-recap/HighNumbersProduct.js';
 import TemporarlyFriends from './frontend/problems/for-recap/TemporarlyFriends.js';
+import SpecialPalindrom from './frontend/problems/for-recap/SpecialPalindrom.js';
+import ControlDigit from './frontend/problems/while-recap/ControlDigit.js';
+import ParanthesisCheck from './frontend/problems/char/ParanthesisCheck.js';
+import PopAndPush from './frontend/problems/functions/PopAndPush.js';
 
 
 
@@ -240,6 +244,11 @@ function App() {
               <Route path="/problems/Generare numere" element={<GeneratePrimeNumbers />} />
               <Route path="/problems/Numere perfecte" element={<PerfectNumbers />} />
               <Route path="/problems/Interschimbare doua jumatati" element={<InterchangeHalfNumber />} />
+              <Route path="/problems/Cifra de control" element={<ControlDigit />} />
+
+              
+
+
 
               <Route path="/problems/Structura Repetitiva for" element={<ForLecture />} />
               <Route path="/problems/Siruri de numere" element={<Arrays />} />
@@ -271,7 +280,8 @@ function App() {
               <Route path="/problems/Suma a doua numere mari" element={<HighNumbersSum />} />
               <Route path="/problems/Produsul a doua numere mari" element={<HighNumbersProduct />} />
               <Route path="/problems/Analiza cercului prietenilor" element={<TemporarlyFriends />} />
-              
+              <Route path="/problems/Numere speciale palindromizate" element={<SpecialPalindrom />} />
+
               
 
               <Route path="/problems/Matrici" element={<Matrix />} />
@@ -302,6 +312,10 @@ function App() {
               <Route path="/problems/Modificarea unui tablou" element={<ArrayModify />} />
               <Route path="/problems/Fibonacci recursiv" element={<FibonacciRecursiv />} />
               <Route path="/problems/Functie-Factorialul unui numar" element={<FactorialNumber />} />
+              <Route path="/problems/Simularea unei stive" element={<PopAndPush />} />
+
+
+              
 
               <Route path="/problems/Siruri de caractere" element={<Char />} />
               <Route path="/problems/ASCII" element={<ASCII />} />
@@ -317,6 +331,11 @@ function App() {
               <Route path="/problems/Cenzurarea unui cuvant" element={<Cenzor />} />
               <Route path="/problems/Numararea cuvintelor" element={<WordsCounter />} />
               <Route path="/problems/Anagrame" element={<Anagrams />} />
+              <Route path="/problems/Verificarea corectitudinii parantezelor" element={<ParanthesisCheck />} />
+
+              
+
+
 
               <Route path="/problems/Ce este backtracking?" element={<Backtracking />} />
               <Route path="/problems/Generare aranjamente" element={<GenerateArrangements />} />

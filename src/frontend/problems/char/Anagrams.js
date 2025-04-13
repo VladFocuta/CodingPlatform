@@ -43,7 +43,7 @@ function Anagrams() {
             problemName="Anagrame"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Copia unui sir de caractere"
+            nextRoute="/problems/Verificarea corectitudinii parantezelor"
             testPassed={testPassed}
         />
     )
