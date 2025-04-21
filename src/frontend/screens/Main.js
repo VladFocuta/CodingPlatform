@@ -118,9 +118,10 @@ function Main() {
         { title: "Produsul a doua numere mari", link: "/problems/Produsul a doua numere mari", icon: "fa-solid fa-circle-check", index: 68 },
         { title: "Analiza cercului prietenilor", link: "/problems/Analiza cercului prietenilor", icon: "fa-solid fa-circle-check", index: 69 },
         { title: "Numere speciale palindromizate", link: "/problems/Numere speciale palindromizate", icon: "fa-solid fa-circle-check", index: 70 },
+        //
+        { title: "Gestionarea unei librarii", link: "/problems/Gestionarea unei librarii", icon: "fa-solid fa-circle-check", index: 70 },
 
 
-        
       ]
     }, {
       title: "Matrici",
@@ -163,6 +164,11 @@ function Main() {
         { title: "Fibonacci recursiv", link: "/problems/Fibonacci recursiv", icon: "fa-solid fa-circle-check", index: 95 },
         { title: "Functie-Factorialul unui numar", link: "/problems/Functie-Factorialul unui numar", icon: "fa-solid fa-circle-check", index: 96 },
         { title: "Simularea unei stive", link: "/problems/Simularea unei stive", icon: "fa-solid fa-circle-check", index: 97 },
+        { title: "Castele", link: "/problems/Castele", icon: "fa-solid fa-circle-check", index: 97 },
+        //
+
+
+
       ]
     }, {
       title: "Siruri de caractere",

@@ -16,12 +16,20 @@ function SortAndInterchange() {
     const problemContent = (
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <h4>Sorteaza prima jumatate a unui array in ordine crescatoare si a doua jumatate in ordine descrescatoare.
+                <h4>În adâncul Templului Ordinii, există un artefact legendar cunoscut sub numele de Balanța Timpului. <br />
+                    Aceasta are puterea de a reorganiza un șir de energii în moduri neașteptate pentru a aduce echilibru între trecut și viitor.<br />
+
+                    Templul a primit un șir de puteri magice reprezentate de numere întregi. Pentru a activa mecanismul sacru, este nevoie ca:<br />
+
+                    Prima jumătate a șirului (reprezentând trecutul) să fie sortată în ordine crescătoare – simbol al progresului și al înțelepciunii acumulate.<br />
+
+                    A doua jumătate a șirului (reprezentând viitorul) să fie sortată în ordine descrescătoare – semn al provocărilor necunoscute ce vor veni.<br />
+
+                    Dacă numărul elementelor este impar, mijlocul aparține viitorului – fiind punctul de cotitură dintre cele două lumi.
                     <br /> <br />
-                    Pe prima linie se citeste un numar întreg N (1 ≤ N ≤ 50), reprezentand numarul elementelor unui array.<br />
+                    Pe prima linie se citeste un numar întreg N (1 ≤ N ≤ 50), reprezentând dimensiunea șirului.<br />
                     Pe a doua linie se citesc N numere intregi separate prin spatiu.<br />
-                    Daca sirul are o lungime impara, de exemplu 5, lungimea primei jumatati este 2 si a doua jumatate 3.
-                    Programul va afisa noul array sortat in modul mentionat mai sus.
+                    Se afișează noul șir obținut.
                     <br /><br />
                     Exemplu:
                 </h4>

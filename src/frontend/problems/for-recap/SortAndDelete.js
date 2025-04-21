@@ -16,11 +16,19 @@ function SortAndDelete() {
     const problemContent = (
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <h4>Scrie un program care citeste N numere intregi de la tastatura (unde N ≤ 50) si le sorteaza in ordine crescatoare folosind algoritmul Insertion Sort si apoi elimina elementele duplicate.
+                <h4>Într-o vale uitată de timp, trăiau cei mai înțelepți magi ai Regatului Numerelor. Aceștia aveau o Arhivă Sacră, unde trebuiau să stocheze toate numerele magice găsite de ucenici, dar cu o singură regulă:<br />
+
+                    „Niciun număr nu are voie să apară de două ori și toate trebuie așezate în ordine perfectă!”<br />
+
+                    Într-o zi, tu, un tânăr ucenic, primești sarcina de a curăța un set de numere găsite în pădurea digitală.<br />
+                    Aceste numere sunt amestecate și pot conține duplicate.<br />
+                    Marele Înțelept îți spune:<br />
+                    „Ai grijă, ucenice! Poți colecta cel mult 50 de numere. Odată ce le-ai adunat, sortează-le cu migală, exact ca în vechile scripturi.<br />
+                     Apoi elimină toate dublurile, căci ordinea și unicitatea aduc echilibrul!”
                     <br /> <br />
-                    Pe prima linie se citeste un numar întreg N (1 ≤ N ≤ 50), reprezentand numarul de elemente din array.<br />
-                    Pe a doua linie se citesc N numere intregi separate prin spatiu.<br />
-                    Programul va afisa numerele sortate in ordine crescatoare, separate prin spatiu.
+                    Pe prima linie se citeste un numar întreg N (1 ≤ N ≤ 50), numărul total de valori găsite.<br />
+                    Pe a doua linie se citesc N valori, separate prin spatiu.<br />
+                    Afișează pe ecran șirul final, gata să fie depus în Arhiva Magilor.
                     <br /><br />
                     Exemplu:
                 </h4>

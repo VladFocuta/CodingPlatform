@@ -50,7 +50,7 @@ function SpecialPalindrom() {
             problemName="Numere speciale palindromizate"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/Gestionarea unei librarii"
             testPassed={testPassed}
         />
     )

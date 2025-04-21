@@ -176,6 +176,8 @@ import SpecialPalindrom from './frontend/problems/for-recap/SpecialPalindrom.js'
 import ControlDigit from './frontend/problems/while-recap/ControlDigit.js';
 import ParanthesisCheck from './frontend/problems/char/ParanthesisCheck.js';
 import PopAndPush from './frontend/problems/functions/PopAndPush.js';
+import Castels from './frontend/problems/functions/Castels.js';
+import Library from './frontend/problems/for-recap/Library.js';
 
 
 
@@ -248,7 +250,7 @@ function App() {
 
               
 
-
+              
 
               <Route path="/problems/Structura Repetitiva for" element={<ForLecture />} />
               <Route path="/problems/Siruri de numere" element={<Arrays />} />
@@ -281,7 +283,7 @@ function App() {
               <Route path="/problems/Produsul a doua numere mari" element={<HighNumbersProduct />} />
               <Route path="/problems/Analiza cercului prietenilor" element={<TemporarlyFriends />} />
               <Route path="/problems/Numere speciale palindromizate" element={<SpecialPalindrom />} />
-
+              <Route path="/problems/Gestionarea unei librarii" element={<Library />} />
               
 
               <Route path="/problems/Matrici" element={<Matrix />} />
@@ -313,8 +315,8 @@ function App() {
               <Route path="/problems/Fibonacci recursiv" element={<FibonacciRecursiv />} />
               <Route path="/problems/Functie-Factorialul unui numar" element={<FactorialNumber />} />
               <Route path="/problems/Simularea unei stive" element={<PopAndPush />} />
-
-
+              <Route path="/problems/Castele" element={<Castels />} />
+              
               
 
               <Route path="/problems/Siruri de caractere" element={<Char />} />

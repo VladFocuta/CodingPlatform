@@ -15,7 +15,16 @@ function MaxAndMinFor() {
     const problemContent = (
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <h4>Se citesc notele a N elevi si trebuie sa le sortezi in ordine crescatoare pentru a vedea cine are cele mai mici si cele mai mari note.
+                <h4>Într-o zi de toamnă târzie, profesorul Andronic a decis să-și actualizeze vechiul catalog magic.<br />
+                    Fiecare elev din clasa sa primise o notă în urma unei evaluări surpriză. Pentru a afla cine are nevoie de ajutor și cine merită laude, profesorul trebuie să sorteze toate notele elevilor.<br />
+
+                    Astfel, el vrea să afle:<br />
+
+                    Cine a obținut cea mai mică notă (pentru a-i oferi îndrumare)<br />
+
+                    Cine a obținut cea mai mare notă (pentru a-l felicita în fața clasei)<br />
+
+                    Ajută-l pe profesorul Andronic să ordoneze notele elevilor săi și să afle valorile extremelor.
                     <br /> <br />
                     Pe prima linie se citeste un numar întreg N (1 ≤ N ≤ 50), reprezentand numarul de elevi.<br />
                     Pe a doua linie se citesc N numere intregi separate prin spatiu, notele elevilor.<br />
