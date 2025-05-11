@@ -80,7 +80,7 @@ function Library() {
             problemName="Gestionarea unei librarii"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/Laboratorul de inteligenta artificiala"
             testPassed={testPassed}
         />
     )

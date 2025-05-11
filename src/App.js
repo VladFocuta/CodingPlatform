@@ -178,6 +178,13 @@ import ParanthesisCheck from './frontend/problems/char/ParanthesisCheck.js';
 import PopAndPush from './frontend/problems/functions/PopAndPush.js';
 import Castels from './frontend/problems/functions/Castels.js';
 import Library from './frontend/problems/for-recap/Library.js';
+import AILabor from './frontend/problems/for-recap/AILabor.js';
+import DepoCode from './frontend/problems/for-recap/DepoCode.js';
+import SecretCodes from './frontend/problems/for-recap/SecretCodes.js';
+import FreqMatrix from './frontend/problems/matrix/FreqMatrix.js';
+import AgentsMission from './frontend/problems/for-recap/AgentsMission.js';
+import QualityCheck from './frontend/problems/for-recap/QualityCheck.js';
+import DigitalCatalog from './frontend/problems/for-recap/DigitalCatalog.js';
 
 
 
@@ -284,7 +291,16 @@ function App() {
               <Route path="/problems/Analiza cercului prietenilor" element={<TemporarlyFriends />} />
               <Route path="/problems/Numere speciale palindromizate" element={<SpecialPalindrom />} />
               <Route path="/problems/Gestionarea unei librarii" element={<Library />} />
+              <Route path="/problems/Laboratorul de inteligenta artificiala" element={<AILabor />} />
+              <Route path="/problems/Analiza cifrelor in codurile unui depozit" element={<DepoCode />} />
+              <Route path="/problems/Codurile secrete" element={<SecretCodes />} />
+              <Route path="/problems/Misiunea Agentilor P" element={<AgentsMission />} />
+              <Route path="/problems/Controlul de calitate" element={<QualityCheck />} />
+              <Route path="/problems/Catalogul digital" element={<DigitalCatalog />} />
               
+              
+
+
 
               <Route path="/problems/Matrici" element={<Matrix />} />
               <Route path="/problems/Declarare/Citire/Afisare" element={<MatrixDetails />} />
@@ -296,6 +312,9 @@ function App() {
               <Route path="/problems/Matrice de identitate" element={<IdentityMatrix />} />
               <Route path="/problems/Inlocuirea unei coloane" element={<ColumnReplace />} />
               <Route path="/problems/Cel mai mare de pe rand" element={<MaxRow />} />
+              <Route path="/problems/Turnirul Cifrarilor" element={<FreqMatrix />} />
+
+              
 
               <Route path="/problems/Contorizarea valorilor" element={<ValuesCounter />} />
               <Route path="/problems/Matrice simetrica" element={<SymmetricMatrix />} />

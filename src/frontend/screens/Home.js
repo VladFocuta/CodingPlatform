@@ -19,7 +19,7 @@ function Home() {
                 <div className='user-info'>
                     <h4>O facem din pasiune, <br />
                         Nu pentru compensare <br /><br />
-                        Dacă găsești aceste probleme gratuite utile și vrei să ai acces la mai multe exerciții, poți consulta opțiunea de abonare. Toate veniturile din abonamente vor fi folosite pentru îmbunătățirea și menținerea site-ului.
+                        Am început acest proiect din pasiunea pe care o împărtășim pentru programare dar și din dorința de a crea o platformă pentru toți cei care vor să învețe programarea de la zero sau pentru cei care vor să-și testeze cunoștințele.
                     </h4>
                 </div>
             </div>

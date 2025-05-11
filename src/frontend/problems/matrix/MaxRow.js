@@ -48,7 +48,7 @@ function MaxRow() {
             problemName="Cel mai mare de pe rand"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/Turnirul Cifrarilor"
             testPassed={testPassed}
         />
     )

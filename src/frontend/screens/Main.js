@@ -120,8 +120,13 @@ function Main() {
         { title: "Numere speciale palindromizate", link: "/problems/Numere speciale palindromizate", icon: "fa-solid fa-circle-check", index: 70 },
         //
         { title: "Gestionarea unei librarii", link: "/problems/Gestionarea unei librarii", icon: "fa-solid fa-circle-check", index: 70 },
-
-
+        { title: "Laboratorul de inteligenta artificiala", link: "/problems/Laboratorul de inteligenta artificiala", icon: "fa-solid fa-circle-check", index: 70 },
+        { title: "Analiza cifrelor in codurile unui depozit", link: "/problems/Analiza cifrelor in codurile unui depozit", icon: "fa-solid fa-circle-check", index: 70 },
+        { title: "Codurile secrete", link: "/problems/Codurile secrete", icon: "fa-solid fa-circle-check", index: 70 },
+        { title: "Misiunea Agentilor P", link: "/problems/Misiunea Agentilor P", icon: "fa-solid fa-circle-check", index: 70 },
+        { title: "Controlul de calitate", link: "/problems/Controlul de calitate", icon: "fa-solid fa-circle-check", index: 70 },
+        { title: "Catalogul digital", link: "/problems/Catalogul digital", icon: "fa-solid fa-circle-check", index: 70 },
+        
       ]
     }, {
       title: "Matrici",
@@ -136,8 +141,9 @@ function Main() {
         { title: "Matrice de identitate", link: "/problems/Matrice de identitate", icon: "fa-solid fa-circle-check", index: 78 },
         { title: "Inlocuirea unei coloane", link: "/problems/Inlocuirea unei coloane", icon: "fa-solid fa-circle-check", index: 79 },
         { title: "Cel mai mare de pe rand", link: "/problems/Cel mai mare de pe rand", icon: "fa-solid fa-circle-check", index: 80 },
-
-
+        //
+        { title: "Turnirul Cifrarilor", link: "/problems/Turnirul Cifrarilor", icon: "fa-solid fa-circle-check", index: 80 },
+        
       ]
     }, {
       title: "Recapitulare Matrici",
