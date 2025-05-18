@@ -52,7 +52,7 @@ function DigitalCatalog() {
             problemName="Catalogul digital"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/Drumul dintre doua teste reusite"
             testPassed={testPassed}
         />
     )

@@ -185,6 +185,8 @@ import FreqMatrix from './frontend/problems/matrix/FreqMatrix.js';
 import AgentsMission from './frontend/problems/for-recap/AgentsMission.js';
 import QualityCheck from './frontend/problems/for-recap/QualityCheck.js';
 import DigitalCatalog from './frontend/problems/for-recap/DigitalCatalog.js';
+import TwoTestsRoad from './frontend/problems/for-recap/TwoTestsRoad.js';
+import GradesProgress from './frontend/problems/for-recap/GradesProgress.js';
 
 
 
@@ -297,8 +299,10 @@ function App() {
               <Route path="/problems/Misiunea Agentilor P" element={<AgentsMission />} />
               <Route path="/problems/Controlul de calitate" element={<QualityCheck />} />
               <Route path="/problems/Catalogul digital" element={<DigitalCatalog />} />
-              
-              
+              <Route path="/problems/Drumul dintre doua teste reusite" element={<TwoTestsRoad />} />
+              <Route path="/problems/Progresul notelor" element={<GradesProgress />} />
+
+
 
 
 

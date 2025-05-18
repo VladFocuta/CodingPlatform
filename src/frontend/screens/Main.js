@@ -126,7 +126,10 @@ function Main() {
         { title: "Misiunea Agentilor P", link: "/problems/Misiunea Agentilor P", icon: "fa-solid fa-circle-check", index: 70 },
         { title: "Controlul de calitate", link: "/problems/Controlul de calitate", icon: "fa-solid fa-circle-check", index: 70 },
         { title: "Catalogul digital", link: "/problems/Catalogul digital", icon: "fa-solid fa-circle-check", index: 70 },
-        
+        { title: "Drumul dintre doua teste reusite", link: "/problems/Drumul dintre doua teste reusite", icon: "fa-solid fa-circle-check", index: 70 },
+        { title: "Progresul notelor", link: "/problems/Progresul notelor", icon: "fa-solid fa-circle-check", index: 70 },
+
+
       ]
     }, {
       title: "Matrici",
@@ -143,7 +146,7 @@ function Main() {
         { title: "Cel mai mare de pe rand", link: "/problems/Cel mai mare de pe rand", icon: "fa-solid fa-circle-check", index: 80 },
         //
         { title: "Turnirul Cifrarilor", link: "/problems/Turnirul Cifrarilor", icon: "fa-solid fa-circle-check", index: 80 },
-        
+
       ]
     }, {
       title: "Recapitulare Matrici",
