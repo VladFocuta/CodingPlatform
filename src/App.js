@@ -187,6 +187,7 @@ import QualityCheck from './frontend/problems/for-recap/QualityCheck.js';
 import DigitalCatalog from './frontend/problems/for-recap/DigitalCatalog.js';
 import TwoTestsRoad from './frontend/problems/for-recap/TwoTestsRoad.js';
 import GradesProgress from './frontend/problems/for-recap/GradesProgress.js';
+import BinarConversion from './frontend/problems/matrix-recap/BinarConversion.js';
 
 
 
@@ -257,9 +258,9 @@ function App() {
               <Route path="/problems/Interschimbare doua jumatati" element={<InterchangeHalfNumber />} />
               <Route path="/problems/Cifra de control" element={<ControlDigit />} />
 
-              
 
-              
+
+
 
               <Route path="/problems/Structura Repetitiva for" element={<ForLecture />} />
               <Route path="/problems/Siruri de numere" element={<Arrays />} />
@@ -318,7 +319,7 @@ function App() {
               <Route path="/problems/Cel mai mare de pe rand" element={<MaxRow />} />
               <Route path="/problems/Turnirul Cifrarilor" element={<FreqMatrix />} />
 
-              
+
 
               <Route path="/problems/Contorizarea valorilor" element={<ValuesCounter />} />
               <Route path="/problems/Matrice simetrica" element={<SymmetricMatrix />} />
@@ -329,6 +330,11 @@ function App() {
               <Route path="/problems/Rotire la 90 de grade" element={<MatrixRotate />} />
               <Route path="/problems/Permutari la stanga" element={<LeftPermutation />} />
               <Route path="/problems/Triunghi inferior" element={<TriangleInferior />} />
+              <Route path="/problems/Conversie binara pe linii" element={<BinarConversion />} />
+
+
+
+
 
               <Route path="/problems/Functii" element={<Functions />} />
               <Route path="/problems/Verificare numar prim" element={<FunctionPrimeNumber />} />
@@ -339,8 +345,8 @@ function App() {
               <Route path="/problems/Functie-Factorialul unui numar" element={<FactorialNumber />} />
               <Route path="/problems/Simularea unei stive" element={<PopAndPush />} />
               <Route path="/problems/Castele" element={<Castels />} />
-              
-              
+
+
 
               <Route path="/problems/Siruri de caractere" element={<Char />} />
               <Route path="/problems/ASCII" element={<ASCII />} />
@@ -358,7 +364,7 @@ function App() {
               <Route path="/problems/Anagrame" element={<Anagrams />} />
               <Route path="/problems/Verificarea corectitudinii parantezelor" element={<ParanthesisCheck />} />
 
-              
+
 
 
 

@@ -47,7 +47,7 @@ function TriangleInferior() {
             problemName="Triunghi inferior"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/Conversie binara pe linii"
             testPassed={testPassed}
         />
     )

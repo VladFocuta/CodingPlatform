@@ -160,6 +160,9 @@ function Main() {
         { title: "Rotire la 90 de grade", link: "/problems/Rotire la 90 de grade", icon: "fa-solid fa-circle-check", index: 87 },
         { title: "Permutari la stanga", link: "/problems/Permutari la stanga", icon: "fa-solid fa-circle-check", index: 88 },
         { title: "Triunghi inferior", link: "/problems/Triunghi inferior", icon: "fa-solid fa-circle-check", index: 89 },
+        //
+        { title: "Conversie binara pe linii", link: "/problems/Conversie binara pe linii", icon: "fa-solid fa-circle-check", index: 89 },
+
 
       ]
     }, {
