@@ -2,37 +2,30 @@ import React, { useState } from 'react'
 import Test from '../../components/Test'
 import ProblemPage from '../../components/functions/ProblemPage'
 
-function ControlDigit() {
+function PrimeInterval() {
     const [testPassed, setTestPassed] = useState(false);
 
     const testCases = [
-        { params: ['999'], expected: '9' },
-        { params: ['1579'], expected: '4' },
-        { params: ['10'], expected: '1' },
-        { params: ['574897'], expected: '4' },
+        { params: ['10', '25'], expected: '11 13 17 19 23' },
+        { params: ['1', '100'], expected: '1 2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97' },
     ];
-    
+
     const problemContent = (
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <h4>Se dă un număr natural n (0 &lt; n &lt; 10⁹). Se cere să se determine cifra de control a acestuia, obținută astfel:<br />
-    
-                &nbsp;&nbsp;Se calculează suma cifrelor numărului.<br />
-
-                &nbsp;&nbsp;Dacă rezultatul are mai mult de o cifră, se repetă procesul: se calculează suma cifrelor rezultatului anterior.<br />
-
-                &nbsp;&nbsp;Se repetă până când se obține o singură cifră.<br />
-
-                &nbsp;&nbsp;Această cifră se numește cifra de control a numărului.
-                    <br /><br />
+                <h4>Să se afişeze toate numerele prime situate în intervalul p - q, precum
+                    numărul acestora, unde p şi q sunt două numere naturale date.<br />
+                    p si q se citesc de la tastatura.
+                    <br />
 
                     Exemplu:
+
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
-                    <h4>Date de intrare: <br /> 999
+                    <h4>Date de intrare: <br /> 10 25 
                         <br />
                     </h4>
-                    <h4> Date de iesire:  <br /> 9
+                    <h4> Date de iesire:  <br /> 11 13 17 19 23
                     </h4>
                 </div>
 
@@ -42,19 +35,19 @@ function ControlDigit() {
                 <Test
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    problemName="Cifra de control" />
+                    problemName="Intervalul primelor" />
             </div>
         </>
     )
     return (
         <ProblemPage
-            problemName="Cifra de control"
+            problemName="Intervalul primelor"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Congruente simultane cu acelasi rest"
+            nextRoute="/Main"
             testPassed={testPassed}
         />
     )
 }
 
-export default ControlDigit
+export default PrimeInterval

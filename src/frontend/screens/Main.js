@@ -78,6 +78,10 @@ function Main() {
         { title: "Oglindire", link: "/problems/Oglindire", icon: "fa-solid fa-circle-check", index: 38 },
         { title: "Interschimbare doua jumatati", link: "/problems/Interschimbare doua jumatati", icon: "fa-solid fa-circle-check", index: 39 },
         { title: "Cifra de control", link: "/problems/Cifra de control", icon: "fa-solid fa-circle-check", index: 40 },
+        //
+        { title: "Congruente simultane cu acelasi rest", link: "/problems/Congruente simultane cu acelasi rest", icon: "fa-solid fa-circle-check", index: 40 },
+        { title: "Intervalul primelor", link: "/problems/Intervalul primelor", icon: "fa-solid fa-circle-check", index: 40 },
+
 
       ]
     },
