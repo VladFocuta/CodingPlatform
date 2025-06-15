@@ -190,6 +190,7 @@ import GradesProgress from './frontend/problems/for-recap/GradesProgress.js';
 import BinarConversion from './frontend/problems/matrix-recap/BinarConversion.js';
 import Congruences from './frontend/problems/while-recap/Congruences.js';
 import PrimeInterval from './frontend/problems/while-recap/PrimeInterval.js';
+import DecompPrimeFactors from './frontend/problems/while-recap/DecompPrimeFactors.js';
 
 
 
@@ -261,6 +262,7 @@ function App() {
               <Route path="/problems/Cifra de control" element={<ControlDigit />} />
               <Route path="/problems/Congruente simultane cu acelasi rest" element={<Congruences />} />
               <Route path="/problems/Intervalul primelor" element={<PrimeInterval />} />
+              <Route path="/problems/Descompunere in factori primi" element={<DecompPrimeFactors />} />
 
 
 
