@@ -57,7 +57,7 @@ function ParanthesisCheck() {
             problemName="Verificarea corectitudinii parantezelor"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/Verificarea rimelor"
             testPassed={testPassed}
         />
     )

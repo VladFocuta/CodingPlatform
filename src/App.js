@@ -191,6 +191,8 @@ import BinarConversion from './frontend/problems/matrix-recap/BinarConversion.js
 import Congruences from './frontend/problems/while-recap/Congruences.js';
 import PrimeInterval from './frontend/problems/while-recap/PrimeInterval.js';
 import DecompPrimeFactors from './frontend/problems/while-recap/DecompPrimeFactors.js';
+import Rhymes from './frontend/problems/char/Rhymes.js';
+import WordsFilter from './frontend/problems/char/WordsFilter.js';
 
 
 
@@ -367,8 +369,8 @@ function App() {
               <Route path="/problems/Numararea cuvintelor" element={<WordsCounter />} />
               <Route path="/problems/Anagrame" element={<Anagrams />} />
               <Route path="/problems/Verificarea corectitudinii parantezelor" element={<ParanthesisCheck />} />
-
-
+              <Route path="/problems/Verificarea rimelor" element={<Rhymes />} />
+              <Route path="/problems/Filtrarea cuvintelor dupa lungime" element={<WordsFilter />} />
 
 
 

@@ -204,6 +204,10 @@ function Main() {
         { title: "Numararea cuvintelor", link: "/problems/Numararea cuvintelor", icon: "fa-solid fa-circle-check", index: 110 },
         { title: "Anagrame", link: "/problems/Anagrame", icon: "fa-solid fa-circle-check", index: 111 },
         { title: "Verificarea corectitudinii parantezelor", link: "/problems/Verificarea corectitudinii parantezelor", icon: "fa-solid fa-circle-check", index: 112 },
+        //
+        { title: "Verificarea rimelor", link: "/problems/Verificarea rimelor", icon: "fa-solid fa-circle-check", index: 112 },
+        { title: "Filtrarea cuvintelor dupa lungime", link: "/problems/Filtrarea cuvintelor dupa lungime", icon: "fa-solid fa-circle-check", index: 112 },
+
       ]
     }, {
       title: "Recursivitate & Metoda backtracking",
