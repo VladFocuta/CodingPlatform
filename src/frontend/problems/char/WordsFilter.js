@@ -47,7 +47,7 @@ function WordsFilter() {
             problemName="Filtrarea cuvintelor dupa lungime"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/Perechi de vocale consecutive"
             testPassed={testPassed}
         />
     )

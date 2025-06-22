@@ -207,6 +207,9 @@ function Main() {
         //
         { title: "Verificarea rimelor", link: "/problems/Verificarea rimelor", icon: "fa-solid fa-circle-check", index: 112 },
         { title: "Filtrarea cuvintelor dupa lungime", link: "/problems/Filtrarea cuvintelor dupa lungime", icon: "fa-solid fa-circle-check", index: 112 },
+        { title: "Perechi de vocale consecutive", link: "/problems/Perechi de vocale consecutive", icon: "fa-solid fa-circle-check", index: 112 },
+        { title: "Codificare prin repetare ghidata de cifre", link: "/problems/Codificare prin repetare ghidata de cifre", icon: "fa-solid fa-circle-check", index: 112 },
+
 
       ]
     }, {

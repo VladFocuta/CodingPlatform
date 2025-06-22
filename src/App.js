@@ -193,6 +193,8 @@ import PrimeInterval from './frontend/problems/while-recap/PrimeInterval.js';
 import DecompPrimeFactors from './frontend/problems/while-recap/DecompPrimeFactors.js';
 import Rhymes from './frontend/problems/char/Rhymes.js';
 import WordsFilter from './frontend/problems/char/WordsFilter.js';
+import VowsPairs from './frontend/problems/char/VowsPairs.js';
+import CodeRepeatDigits from './frontend/problems/char/CodeRepeatDigits.js';
 
 
 
@@ -371,6 +373,8 @@ function App() {
               <Route path="/problems/Verificarea corectitudinii parantezelor" element={<ParanthesisCheck />} />
               <Route path="/problems/Verificarea rimelor" element={<Rhymes />} />
               <Route path="/problems/Filtrarea cuvintelor dupa lungime" element={<WordsFilter />} />
+              <Route path="/problems/Perechi de vocale consecutive" element={<VowsPairs />} />
+              <Route path="/problems/Codificare prin repetare ghidata de cifre" element={<CodeRepeatDigits />} />
 
 
 
