@@ -54,7 +54,7 @@ function CommentsArea({ problemName }) {
             <>
                 {
                     commentsList.map((comment) => (
-                        <div key={comment.id} style={{ background: 'grey', padding: '10px', marginBottom: '2px', borderRadius: '5px' }}>
+                        <div key={comment.id} style={{ background: 'grey', padding: '10px', marginBottom: '2px', borderRadius: '5px', wordWrap: 'break-word', overflowWrap: 'break-word', maxWidth: '100%' }}>
                             {comment.userId === adminId && <small style={{ color: '#00bfff', marginRight: '3px', fontWeight: 'bold' }}> (Admin)</small>}
                             <strong>{comment.userName}</strong> - {comment.timestamp}
                             <p>{comment.text}</p>
