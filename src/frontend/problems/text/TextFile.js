@@ -151,7 +151,7 @@ int main() {
             problemHeader={problemHeader}
             problemContent={problemContent}
             lecture={true}
-            nextRoute="/problems/Declarare/Citire/Afisare" />
+            nextRoute="/Main" />
     )
 }
 
