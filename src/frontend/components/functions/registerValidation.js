@@ -26,5 +26,9 @@ export const registerValidation = (values) => {
         error.password = "";
     }
 
+    if (!values.acceptTerms) {
+        error.acceptTerms = "Trebuie să accepți politica de confidențialitate.";
+    }
+
     return error;
 }

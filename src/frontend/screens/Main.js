@@ -451,6 +451,11 @@ function Main() {
               </div>
             </div>
           </div>
+
+          <label htmlFor="acceptTerms" style={{ margin: '20px', color:'white' }}>
+            <a href="/policy/policy and confidentiality" target="_blank" rel="noopener noreferrer">Politica de Confidențialitate</a><span> și </span>
+             <a href="/policy/terms and conditions" target="_blank" rel="noopener noreferrer">Termeni și Condiții</a>
+          </label>
         </div>
       ) : (
         <h1 className='home-container' style={{ color: 'white' }}>Trebuie sa te loghezi!</h1>

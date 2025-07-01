@@ -195,6 +195,8 @@ import Rhymes from './frontend/problems/char/Rhymes.js';
 import WordsFilter from './frontend/problems/char/WordsFilter.js';
 import VowsPairs from './frontend/problems/char/VowsPairs.js';
 import CodeRepeatDigits from './frontend/problems/char/CodeRepeatDigits.js';
+import PolicyAndConf from './frontend/components/policy/PolicyAndConf.js';
+import TermsAndConditions from './frontend/components/policy/TermsAndConditions.js';
 
 
 
@@ -212,6 +214,8 @@ function App() {
 
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/policy/policy and confidentiality" element={<PolicyAndConf />} />
+              <Route path="/policy/terms and conditions" element={<TermsAndConditions />} />
               <Route path="/Main" element={<Main />} />
               <Route path="/Login" element={<Login />} />
               <Route path="/Register" element={<Register />} />

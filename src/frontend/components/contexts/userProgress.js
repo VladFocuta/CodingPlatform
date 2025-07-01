@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useLayoutEffect, useState, useEffect } from 'react'
+import React, { createContext, useContext, useLayoutEffect, useState, useEffect, useMemo } from 'react'
 import { db } from '../../../backend/firebaseConfig/firebaseConfig'
 import { UserAuth } from '../../../backend/firebaseConfig/authProvider'
 import { getDoc, doc, onSnapshot } from 'firebase/firestore'
@@ -64,10 +64,17 @@ export const UserProgress = ({ children }) => {
 
     }, [userId])
 
-
+    const contextValue = useMemo(() => ({
+        userProgressPoints,
+        problemsSolved,
+        setUserProgressPoints,
+        admin,
+        capitols,
+        credits
+    }), [userProgressPoints, problemsSolved, admin, capitols, credits]);
 
     return (
-        <AuthContext.Provider value={{ userProgressPoints, problemsSolved, setUserProgressPoints, admin, capitols, credits }}>
+        <AuthContext.Provider value={contextValue}>
             {children}
         </AuthContext.Provider>
     )
