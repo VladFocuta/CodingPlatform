@@ -197,6 +197,7 @@ import VowsPairs from './frontend/problems/char/VowsPairs.js';
 import CodeRepeatDigits from './frontend/problems/char/CodeRepeatDigits.js';
 import PolicyAndConf from './frontend/components/policy/PolicyAndConf.js';
 import TermsAndConditions from './frontend/components/policy/TermsAndConditions.js';
+import PseudoCode from './frontend/problems/second-chapter/PseudoCode.js';
 
 
 
@@ -245,6 +246,7 @@ function App() {
               <Route path="/problems/Calculator" element={<Calculator />} />
 
               <Route path="/problems/While" element={<While />} />
+              <Route path="/problems/Definitia pseudocodului" element={<PseudoCode />} />
               <Route path="/problems/Contor" element={<Counter />} />
               <Route path="/problems/Numaratoare inversa" element={<ReverseCounter />} />
               <Route path="/problems/Suma cifrelor" element={<NumbersSum />} />

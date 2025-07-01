@@ -1,4 +1,3 @@
-import React from 'react'
 import ProblemPage from '../../components/functions/ProblemPage'
 import CodeStyle from '../../components/CodeStyle'
 
@@ -77,7 +76,7 @@ while (i <= 5) {
             problemPoints={1}
             problemHeader={problemHeader}
             problemContent={problemContent}
-            nextRoute="/problems/Contor"
+            nextRoute="/problems/Definitia pseudocodului"
             lecture={true}
         />
     )

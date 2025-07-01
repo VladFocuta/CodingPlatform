@@ -10,11 +10,7 @@ function Main() {
 
   const freeLessons = [
     "Recapitulare algoritmi",
-    "Algoritmi",
-    "While-structură de control",
-    "Recapitulare While",
-    "Structura repetitiva for",
-    "Recapitulare For"
+    "Algoritmi"
   ]
 
   const combinedLessons = [...freeLessons, ...(capitols || [])];
@@ -51,6 +47,7 @@ function Main() {
       title: "While-structură de control",
       lessons: [
         { title: "While", link: "/problems/While", icon: "fa-solid fa-circle-check", index: 18 },
+        { title: "Definitia pseudocodului", link: "/problems/Definitia pseudocodului", icon: "fa-solid fa-circle-check", index: 18 },
         { title: "Contor", link: "/problems/Contor", icon: "fa-solid fa-circle-check", index: 19 },
         { title: "Numaratoare inversa", link: "/problems/Numaratoare inversa", icon: "fa-solid fa-circle-check", index: 20 },
         { title: "Suma cifrelor", link: "/problems/Suma cifrelor", icon: "fa-solid fa-circle-check", index: 21 },
@@ -452,9 +449,9 @@ function Main() {
             </div>
           </div>
 
-          <label htmlFor="acceptTerms" style={{ margin: '20px', color:'white' }}>
+          <label htmlFor="acceptTerms" style={{ margin: '20px', color: 'white' }}>
             <a href="/policy/policy and confidentiality" target="_blank" rel="noopener noreferrer">Politica de Confidențialitate</a><span> și </span>
-             <a href="/policy/terms and conditions" target="_blank" rel="noopener noreferrer">Termeni și Condiții</a>
+            <a href="/policy/terms and conditions" target="_blank" rel="noopener noreferrer">Termeni și Condiții</a>
           </label>
         </div>
       ) : (
