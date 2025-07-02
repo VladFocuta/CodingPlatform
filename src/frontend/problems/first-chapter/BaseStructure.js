@@ -156,7 +156,7 @@ int main() {
       problemPoints={1}
       problemHeader={problemHeader}
       problemContent={problemContent}
-      nextRoute="/problems/Interschimbare"
+      nextRoute="/problems/If-structura alternativa"
       lecture={true}
     />
 

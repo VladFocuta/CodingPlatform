@@ -198,6 +198,7 @@ import CodeRepeatDigits from './frontend/problems/char/CodeRepeatDigits.js';
 import PolicyAndConf from './frontend/components/policy/PolicyAndConf.js';
 import TermsAndConditions from './frontend/components/policy/TermsAndConditions.js';
 import PseudoCode from './frontend/problems/second-chapter/PseudoCode.js';
+import If from './frontend/problems/If-Instruction/If.js';
 
 
 
@@ -231,6 +232,8 @@ function App() {
               <Route path="/problems/Bazele programarii" element={<ProgramBase />} />
               <Route path="/problems/Interschimbare" element={<Interchange />} />
               <Route path="/problems/Structuri de baze" element={<BaseStructure />} />
+              <Route path="/problems/If-structura alternativa" element={<If />} />
+
               <Route path="/problems/Suma" element={<SumOfTwoNumbers />} />
               <Route path="/problems/Rulare program" element={<ProgramRun />} />
               <Route path="/problems/Numarul maxim" element={<Max />} />

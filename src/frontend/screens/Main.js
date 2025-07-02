@@ -25,6 +25,7 @@ function Main() {
         { title: "Suma", link: "/problems/Suma", icon: "fa-solid fa-circle-check", index: 4 },
         { title: "Aria unui dreptunghi", link: "/problems/Aria unui dreptunghi", icon: "fa-solid fa-circle-check", index: 5 },
         { title: "Structuri de baze", link: "/problems/Structuri de baze", icon: "fa-solid fa-circle-check", index: 6 },
+        { title: "If-structura alternativa", link: "/problems/If-structura alternativa", icon: "fa-solid fa-circle-check", index: 7 },
         { title: "Interschimbare", link: "/problems/Interschimbare", icon: "fa-solid fa-circle-check", index: 7 },
         { title: "Numarul maxim", link: "/problems/Numarul maxim", icon: "fa-solid fa-circle-check", index: 8 }
       ]
