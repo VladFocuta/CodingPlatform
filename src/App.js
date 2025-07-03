@@ -199,6 +199,7 @@ import PolicyAndConf from './frontend/components/policy/PolicyAndConf.js';
 import TermsAndConditions from './frontend/components/policy/TermsAndConditions.js';
 import PseudoCode from './frontend/problems/second-chapter/PseudoCode.js';
 import If from './frontend/problems/If-Instruction/If.js';
+import DistancePermutations from './frontend/problems/backtracking/DistancePermutations.js';
 
 
 
@@ -391,6 +392,9 @@ function App() {
               <Route path="/problems/Generare aranjamente" element={<GenerateArrangements />} />
               <Route path="/problems/Suma de numere naturale" element={<ThreeTermsSum />} />
               <Route path="/problems/Fructe si legume" element={<FruitsAndVegetables />} />
+              <Route path="/problems/Permutari la distanta" element={<DistancePermutations />} />
+
+
 
               <Route path="/problems/Struct" element={<Struct />} />
               <Route path="/problems/Vector de structuri" element={<StructVector />} />

@@ -217,6 +217,8 @@ function Main() {
         { title: "Generare aranjamente", link: "/problems/Generare aranjamente", icon: "fa-solid fa-circle-check", index: 114 },
         { title: "Suma de numere naturale", link: "/problems/Suma de numere naturale", icon: "fa-solid fa-circle-check", index: 115 },
         { title: "Fructe si legume", link: "/problems/Fructe si legume", icon: "fa-solid fa-circle-check", index: 116 },
+        { title: "Permutari la distanta", link: "/problems/Permutari la distanta", icon: "fa-solid fa-circle-check", index: 116 },
+
       ]
     }
     , {
