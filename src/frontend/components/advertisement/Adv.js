@@ -16,18 +16,18 @@ function Adv() {
                     color: 'white',
                     boxShadow: '0 0 15px rgba(255,255,255,0.1)'
                 }}>
-                    <h2 style={{ color: '#00bcd4', marginBottom: '15px' }}>🎯 Cui se adresează platforma?</h2>
+                    <h2 style={{ color: '#00bcd4', marginBottom: '15px' }}>Cui se adresează platforma?</h2>
                     <p style={{ fontSize: '16px' }}>
                         Indiferent dacă ești elev, adult sau pasionat de tehnologie, această platformă este pentru tine:
                     </p>
                     <ul style={{ listStyle: 'none', paddingLeft: '0', lineHeight: '1.8' }}>
-                        <li>🎓 <strong>Elevi de liceu (mate-info sau orice profil)</strong> – explicații pe înțelesul tău, perfect pentru BAC, teme și olimpiade</li>
-                        <li>🧑‍💻 <strong>Adulți</strong> – învață programare de la zero ca să te poți reprofila în IT sau să-ți cauți un job</li>
-                        <li>🚀 <strong>Pasionați de tehnologie</strong> – care vor să înțeleagă cum funcționează codul, ca hobby</li>
-                        <li>👨‍👩‍👧 <strong>Părinți</strong> – care vor să-și ajute copiii sau să înțeleagă materia</li>
+                        <li> <strong>Elevi de liceu (mate-info sau orice profil)</strong> – explicații pe înțelesul tău, perfect pentru BAC, teme și olimpiade</li>
+                        <li> <strong>Adulți</strong> – învață programare de la zero ca să te poți reprofila în IT sau să-ți cauți un job</li>
+                        <li> <strong>Pasionați de tehnologie</strong> – care vor să înțeleagă cum funcționează codul, ca hobby</li>
+                        <li> <strong>Părinți</strong> – care vor să-și ajute copiii sau să înțeleagă materia</li>
                     </ul>
                     <p style={{ marginTop: '10px' }}>
-                        🧭 Platforma te ghidează pas cu pas prin tot ce ai nevoie pentru a învăța programare C++ în ritmul tău.
+                        Platforma te ghidează pas cu pas prin tot ce ai nevoie pentru a învăța programare C++ în ritmul tău.
                     </p>
                 </div>
                 <strong style={{ color: 'white', background: '#696969', padding: '3px', borderRadius: '5px', letterSpacing: '0.1rem' }}>
@@ -44,15 +44,15 @@ function Adv() {
                     <li><strong>Exerciții practice cu feedback personalizat</strong> – zilnic răspundem la întrebările tale</li>
                     <li><strong>Testare automată a soluțiilor</strong> – vezi instant dacă ai rezolvat corect problema</li>
                     <li><strong>Call 1 la 1 săptămânal</strong> – discutăm ce nu ai înțeles și cum poți progresa</li>
-                    <li><strong>Consiliere psihologică gratuită</strong> – pentru echilibru și claritate în procesul de învățare</li>
+                    <li><strong>Consiliere psihologică</strong> – pentru echilibru și claritate în procesul de învățare</li>
                     <li><strong>Urmărirea progresului</strong> – vezi exact cât de mult ai evoluat</li>
                     <li><strong>Ajutor concret la teme sau lecții</strong> – explicăm tot ce pare complicat</li>
                     <li><strong>Comunitate de elevi ca tine</strong> – nu înveți singur, ci cu sprijin</li>
                 </ul>
 
                 <p style={{ color: 'white' }}>
-                    ✅ <strong>Structurat 100% după programa școlară mate-info de liceu.</strong><br />
-                    Tot conținutul urmează temele din manualele de informatică pentru Bacalaureat și olimpiadă:
+                    <strong>Structurat 100% după programa școlară mate-info de liceu.</strong><br />
+                   ✅ Tot conținutul urmează temele din manualele de informatică pentru Bacalaureat și olimpiadă:
                 </p>
 
                 <ol style={{ color: 'white', paddingLeft: '20px' }}>
@@ -72,7 +72,7 @@ function Adv() {
                 <h2 style={{ color: 'white', marginTop: '30px' }}>Pachete disponibile</h2>
 
                 <div style={{ color: 'white', background: '#333', padding: '15px', borderRadius: '10px', marginTop: '10px' }}>
-                    <h3>🔹 Pachet Standard – 250 lei</h3>
+                    <h3>🔹Pachet Standard – 250 lei / lună</h3>
                     <ul style={{ paddingLeft: '20px' }}>
                         <li>Acces complet la lecții și exerciții</li>
                         <li>Testare automată a soluțiilor</li>
@@ -82,7 +82,7 @@ function Adv() {
                 </div>
 
                 <div style={{ color: 'white', background: '#444', padding: '15px', borderRadius: '10px', marginTop: '20px' }}>
-                    <h3>⭐ Pachet Premium – 450 lei</h3>
+                    <h3>⭐ Pachet Premium – 450 lei / lună</h3>
                     <ul style={{ paddingLeft: '20px' }}>
                         <li>Tot ce include pachetul Standard</li>
                         <li>Feedback zilnic și răspuns la întrebări</li>
