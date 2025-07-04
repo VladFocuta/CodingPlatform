@@ -200,6 +200,7 @@ import TermsAndConditions from './frontend/components/policy/TermsAndConditions.
 import PseudoCode from './frontend/problems/second-chapter/PseudoCode.js';
 import If from './frontend/problems/If-Instruction/If.js';
 import DistancePermutations from './frontend/problems/backtracking/DistancePermutations.js';
+import Adv from './frontend/components/advertisement/Adv.js';
 
 
 
@@ -217,6 +218,7 @@ function App() {
 
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/advertisement/adv" element={<Adv />} />
               <Route path="/policy/policy and confidentiality" element={<PolicyAndConf />} />
               <Route path="/policy/terms and conditions" element={<TermsAndConditions />} />
               <Route path="/Main" element={<Main />} />
