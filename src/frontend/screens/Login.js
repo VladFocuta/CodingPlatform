@@ -88,10 +88,10 @@ function Login() {
 
                 </div>
                 <div>
-                    <button type="submit" className="costumButton">Logheaza-ma</button>
-                    {isLoading && (
-                        <i className="fa-solid fa-gear fa-spin" style={{ position: 'absolute', color: '#00bfff', top: wrongCredentials ? '555px' : '535px', left: wrongCredentials ? '255px' : '255px', fontSize: '20px' }}></i>
-                    )}
+                    <button type="submit" className="costumButton">Logheaza-ma {isLoading && (
+                        <i className="fa-solid fa-gear fa-spin" style={{ color: '#00bfff', fontSize: '20px' }}></i>
+                    )}</button>
+
                 </div>
 
                 <div className='register-link' style={{ marginTop: 5 }}>

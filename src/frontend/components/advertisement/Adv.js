@@ -1,4 +1,5 @@
 import React from 'react'
+import ContactForm from './ContactForm'
 
 function Adv() {
     return (
@@ -52,7 +53,7 @@ function Adv() {
 
                 <p style={{ color: 'white' }}>
                     <strong>Structurat 100% după programa școlară mate-info de liceu.</strong><br />
-                   ✅ Tot conținutul urmează temele din manualele de informatică pentru Bacalaureat și olimpiadă:
+                    ✅ Tot conținutul urmează temele din manualele de informatică pentru Bacalaureat și olimpiadă:
                 </p>
 
                 <ol style={{ color: 'white', paddingLeft: '20px' }}>
@@ -70,26 +71,31 @@ function Adv() {
                 </ol>
 
                 <h2 style={{ color: 'white', marginTop: '30px' }}>Pachete disponibile</h2>
+                <div>
+                    <div style={{ color: 'white', background: '#333', padding: '15px', borderRadius: '10px', marginTop: '10px' }}>
+                        <h3>🔹Pachet Standard – 250 lei / lună</h3>
+                        <ul style={{ paddingLeft: '20px' }}>
+                            <li>Acces complet la lecții și exerciții</li>
+                            <li>Testare automată a soluțiilor</li>
+                            <li>Urmărirea progresului</li>
+                            <li>Fără suport personal – lucrezi în ritmul tău</li>
+                        </ul>
+                    </div>
 
-                <div style={{ color: 'white', background: '#333', padding: '15px', borderRadius: '10px', marginTop: '10px' }}>
-                    <h3>🔹Pachet Standard – 250 lei / lună</h3>
-                    <ul style={{ paddingLeft: '20px' }}>
-                        <li>Acces complet la lecții și exerciții</li>
-                        <li>Testare automată a soluțiilor</li>
-                        <li>Urmărirea progresului</li>
-                        <li>Fără suport personal – lucrezi în ritmul tău</li>
-                    </ul>
-                </div>
+                    <div style={{ color: 'white', background: '#444', padding: '15px', borderRadius: '10px', marginTop: '20px' }}>
+                        <h3>⭐ Pachet Premium – 450 lei / lună</h3>
+                        <ul style={{ paddingLeft: '20px' }}>
+                            <li>Tot ce include pachetul Standard</li>
+                            <li>Feedback zilnic și răspuns la întrebări</li>
+                            <li>1x call 1 la 1 pe săptămână cu mentor</li>
+                            <li>1x sesiune de consiliere psihologică/săptămână</li>
+                            <li>Sprijin pentru teme, BAC, olimpiade, concepte dificile</li>
+                        </ul>
+                    </div>
 
-                <div style={{ color: 'white', background: '#444', padding: '15px', borderRadius: '10px', marginTop: '20px' }}>
-                    <h3>⭐ Pachet Premium – 450 lei / lună</h3>
-                    <ul style={{ paddingLeft: '20px' }}>
-                        <li>Tot ce include pachetul Standard</li>
-                        <li>Feedback zilnic și răspuns la întrebări</li>
-                        <li>1x call 1 la 1 pe săptămână cu mentor</li>
-                        <li>1x sesiune de consiliere psihologică/săptămână</li>
-                        <li>Sprijin pentru teme, BAC, olimpiade, concepte dificile</li>
-                    </ul>
+                    <div>
+                        <ContactForm />
+                    </div>
                 </div>
 
                 <p style={{ color: 'white', marginTop: '20px' }}>
