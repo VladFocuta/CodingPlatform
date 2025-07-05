@@ -48,16 +48,17 @@ function Register() {
         e.preventDefault();
         const validationErrors = registerValidation(values);
         setErrors(validationErrors);
-    
+        console.log(values.acceptTerms)
         if (Object.keys(validationErrors).length > 0) return;
 
         try {
-             console.log("Încep înregistrarea...");
+            console.log("Încep înregistrarea...");
+            setIsLoading(true);
             await registerUser(values.email, values.password);
             console.log("Înregistrare reușită!");
             updateUserProfile();
             verifyEmail();
-            setIsLoading(true);
+
             navigate('/Main');
         } catch (e) {
             console.log(e.message);
@@ -116,24 +117,18 @@ function Register() {
                 </div>
 
                 <button
-                    style={{ marginTop: errors.password ? 30 : 40}}
+                    style={{ marginTop: errors.password ? 30 : 40 }}
                     type="submit"
                     className="costumButton"
                 >
                     Inregistreaza-ma
+                    {loading && (
+                        <i className="fa-solid fa-gear fa-spin" style={{ color: '#00bfff', fontSize: '20px' }}></i>
+                    )}
                 </button>
 
                 <div className='register-link'>
-                    {loading && (
-                        <i className="fa-solid fa-gear fa-spin"
-                            style={{
-                                position: 'absolute',
-                                color: '#00bfff',
-                                top: '535px',
-                                left: '265px',
-                                fontSize: '20px'
-                            }}></i>
-                    )}
+
                     <p>Ai deja un cont?
                         <button
                             className="costumButton"

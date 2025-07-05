@@ -1,99 +1,96 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { UserAuth } from '../../backend/firebaseConfig/authProvider'
-import { FaUser } from "react-icons/fa"
-import Logo from '../components/Logo'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { UserAuth } from '../../backend/firebaseConfig/authProvider';
+import { FaUser } from "react-icons/fa";
+import Logo from '../components/Logo';
 
 function ResetPassword({ changePassword }) {
-    const { forgotPassword, logout } = UserAuth();
-    const [email, setEmail] = useState('');
-    const [errors, setErrors] = useState('');
-    const [isLoading, setIsLoading] = useState(false);
+  const { forgotPassword, logout } = UserAuth();
+  const [email, setEmail] = useState('');
+  const [errors, setErrors] = useState('');
+  const [success, setSuccess] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+    if (errors) setErrors('');
+  };
 
-    const handleEmail = (email) => {
-        setEmail(email);
-        if (errors) {
-            setErrors('')
-        }
+  const fetchPassword = async (e) => {
+    e.preventDefault();
+
+    if (!email.trim()) {
+      setErrors("Te rog introdu un email.");
+      return;
     }
- 
-    const fetchPassword = async (e) => {
-        e.preventDefault();
-    
-        if (email.length <= 0) {
-            return;
-        } else {
-            try {
-                setIsLoading(true);
-                await forgotPassword(email);
-                logout();
-                navigate('/Login');
-            } catch (error) {
-                console.log(error.message);
-                setErrors('Vertificati daca email-ul introdus este valabil.')
-            } finally {
-                setIsLoading(false);
-            }
-        }
 
-
+    try {
+      setIsLoading(true);
+      await forgotPassword(email);
+      setSuccess("Emailul de resetare a fost trimis.");
+      setEmail('');
+      await logout();
+      setTimeout(() => {
+        navigate('/Login');
+      }, 2000);
+    } catch (error) {
+      console.error(error.message);
+      setErrors("Verifică dacă emailul introdus este corect sau înregistrat.");
+    } finally {
+      setIsLoading(false);
     }
-    return (
-        <>
-            {!changePassword ? (
-                <div className='login-container'>
-                    <Logo />
-                    <form action="" onSubmit={fetchPassword}>
-                        <h1>Resetare parola</h1>
-                        <div className='input-box'>
-                            <input type='text' placeholder='E-mail' name="email" required onChange={(event) => handleEmail(event.target.value)} />
-                            <FaUser className='icon' />
+  };
 
-                        </div>
-                        {errors && (
-                            <span className="text-danger"> {errors}</span>
-                        )}
-                        <div>
-                            <button type="submit" className="costumButton">Confirma</button>
-                            {isLoading && (<i className="fa-solid fa-gear" style={{ position: 'absolute', color: '#00bfff', left: '530px', top: '257px', fontSize: '20px' }}></i>)}
-                        </div>
+  const renderForm = () => (
+    <form onSubmit={fetchPassword}>
+      <h1>{changePassword ? 'Schimbă parola' : 'Resetare parolă'}</h1>
 
+      <div className='input-box'>
+        <input
+          type='email'
+          placeholder='E-mail'
+          name='email'
+          required
+          value={email}
+          onChange={handleEmail}
+        />
+        <FaUser className='icon' />
+      </div>
 
-                    </form>
+      {errors && <span className="text-danger">{errors}</span>}
+      {success && <span className="text-success">{success}</span>}
 
-                </div>
+      <div style={{ marginTop: '10px', position: 'relative' }}>
+        <button
+          type="submit"
+          className={changePassword ? 'button' : 'costumButton'}
+          style={changePassword ? { background: '#333' } : {}}
+        >
+          Confirmă
+        </button>
 
-            ) : (
-                <div className='login-container' style={{height: '50%'}}>
+        {isLoading && (
+          <i className="fa-solid fa-gear fa-spin"
+             style={{
+               position: 'absolute',
+               color: '#00bfff',
+               left: '50%',
+               top: '50%',
+               transform: 'translate(-50%, -50%)',
+               fontSize: '20px'
+             }} />
+        )}
+      </div>
+    </form>
+  );
 
-                    <Logo />
-                    <form action="" onSubmit={fetchPassword}>
-                        <h1>Schimba parola</h1>
-
-                        <div className='input-box'>
-                            <input type='text' placeholder='E-mail' name="email" required onChange={(event) => handleEmail(event.target.value)} />
-
-                        </div>
-
-                        {errors && (
-                            <span className="text-danger"> {errors}</span>
-                        )}
-
-                        <div style={{ marginTop: '5px' }}>
-                            <button type="submit" className="button" style={{background: '#333'}}>Confirma</button>
-                            {isLoading && (<i className="fa-solid fa-gear fa-spin" style={{ position: 'absolute', color: '#00bfff', left: '520px', top: errors ? '280px' : '257px', fontSize: '20px' }}></i>)}
-
-                        </div>
-
-                    </form>
-                </div>
-            )}
-
-
-        </>
-    )
+  return (
+    <div className='login-container' style={changePassword ? { height: '50%' } : {}}>
+      <Logo />
+      {renderForm()}
+    </div>
+  );
 }
 
-export default ResetPassword
+export default ResetPassword;

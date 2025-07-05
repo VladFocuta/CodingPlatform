@@ -80,24 +80,36 @@ function NavBar() {
           )}
 
           {loggedIn && (
-            <div style={{ display: 'flex', alignItems: 'center', marginRight: '20px' }}>
 
-              <button className='fa-solid fa-message messages-icon'
-                onClick={handleMessagesScreen} >
+            <div style={{ display: 'flex', marginRight: '15px', alignItems: 'center' }}>
+              <button onClick={handleMessagesScreen} style={{ position: 'relative', background: 'none', border: 'none', cursor: 'pointer' }}>
+                <i className="fa-solid fa-message" style={{ fontSize: '22px', color: 'white' }}></i>
                 {displayCount > 0 && (
-                  <strong className="badge">
+                  <span className="badge" style={{
+                    position: 'absolute',
+                    top: '-5px',
+                    right: '-5px',
+                    background: 'red',
+                    color: 'white',
+                    borderRadius: '50%',
+                    padding: '2px 6px',
+                    fontSize: '10px'
+                  }}>
                     {displayCount}
-                  </strong>
+                  </span>
                 )}
               </button>
-            </div>)}
+            </div>
+          )}
 
           {loggedIn && (
-            <div style={{ display: 'flex', alignItems: 'center', marginRight: '20px' }}>
-              <button onClick={handleProfileScreen} className='fa-regular fa-user profile-icon' >
-
-              </button >
-              <strong className='profile-user-name'>{user && (user.displayName)}</strong>
+            <div style={{ display: 'flex', alignItems: 'center', marginRight: '10px' }}>
+              <button onClick={handleProfileScreen} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0', marginRight: '6px' }}>
+                <i className="fa-regular fa-user profile-icon" style={{ fontSize: '22px', color: 'white' }}></i>
+              </button>
+              <strong className='profile-user-name'>
+                {user && user.displayName}
+              </strong>
             </div>
           )}
 
