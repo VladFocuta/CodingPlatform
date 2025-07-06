@@ -48,8 +48,8 @@ function Register() {
         e.preventDefault();
         const validationErrors = registerValidation(values);
         setErrors(validationErrors);
-        console.log(values.acceptTerms)
-        if (Object.keys(validationErrors).length > 0) return;
+        const hasErrors = Object.values(validationErrors).some(error => error);
+        if (hasErrors) return;
 
         try {
             console.log("Încep înregistrarea...");

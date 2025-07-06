@@ -93,14 +93,16 @@ function Adv() {
                         </ul>
                     </div>
 
-                    <div>
+                    <p style={{ color: 'white', marginTop: '20px', fontWeight: '500'}}>
+                       ✅ Poți testa platforma gratuit. <br />Alege pachetul potrivit și începe să înveți eficient, fără stres.<br />
+                       ✅ Fără contracte. Totul este transparent. <br />Cand nu mai doresti să continui, te poți opri.
+                    </p>
+                    <div style={{ marginBottom: '20px' }}>
                         <ContactForm />
                     </div>
                 </div>
 
-                <p style={{ color: 'white', marginTop: '20px' }}>
-                    Poți testa platforma gratuit. Alege pachetul potrivit și începe să înveți eficient, fără stres.
-                </p>
+
             </div>
         </>
     )
