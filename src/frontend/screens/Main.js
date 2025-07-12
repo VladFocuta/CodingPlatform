@@ -14,6 +14,7 @@ function Main() {
   ]
 
   const combinedLessons = [...freeLessons, ...(capitols || [])];
+  const totalPoints = Math.floor((userProgressPoints / 184) * 100);
 
   const sections = [
     {
@@ -218,6 +219,7 @@ function Main() {
         { title: "Suma de numere naturale", link: "/problems/Suma de numere naturale", icon: "fa-solid fa-circle-check", index: 115 },
         { title: "Fructe si legume", link: "/problems/Fructe si legume", icon: "fa-solid fa-circle-check", index: 116 },
         { title: "Permutari la distanta", link: "/problems/Permutari la distanta", icon: "fa-solid fa-circle-check", index: 116 },
+        { title: "Cautarea drumului intr-un labirint", link: "/problems/Cautarea drumului intr-un labirint", icon: "fa-solid fa-circle-check", index: 116 },
 
       ]
     }
@@ -309,8 +311,8 @@ function Main() {
             <h3>Invata bazele programarii:</h3>
 
             <div style={{ width: '70%', alignSelf: 'center' }} className="progress" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-              <div className="progress-bar bg-danger" style={{ width: userProgressPoints ? `${userProgressPoints}%` : '0%' }}>
-                {userProgressPoints}%
+              <div className="progress-bar bg-danger" style={{ width: totalPoints ? `${totalPoints}%` : '0%' }}>
+                {totalPoints}%
               </div>
             </div>
           </div>

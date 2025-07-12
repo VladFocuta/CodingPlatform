@@ -201,6 +201,7 @@ import PseudoCode from './frontend/problems/second-chapter/PseudoCode.js';
 import If from './frontend/problems/If-Instruction/If.js';
 import DistancePermutations from './frontend/problems/backtracking/DistancePermutations.js';
 import Adv from './frontend/components/advertisement/Adv.js';
+import Labirinth from './frontend/problems/backtracking/Labirinth.js';
 
 
 
@@ -395,7 +396,7 @@ function App() {
               <Route path="/problems/Suma de numere naturale" element={<ThreeTermsSum />} />
               <Route path="/problems/Fructe si legume" element={<FruitsAndVegetables />} />
               <Route path="/problems/Permutari la distanta" element={<DistancePermutations />} />
-
+              <Route path="/problems/Cautarea drumului intr-un labirint" element={<Labirinth />} />
 
 
               <Route path="/problems/Struct" element={<Struct />} />

@@ -45,7 +45,7 @@ function DistancePermutations() {
             problemName="Permutari la distanta"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/Cautarea drumului intr-un labirint"
             testPassed={testPassed}
         />
     )
