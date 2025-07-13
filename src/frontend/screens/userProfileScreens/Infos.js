@@ -5,6 +5,8 @@ import { UserProgressData } from '../../components/contexts/userProgress';
 function Infos() {
     const { user } = UserAuth();
     const { userProgressPoints } = UserProgressData();
+    const totalPoints = Math.floor((userProgressPoints / 184) * 100);
+
     return (
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <div style={{
@@ -31,8 +33,8 @@ function Infos() {
             <div style={{ position: 'absolute', top: '370px', left: '350px', padding: '5px' }}>
                 <h3>Punctaj actual</h3>
                 <div style={{ alignSelf: 'center' }} className="progress" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                    <div className="progress-bar bg-warning" style={{width: userProgressPoints ? `${userProgressPoints}%` : '0%', color: 'black' }}>
-                        {userProgressPoints}%
+                    <div className="progress-bar bg-warning" style={{width: totalPoints ? `${totalPoints}%` : '0%', color: 'black' }}>
+                        {totalPoints}%
                     </div>
                 </div>
             </div>
