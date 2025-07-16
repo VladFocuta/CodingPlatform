@@ -29,7 +29,7 @@ function MagicNumber() {
                     <h4>Date de intrare: 1 103 999 15 16
                         <br />
                     </h4>
-                    <h4> Date de iesire: <strong style={{ color: 'Red' }}>Mai incearca! Mai incearca! Mai incearca! Mai incearca Ai gasit numarul magic! </strong>
+                    <h4> Date de iesire: <strong style={{ color: 'Red' }}>Mai incearca! Mai incearca! Mai incearca! Mai incearca! Ai gasit numarul magic! </strong>
                     </h4>
                 </div>
 
