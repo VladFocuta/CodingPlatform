@@ -46,7 +46,7 @@ function Profile() {
         setInfosIsClicked(false)
         setChangePasswordIsClicked(false);
         setAdminUsersIsClicked(false);
-        setChangeEmailIsClicked(false)    
+        setChangeEmailIsClicked(false)
         setSecretQuestionIsClicked(true);
     }
 
@@ -75,20 +75,23 @@ function Profile() {
                             {admin && (
                                 <>
                                     <button onClick={handleAdminUsers} className='button' style={{ background: adminUsersIsClicked ? '#e4dddd' : 'transparent', color: adminUsersIsClicked ? '#747373' : '#fff' }}>Administrare utilizatori</button>
-                                    
+
                                 </>
                             )}
 
                         </div>
 
                         <div className='infos' >
-                            <h5 style={{ textAlign: 'center', marginTop: '3px' }}>Profilul meu</h5>
-                            {infosIsClicked && (<Infos />)}
-                            {changePasswordIsClicked && (<ResetPassword changePassword={true} />)}
-                            {secretQuestionIsClicked && (<SecretQuestion />)}
-                            {changeEmailIsClicked && (<EmailChange />)}
-                            {adminUsersIsClicked && (<AdminUsers />)}
-
+                            <div style={{ position: 'sticky', backgroundColor: 'brown', zIndex: '10', top: '0' }}>
+                                <h5 style={{ textAlign: 'center', marginTop: '3px' }}>Profilul meu</h5>
+                            </div>
+                            <div>
+                                {infosIsClicked && (<Infos />)}
+                                {changePasswordIsClicked && (<ResetPassword changePassword={true} />)}
+                                {secretQuestionIsClicked && (<SecretQuestion />)}
+                                {changeEmailIsClicked && (<EmailChange />)}
+                                {adminUsersIsClicked && (<AdminUsers />)}
+                            </div>
                         </div>
                     </div>
 
