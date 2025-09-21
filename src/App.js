@@ -202,6 +202,9 @@ import If from './frontend/problems/If-Instruction/If.js';
 import DistancePermutations from './frontend/problems/backtracking/DistancePermutations.js';
 import Adv from './frontend/components/advertisement/Adv.js';
 import Labirinth from './frontend/problems/backtracking/Labirinth.js';
+import FibonacciMatrix from './frontend/problems/matrix-recap/FibonacciMatrix.js';
+import DigitsOfLines from './frontend/problems/matrix-recap/DigitsOfLines.js';
+import EqualLines from './frontend/problems/matrix-recap/EqualLines.js';
 
 
 
@@ -347,6 +350,11 @@ function App() {
               <Route path="/problems/Vecinii" element={<Neighbours />} />
               <Route path="/problems/Generare matrice" element={<GenerateMatrix />} />
               <Route path="/problems/Interschimbare linii" element={<InterchangeMinAndMax />} />
+              <Route path="/problems/Generare sir Fibonacci" element={<FibonacciMatrix />} />
+              <Route path="/problems/Numere din liniile unei matrice de cifre" element={<DigitsOfLines />} />
+              <Route path="/problems/Linii egale" element={<EqualLines />} />
+
+
               <Route path="/problems/Gaseste elementii" element={<FindElements />} />
               <Route path="/problems/Rotire la 90 de grade" element={<MatrixRotate />} />
               <Route path="/problems/Permutari la stanga" element={<LeftPermutation />} />

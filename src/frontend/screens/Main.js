@@ -159,6 +159,11 @@ function Main() {
         { title: "Vecinii", link: "/problems/Vecinii", icon: "fa-solid fa-circle-check", index: 83 },
         { title: "Generare matrice", link: "/problems/Generare matrice", icon: "fa-solid fa-circle-check", index: 84 },
         { title: "Interschimbare linii", link: "/problems/Interschimbare linii", icon: "fa-solid fa-circle-check", index: 85 },
+        { title: "Generare sir Fibonacci", link: "/problems/Generare sir Fibonacci", icon: "fa-solid fa-circle-check", index: 85 },
+        { title: "Numere din liniile unei matrice de cifre", link: "/problems/Numere din liniile unei matrice de cifre", icon: "fa-solid fa-circle-check", index: 85 },
+        { title: "Linii egale", link: "/problems/Linii egale", icon: "fa-solid fa-circle-check", index: 85 },
+
+
         { title: "Gaseste elementii", link: "/problems/Gaseste elementii", icon: "fa-solid fa-circle-check", index: 86 },
         { title: "Rotire la 90 de grade", link: "/problems/Rotire la 90 de grade", icon: "fa-solid fa-circle-check", index: 87 },
         { title: "Permutari la stanga", link: "/problems/Permutari la stanga", icon: "fa-solid fa-circle-check", index: 88 },

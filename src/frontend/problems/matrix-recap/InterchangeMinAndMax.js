@@ -19,7 +19,7 @@ function InterchangeMinAndMax() {
                 <h4>Se da o matrice n x m cu toate elementele diferite. Sa se interschimbe liniile pe care se afla cel mai mic si respectiv cel mai mare element din matrice.
                     <br />
                     Pe prima linie se citeste numarul n, apoi m.<br />
-                    Se va afisa noua matrice.<br />
+                    Se va afisa noua matrice.
                     <br /><br />
                     Exemplu:
                 </h4>
@@ -45,7 +45,7 @@ function InterchangeMinAndMax() {
             problemName="Interschimbare linii"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Gaseste elementii"
+            nextRoute="/problems/Generare sir Fibonacci"
             testPassed={testPassed}
         />
     )
