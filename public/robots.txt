@@ -1,3 +1,7 @@
-# https://www.robotstxt.org/robotstxt.html
+# robots.txt pentru codersro.com
+# Permite tuturor roboților să acceseze toate paginile
+
+User-agent: *
 Allow: /
+
 Sitemap: https://codersro.com/sitemap.xml
