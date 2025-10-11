@@ -205,6 +205,7 @@ import Labirinth from './frontend/problems/backtracking/Labirinth.js';
 import FibonacciMatrix from './frontend/problems/matrix-recap/FibonacciMatrix.js';
 import DigitsOfLines from './frontend/problems/matrix-recap/DigitsOfLines.js';
 import EqualLines from './frontend/problems/matrix-recap/EqualLines.js';
+import GoogleTrafic from './frontend/components/advertisement/GoogleTrafic.js';
 
 
 
@@ -223,6 +224,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/advertisement/adv" element={<Adv />} />
+              <Route path="/meditatii-informatica" element={<GoogleTrafic />} />
               <Route path="/policy/policy and confidentiality" element={<PolicyAndConf />} />
               <Route path="/policy/terms and conditions" element={<TermsAndConditions />} />
               <Route path="/Main" element={<Main />} />
@@ -234,6 +236,9 @@ function App() {
               <Route path="/screens/Messages" element={<Messages />} />
               <Route path="/user/Profile" element={<Profile />} />
               <Route path="/user/Infos" element={<Infos />} />
+
+
+
 
               <Route path="/problems/Notiunea de algoritm" element={<AlgorithmNotion />} />
               <Route path="/problems/Bazele programarii" element={<ProgramBase />} />
