@@ -73,6 +73,16 @@ function Adv() {
                 <h2 style={{ color: 'white', marginTop: '30px' }}>Pachete disponibile</h2>
                 <div>
                     <div style={{ color: 'white', background: '#333', padding: '15px', borderRadius: '10px', marginTop: '10px' }}>
+                        <h3>🔹Meditații Clasice – 150 lei / 2 Ore</h3>
+                        <ul style={{ paddingLeft: '20px' }}>
+                            <li>Sesiuni 1 la 1, personalizate</li>
+                            <li>Program flexibil și feedback constant</li>
+                            <li>O sedință săptămânal sau de câte ori aveți nevoie</li>
+                            
+                        </ul>
+                    </div>
+
+                    <div style={{ color: 'white', background: '#333', padding: '15px', borderRadius: '10px', marginTop: '10px' }}>
                         <h3>🔹Pachet Standard – 250 lei / lună</h3>
                         <ul style={{ paddingLeft: '20px' }}>
                             <li>Acces complet la lecții și exerciții</li>
@@ -93,9 +103,9 @@ function Adv() {
                         </ul>
                     </div>
 
-                    <p style={{ color: 'white', marginTop: '20px', fontWeight: '500'}}>
-                       ✅ Poți testa platforma gratuit. <br />Alege pachetul potrivit și începe să înveți eficient, fără stres.<br />
-                       ✅ Fără contracte. Totul este transparent. <br />Cand nu mai doresti să continui, te poți opri.
+                    <p style={{ color: 'white', marginTop: '20px', fontWeight: '500' }}>
+                        ✅ Poți testa platforma gratuit. <br />Alege pachetul potrivit și începe să înveți eficient, fără stres.<br />
+                        ✅ Fără contracte. Totul este transparent. <br />Cand nu mai doresti să continui, te poți opri.
                     </p>
                     <div style={{ marginBottom: '20px' }}>
                         <ContactForm />
