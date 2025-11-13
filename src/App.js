@@ -206,6 +206,7 @@ import FibonacciMatrix from './frontend/problems/matrix-recap/FibonacciMatrix.js
 import DigitsOfLines from './frontend/problems/matrix-recap/DigitsOfLines.js';
 import EqualLines from './frontend/problems/matrix-recap/EqualLines.js';
 import GoogleTrafic from './frontend/components/advertisement/GoogleTrafic.js';
+import PrimePairs from './frontend/problems/while-recap/PrimePairs.js';
 
 
 
@@ -288,7 +289,7 @@ function App() {
               <Route path="/problems/Congruente simultane cu acelasi rest" element={<Congruences />} />
               <Route path="/problems/Intervalul primelor" element={<PrimeInterval />} />
               <Route path="/problems/Descompunere in factori primi" element={<DecompPrimeFactors />} />
-
+              <Route path="/problems/Perechi de numere prime" element={<PrimePairs />} />
 
 
               <Route path="/problems/Structura Repetitiva for" element={<ForLecture />} />

@@ -81,6 +81,8 @@ function Main() {
         { title: "Congruente simultane cu acelasi rest", link: "/problems/Congruente simultane cu acelasi rest", icon: "fa-solid fa-circle-check", index: 40 },
         { title: "Intervalul primelor", link: "/problems/Intervalul primelor", icon: "fa-solid fa-circle-check", index: 40 },
         { title: "Descompunere in factori primi", link: "/problems/Descompunere in factori primi", icon: "fa-solid fa-circle-check", index: 40 },
+        { title: "Perechi de numere prime", link: "/problems/Perechi de numere prime", icon: "fa-solid fa-circle-check", index: 40 },
+
 
       ]
     },

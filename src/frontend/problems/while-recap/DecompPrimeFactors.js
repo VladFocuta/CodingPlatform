@@ -45,7 +45,7 @@ function DecompPrimeFactors() {
             problemName="Descompunere in factori primi"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/Perechi de numere prime"
             testPassed={testPassed}
         />
     )
