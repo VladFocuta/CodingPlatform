@@ -1,7 +1,15 @@
 import React from 'react'
 import ContactForm from './ContactForm'
+import { useEffect } from "react";
 
 function Adv() {
+    useEffect(() => {
+        if (window.gtag) {
+            window.gtag('event', 'page_view', {
+                page_path: window.location.pathname
+            });
+        }
+    }, []);
     return (
         <>
             <div className='main-container'>
@@ -78,7 +86,7 @@ function Adv() {
                             <li>Sesiuni 1 la 1, personalizate</li>
                             <li>Program flexibil și feedback constant</li>
                             <li>O sedință săptămânal sau de câte ori aveți nevoie</li>
-                            
+
                         </ul>
                     </div>
 

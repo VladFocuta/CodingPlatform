@@ -1,6 +1,14 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { useEffect } from "react";
 function GoogleTrafic() {
+    useEffect(() => {
+        if (window.gtag) {
+            window.gtag('event', 'page_view', {
+                page_path: window.location.pathname
+            });
+        }
+    }, []);
     const sections = [
         {
             title: 'De ce să alegi meditațiile noastre la informatică?',
