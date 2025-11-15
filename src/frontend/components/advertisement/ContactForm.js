@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function ContactForm() {
     const [status, setStatus] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -17,15 +19,16 @@ function ContactForm() {
         });
 
         if (response.ok) {
-            setStatus('Mesaj trimis cu succes! Îți mulțumim.');
-            form.reset();
+            navigate("/contact-succes");
+            
         } else {
             setStatus('A apărut o eroare. Te rugăm să încerci din nou.');
         }
     };
 
     return (
-        <div style={{padding:'10px',
+        <div style={{
+            padding: '10px',
             marginTop: '20px', alignItems: 'center'
             , color: '#fff', boxShadow: '0 0 10px rgba(255, 255, 255, .2)', border: '2px solid rgba(255, 255, 255, .2)', display: 'flex', flexDirection: 'column'
         }}
@@ -58,7 +61,7 @@ function ContactForm() {
                 <div>
                     <label style={{ padding: '10px' }} className="block text-gray-700 mb-1">Mesaj</label>
                     <textarea
-                    placeholder='Introduceți abonamentul dorit'
+                        placeholder='Introduceți abonamentul dorit'
                         name="message"
                         rows="5"
                         required

@@ -207,6 +207,7 @@ import DigitsOfLines from './frontend/problems/matrix-recap/DigitsOfLines.js';
 import EqualLines from './frontend/problems/matrix-recap/EqualLines.js';
 import GoogleTrafic from './frontend/components/advertisement/GoogleTrafic.js';
 import PrimePairs from './frontend/problems/while-recap/PrimePairs.js';
+import ContactSucces from './frontend/components/advertisement/ContactSucces.js';
 
 
 
@@ -228,6 +229,9 @@ function App() {
               <Route path="/meditatii-informatica" element={<GoogleTrafic />} />
               <Route path="/policy/policy and confidentiality" element={<PolicyAndConf />} />
               <Route path="/policy/terms and conditions" element={<TermsAndConditions />} />
+              <Route path="/contact-succes" element={<ContactSucces />} />
+
+
               <Route path="/Main" element={<Main />} />
               <Route path="/Login" element={<Login />} />
               <Route path="/Register" element={<Register />} />
