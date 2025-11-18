@@ -2,35 +2,32 @@ import React, { useState } from 'react'
 import Test from '../../components/Test'
 import ProblemPage from '../../components/functions/ProblemPage'
 
-function CMMD() {
+function CMMMC() {
     const [testPassed, setTestPassed] = useState(false);
 
     const testCases = [
-        { params: [48, 18], expected: [6] },
-        { params: [1, 1], expected: [1] },
-        { params: [4, 5], expected: [1] },
-        { params: [146, 1046], expected: [2] },
-        { params: [12, 21], expected: [3] }
+        { params: [12, 18], expected: [36] },
+        { params: [18, 48], expected: [144] },
+        { params: [10, 4], expected: [20] },
     ];
-
 
     const problemContent = (
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <h4>Scrie un program care calculeaza cel mai mare divizor comun (CMMD) a doua numere.
+                <h4>Scrie un program care calculeaza cel mai mic multiplu comun (CMMMC) a doua numere.
                     <br />
                     Numerele se citesc de la tastatura.
                     <br />
-                    Sa se afiseze cel mai mare divizor comun.<br />
+                    Sa se afiseze cel mai mic multiplu comun.<br />
 
                     <br />
                     Exemplu:
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
-                    <h4>Date de intrare: 48 18
+                    <h4>Date de intrare: 12 18
                         <br />
                     </h4>
-                    <h4> Date de iesire: 6
+                    <h4> Date de iesire: 36
                     </h4>
                 </div>
 
@@ -40,19 +37,19 @@ function CMMD() {
                 <Test
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    problemName="CMMD" />
+                    problemName="CMMMC" />
             </div>
         </>
     )
     return (
         <ProblemPage
-            problemName="CMMD"
+            problemName="CMMMC"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/CMMMC"
+            nextRoute="/problems/Suma maxima"
             testPassed={testPassed}
         />
     )
 }
 
-export default CMMD
+export default CMMMC

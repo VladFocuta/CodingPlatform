@@ -208,6 +208,8 @@ import EqualLines from './frontend/problems/matrix-recap/EqualLines.js';
 import GoogleTrafic from './frontend/components/advertisement/GoogleTrafic.js';
 import PrimePairs from './frontend/problems/while-recap/PrimePairs.js';
 import ContactSucces from './frontend/components/advertisement/ContactSucces.js';
+import PrimeDiv from './frontend/problems/while-recap/PrimeDiv.js';
+import CMMMC from './frontend/problems/while-recap/CMMMC.js';
 
 
 
@@ -275,14 +277,15 @@ function App() {
               <Route path="/problems/Debugging" element={<Debugging />} />
               <Route path="/problems/Concatenarea" element={<Concatenation />} />
               <Route path="/problems/Trenul" element={<Stop />} />
-
               <Route path="/problems/Numar maxim" element={<MaxNumber />} />
               <Route path="/problems/CMMD" element={<CMMD />} />
+              <Route path="/problems/CMMMC" element={<CMMMC />} />
               <Route path="/problems/Suma maxima" element={<MaxSum />} />
               <Route path="/problems/Numar impar" element={<OddNumber />} />
               <Route path="/problems/Factorialul unui numar" element={<Factorial />} />
               <Route path="/problems/Numarul magic" element={<MagicNumber />} />
               <Route path="/problems/Oglindire" element={<MirrorNumber />} />
+              <Route path="/problems/Factori primi" element={<PrimeDiv />} />
               <Route path="/problems/Maxim si minim" element={<MaxAndMin />} />
               <Route path="/problems/Produsul" element={<Product />} />
               <Route path="/problems/Eliminarea" element={<Elimination />} />

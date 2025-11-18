@@ -65,6 +65,7 @@ function Main() {
       lessons: [
         { title: "Numar maxim", link: "/problems/Numar maxim", icon: "fa-solid fa-circle-check", index: 27 },
         { title: "CMMD", link: "/problems/CMMD", icon: "fa-solid fa-circle-check", index: 28 },
+        { title: "CMMMC", link: "/problems/CMMMC", icon: "fa-solid fa-circle-check", index: 28 },
         { title: "Suma maxima", link: "/problems/Suma maxima", icon: "fa-solid fa-circle-check", index: 29 },
         { title: "Numar impar", link: "/problems/Numar impar", icon: "fa-solid fa-circle-check", index: 30 },
         { title: "Maxim si minim", link: "/problems/Maxim si minim", icon: "fa-solid fa-circle-check", index: 31 },
@@ -75,6 +76,7 @@ function Main() {
         { title: "Factorialul unui numar", link: "/problems/Factorialul unui numar", icon: "fa-solid fa-circle-check", index: 36 },
         { title: "Numarul magic", link: "/problems/Numarul magic", icon: "fa-solid fa-circle-check", index: 37 },
         { title: "Oglindire", link: "/problems/Oglindire", icon: "fa-solid fa-circle-check", index: 38 },
+        { title: "Factori primi", link: "/problems/Factori primi", icon: "fa-solid fa-circle-check", index: 38 },
         { title: "Interschimbare doua jumatati", link: "/problems/Interschimbare doua jumatati", icon: "fa-solid fa-circle-check", index: 39 },
         { title: "Cifra de control", link: "/problems/Cifra de control", icon: "fa-solid fa-circle-check", index: 40 },
         //

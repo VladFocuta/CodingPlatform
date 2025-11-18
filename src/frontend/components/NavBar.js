@@ -73,8 +73,8 @@ function NavBar() {
           ) : (
 
             <>
-              <button onClick={handleRegisterScreen} className='costum-button'>Inregistreaza-te</button>
-              <button onClick={handleLoginScreen} className='costum-button'>Logheaza-te</button>
+              <button onClick={handleRegisterScreen} className='costum-button'>Înregistrează-te</button>
+              <button onClick={handleLoginScreen} className='costum-button'>Loghează-te</button>
               <button onClick={() => navigate('/advertisement/adv')} className='costum-button'>De ce să te înscrii?</button>
             </>
           )}
