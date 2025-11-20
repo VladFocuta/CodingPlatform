@@ -164,6 +164,7 @@ function AdminUsers() {
                                     <option value="10">Struct</option>
                                     <option value="11">Fisiere text</option>
                                     <option value="12">Grafuri</option>
+                                    <option value="13">Pointeri</option>
                                 </select>
 
                                 <button
