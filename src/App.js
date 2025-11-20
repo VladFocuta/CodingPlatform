@@ -211,6 +211,14 @@ import ContactSucces from './frontend/components/advertisement/ContactSucces.js'
 import PrimeDiv from './frontend/problems/while-recap/PrimeDiv.js';
 import CMMMC from './frontend/problems/while-recap/CMMMC.js';
 
+import Pointers from './frontend/problems/pointeri/Pointers.js';
+import FirstPointer from './frontend/problems/pointeri/FirstPointer.js';
+import PointersInterchange from './frontend/problems/pointeri/PointersInterchange.js';
+import PointersArray from './frontend/problems/pointeri/PointersArray.js';
+import PintersSum from './frontend/problems/pointeri/PintersSum.js';
+import MaxPointer from './frontend/problems/pointeri/MaxPointer.js';
+import ReverseArray from './frontend/problems/pointeri/ReverseArray.js';
+
 
 
 function App() {
@@ -342,8 +350,6 @@ function App() {
 
 
 
-
-
               <Route path="/problems/Matrici" element={<Matrix />} />
               <Route path="/problems/Declarare/Citire/Afisare" element={<MatrixDetails />} />
               <Route path="/problems/Suma elementelor" element={<ElementsSum />} />
@@ -355,7 +361,6 @@ function App() {
               <Route path="/problems/Inlocuirea unei coloane" element={<ColumnReplace />} />
               <Route path="/problems/Cel mai mare de pe rand" element={<MaxRow />} />
               <Route path="/problems/Turnirul Cifrarilor" element={<FreqMatrix />} />
-
 
 
               <Route path="/problems/Contorizarea valorilor" element={<ValuesCounter />} />
@@ -375,6 +380,13 @@ function App() {
               <Route path="/problems/Conversie binara pe linii" element={<BinarConversion />} />
 
 
+              <Route path="/problems/Pointeri" element={<Pointers />} />
+              <Route path="/problems/Primul Pointer" element={<FirstPointer />} />
+              <Route path="/problems/Interschimbare cu pointeri" element={<PointersInterchange />} />
+              <Route path="/problems/Pointeri si tablouri" element={<PointersArray />} />
+              <Route path="/problems/Suma elementelor cu pointer" element={<PintersSum />} />
+              <Route path="/problems/Valoarea maxima cu pointer" element={<MaxPointer />} />
+              <Route path="/problems/Inversarea vectorului" element={<ReverseArray />} />
 
 
 

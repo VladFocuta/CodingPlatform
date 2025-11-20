@@ -20,8 +20,8 @@ function Main() {
     {
       title: "Algoritmi",
       lessons: [
-        { title: "Notiunea de algoritm", link: "/problems/Notiunea de algoritm", icon: "fa-solid fa-circle-check", index: 1 },
         { title: "Bazele programarii", link: "/problems/Bazele programarii", icon: "fa-solid fa-circle-check", index: 2 },
+        { title: "Notiunea de algoritm", link: "/problems/Notiunea de algoritm", icon: "fa-solid fa-circle-check", index: 1 },
         { title: "Rulare program", link: "/problems/Rulare program", icon: "fa-solid fa-circle-check", index: 3 },
         { title: "Suma", link: "/problems/Suma", icon: "fa-solid fa-circle-check", index: 4 },
         { title: "Aria unui dreptunghi", link: "/problems/Aria unui dreptunghi", icon: "fa-solid fa-circle-check", index: 5 },
@@ -195,6 +195,20 @@ function Main() {
 
       ]
     }, {
+      title: "Pointeri",
+      lessons: [
+        { title: "Pointeri", link: "/problems/Pointeri", icon: "fa-solid fa-circle-check", index: 90 },
+        { title: "Primul Pointer", link: "/problems/Primul Pointer", icon: "fa-solid fa-circle-check", index: 90 },
+        { title: "Interschimbare cu pointeri", link: "/problems/Interschimbare cu pointeri", icon: "fa-solid fa-circle-check", index: 90 },
+        { title: "Pointeri si tablouri", link: "/problems/Pointeri si tablouri", icon: "fa-solid fa-circle-check", index: 90 },
+        { title: "Suma elementelor cu pointer", link: "/problems/Suma elementelor cu pointer", icon: "fa-solid fa-circle-check", index: 90 },
+        { title: "Valoarea maxima cu pointer", link: "/problems/Valoarea maxima cu pointer", icon: "fa-solid fa-circle-check", index: 90 },
+        { title: "Inversarea vectorului", link: "/problems/Inversarea vectorului", icon: "fa-solid fa-circle-check", index: 90 },
+      ]
+    },
+
+    {
+
       title: "Siruri de caractere",
       lessons: [
         { title: "Siruri de caractere", link: "/problems/Siruri de caractere", icon: "fa-solid fa-circle-check", index: 98 },
