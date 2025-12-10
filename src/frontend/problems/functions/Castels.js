@@ -54,7 +54,7 @@ function Castels() {
             problemName="Castele"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Simularea unei stive"
+            nextRoute="/Main"
             testPassed={testPassed}
         />
     )

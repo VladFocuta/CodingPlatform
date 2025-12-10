@@ -55,7 +55,7 @@ function PrimePairs() {
             problemName="Perechi de numere prime"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/Suma numerelor cu prima cifra k"
             testPassed={testPassed}
         />
     )

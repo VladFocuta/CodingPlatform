@@ -104,6 +104,7 @@ import VoidMessage from './frontend/problems/functions/VoidMessage.js';
 import SwapNumbers from './frontend/problems/functions/SwapNumbers.js';
 import ArrayModify from './frontend/problems/functions/ArrayModify.js';
 import FibonacciRecursiv from './frontend/problems/functions/FibonacciRecursiv.js';
+import ShowMultiply from './frontend/problems/functions/ShowMultiply.js';
 import FactorialNumber from './frontend/problems/functions/FactorialNumber.js';
 import Char from './frontend/problems/char/Char.js';
 import ASCII from './frontend/problems/char/ASCII.js';
@@ -210,6 +211,9 @@ import PrimePairs from './frontend/problems/while-recap/PrimePairs.js';
 import ContactSucces from './frontend/components/advertisement/ContactSucces.js';
 import PrimeDiv from './frontend/problems/while-recap/PrimeDiv.js';
 import CMMMC from './frontend/problems/while-recap/CMMMC.js';
+import DigitsSumWithK from './frontend/problems/while-recap/DigitsSumWithK.js';
+
+
 
 import Pointers from './frontend/problems/pointeri/Pointers.js';
 import FirstPointer from './frontend/problems/pointeri/FirstPointer.js';
@@ -218,6 +222,7 @@ import PointersArray from './frontend/problems/pointeri/PointersArray.js';
 import PintersSum from './frontend/problems/pointeri/PintersSum.js';
 import MaxPointer from './frontend/problems/pointeri/MaxPointer.js';
 import ReverseArray from './frontend/problems/pointeri/ReverseArray.js';
+
 
 
 
@@ -305,6 +310,8 @@ function App() {
               <Route path="/problems/Intervalul primelor" element={<PrimeInterval />} />
               <Route path="/problems/Descompunere in factori primi" element={<DecompPrimeFactors />} />
               <Route path="/problems/Perechi de numere prime" element={<PrimePairs />} />
+              <Route path="/problems/Suma numerelor cu prima cifra k" element={<DigitsSumWithK />} />
+
 
 
               <Route path="/problems/Structura Repetitiva for" element={<ForLecture />} />
@@ -399,8 +406,8 @@ function App() {
               <Route path="/problems/Functie-Factorialul unui numar" element={<FactorialNumber />} />
               <Route path="/problems/Simularea unei stive" element={<PopAndPush />} />
               <Route path="/problems/Castele" element={<Castels />} />
-
-
+              <Route path="/problems/Primele n numere divizibile cu x" element={<ShowMultiply />} />
+              
 
               <Route path="/problems/Siruri de caractere" element={<Char />} />
               <Route path="/problems/ASCII" element={<ASCII />} />

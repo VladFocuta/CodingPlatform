@@ -60,7 +60,7 @@ function PopAndPush() {
             problemName="Simularea unei stive"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/Castele"
             testPassed={testPassed}
         />
     )

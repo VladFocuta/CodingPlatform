@@ -5,8 +5,7 @@ import Progress from "../components/Progress";
 function Main() {
   const { user, loggedIn } = UserAuth();
   const { userProgressPoints, problemsSolved, admin, capitols, credits } = UserProgressData() || {};
-  //trecerea de la o problema la alta
-  // titlurile sa fie cuprinse in chenar
+
 
   const freeLessons = [
     "Recapitulare algoritmi",
@@ -84,7 +83,7 @@ function Main() {
         { title: "Intervalul primelor", link: "/problems/Intervalul primelor", icon: "fa-solid fa-circle-check", index: 40 },
         { title: "Descompunere in factori primi", link: "/problems/Descompunere in factori primi", icon: "fa-solid fa-circle-check", index: 40 },
         { title: "Perechi de numere prime", link: "/problems/Perechi de numere prime", icon: "fa-solid fa-circle-check", index: 40 },
-
+        { title: "Suma numerelor cu prima cifra k", link: "/problems/Suma numerelor cu prima cifra k", icon: "fa-solid fa-circle-check", index: 40 },
 
       ]
     },
@@ -187,8 +186,11 @@ function Main() {
         { title: "Modificarea unui tablou", link: "/problems/Modificarea unui tablou", icon: "fa-solid fa-circle-check", index: 94 },
         { title: "Fibonacci recursiv", link: "/problems/Fibonacci recursiv", icon: "fa-solid fa-circle-check", index: 95 },
         { title: "Functie-Factorialul unui numar", link: "/problems/Functie-Factorialul unui numar", icon: "fa-solid fa-circle-check", index: 96 },
+        { title: "Primele n numere divizibile cu x", link: "/problems/Primele n numere divizibile cu x", icon: "fa-solid fa-circle-check", index: 97 },
         { title: "Simularea unei stive", link: "/problems/Simularea unei stive", icon: "fa-solid fa-circle-check", index: 97 },
         { title: "Castele", link: "/problems/Castele", icon: "fa-solid fa-circle-check", index: 97 },
+
+
         //
 
 
