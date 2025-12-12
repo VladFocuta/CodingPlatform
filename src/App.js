@@ -212,7 +212,7 @@ import ContactSucces from './frontend/components/advertisement/ContactSucces.js'
 import PrimeDiv from './frontend/problems/while-recap/PrimeDiv.js';
 import CMMMC from './frontend/problems/while-recap/CMMMC.js';
 import DigitsSumWithK from './frontend/problems/while-recap/DigitsSumWithK.js';
-
+import PrimeFactorsNumb from './frontend/problems/while-recap/PrimeFactorsNumb.js';
 
 
 import Pointers from './frontend/problems/pointeri/Pointers.js';
@@ -222,6 +222,7 @@ import PointersArray from './frontend/problems/pointeri/PointersArray.js';
 import PintersSum from './frontend/problems/pointeri/PintersSum.js';
 import MaxPointer from './frontend/problems/pointeri/MaxPointer.js';
 import ReverseArray from './frontend/problems/pointeri/ReverseArray.js';
+
 
 
 
@@ -311,6 +312,7 @@ function App() {
               <Route path="/problems/Descompunere in factori primi" element={<DecompPrimeFactors />} />
               <Route path="/problems/Perechi de numere prime" element={<PrimePairs />} />
               <Route path="/problems/Suma numerelor cu prima cifra k" element={<DigitsSumWithK />} />
+              <Route path="/problems/Numarul de factori primi" element={<PrimeFactorsNumb />} />
 
 
 

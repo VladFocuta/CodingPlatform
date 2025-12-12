@@ -24,7 +24,7 @@ function CharDelete() {
                     Exemplu:
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
-                    <h4>Date de intrare: programare
+                    <h4>Date de intrare: programare r
 
                     </h4>
                     <h4> Date de iesire: pogamae</h4>

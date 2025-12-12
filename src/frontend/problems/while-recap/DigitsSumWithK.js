@@ -47,7 +47,7 @@ function DigitsSumWithK() {
             problemName="Suma numerelor cu prima cifra k"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/Numarul de factori primi"
             testPassed={testPassed}
         />
     )

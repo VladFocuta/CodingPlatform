@@ -84,7 +84,7 @@ function Main() {
         { title: "Descompunere in factori primi", link: "/problems/Descompunere in factori primi", icon: "fa-solid fa-circle-check", index: 40 },
         { title: "Perechi de numere prime", link: "/problems/Perechi de numere prime", icon: "fa-solid fa-circle-check", index: 40 },
         { title: "Suma numerelor cu prima cifra k", link: "/problems/Suma numerelor cu prima cifra k", icon: "fa-solid fa-circle-check", index: 40 },
-
+        { title: "Numarul de factori primi", link: "/problems/Numarul de factori primi", icon: "fa-solid fa-circle-check", index: 40 },
       ]
     },
     {
