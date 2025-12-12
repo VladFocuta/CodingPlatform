@@ -1,33 +1,32 @@
 import React, { useState } from 'react'
 import Test from '../../components/Test'
 import ProblemPage from '../../components/functions/ProblemPage'
-
-function CMMMC() {
+function CommonDividers() {
     const [testPassed, setTestPassed] = useState(false);
 
     const testCases = [
-        { params: [12, 18], expected: [36] },
-        { params: [18, 48], expected: [144] },
-        { params: [10, 4], expected: [20] },
+        { params: [20, 52], expected: [1, 2, 4] },
+        { params: [24, 36], expected: [1, 2, 3, 4, 6, 12] },
+        { params: [1, 4], expected: [1] },
     ];
 
     const problemContent = (
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <h4>Scrie un program care calculeaza cel mai mic multiplu comun (CMMMC) a doua numere.
+                <h4>Se citesc de la tastatură două numere naturale a și b.
                     <br />
-                    Numerele se citesc de la tastatura.
+                    Să se determine și să se afișeze, în ordine crescătoare, toți divizorii comuni ai numerelor a și b.
                     <br />
-                    Sa se afiseze cel mai mic multiplu comun.<br />
+                    Divizorii vor fi afișați pe ecran, separați printr-un spațiu.<br />
 
                     <br />
                     Exemplu:
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
-                    <h4>Date de intrare: 12 18
+                    <h4>Date de intrare: 20 52
                         <br />
                     </h4>
-                    <h4> Date de iesire: 36
+                    <h4> Date de iesire: 1 2 4
                     </h4>
                 </div>
 
@@ -37,19 +36,19 @@ function CMMMC() {
                 <Test
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    problemName="CMMMC" />
+                    problemName="Divizori comuni" />
             </div>
         </>
     )
     return (
         <ProblemPage
-            problemName="CMMMC"
+            problemName="Divizori comuni"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Divizori comuni"
+            nextRoute="/problems/Suma maxima"
             testPassed={testPassed}
         />
     )
 }
 
-export default CMMMC
+export default CommonDividers

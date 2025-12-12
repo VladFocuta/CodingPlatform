@@ -65,6 +65,7 @@ function Main() {
         { title: "Numar maxim", link: "/problems/Numar maxim", icon: "fa-solid fa-circle-check", index: 27 },
         { title: "CMMD", link: "/problems/CMMD", icon: "fa-solid fa-circle-check", index: 28 },
         { title: "CMMMC", link: "/problems/CMMMC", icon: "fa-solid fa-circle-check", index: 28 },
+        { title: "Divizori comuni", link: "/problems/Divizori comuni", icon: "fa-solid fa-circle-check", index: 40 },
         { title: "Suma maxima", link: "/problems/Suma maxima", icon: "fa-solid fa-circle-check", index: 29 },
         { title: "Numar impar", link: "/problems/Numar impar", icon: "fa-solid fa-circle-check", index: 30 },
         { title: "Maxim si minim", link: "/problems/Maxim si minim", icon: "fa-solid fa-circle-check", index: 31 },
@@ -85,6 +86,8 @@ function Main() {
         { title: "Perechi de numere prime", link: "/problems/Perechi de numere prime", icon: "fa-solid fa-circle-check", index: 40 },
         { title: "Suma numerelor cu prima cifra k", link: "/problems/Suma numerelor cu prima cifra k", icon: "fa-solid fa-circle-check", index: 40 },
         { title: "Numarul de factori primi", link: "/problems/Numarul de factori primi", icon: "fa-solid fa-circle-check", index: 40 },
+
+
       ]
     },
     {
