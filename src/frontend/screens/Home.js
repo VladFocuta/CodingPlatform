@@ -77,12 +77,12 @@ function Home() {
     return (
         <>
             <Helmet>
-                <title>Meditații Informatică Online | Pregătire BAC și Admitere | CodersRO</title>
-                <meta name="description" content="Meditații informatică online 1 la 1, pregătire BAC informatică, cursuri programare și probleme rezolvate. Profesor dedicat, platformă interactivă. CodersRO." />
+                <title>Meditatii Informatica Online | Pregatire BAC si Admitere</title>
+                <meta name="description" content="Meditatii informatica online 1 la 1, pregatire BAC informatica, cursuri programare si probleme rezolvate. Profesor dedicat, platforma interactiva. CodersRO." />
             </Helmet>
             <div style={{ padding: '20px', minHeight: '100vh' }}>
-                <h1 className='home-container' style={{ color: 'white', textAlign: 'center', marginBottom: '30px' }}>
-                    Meditații Informatică Online
+                <h1 className='home-container' style={{ color: 'white', textAlign: 'center', marginBottom: '30px', marginTop: '50px' }}>
+                    Meditatii Informatica Online
                 </h1>
 
                 <div

@@ -89,7 +89,7 @@ function GoogleTrafic() {
                 <meta name="description" content="Meditații informatică online 1 la 1, pregătire BAC informatică, cursuri programare și probleme rezolvate. Profesor dedicat, platformă interactivă. CodersRO." />
             </Helmet>
             <div style={{ padding: '20px', minHeight: '100vh' }}>
-                <h1 className='home-container' style={{ color: 'white', textAlign: 'center', marginBottom: '30px' }}>
+                <h1 className='home-container' style={{ color: 'white', textAlign: 'center', marginBottom: '30px', marginTop: '50px' }}>
                     Meditații Informatică Online
                 </h1>
 
