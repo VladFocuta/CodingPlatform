@@ -132,6 +132,7 @@ function Main() {
         { title: "Laboratorul de inteligenta artificiala", link: "/problems/Laboratorul de inteligenta artificiala", icon: "fa-solid fa-circle-check", index: 70 },
         { title: "Analiza cifrelor in codurile unui depozit", link: "/problems/Analiza cifrelor in codurile unui depozit", icon: "fa-solid fa-circle-check", index: 70 },
         { title: "Codurile secrete", link: "/problems/Codurile secrete", icon: "fa-solid fa-circle-check", index: 70 },
+        { title: "Interval divizori pari", link: "/problems/Interval divizori pari", icon: "fa-solid fa-circle-check", index: 70 },
         { title: "Misiunea Agentilor P", link: "/problems/Misiunea Agentilor P", icon: "fa-solid fa-circle-check", index: 70 },
         { title: "Controlul de calitate", link: "/problems/Controlul de calitate", icon: "fa-solid fa-circle-check", index: 70 },
         { title: "Catalogul digital", link: "/problems/Catalogul digital", icon: "fa-solid fa-circle-check", index: 70 },

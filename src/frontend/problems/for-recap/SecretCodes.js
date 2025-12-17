@@ -59,7 +59,7 @@ function SecretCodes() {
             problemName="Codurile secrete"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Misiunea Agentilor P"
+            nextRoute="/problems/Interval divizori pari"
             testPassed={testPassed}
         />
     )

@@ -181,6 +181,7 @@ import Castels from './frontend/problems/functions/Castels.js';
 import Library from './frontend/problems/for-recap/Library.js';
 import AILabor from './frontend/problems/for-recap/AILabor.js';
 import DepoCode from './frontend/problems/for-recap/DepoCode.js';
+import EvenDividersInterval from './frontend/problems/for-recap/EvenDividersInterval.js';
 import SecretCodes from './frontend/problems/for-recap/SecretCodes.js';
 import FreqMatrix from './frontend/problems/matrix/FreqMatrix.js';
 import AgentsMission from './frontend/problems/for-recap/AgentsMission.js';
@@ -223,6 +224,7 @@ import PointersArray from './frontend/problems/pointeri/PointersArray.js';
 import PintersSum from './frontend/problems/pointeri/PintersSum.js';
 import MaxPointer from './frontend/problems/pointeri/MaxPointer.js';
 import ReverseArray from './frontend/problems/pointeri/ReverseArray.js';
+
 
 
 
@@ -353,6 +355,7 @@ function App() {
               <Route path="/problems/Laboratorul de inteligenta artificiala" element={<AILabor />} />
               <Route path="/problems/Analiza cifrelor in codurile unui depozit" element={<DepoCode />} />
               <Route path="/problems/Codurile secrete" element={<SecretCodes />} />
+              <Route path="/problems/Interval divizori pari" element={<EvenDividersInterval />} />
               <Route path="/problems/Misiunea Agentilor P" element={<AgentsMission />} />
               <Route path="/problems/Controlul de calitate" element={<QualityCheck />} />
               <Route path="/problems/Catalogul digital" element={<DigitalCatalog />} />
