@@ -18,8 +18,7 @@ function TextFile() {
             ifstream → pentru citire (input)<br />
             fstream → pentru citire și scriere<br />
             <CodeStyle code={`#include <iostream>
-#include <fstream>  // Biblioteca pentru lucrul cu fișiere
-
+#include <fstream> // Biblioteca pentru lucrul cu fișiere
 using namespace std;
 
 int main() {
@@ -28,13 +27,20 @@ int main() {
         cout << "Eroare la deschiderea fisierului!";
         return 1;
     }
-    fisierScriere << "Salut! Acesta este un fisier text.\\n"; // Scriem în fișier
+
+    char text[256]; // șir de caractere
+    cin.getline(text, 256); // Citire de la tastatură
+
+    fisierScriere << text << endl; // Scriere în fișier
     fisierScriere.close(); // Închidem fișierul
+
     return 0;
 }`} />
             ofstream fisierScriere("nume_fisier.txt"); – Deschide sau creează un fișier pentru scriere. Dacă fișierul există deja, conținutul său se șterge.<br />
             if (!fisierScriere) – Verifică dacă fișierul s-a deschis corect.<br />
-            fisierScriere &lt;&lt; "Text" – Scrie în fișier.<br />
+            char text[256]; – declarăm un șir de caractere<br />
+            cin.getline(text, 256); – citește o linie întreagă de la tastatură<br />
+            256 reprezintă dimensiunea maximă a textului citit<br />
             fisierScriere.close(); – Închide fișierul după utilizare.<br /><br />
 
             <strong style={{ letterSpacing: '0.1rem' }}>2. Citirea dintr-un fișier text</strong> După ce am creat fișierul, putem citi conținutul său folosind ifstream.<br />
@@ -51,8 +57,9 @@ int main() {
         return 1;
     }
 
-    string linie;
-    while (getline(fisierCitire, linie)) { // Citim linie cu linie
+    char linie[256];
+
+    while (fisierCitire.getline(linie, 256)) { // Citim linie cu linie
         cout << linie << endl; // Afișăm conținutul citit
     }
 
@@ -60,11 +67,56 @@ int main() {
     return 0;
 }`} />
             ifstream fisierCitire("nume_fisier.txt"); – Deschide fișierul pentru citire.<br />
-            while (getline(fisierCitire, linie)) – Citește linie cu linie până la sfârșitul fișierului.<br />
+            fisierCitire.getline(linie, 256); → citește linie cu linie din fișier.<br />
             cout &lt;&lt; linie; – Afișează conținutul fișierului.<br />
             fisierCitire.close(); – Închide fișierul după citire.<br /><br />
 
-            <strong style={{ letterSpacing: '0.1rem' }}>3. Adăugarea de text la un fișier existent</strong> Dacă vrem să adăugăm text în fișier fără să ștergem ce era înainte, folosim modul ios::app.<br />
+            <strong style={{ letterSpacing: '0.1rem' }}>3. Citirea si afișarea de mai multe linii de la tastatură (până la o linie goală)</strong>
+            <CodeStyle code={`#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+    ofstream fisier("nume_fisier.txt");
+    if (!fisier) {
+        cout << "Eroare la deschiderea fisierului!";
+        return 1;
+    }
+
+    char linie[256];
+
+    cout << "Introduceti text (linie goala pentru oprire):\\n";
+    while (true) {
+        cin.getline(linie, 256);
+        if (linie[0] == '\\0') break; // linie goală
+        fisier << linie << "\\n";
+    }
+
+    fisier.close();
+
+    ifstream fisierCitire ("nume_fisier.txt");
+    if (!fisier) {
+        cout << "Eroare la deschiderea fisierului pentru citire!";
+        return 1;
+    }
+
+    char textCitit[256];
+
+    while(fisierCitire.getline(textCitit, 256)) {
+        cout << textCitit << "\\n";
+    }
+
+     fisierCitire.close();
+    return 0;
+}`} />
+
+
+
+
+
+
+            <strong style={{ letterSpacing: '0.1rem' }}>4. Adăugarea de text la un fișier existent</strong> Dacă vrem să adăugăm text în fișier fără să ștergem ce era înainte, folosim modul ios::app.<br />
             <CodeStyle code={`#include <iostream>
 #include <fstream>
 
@@ -85,7 +137,7 @@ int main() {
             ios::app → Deschide fișierul în modul "append" (adăugare).<br />
             Nu șterge conținutul existent, ci doar adaugă la sfârșit.<br /><br />
 
-            <strong style={{ letterSpacing: '0.1rem' }}>4. Scriere și citire folosind fstream</strong> Dacă vrem atât să scriem, cât și să citim dintr-un fișier, folosim fstream.<br />
+            <strong style={{ letterSpacing: '0.1rem' }}>5. Scriere și citire folosind fstream</strong> Dacă vrem atât să scriem, cât și să citim dintr-un fișier, folosim fstream.<br />
             <CodeStyle code={`#include <iostream>
 #include <fstream>
 
@@ -102,18 +154,18 @@ int main() {
 
     fisier.seekg(0); // Mutăm cursorul la început pentru citire
 
-    string linie;
-    while (getline(fisier, linie)) { // Citim fișierul
-        cout << linie << endl;
+    char linie[256];
+    while (fisier.getline(linie, 256)) { // Citim fișierul
+        cout << linie << "\\n";
     }
 
     fisier.close();
     return 0;
 }`} />
             ios::in | ios::out | ios::app → Permite citirea, scrierea și adăugarea în fișier.<br />
-            seekg(0); → Mute cursorul la început, astfel încât să putem citi din fișier după ce am scris.<br /><br />
-
-            <strong style={{ letterSpacing: '0.1rem' }}>5. Ștergerea conținutului unui fișier</strong> Dacă vrem să ștergem tot conținutul unui fișier, îl deschidem fără ios::app.<br />
+            seekg(0); → Mută cursorul de citire la poziția 0, adică începutul fișierului.<br />
+            Altfel spus, după ce ai scris în fișier, cursorul de citire este la final, iar fără seekg(0) nu s-ar citi nimic.<br /><br />
+            <strong style={{ letterSpacing: '0.1rem' }}>6. Ștergerea conținutului unui fișier</strong> Dacă vrem să ștergem tot conținutul unui fișier, îl deschidem fără ios::app.<br />
             <CodeStyle code={`#include <iostream>
 #include <fstream>
 
@@ -127,7 +179,7 @@ int main() {
 }`} />
             ios::trunc → Șterge tot conținutul fișierului la deschidere.<br /><br />
 
-            <strong style={{ letterSpacing: '0.1rem' }}>6. Probleme comune și soluții</strong>
+            <strong style={{ letterSpacing: '0.1rem' }}>7. Probleme comune și soluții</strong>
             Fișierul nu se deschide?<br />
             Verifică dacă există și ai permisiunea de a-l modifica.<br />
             Folosește if (!fisier) pentru a detecta erori.<br /><br />
