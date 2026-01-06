@@ -1,16 +1,46 @@
+import { useState, useEffect } from "react";
 import { UserAuth } from "../../backend/firebaseConfig/authProvider";
 import { UserProgressData } from "../components/contexts/userProgress";
 import Progress from "../components/Progress";
+import BacScreen from "../components/BacScreen";
 
 function Main() {
   const { user, loggedIn } = UserAuth();
   const { userProgressPoints, problemsSolved, admin, capitols, credits } = UserProgressData() || {};
+  const [mode, setMode] = useState('baze');
 
+  useEffect(() => {
+    if (!user?.uid) return;
+
+    const key = `main_mode_${user.uid}`;
+    const saved = localStorage.getItem(key);
+
+    if (saved === "baze" || saved === "bac") {
+      setMode(saved);
+    } else {
+      setMode("baze");
+    }
+  }, [user?.uid]);
+
+  useEffect(() => {
+    if (!user?.uid) return;
+
+    const key = `main_mode_${user.uid}`;
+    localStorage.setItem(key, mode);
+  }, [mode, user?.uid]);
 
   const freeLessons = [
     "Recapitulare algoritmi",
     "Algoritmi"
   ]
+
+  const bazeIsPressed = () => {
+    setMode('baze');
+  }
+
+  const bacIsPressed = () => {
+    setMode('bac');
+  }
 
   const combinedLessons = [...freeLessons, ...(capitols || [])];
   const totalPoints = Math.floor((userProgressPoints / 184) * 100);
@@ -106,7 +136,14 @@ function Main() {
         { title: "Insertion Sort", link: "/problems/Insertion Sort", icon: "fa-solid fa-circle-check", index: 51 },
         { title: "Selection Sort", link: "/problems/Selection Sort", icon: "fa-solid fa-circle-check", index: 52 },
         { title: "Linear Search", link: "/problems/Linear Search", icon: "fa-solid fa-circle-check", index: 53 },
-        { title: "Binary Search", link: "/problems/Binary Search", icon: "fa-solid fa-circle-check", index: 54 }
+        { title: "Binary Search", link: "/problems/Binary Search", icon: "fa-solid fa-circle-check", index: 54 },
+        { title: "Stiva", link: "/problems/Stiva", icon: "fa-solid fa-circle-check", index: 54 },
+        { title: "Simulare stiva", link: "/problems/Simulare stiva", icon: "fa-solid fa-circle-check", index: 54 },
+        { title: "Suma elementelor din stiva", link: "/problems/Suma elementelor din stiva", icon: "fa-solid fa-circle-check", index: 54 },
+        { title: "Inversarea unei secvente", link: "/problems/Inversarea unei secvente", icon: "fa-solid fa-circle-check", index: 54 },
+        { title: "Sir de frecventa", link: "/problems/Sir de frecventa", icon: "fa-solid fa-circle-check", index: 54 },
+        { title: "Numarari de aparitii", link: "/problems/Numarari de aparitii", icon: "fa-solid fa-circle-check", index: 54 },
+
       ]
     }, {
       title: "Recapitulare For",
@@ -337,18 +374,30 @@ function Main() {
 
           <div className='userInfo'>
             <div className='profile-picture'></div>
-            <h3>Invata bazele programarii:</h3>
+            {
+              mode === 'baze' ? (
+                <h3>Invata bazele programarii:</h3>
+              ) : (
+                <h3>Probleme bac:</h3>
+              )
+            }
 
-            <div style={{ width: '70%', alignSelf: 'center' }} className="progress" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-              <div className="progress-bar bg-danger" style={{ width: totalPoints ? `${totalPoints}%` : '0%' }}>
+
+            <div style={{ width: '70%', alignSelf: 'center', marginRight: '20px' }} className="progress" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+              <div className={mode === 'baze' ? "progress-bar bg-danger" : "progress-bar bg-success"} style={{ width: totalPoints ? `${totalPoints}%` : '0%' }}>
                 {totalPoints}%
               </div>
+            </div>
+            <div className="btn-group" role="group" aria-label="Basic mixed styles example">
+              <button type="button" className={mode === 'baze' ? "btn btn-danger" : "btn btn-light"} onClick={bazeIsPressed}>Baze</button>
+              <button type="button" className={mode === 'bac' ? "btn btn-success" : "btn btn-light"} onClick={bacIsPressed}>Bac</button>
             </div>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column' }}>
 
-            <strong style={{ color: 'white' }}>Credite ramase: {credits} </strong>
+            <strong style={{ color: 'white' }}>Credite ramase: {credits}
+            </strong>
           </div>
 
 
@@ -357,129 +406,142 @@ function Main() {
               <Progress exp={userProgressPoints} />
             </div>
 
-            <div style={{ background: 'white', opacity: 0.8, marginTop: '10px' }}>
+            <div key={mode} style={{ background: 'white', opacity: 0.8, marginTop: '10px' }}>
               <div style={{ color: 'black', width: '100%', padding: '10px', marginBottom: '5px' }}>
                 <h4 style={{ color: 'black' }}>Problemele curente:</h4>
               </div>
 
-              <div className="accordion accordion-flush" id="accordionFlushExample">
-                {sections.map((section, sectionIndex) => {
-                  const shouldRender = !admin && combinedLessons.includes(section.title);
+              {
+
+                mode === 'baze' ? (
+                  <div className="accordion accordion-flush" id="accordionFlushExample">
+                    {sections.map((section, sectionIndex) => {
+                      const shouldRender = !admin && combinedLessons.includes(section.title);
 
 
-                  return (
-                    <div key={sectionIndex} className="accordion-item">
-                      <h2 className="accordion-header">
-                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#flush-collapse${sectionIndex}`} aria-expanded="false" aria-controls={`flush-collapse${sectionIndex}`}>
-                          {section.title}
-                        </button>
-                      </h2>
+                      return (
+                        <div key={sectionIndex} className="accordion-item">
+                          <h2 className="accordion-header">
+                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#flush-collapse${sectionIndex}`} aria-expanded="false" aria-controls={`flush-collapse${sectionIndex}`}>
+                              {section.title}
+                            </button>
+                          </h2>
 
-                      {shouldRender && (
+                          {shouldRender && (
 
-                        <div id={`flush-collapse${sectionIndex}`} className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                          {section.lessons.map((lesson, lessonIndex) => {
-                            const isSolved = problemsSolved.includes(lesson.title);
+                            <div id={`flush-collapse${sectionIndex}`} className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                              {section.lessons.map((lesson, lessonIndex) => {
+                                const isSolved = problemsSolved.includes(lesson.title);
 
-                            return (
-                              <div key={lessonIndex} className="accordion-body" style={{ display: 'flex' }}>
-                                <div className="icon-container">
-                                  {!admin ? (
-                                    <i
-                                      className={
-                                        isSolved ? lesson.icon : problemsSolved.length === lesson.index - 1
-                                          ? lesson.icon
-                                          : lesson.icon
+                                return (
+                                  <div key={lessonIndex} className="accordion-body" style={{ display: 'flex' }}>
+                                    <div className="icon-container">
+                                      {!admin ? (
+                                        <i
+                                          className={
+                                            isSolved ? lesson.icon : problemsSolved.length === lesson.index - 1
+                                              ? lesson.icon
+                                              : lesson.icon
+                                          }
+                                          style={{ color: isSolved ? 'green' : 'grey' }}
+                                        ></i>
+                                      ) : (
+                                        <i
+                                          className={lesson.icon}
+
+
+                                          style={{ color: isSolved ? 'green' : 'grey' }}
+                                        ></i>
+                                      )
                                       }
-                                      style={{ color: isSolved ? 'green' : 'grey' }}
-                                    ></i>
-                                  ) : (
-                                    <i
-                                      className={lesson.icon}
+
+                                      {lessonIndex !== section.lessons.length - 1 && <div className="vertical-line" style={{ backgroundColor: `${isSolved ? 'green' : 'grey'}` }}></div>}
+
+                                    </div>
+                                    {!admin ? (
+                                      <a style={{ textDecoration: 'none', marginLeft: '10px' }} href={lesson.link}>
+                                        {lesson.title}
+                                      </a>
+                                    ) : (
+                                      <a style={{ textDecoration: 'none', marginLeft: '10px' }} href={lesson.link}>
+                                        {lesson.title}
+                                      </a>
+                                    )}
 
 
-                                      style={{ color: isSolved ? 'green' : 'grey' }}
-                                    ></i>
-                                  )
-                                  }
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          )}
 
-                                  {lessonIndex !== section.lessons.length - 1 && <div className="vertical-line" style={{ backgroundColor: `${isSolved ? 'green' : 'grey'}` }}></div>}
+                          {admin && (
+                            <div id={`flush-collapse${sectionIndex}`} className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                              {section.lessons.map((lesson, lessonIndex) => {
+                                const isSolved = problemsSolved.includes(lesson.title);
 
-                                </div>
-                                {!admin ? (
-                                  <a style={{ textDecoration: 'none', marginLeft: '10px' }} href={lesson.link}>
-                                    {lesson.title}
-                                  </a>
-                                ) : (
-                                  <a style={{ textDecoration: 'none', marginLeft: '10px' }} href={lesson.link}>
-                                    {lesson.title}
-                                  </a>
-                                )}
+                                return (
+                                  <div key={lessonIndex} className="accordion-body" style={{ display: 'flex' }}>
+                                    <div className="icon-container">
+                                      {!admin ? (
+                                        <i
+                                          className={
+                                            isSolved
+                                              ? lesson.icon // Icon-ul verde pentru lecțiile rezolvate
+                                              : problemsSolved.length === lesson.index - 1 // Lecția curentă fără lacăt
+                                                ? lesson.icon // Icon-ul specific lecției
+                                                : "fa-solid fa-lock" // Icon-ul cu lacăt pentru restul lecțiilor
+                                          }
+                                          style={{ color: isSolved || problemsSolved.length === lesson.index ? 'green' : 'grey' }}
+                                        ></i>
+                                      ) : (
+                                        <i
+                                          className={lesson.icon}
 
 
-                              </div>
-                            );
-                          })}
-                        </div>
-                      )}
-
-                      {admin && (
-                        <div id={`flush-collapse${sectionIndex}`} className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                          {section.lessons.map((lesson, lessonIndex) => {
-                            const isSolved = problemsSolved.includes(lesson.title);
-
-                            return (
-                              <div key={lessonIndex} className="accordion-body" style={{ display: 'flex' }}>
-                                <div className="icon-container">
-                                  {!admin ? (
-                                    <i
-                                      className={
-                                        isSolved
-                                          ? lesson.icon // Icon-ul verde pentru lecțiile rezolvate
-                                          : problemsSolved.length === lesson.index - 1 // Lecția curentă fără lacăt
-                                            ? lesson.icon // Icon-ul specific lecției
-                                            : "fa-solid fa-lock" // Icon-ul cu lacăt pentru restul lecțiilor
+                                          style={{ color: isSolved || problemsSolved.length === lesson.index ? 'green' : 'grey' }}
+                                        ></i>
+                                      )
                                       }
-                                      style={{ color: isSolved || problemsSolved.length === lesson.index ? 'green' : 'grey' }}
-                                    ></i>
-                                  ) : (
-                                    <i
-                                      className={lesson.icon}
+
+                                      {lessonIndex !== section.lessons.length - 1 && <div className="vertical-line" style={{ backgroundColor: `${isSolved ? 'green' : 'grey'}` }}></div>}
+
+                                    </div>
+                                    {!admin ? (
+                                      <a style={{ textDecoration: 'none', marginLeft: '10px' }} href={isSolved || problemsSolved.length === lesson.index - 1 ? lesson.link : null}>
+                                        {lesson.title}
+                                      </a>
+                                    ) : (
+                                      <a style={{ textDecoration: 'none', marginLeft: '10px' }} href={lesson.link}>
+                                        {lesson.title}
+                                      </a>
+                                    )}
 
 
-                                      style={{ color: isSolved || problemsSolved.length === lesson.index ? 'green' : 'grey' }}
-                                    ></i>
-                                  )
-                                  }
-
-                                  {lessonIndex !== section.lessons.length - 1 && <div className="vertical-line" style={{ backgroundColor: `${isSolved ? 'green' : 'grey'}` }}></div>}
-
-                                </div>
-                                {!admin ? (
-                                  <a style={{ textDecoration: 'none', marginLeft: '10px' }} href={isSolved || problemsSolved.length === lesson.index - 1 ? lesson.link : null}>
-                                    {lesson.title}
-                                  </a>
-                                ) : (
-                                  <a style={{ textDecoration: 'none', marginLeft: '10px' }} href={lesson.link}>
-                                    {lesson.title}
-                                  </a>
-                                )}
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          )}
 
 
-                              </div>
-                            );
-                          })}
                         </div>
-                      )}
-
-
-                    </div>
-                  )
+                      )
 
 
 
-                })}
-              </div>
+                    })}
+                  </div>
+
+                ) : (
+                  <>
+                    <BacScreen />
+                  </>
+                )
+
+              }
+
+
             </div>
           </div>
 
@@ -489,7 +551,7 @@ function Main() {
           </label>
         </div>
       ) : (
-        <h1 className='home-container' style={{ color: 'white' }}>Trebuie sa te loghezi!</h1>
+        <h1 className='home-container' style={{ color: 'white', marginTop: '100px' }}>Trebuie sa te loghezi!</h1>
       )}
     </>
   )

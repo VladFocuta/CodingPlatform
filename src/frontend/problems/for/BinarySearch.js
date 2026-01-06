@@ -104,7 +104,7 @@ int main() {
             problemPoints={1}
             problemContent={problemContent}
             lecture={true}
-            nextRoute="/Main" />
+            nextRoute="/problems/Stiva" />
     )
 }
 

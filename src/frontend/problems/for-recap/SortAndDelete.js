@@ -9,7 +9,7 @@ function SortAndDelete() {
         { params: [6, 4, 2, 5, 2, 8, 4], expected: [2, 4, 5, 8] },
         { params: [3, 0, 0, 0], expected: [0] },
         { params: [1, 2], expected: [2] },
-        { params: [7, 33, 1, 33, 0, 33, 9, 102], expected: [0, 1, 9, 33, 102] }
+        { params: [7, 33, 1, 33, 0, 33, 9, 100], expected: [0, 1, 9, 33, 100] }
     ];
 
 
@@ -27,7 +27,7 @@ function SortAndDelete() {
                      Apoi elimină toate dublurile, căci ordinea și unicitatea aduc echilibrul!”
                     <br /> <br />
                     Pe prima linie se citeste un numar întreg N (1 ≤ N ≤ 50), numărul total de valori găsite.<br />
-                    Pe a doua linie se citesc N valori, separate prin spatiu.<br />
+                    Pe a doua linie se citesc N elemente cu valori cuprinse între (0 - 100), separate prin spatiu.<br />
                     Afișează pe ecran șirul final, gata să fie depus în Arhiva Magilor.
                     <br /><br />
                     Exemplu:

@@ -10,7 +10,8 @@ function AdminUsers() {
     const [userMessages, setUserMessages] = useState({});
     const [hours, setHours] = useState(0);
     const [newCredits, setNewCredits] = useState(0);
-    
+    const [debouncedSearch, setDebouncedSearch] = useState('');
+    const [searchTerm, setSearchTerm] = useState('');
     // trebuie sa fetchuiesc creditele utilizatorlui selectat,nu pe ale mele
     useEffect(() => {
         const fetchUsers = async () => {
@@ -23,6 +24,23 @@ function AdminUsers() {
         };
         fetchUsers();
     }, []);
+
+
+
+    useEffect(() => {
+        const t = setTimeout(() => setDebouncedSearch(searchTerm), 200);
+        return () => clearTimeout(t);
+    }, [searchTerm]);
+
+    const filteredUsers = users.filter((user) => {
+        const q = debouncedSearch.trim().toLowerCase();
+        if (!q) return true;
+
+        return (
+            (user.name || '').toLowerCase().includes(q) ||
+            (user.email || '').toLowerCase().includes(q)
+        );
+    });
 
     const handleGetNewCredits = (event, userId) => {
         setNewCredits(event.target.value);
@@ -125,7 +143,21 @@ function AdminUsers() {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
-            {users.map((user, index) => {
+            <div style={{ width: '90%', margin: '20px 0' }}>
+                <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Caută după nume sau email..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    style={{
+                        maxWidth: '500px',
+                        margin: '0 auto',
+                        textAlign: 'center'
+                    }}
+                />
+            </div>
+            {filteredUsers.map((user, index) => {
                 const messages = userMessages[user.userId] || { success: '', error: '' };
 
                 return (

@@ -67,6 +67,13 @@ import InsertionSort from './frontend/problems/for/InsertionSort';
 import SelectionSort from './frontend/problems/for/SelectionSort';
 import LinearSearch from './frontend/problems/for/LinearSearch';
 import BinarySearch from './frontend/problems/for/BinarySearch';
+import Stiva from './frontend/problems/for/Stiva.js';
+import StackStimulating from './frontend/problems/for/StackStimulating.js';
+import ElementsSumStack from './frontend/problems/for/ElementsSumStack.js';
+import SequenceReverse from './frontend/problems/for/SequenceReverse.js';
+import FrequenceArray from './frontend/problems/for/FrequenceArray.js';
+import FreqCounter from './frontend/problems/for/FreqCounter.js';
+
 import DescendingSort from './frontend/problems/for-recap/DescendingSort';
 import SortAndDelete from './frontend/problems/for-recap/SortAndDelete';
 import MaxAndMinFor from './frontend/problems/for-recap/MaxAndMinFor';
@@ -207,7 +214,10 @@ import Labirinth from './frontend/problems/backtracking/Labirinth.js';
 import FibonacciMatrix from './frontend/problems/matrix-recap/FibonacciMatrix.js';
 import DigitsOfLines from './frontend/problems/matrix-recap/DigitsOfLines.js';
 import EqualLines from './frontend/problems/matrix-recap/EqualLines.js';
+
 import GoogleTrafic from './frontend/components/advertisement/GoogleTrafic.js';
+import SimpleAddPage from './frontend/components/advertisement/SimpleAddPage.js';
+
 import PrimePairs from './frontend/problems/while-recap/PrimePairs.js';
 import ContactSucces from './frontend/components/advertisement/ContactSucces.js';
 import PrimeDiv from './frontend/problems/while-recap/PrimeDiv.js';
@@ -224,6 +234,14 @@ import PointersArray from './frontend/problems/pointeri/PointersArray.js';
 import PintersSum from './frontend/problems/pointeri/PintersSum.js';
 import MaxPointer from './frontend/problems/pointeri/MaxPointer.js';
 import ReverseArray from './frontend/problems/pointeri/ReverseArray.js';
+
+
+
+import KTermsSum from './frontend/problems/bac/for/KTermsSum.js';
+import AscendingVerify from './frontend/problems/bac/for/AscendingVerify.js';
+
+
+
 
 
 
@@ -250,6 +268,7 @@ function App() {
               <Route path="/policy/policy and confidentiality" element={<PolicyAndConf />} />
               <Route path="/policy/terms and conditions" element={<TermsAndConditions />} />
               <Route path="/contact-succes" element={<ContactSucces />} />
+              <Route path="/informatica" element={<SimpleAddPage />} />
 
 
               <Route path="/Main" element={<Main />} />
@@ -334,6 +353,12 @@ function App() {
               <Route path="/problems/Selection Sort" element={<SelectionSort />} />
               <Route path="/problems/Linear Search" element={<LinearSearch />} />
               <Route path="/problems/Binary Search" element={<BinarySearch />} />
+              <Route path="/problems/Stiva" element={<Stiva />} />
+              <Route path="/problems/Simulare stiva" element={<StackStimulating />} />
+              <Route path="/problems/Suma elementelor din stiva" element={<ElementsSumStack />} />
+              <Route path="/problems/Inversarea unei secvente" element={<SequenceReverse />} />
+              <Route path="/problems/Sir de frecventa" element={<FrequenceArray />} />
+              <Route path="/problems/Numarari de aparitii" element={<FreqCounter />} />
 
               <Route path="/problems/Sortare descrescatoare" element={<DescendingSort />} />
               <Route path="/problems/Sortare si eliminare duplicate" element={<SortAndDelete />} />
@@ -495,6 +520,15 @@ function App() {
               <Route path="/problems/Verificare graf Eulerian" element={<EulerianGraphProblem />} />
 
               <Route path="/problems/Fisiere text" element={<TextFile />} />
+
+
+
+              {/*PROBLEME BAC*/}
+              <Route path="/problems/bac/Cea mai mare suma de k termeni" element={<KTermsSum />} />
+              <Route path="/problems/bac/Verificarea numerelor crescatoare" element={<AscendingVerify />} />
+
+
+
 
             </Routes>
           </NotificationProvider>
