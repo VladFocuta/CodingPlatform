@@ -49,7 +49,7 @@ function AscendingVerify() {
             problemName="Verificarea numerelor crescatoare"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Cifra maxima si nr de aparitii"
             testPassed={testPassed}
         />
     )

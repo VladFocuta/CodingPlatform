@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { UserAuth } from "../../backend/firebaseConfig/authProvider";
 import { UserProgressData } from "../components/contexts/userProgress";
+import * as bootstrap from "bootstrap";
 import Progress from "../components/Progress";
 import BacScreen from "../components/BacScreen";
 
@@ -8,6 +9,11 @@ function Main() {
   const { user, loggedIn } = UserAuth();
   const { userProgressPoints, problemsSolved, admin, capitols, credits } = UserProgressData() || {};
   const [mode, setMode] = useState('baze');
+
+  useEffect(() => {
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    [...tooltipTriggerList].map(el => new bootstrap.Tooltip(el));
+  }, []);
 
   useEffect(() => {
     if (!user?.uid) return;
@@ -389,8 +395,33 @@ function Main() {
               </div>
             </div>
             <div className="btn-group" role="group" aria-label="Basic mixed styles example">
-              <button type="button" className={mode === 'baze' ? "btn btn-danger" : "btn btn-light"} onClick={bazeIsPressed}>Baze</button>
-              <button type="button" className={mode === 'bac' ? "btn btn-success" : "btn btn-light"} onClick={bacIsPressed}>Bac</button>
+              <span
+                data-bs-toggle="tooltip"
+                title="Această opțiune nu este disponibilă momentan"
+              >
+                <button
+                  type="button"
+                  className={mode === 'baze' ? "btn btn-danger" : "btn btn-light"}
+                  onClick={bazeIsPressed}
+                  disabled
+                >
+                  Baze
+                </button>
+              </span>
+
+              <span
+                data-bs-toggle="tooltip"
+                title="Această opțiune nu este disponibilă momentan"
+              >
+                <button
+                  type="button"
+                  className={mode === 'bac' ? "btn btn-success" : "btn btn-light"}
+                  onClick={bacIsPressed}
+                  disabled
+                >
+                  Bac
+                </button>
+              </span>
             </div>
           </div>
 

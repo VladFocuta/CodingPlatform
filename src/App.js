@@ -236,9 +236,40 @@ import MaxPointer from './frontend/problems/pointeri/MaxPointer.js';
 import ReverseArray from './frontend/problems/pointeri/ReverseArray.js';
 
 
-
+//for bac
 import KTermsSum from './frontend/problems/bac/for/KTermsSum.js';
 import AscendingVerify from './frontend/problems/bac/for/AscendingVerify.js';
+import MaxNrAndApp from './frontend/problems/bac/for/MaxNrAndApp.js';
+import MultiplyApp from './frontend/problems/bac/for/MultiplyApp.js';
+import ElementsRearange from './frontend/problems/bac/for/ElementsRearange.js';
+
+//matrice bac
+import DiffValuesMatrix from './frontend/problems/bac/matrix/DiffValuesMatrix.js';
+import DiffSumLinesCol from './frontend/problems/bac/matrix/DiffSumLinesCol.js';
+import EvenNumbersMatrix from './frontend/problems/bac/matrix/EvenNumbersMatrix.js';
+import LastDigitProduct from './frontend/problems/bac/matrix/LastDigitProduct.js';
+
+//subprograme bac
+import EvenNumbersSum from './frontend/problems/bac/subprograme/EvenNumbersSum.js';
+import PrimeNrSquare from './frontend/problems/bac/subprograme/PrimeNrSquare.js';
+import SumAndDigits from './frontend/problems/bac/subprograme/SumAndDigits.js';
+import AverageDigit from './frontend/problems/bac/subprograme/AverageDigit.js';
+import IrreducibleFractions from './frontend/problems/bac/subprograme/IrreducibleFractions.js';
+import MinNumberMaxDigit from './frontend/problems/bac/subprograme/MinNumberMaxDigit.js';
+
+//while bac
+import KPows from './frontend/problems/bac/while/KPows.js';
+
+//char bac
+import ConsonantDelete from './frontend/problems/bac/char/ConsonantDelete.js';
+
+
+
+
+
+
+
+
 
 
 
@@ -524,11 +555,35 @@ function App() {
 
 
               {/*PROBLEME BAC*/}
+
+              {/*PROBLEME FOR*/}
               <Route path="/problems/bac/Cea mai mare suma de k termeni" element={<KTermsSum />} />
               <Route path="/problems/bac/Verificarea numerelor crescatoare" element={<AscendingVerify />} />
+              <Route path="/problems/bac/Cifra maxima si nr de aparitii" element={<MaxNrAndApp />} />
+              <Route path="/problems/bac/Determinarea numerelor cu aparitii multiple" element={<MultiplyApp />} />
+              <Route path="/problems/bac/Rearanjarea elementelor" element={<ElementsRearange />} />
+
+              {/*PROBLEME MATRICI*/}
+              <Route path="/problems/bac/Matrice cu valori diferite" element={<DiffValuesMatrix />} />
+              <Route path="/problems/bac/Matrice cu sume diferite pe linii si coloane" element={<DiffSumLinesCol />} />
+              <Route path="/problems/bac/Generarea unei matrice cu numere pare" element={<EvenNumbersMatrix />} />
+              <Route path="/problems/bac/Produs sub diagonala secundara" element={<LastDigitProduct />} />
+              
+              {/*PROBLEME SUBPROGRAME*/}
+              <Route path="/problems/bac/Suma numerelor pare" element={<EvenNumbersSum />} />
+              <Route path="/problems/bac/Patratul numerelor prime" element={<PrimeNrSquare />} />
+              <Route path="/problems/bac/Suma si numarul de cifre" element={<SumAndDigits />} />
+              <Route path="/problems/bac/Cifra cu proprietate de medie aritmetica" element={<AverageDigit />} />
+              <Route path="/problems/bac/Fractii ireductibile" element={<IrreducibleFractions />} />
+              <Route path="/problems/bac/Numar minim cu cifra maxima" element={<MinNumberMaxDigit />} />
 
 
 
+              {/*PROBLEME WHILE*/}
+              <Route path="/problems/bac/Puteri ale lui k" element={<KPows />} />
+
+              {/*PROBLEME CHAR*/}
+              <Route path="/problems/bac/Eliminarea consoanelor" element={<ConsonantDelete />} />
 
             </Routes>
           </NotificationProvider>

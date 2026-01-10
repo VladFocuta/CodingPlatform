@@ -9,13 +9,44 @@ function BacScreen() {
 
     const sections = [
         {
+            title: "While",
+            lessons: [
+                { title: "Puteri ale lui k", link: "/problems/bac/Puteri ale lui k", icon: "fa-solid fa-circle-check" },
+            ]
+        },
+        {
             title: "Tablouri unidimensionale",
             lessons: [
                 { title: "Cea mai mare suma de k termeni", link: "/problems/bac/Cea mai mare suma de k termeni", icon: "fa-solid fa-circle-check" },
                 { title: "Verificarea numerelor crescatoare", link: "/problems/bac/Verificarea numerelor crescatoare", icon: "fa-solid fa-circle-check" },
-
+                { title: "Cifra maxima si nr de aparitii", link: "/problems/bac/Cifra maxima si nr de aparitii", icon: "fa-solid fa-circle-check" },
+                { title: "Determinarea numerelor cu aparitii multiple", link: "/problems/bac/Determinarea numerelor cu aparitii multiple", icon: "fa-solid fa-circle-check" },
+                { title: "Rearanjarea elementelor", link: "/problems/bac/Rearanjarea elementelor", icon: "fa-solid fa-circle-check" },
             ]
-        }]
+        }, {
+            title: "Matrici",
+            lessons: [
+                { title: "Matrice cu valori diferite", link: "/problems/bac/Matrice cu valori diferite", icon: "fa-solid fa-circle-check" },
+                { title: "Matrice cu sume diferite pe linii si coloane", link: "/problems/bac/Matrice cu sume diferite pe linii si coloane", icon: "fa-solid fa-circle-check" },
+                { title: "Generarea unei matrice cu numere pare", link: "/problems/bac/Generarea unei matrice cu numere pare", icon: "fa-solid fa-circle-check" },
+                { title: "Produs sub diagonala secundara", link: "/problems/bac/Produs sub diagonala secundara", icon: "fa-solid fa-circle-check" },
+            ]
+        }, {
+            title: "Subprograme",
+            lessons: [
+                { title: "Suma numerelor pare", link: "/problems/bac/Suma numerelor pare", icon: "fa-solid fa-circle-check" },
+                { title: "Patratul numerelor prime", link: "/problems/bac/Patratul numerelor prime", icon: "fa-solid fa-circle-check" },
+                { title: "Suma si numarul de cifre", link: "/problems/bac/Suma si numarul de cifre", icon: "fa-solid fa-circle-check" },
+                { title: "Cifra cu proprietate de medie aritmetica", link: "/problems/bac/Cifra cu proprietate de medie aritmetica", icon: "fa-solid fa-circle-check" },
+                { title: "Fractii ireductibile", link: "/problems/bac/Fractii ireductibile", icon: "fa-solid fa-circle-check" },
+                { title: "Numar minim cu cifra maxima", link: "/problems/bac/Numar minim cu cifra maxima", icon: "fa-solid fa-circle-check" },
+            ]
+        }, {
+            title: "Siruri de caractere",
+            lessons: [
+                { title: "Eliminarea consoanelor", link: "/problems/bac/Eliminarea consoanelor", icon: "fa-solid fa-circle-check" },
+            ]
+        },]
 
     return (
         <>
