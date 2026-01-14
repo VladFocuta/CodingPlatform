@@ -26,7 +26,7 @@ function CodeSubmitHistory() {
                 <p>Submisiile tale</p>
             </h1>
 
-            <div className='userInfo' style={{ marginTop: '40px', width: '50%', flexDirection: 'column' }}>
+            <div className='userInfo' style={{ marginTop: '40px', flexDirection: 'column' }}>
 
                 {codeList.map((submission, index) => (
                     <div key={index}>

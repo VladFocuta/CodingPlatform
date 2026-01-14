@@ -80,48 +80,19 @@ function Home() {
                 <title>Meditatii Informatica Online | Pregatire BAC si Admitere</title>
                 <meta name="description" content="Meditatii informatica online 1 la 1, pregatire BAC informatica, cursuri programare si probleme rezolvate. Profesor dedicat, platforma interactiva. CodersRO." />
             </Helmet>
-            <div style={{ padding: '20px', minHeight: '100vh' }}>
-                <h1 className='home-container' style={{ color: 'white', textAlign: 'center', marginBottom: '30px', marginTop: '50px' }}>
-                    Meditatii Informatica Online
+            <div className="main-container">
+                <h1 className="page-title" style={{ marginTop: '30px' }}>
+                    Meditații Informatică Online
                 </h1>
-
-                <div
-                    style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(3, 1fr)',
-                        gap: '20px',
-                        justifyItems: 'center',
-                    }}
-                >
-                    {sections.map((sec, index) => (
-                        <div
-                            key={index}
-                            style={{
-                                background: '#2f2f2f',
-                                color: 'white',
-                                borderRadius: '10px',
-                                padding: '15px',
-                                maxWidth: '300px',
-                                textAlign: 'left',
-                                boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
-                            }}
-                        >
-                            <strong
-                                style={{
-                                    display: 'block',
-                                    background: '#696969',
-                                    padding: '5px',
-                                    borderRadius: '5px',
-                                    marginBottom: '10px',
-                                    textAlign: 'center',
-                                    letterSpacing: '0.05rem'
-                                }}
-                            >
-                                {sec.title}
-                            </strong>
-                            <p style={{ fontSize: '0.95rem' }}>{sec.text}</p>
-                        </div>
-                    ))}
+                <div className='page-wrapper'>
+                    <div className="glass-grid">
+                        {sections.map((sec, index) => (
+                            <div className="glass-card" key={index}>
+                                <h3 className="card-title">{sec.title}</h3>
+                                <p className="card-text">{sec.text}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </>

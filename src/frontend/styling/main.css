@@ -17,6 +17,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 70%;
+
     padding: 10px;
 }
 
@@ -41,7 +42,7 @@
     background: url('../assets/r-baiat.png') no-repeat;
     background-size: cover;
     background-position: center;
-   
+
     border-radius: 50%;
     margin-right: 10px;
     margin-left: 5px;
@@ -106,4 +107,52 @@
 
 .messages-icon:hover {
     color: grey;
+}
+
+@media (max-width: 600px) {
+    .main-container .userInfo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .userInfo h3 {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+
+    .userInfo .progress {
+        margin-top: 10px;
+    }
+
+    .userInfo .btn-group {
+        margin-top: 10px;
+    }
+
+    .main-container .profile-picture {
+        width: 60px;
+        height: 60px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .main-container .problems {
+        width: 90%;
+        /* ocupă aproape tot ecranul */
+        padding: 15px;
+        /* mai mult spațiu interior */
+        margin-top: 20px;
+        /* mai puțin spațiu sus */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-container .problems {
+        width: 95%;
+        /* aproape tot ecranul pe telefoane mici */
+        padding: 12px;
+        margin-top: 15px;
+    }
 }

@@ -378,7 +378,7 @@ function Main() {
           {user && <h1 style={{ color: 'white', marginTop: '30px', marginBottom: '20px' }}>Bun venit, {user.displayName}!</h1>}
 
 
-          <div className='userInfo'>
+          <div className='userInfo' style={{width: '70%'}}>
             <div className='profile-picture'></div>
             {
               mode === 'baze' ? (
@@ -452,10 +452,12 @@ function Main() {
 
                       return (
                         <div key={sectionIndex} className="accordion-item">
+
                           <h2 className="accordion-header">
                             <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#flush-collapse${sectionIndex}`} aria-expanded="false" aria-controls={`flush-collapse${sectionIndex}`}>
                               {section.title}
                             </button>
+
                           </h2>
 
                           {shouldRender && (

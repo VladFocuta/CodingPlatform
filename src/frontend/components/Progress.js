@@ -51,10 +51,8 @@ function Progress({ exp }) {
         <FaStar color={chapterXP < halfXP + 30 ? 'white' : 'yellow'} size={30} />
         <FaStar color={chapterXP < halfXP + 40 ? 'white' : 'yellow'} size={30} />
 
-      </div>
-
       {/* Bara de progres 2 (restul de puncte) */}
-      <div className="progress-item progress-bar-container">
+      
         <div className="progress-line-container second">
           <div
             className="progress-line second"

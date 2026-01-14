@@ -13,8 +13,8 @@ html, body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: calc(100vh - 56px); /* 56px este înălțimea tipică pentru o bară de navigare */
-    margin-top: 70px; /* Asigură că formularul apare sub nav */
+    height: auto; /* 56px este înălțimea tipică pentru o bară de navigare */
+    min-height: 400px;
     background: transparent;
     backdrop-filter: blur(30px);
     box-shadow: 0 0 10px rgba(255, 255, 255, .2);

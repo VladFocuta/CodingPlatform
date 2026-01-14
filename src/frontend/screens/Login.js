@@ -64,44 +64,46 @@ function Login() {
     };
 
     return (
-        <div className='login-container'>
-            <Logo />
-            <form action="" onSubmit={logInUser}>
+        <div className='login-page'>
+            <div className='login-container'>
+                <Logo />
+                <form action="" onSubmit={logInUser}>
 
-                <h1>Login</h1>
-                <div className='input-box'>
-                    <input type='text' placeholder='E-mail' name="email" required onChange={handleInput} />
-                    <FaUser className='icon' />
+                    <h1>Login</h1>
+                    <div className='input-box'>
+                        <input type='text' placeholder='E-mail' name="email" required onChange={handleInput} />
+                        <FaUser className='icon' />
 
-                </div>
-                <div className='input-box'>
-                    <input type='password' placeholder='Parola' name="password" required onChange={handleInput} />
-                    <FaLock className='icon' />
+                    </div>
+                    <div className='input-box'>
+                        <input type='password' placeholder='Parola' name="password" required onChange={handleInput} />
+                        <FaLock className='icon' />
 
-                </div>
+                    </div>
 
-                <div className='forgot-password' style={{ flexDirection: 'column' }}>
-                    {wrongCredentials && (
-                        <span className="text-danger"> {wrongCredentials}</span>
-                    )}
-                    <a href="/ResetPassword">Ai uitat parola?</a>
+                    <div className='forgot-password' style={{ flexDirection: 'column' }}>
+                        {wrongCredentials && (
+                            <span className="text-danger"> {wrongCredentials}</span>
+                        )}
+                        <a href="/ResetPassword">Ai uitat parola?</a>
 
-                </div>
-                <div>
-                    <button type="submit" className="costumButton">Logheaza-ma {isLoading && (
-                        <i className="fa-solid fa-gear fa-spin" style={{ color: '#00bfff', fontSize: '20px' }}></i>
-                    )}</button>
+                    </div>
+                    <div>
+                        <button type="submit" className="costumButton">Logheaza-ma {isLoading && (
+                            <i className="fa-solid fa-gear fa-spin" style={{ color: '#00bfff', fontSize: '20px' }}></i>
+                        )}</button>
 
-                </div>
+                    </div>
 
-                <div className='register-link' style={{ marginTop: 5 }}>
-                    <p >Nu ai un cont?
-                        <button onClick={handleRegisterAccount} className='costumButton' style={{ marginTop: 8 }}>Inregistreaza-te!</button>
+                    <div className='register-link' style={{ marginTop: 5 }}>
+                        <p >Nu ai un cont?
+                            <button onClick={handleRegisterAccount} className='costumButton' style={{ marginTop: 8 }}>Inregistreaza-te!</button>
 
-                    </p>
-                </div>
-            </form>
+                        </p>
+                    </div>
+                </form>
 
+            </div>
         </div>
     )
 }

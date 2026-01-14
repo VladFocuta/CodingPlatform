@@ -76,71 +76,73 @@ function Register() {
     };
 
     return (
-        <div className='login-container'>
-            <Logo />
-            <form onSubmit={storeUser} >
-                <h1>Register</h1>
+        <div className='login-page'>
+            <div className='login-container'>
+                <Logo />
+                <form onSubmit={storeUser} >
+                    <h1>Register</h1>
 
-                <div className='input-box'>
-                    <input type='text' placeholder='Nume si prenume' onChange={handleInput} required name='name' value={values.name} />
-                    <FaUser className='icon' />
-                    {errors.name && <span className='text-danger'>{errors.name}</span>}
-                </div>
+                    <div className='input-box'>
+                        <input type='text' placeholder='Nume si prenume' onChange={handleInput} required name='name' value={values.name} />
+                        <FaUser className='icon' />
+                        {errors.name && <span className='text-danger'>{errors.name}</span>}
+                    </div>
 
-                <div className='input-box'>
-                    <input type='text' placeholder='E-mail' required onChange={handleInput} name='email' value={values.email} />
-                    <MdOutlineEmail className='icon' />
-                    {errors.email && <span className='text-danger' style={{ fontSize: 15 }}>{errors.email}</span>}
-                </div>
+                    <div className='input-box'>
+                        <input type='text' placeholder='E-mail' required onChange={handleInput} name='email' value={values.email} />
+                        <MdOutlineEmail className='icon' />
+                        {errors.email && <span className='text-danger' style={{ fontSize: 15 }}>{errors.email}</span>}
+                    </div>
 
-                <div className='input-box'>
-                    <input type='password' placeholder='Parola' required onChange={handleInput} name='password' value={values.password} />
-                    <FaLock className='icon' />
-                    {errors.password && <span className='text-danger'>{errors.password}</span>}
-                </div>
+                    <div className='input-box'>
+                        <input type='password' placeholder='Parola' required onChange={handleInput} name='password' value={values.password} />
+                        <FaLock className='icon' />
+                        {errors.password && <span className='text-danger'>{errors.password}</span>}
+                    </div>
 
-                {/* ✅ Checkbox Politica de Confidențialitate */}
-                <div className='input-box checkbox' style={{ height: '20px' }}>
-                    <input
-                        type="checkbox"
-                        name="acceptTerms"
-                        id="acceptTerms"
-                        checked={values.acceptTerms}
-                        onChange={handleInput}
-                        required
-                    />
-                    <label htmlFor="acceptTerms">
-                        Sunt de acord cu <a href="/policy/policy and confidentiality" target="_blank" rel="noopener noreferrer">Politica de Confidențialitate</a>
-                        <span> și </span> <a href="/policy/terms and conditions" target="_blank" rel="noopener noreferrer">Termeni și Condiții</a>
-                    </label>
-                    {errors.acceptTerms && <span className='text-danger'>{errors.acceptTerms}</span>}
-                </div>
+                    {/* ✅ Checkbox Politica de Confidențialitate */}
+                    <div className='input-box checkbox' style={{ height: '20px' }}>
+                        <input
+                            type="checkbox"
+                            name="acceptTerms"
+                            id="acceptTerms"
+                            checked={values.acceptTerms}
+                            onChange={handleInput}
+                            required
+                        />
+                        <label htmlFor="acceptTerms">
+                            Sunt de acord cu <a href="/policy/policy and confidentiality" target="_blank" rel="noopener noreferrer">Politica de Confidențialitate</a>
+                            <span> și </span> <a href="/policy/terms and conditions" target="_blank" rel="noopener noreferrer">Termeni și Condiții</a>
+                        </label>
+                        {errors.acceptTerms && <span className='text-danger'>{errors.acceptTerms}</span>}
+                    </div>
 
-                <button
-                    style={{ marginTop: errors.password ? 30 : 40 }}
-                    type="submit"
-                    className="costumButton"
-                >
-                    Inregistreaza-ma
-                    {loading && (
-                        <i className="fa-solid fa-gear fa-spin" style={{ color: '#00bfff', fontSize: '20px' }}></i>
-                    )}
-                </button>
+                    <button
+                        style={{ marginTop: errors.password ? 30 : 40 }}
+                        type="submit"
+                        className="costumButton"
+                    >
+                        Inregistreaza-ma
+                        {loading && (
+                            <i className="fa-solid fa-gear fa-spin" style={{ color: '#00bfff', fontSize: '20px' }}></i>
+                        )}
+                    </button>
 
-                <div className='register-link'>
+                    <div className='register-link'>
 
-                    <p>Ai deja un cont?
-                        <button
-                            className="costumButton"
-                            onClick={handleNavigateToLogin}
-                            style={{ marginTop: 8 }}
-                            type="button"
-                        >
-                            Logheaza-te!
-                        </button>
-                    </p>
-                </div>
-            </form>
+                        <p>Ai deja un cont?
+                            <button
+                                className="costumButton"
+                                onClick={handleNavigateToLogin}
+                                style={{ marginTop: 8 }}
+                                type="button"
+                            >
+                                Logheaza-te!
+                            </button>
+                        </p>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 }

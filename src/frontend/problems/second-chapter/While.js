@@ -54,7 +54,7 @@ int main() {
             </p>
 
             <h4>Erori comune:</h4>
-            <p>
+            
                 1. Buclă infinită:<br />
                 Dacă condiția nu devine niciodată falsă, bucla continuă să ruleze la nesfârșit.
                 <CodeStyle code={`int i = 1;
@@ -62,7 +62,7 @@ while (i <= 5) {
     cout << i;  // Lipsa incrementării lui i => buclă infinită
 }`} />
                 Rezolvare: Adăugați modificări asupra variabilelor care determină condiția.
-            </p>
+            
             
             <p>
                 2. Condiție greșită:<br />

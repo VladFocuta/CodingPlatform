@@ -54,42 +54,43 @@ function ProgramBase() {
             <h4>
                 2. Variabile
             </h4>
-           
-                Definiție:<br />
-                O variabilă în C++ este un spațiu din memorie cu un nume asociat, folosit pentru a stoca o valoare care poate fi utilizată și modificată în timpul execuției programului.<br /> <br />
-                <strong style={{ letterSpacing: '0.1rem' }}>Reguli de declarare:</strong>
-                1. O variabilă trebuie să aibă un nume unic.<br />
-                2. Declarația specifică tipul de date și numele variabilei.<br /><br />
-                <strong style={{ letterSpacing: '0.1rem' }}>Sintaxa:</strong>
 
-                <CodeStyle code={`tip_variabilă nume_variabilă = valoare_initială;`} />
-                <strong style={{ letterSpacing: '0.1rem' }}>Exemple:</strong>
-                <CodeStyle code={`int numar = 5;        // Variabilă de tip întreg
+            Definiție:<br />
+            O variabilă în C++ este un spațiu din memorie cu un nume asociat, folosit pentru a stoca o valoare care poate fi utilizată și modificată în timpul execuției programului.<br /> <br />
+            <strong style={{ letterSpacing: '0.1rem' }}>Reguli de declarare:</strong>
+            1. O variabilă trebuie să aibă un nume unic.<br />
+            2. Declarația specifică tipul de date și numele variabilei.<br /><br />
+            <strong style={{ letterSpacing: '0.1rem' }}>Sintaxa:</strong>
+
+            <CodeStyle code={`tip_variabilă nume_variabilă = valoare_initială;`} />
+
+            <strong style={{ letterSpacing: '0.1rem' }}>Exemple:</strong>
+            <CodeStyle code={`int numar = 5;        // Variabilă de tip întreg
 double pi = 3.14159;  // Variabilă de tip real
 char litera = 'A';    // Variabilă de tip caracter
 bool esteValabil = true;  // Variabilă de tip logic`} />
-                <strong style={{ letterSpacing: '0.1rem' }}>Explicatie:</strong>
-                Variabilele în C++ trebuie să fie declarate înainte de utilizare, specificând tipul lor. Ele pot fi inițializate în momentul declarării sau ulterior. Variabilele pot fi locale (într-o funcție) sau globale (definite în afara tuturor funcțiilor).<br /><br />
+            <strong style={{ letterSpacing: '0.1rem' }}>Explicatie:</strong>
+            Variabilele în C++ trebuie să fie declarate înainte de utilizare, specificând tipul lor. Ele pot fi inițializate în momentul declarării sau ulterior. Variabilele pot fi locale (într-o funcție) sau globale (definite în afara tuturor funcțiilor).<br /><br />
             <h4>
                 3. Expresii
             </h4>
-            
-                Definiție:<br />
-                O expresie în C++ este o combinație de variabile, constante, operatori și funcții care produce o valoare. Expresiile pot fi folosite pentru a realiza calcule, a evalua condiții, sau a inițializa variabile.<br /><br />
-                <strong style={{ letterSpacing: '0.1rem' }}>Exemple:</strong>
-                <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px', letterSpacing: '0.1rem' }}> 1. Expresii aritmetice:
-                </strong>
-                <CodeStyle code={`int suma = a + b;  // Adunare
+
+            Definiție:<br />
+            O expresie în C++ este o combinație de variabile, constante, operatori și funcții care produce o valoare. Expresiile pot fi folosite pentru a realiza calcule, a evalua condiții, sau a inițializa variabile.<br /><br />
+            <strong style={{ letterSpacing: '0.1rem' }}>Exemple:</strong>
+            <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px', letterSpacing: '0.1rem' }}> 1. Expresii aritmetice:
+            </strong>
+            <CodeStyle code={`int suma = a + b;  // Adunare
 float arie = lungime * latime;  // Multiplicare`} />
-                <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px', letterSpacing: '0.1rem' }}> 2. Expresii logice:
-                </strong>
-                <CodeStyle code={`bool conditie = (x > 10) && (y < 20);  // Operatorii && (AND) și >, <`} />
-                <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px', letterSpacing: '0.1rem' }}> 3. Expresii mixte:
-                </strong>
-                <CodeStyle code={`double rezultat = (a + b) / 2.0;  // Operații cu numere întregi și reale`} />
-            
+            <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px', letterSpacing: '0.1rem' }}> 2. Expresii logice:
+            </strong>
+            <CodeStyle code={`bool conditie = (x > 10) && (y < 20);  // Operatorii && (AND) și >, <`} />
+            <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px', letterSpacing: '0.1rem' }}> 3. Expresii mixte:
+            </strong>
+            <CodeStyle code={`double rezultat = (a + b) / 2.0;  // Operații cu numere întregi și reale`} />
+
             <strong style={{ letterSpacing: '0.1rem' }}>Explicatie:</strong>
-            Expresiile sunt evaluate conform ordinii operatorilor din C++. Rezultatul unei expresii poate fi stocat într-o variabilă sau utilizat direct.<br/><br/>
+            Expresiile sunt evaluate conform ordinii operatorilor din C++. Rezultatul unei expresii poate fi stocat într-o variabilă sau utilizat direct.<br /><br />
 
             <h4>
                 4. Operații

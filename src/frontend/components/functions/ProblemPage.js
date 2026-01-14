@@ -68,7 +68,7 @@ function ProblemPage({ problemName, problemPoints, problemContent, nextRoute, pr
 
 
                             {problemHeader && (
-                                <div className='userInfo' style={{ marginTop: '60px', width: '50%' }}>
+                                <div className='userInfo' style={{ marginTop: '60px' }}>
                                     <strong className='common-text'>
                                         {problemHeader}
                                     </strong>
@@ -77,14 +77,14 @@ function ProblemPage({ problemName, problemPoints, problemContent, nextRoute, pr
 
 
                             {problemContent && (
-                                <div className='userInfo' style={{ marginTop: '20px', width: '50%', flexDirection: 'column' }}>
+                                <div className='userInfo' style={{ marginTop: '20px', flexDirection: 'column' }}>
                                     {problemContent}
                                 </div>
                             )}
 
 
                             {problemEnd && (
-                                <div className='userInfo' style={{ marginTop: '20px', width: '50%', alignSelf: 'flex-start' }}>
+                                <div className='userInfo' style={{ marginTop: '20px', alignSelf: 'flex-start' }}>
                                     {problemEnd}
                                 </div>
                             )}
@@ -95,7 +95,7 @@ function ProblemPage({ problemName, problemPoints, problemContent, nextRoute, pr
                                 Quiz
                             </h1>
                             {problemContent && (
-                                <div className='userInfo' style={{ marginTop: '20px', width: '50%', flexDirection: 'column' }}>
+                                <div className='userInfo' style={{ marginTop: '20px', flexDirection: 'column' }}>
                                     {problemContent}
                                 </div>
                             )}
@@ -125,7 +125,7 @@ function ProblemPage({ problemName, problemPoints, problemContent, nextRoute, pr
                             </>
                         )}
                     </div>
-                    <div className='userInfo' style={{ marginTop: '20px', width: '50%', flexDirection: 'column' }}>
+                    <div className='userInfo' style={{ marginTop: '20px', flexDirection: 'column' }}>
                         <div style={{ marginBottom: '40px' }}>
                             <CommentsArea
                                 problemName={problemName}

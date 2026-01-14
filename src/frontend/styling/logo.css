@@ -2,25 +2,25 @@
     background: url('../assets/logo2.png') no-repeat;
     background-size: cover;
     background-position: center;
-    width: 70px; 
-    height: 70px; 
+    width: 70px;
+    height: 70px;
     margin: 0;
     border-radius: 50px;
-    transition: transform 0.3s ease-in-out; /* Tranziție mai lină */
+    transition: transform 0.3s ease-in-out;
+    /* Tranziție mai lină */
 }
 
 .logo:hover {
-    transform: translateY(-5px); /* Deplasează logo-ul cu 5px în sus */
+    transform: translateY(-5px);
+    /* Deplasează logo-ul cu 5px în sus */
 }
 
 .logo-for-profile {
     background: url('../assets/logo2.png') no-repeat;
     background-size: cover;
     background-position: center;
-    width: 200px; 
-    height: 200px; 
+    width: 200px;
+    height: 200px;
     margin: 0;
     border-radius: 50px;
 }
-
-

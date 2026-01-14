@@ -1,0 +1,90 @@
+.adv-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    color: white;
+    margin-top: 80px;
+}
+
+.adv-hero {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.adv-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.adv-hero p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.adv-hero {
+    margin-bottom: 50px;
+}
+
+.adv-section h2 {
+    color: #00bcd4;
+    margin-bottom: 15px;
+}
+
+.adv-list {
+    list-style: none;
+    padding: 0;
+    line-height: 1.8;
+}
+
+.adv-list li::before {
+    content: "✔ ";
+    color: #00e676;
+}
+
+.adv-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.price-card {
+    text-align: center;
+}
+
+.price-card h3 {
+    margin-bottom: 10px;
+}
+
+.premium {
+    border: 2px solid gold;
+}
+
+.adv-cta {
+    margin-top: 60px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .adv-hero h1 {
+        font-size: 2rem;
+    }
+
+    .glass {
+        padding: 18px;
+    }
+}

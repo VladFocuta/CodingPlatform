@@ -1,8 +1,6 @@
 import React from 'react'
 import ProblemPage from '../../components/functions/ProblemPage'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
-
+import CodeStyle from '../../components/CodeStyle'
 function Counter() {
     const problemHeader = (
         <>
@@ -26,14 +24,15 @@ function Counter() {
                     <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px' }}> 2. Cum se inițializează și folosește un contor</strong><br />
                     De obicei, un contor este inițializat la <strong className='highlight'>0</strong> sau <strong className='highlight'>1</strong>, în funcție de scopul lui, și apoi este incrementat sau decrementat în funcție de operațiunea dorită.<br /><br />
                     Exemplu de contor inițializat la <strong className='highlight'>0</strong>:
-                    <SyntaxHighlighter language="cpp" style={tomorrow}>
-                        {`int contor = 0; // Inițializăm contorul la zero
+                   
+                        <CodeStyle code={`int contor = 0; // Inițializăm contorul la zero
 while (contor < 5) { // Bucla se va executa până când contorul ajunge la 5
     cout << "Valoarea contorului este: " << contor << endl;
     contor = contor + 1; // Incrementăm contorul la fiecare iterație
 }
-cout << "Bucla s-a încheiat. Valoarea finală a contorului este: " << contor;`}
-                    </SyntaxHighlighter>
+cout << "Bucla s-a încheiat. Valoarea finală a contorului este: " << contor;`} />
+                    
+
                 </div>
 
                 <div style={{ background: 'grey', padding: '10px', marginBottom: '2px', borderRadius: '5px' }}>
@@ -47,13 +46,13 @@ cout << "Bucla s-a încheiat. Valoarea finală a contorului este: " << contor;`}
                     <strong style={{ color: '#00bfff', background: '#696969', padding: '3px', borderRadius: '5px' }}> 4. Exemple de utilizare</strong><br />
                     <strong>Contorizare simplă</strong><br />
                     Să spunem că dorim să afișăm un mesaj de <strong className='highlight'>10</strong> ori. Putem face asta folosind o variabilă contor:<br />
-                    <SyntaxHighlighter language="javascript" style={tomorrow}>
-{`let contor = 1;
+                    <CodeStyle code={`let contor = 1;
 while (contor <= 10) {
     cout << "Mesajul numărul " << contor << endl;
     contor = contor + 1;
-}`}
-                    </SyntaxHighlighter>
+}`} />
+
+
                     Aici, contorul începe de la <strong className='highlight'>1</strong> și crește până la <strong className='highlight'>10</strong>. Când contorul ajunge la <strong className='highlight'>11</strong>, condiția <strong className='highlight'>contor &lt;= 10</strong> devine <strong className='highlight'>false</strong>, iar bucla se oprește.<br /><br />
                 </div>
 

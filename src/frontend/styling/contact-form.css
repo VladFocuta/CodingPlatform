@@ -1,0 +1,78 @@
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(25px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    color: white;
+}
+
+.contact-form h3 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.contact-form p {
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    opacity: 0.85;
+}
+
+.form-group input,
+.form-group textarea {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 12px;
+    color: white;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #00bcd4;
+    box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.3);
+}
+
+/* BUTTON */
+.submit-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px;
+    background: linear-gradient(135deg, #00bcd4, #0097a7);
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 188, 212, 0.4);
+}

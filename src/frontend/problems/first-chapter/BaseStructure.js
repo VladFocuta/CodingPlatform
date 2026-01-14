@@ -17,14 +17,15 @@ function BaseStructure() {
       <h4 style={{ color: 'white' }}>
         1. Structura liniară
       </h4>
-      <p>
+    
         Definiție:<br />
         Structura liniară este o secvență de instrucțiuni care sunt executate una după alta, în ordinea în care sunt scrise, fără a avea ramificări sau bucle.<br /><br />
         Caracteristici:<br />
         &nbsp;Fluxul execuției este continuu și neîntrerupt.<br />
         &nbsp;Este cea mai simplă dintre structuri.<br /><br />
         Exemplu în C++:
-        <CodeStyle code={`#include <iostream>
+        <div style={{width: '100%'}}>
+          <CodeStyle code={`#include <iostream>
 using namespace std;
 
 int main() {
@@ -42,18 +43,19 @@ int main() {
 
     return 0;
 }`} />
+        </div>
         Explicație:<br />
         Instrucțiunile sunt executate secvențial:<br />
 
         &nbsp;1. Citirea numerelor.<br />
         &nbsp;2. Calculul sumei.<br />
         &nbsp;3. Afișarea rezultatului.<br />
-      </p>
+      
 
       <h4 style={{ color: 'white' }}>
         2. Structura alternativă
       </h4>
-      <p>
+     
         Definitie:<br />
         Structura alternativă permite ramificarea execuției pe baza unei condiții. În funcție de rezultatul acestei condiții (adevărat sau fals), o ramură a codului este executată, iar cealaltă este ignorată.<br /><br />
 
@@ -80,12 +82,12 @@ int main() {
 }`} />
         Explicație:<br />
         &nbsp;if-else: Decide dacă un număr este par sau impar în funcție de restul împărțirii la 2.
-      </p>
+   
 
       <h4 style={{ color: 'white' }}>
         3.  Structura repetitivă
       </h4>
-      <p>
+      
         Definiție:<br />
         Structura repetitivă permite execuția repetată a unei secvențe de instrucțiuni, atâta timp cât o condiție este îndeplinită. Este utilizată pentru cicluri și bucle.<br /><br />
         Caracteristici:<br />
@@ -135,16 +137,16 @@ int main() {
         &nbsp;for: Iterează de 5 ori, afișând numerele de la 1 la 5.<br />
         &nbsp;while: Continuă să ruleze cât timp condiția numar &lt;= 5 este adevărată.<br />
         &nbsp;do-while: Rulează cel puțin o dată și verifică condiția după execuție.<br />
-      </p>
+      
 
       <h4>
         Rezumat:
 
       </h4>
       <p>
-      &nbsp;<strong style={{letterSpacing: '0.1rem'}}>Structura liniară</strong>: Instrucțiuni executate secvențial.<br />
-      &nbsp;<strong style={{letterSpacing: '0.1rem'}}>Structura alternativă</strong>: Decizii luate pe baza condițiilor (if, switch).<br />
-      &nbsp;<strong style={{letterSpacing: '0.1rem'}}>Structura repetitivă</strong>: Execuție repetată a codului (for, while, do-while).<br />
+        &nbsp;<strong style={{ letterSpacing: '0.1rem' }}>Structura liniară</strong>: Instrucțiuni executate secvențial.<br />
+        &nbsp;<strong style={{ letterSpacing: '0.1rem' }}>Structura alternativă</strong>: Decizii luate pe baza condițiilor (if, switch).<br />
+        &nbsp;<strong style={{ letterSpacing: '0.1rem' }}>Structura repetitivă</strong>: Execuție repetată a codului (for, while, do-while).<br />
       </p>
 
     </>
