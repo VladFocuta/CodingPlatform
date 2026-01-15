@@ -403,7 +403,7 @@ function Main() {
                   type="button"
                   className={mode === 'baze' ? "btn btn-danger" : "btn btn-light"}
                   onClick={bazeIsPressed}
-                  disabled
+                  
                 >
                   Baze
                 </button>
@@ -417,7 +417,7 @@ function Main() {
                   type="button"
                   className={mode === 'bac' ? "btn btn-success" : "btn btn-light"}
                   onClick={bacIsPressed}
-                  disabled
+                  
                 >
                   Bac
                 </button>
