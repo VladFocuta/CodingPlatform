@@ -31,7 +31,7 @@ function BacScreen() {
                 { title: "Generarea unei matrice cu numere pare", link: "/problems/bac/Generarea unei matrice cu numere pare", icon: "fa-solid fa-circle-check" },
                 { title: "Produs sub diagonala secundara", link: "/problems/bac/Produs sub diagonala secundara", icon: "fa-solid fa-circle-check" },
                 { title: "Eliminarea diagonalei secundare", link: "/problems/bac/Eliminarea diagonalei secundare", icon: "fa-solid fa-circle-check" },
-
+                { title: "Coloana minimului", link: "/problems/bac/Coloana minimului", icon: "fa-solid fa-circle-check" },
             ]
         }, {
             title: "Subprograme",
@@ -43,6 +43,7 @@ function BacScreen() {
                 { title: "Fractii ireductibile", link: "/problems/bac/Fractii ireductibile", icon: "fa-solid fa-circle-check" },
                 { title: "Numar minim cu cifra maxima", link: "/problems/bac/Numar minim cu cifra maxima", icon: "fa-solid fa-circle-check" },
                 { title: "Inlocuire secventa", link: "/problems/bac/Inlocuire secventa", icon: "fa-solid fa-circle-check" },
+                { title: "Parcele de arie egala", link: "/problems/bac/Parcele de arie egala", icon: "fa-solid fa-circle-check" },
 
 
             ]

@@ -48,7 +48,7 @@ function SeqReplace() {
             problemName="Inlocuire secventa"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Parcele de arie egala"
             testPassed={testPassed}
         />
     )

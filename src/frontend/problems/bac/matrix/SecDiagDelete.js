@@ -54,7 +54,7 @@ function SecDiagDelete() {
             problemName="Eliminarea diagonalei secundare"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Coloana minimului"
             testPassed={testPassed}
         />
     )
