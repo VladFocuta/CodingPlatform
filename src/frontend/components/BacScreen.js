@@ -30,6 +30,8 @@ function BacScreen() {
                 { title: "Matrice cu sume diferite pe linii si coloane", link: "/problems/bac/Matrice cu sume diferite pe linii si coloane", icon: "fa-solid fa-circle-check" },
                 { title: "Generarea unei matrice cu numere pare", link: "/problems/bac/Generarea unei matrice cu numere pare", icon: "fa-solid fa-circle-check" },
                 { title: "Produs sub diagonala secundara", link: "/problems/bac/Produs sub diagonala secundara", icon: "fa-solid fa-circle-check" },
+                { title: "Eliminarea diagonalei secundare", link: "/problems/bac/Eliminarea diagonalei secundare", icon: "fa-solid fa-circle-check" },
+
             ]
         }, {
             title: "Subprograme",
@@ -40,11 +42,16 @@ function BacScreen() {
                 { title: "Cifra cu proprietate de medie aritmetica", link: "/problems/bac/Cifra cu proprietate de medie aritmetica", icon: "fa-solid fa-circle-check" },
                 { title: "Fractii ireductibile", link: "/problems/bac/Fractii ireductibile", icon: "fa-solid fa-circle-check" },
                 { title: "Numar minim cu cifra maxima", link: "/problems/bac/Numar minim cu cifra maxima", icon: "fa-solid fa-circle-check" },
+                { title: "Inlocuire secventa", link: "/problems/bac/Inlocuire secventa", icon: "fa-solid fa-circle-check" },
+
+
             ]
         }, {
             title: "Siruri de caractere",
             lessons: [
                 { title: "Eliminarea consoanelor", link: "/problems/bac/Eliminarea consoanelor", icon: "fa-solid fa-circle-check" },
+                { title: "Formatarea numerelor de telefon", link: "/problems/bac/Formatarea numerelor de telefon", icon: "fa-solid fa-circle-check" },
+
             ]
         },]
 

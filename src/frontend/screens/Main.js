@@ -397,7 +397,7 @@ function Main() {
             <div className="btn-group" role="group" aria-label="Basic mixed styles example">
               <span
                 data-bs-toggle="tooltip"
-                title="Această opțiune nu este disponibilă momentan"
+                
               >
                 <button
                   type="button"
@@ -411,7 +411,7 @@ function Main() {
 
               <span
                 data-bs-toggle="tooltip"
-                title="Această opțiune nu este disponibilă momentan"
+                
               >
                 <button
                   type="button"

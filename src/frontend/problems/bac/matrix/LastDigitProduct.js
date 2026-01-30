@@ -45,7 +45,7 @@ function LastDigitProduct() {
             problemName="Produs sub diagonala secundara"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Eliminarea diagonalei secundare"
             testPassed={testPassed}
         />
     )

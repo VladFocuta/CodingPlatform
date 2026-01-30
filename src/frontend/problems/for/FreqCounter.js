@@ -48,7 +48,7 @@ function FreqCounter() {
             problemName="Numarari de aparitii"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Sir de frecventa"
+            nextRoute="/Main"
             testPassed={testPassed}
         />
     )

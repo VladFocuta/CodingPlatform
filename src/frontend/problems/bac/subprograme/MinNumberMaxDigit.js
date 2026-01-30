@@ -49,7 +49,7 @@ function MinNumberMaxDigit() {
             problemName="Numar minim cu cifra maxima"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Inlocuire secventa"
             testPassed={testPassed}
         />
     )

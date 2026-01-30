@@ -47,7 +47,7 @@ function ConsonantDelete() {
             problemName="Eliminarea consoanelor"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Formatarea numerelor de telefon"
             testPassed={testPassed}
         />
     )
