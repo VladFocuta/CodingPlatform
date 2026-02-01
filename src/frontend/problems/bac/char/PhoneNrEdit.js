@@ -32,11 +32,11 @@ function PhoneNrEdit() {
                     Exemplu:
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
-                    <h4>Date de intrare:<br />informatica
+                    <h4>Date de intrare:<br />(+254)722123456
 
 
                     </h4>
-                    <h4> Date de iesire: <br /> ioaia </h4>
+                    <h4> Date de iesire: <br /> 0722123456 </h4>
 
                 </div>
 
