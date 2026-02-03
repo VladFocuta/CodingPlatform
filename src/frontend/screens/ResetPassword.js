@@ -43,7 +43,7 @@ function ResetPassword({ changePassword }) {
   };
 
   const renderForm = () => (
-    <form onSubmit={fetchPassword}>
+    <form onSubmit={fetchPassword} >
       <h1>{changePassword ? 'Schimbă parola' : 'Resetare parolă'}</h1>
 
       <div className='input-box'>
@@ -86,7 +86,7 @@ function ResetPassword({ changePassword }) {
   );
 
   return (
-    <div className='login-container' style={changePassword ? { height: '50%' } : {}}>
+    <div className='login-container' style={changePassword ? { height: '50%' } : {marginTop:'100px'}}>
       <Logo />
       {renderForm()}
     </div>

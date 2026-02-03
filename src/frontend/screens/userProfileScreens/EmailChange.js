@@ -73,15 +73,15 @@ function EmailChange() {
                 <Logo />
                 <form action="" >
 
-                    <h1 style={{ marginBottom: '15px' }}>Schimba-ti email-ul</h1>
-                    <strong>Introdu raspunsul corect si noul email.</strong>
+                    <h1 style={{ marginBottom: '15px' }}>Schimbă-ți email-ul</h1>
+                    <strong>Introdu răspunsul corect și noul email.</strong>
 
                     <div>
                         <input type='text' className="input-group mb-3" style={{ padding: '5px', textAlign: 'center' }} disabled placeholder={question ? (question) : ("Trebuie sa iti setezi intrebarea secreta mai intai.")}></input>
                     </div>
 
                     <div className='input-box'>
-                        <input type='text' placeholder='Raspuns' name="answer" required onChange={(event) => handleAnswer(event.target.value)} />
+                        <input type='text' placeholder='Răspuns' name="answer" required onChange={(event) => handleAnswer(event.target.value)} />
                     </div>
                     {error && (<span style={{ color: 'red' }}>{error}</span>)}
                     <div className='input-box'>
