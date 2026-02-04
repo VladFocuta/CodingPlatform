@@ -47,7 +47,7 @@ function MinColumn() {
             problemName="Coloana minimului"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Simetrica"
             testPassed={testPassed}
         />
     )

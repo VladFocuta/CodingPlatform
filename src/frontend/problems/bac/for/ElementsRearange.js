@@ -50,7 +50,7 @@ function ElementsRearange() {
             problemName="Rearanjarea elementelor"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Sir paritar"
             testPassed={testPassed}
         />
     )

@@ -22,6 +22,7 @@ function BacScreen() {
                 { title: "Cifra maxima si nr de aparitii", link: "/problems/bac/Cifra maxima si nr de aparitii", icon: "fa-solid fa-circle-check" },
                 { title: "Determinarea numerelor cu aparitii multiple", link: "/problems/bac/Determinarea numerelor cu aparitii multiple", icon: "fa-solid fa-circle-check" },
                 { title: "Rearanjarea elementelor", link: "/problems/bac/Rearanjarea elementelor", icon: "fa-solid fa-circle-check" },
+                { title: "Sir paritar", link: "/problems/bac/Sir paritar", icon: "fa-solid fa-circle-check" },
             ]
         }, {
             title: "Matrici",
@@ -32,6 +33,8 @@ function BacScreen() {
                 { title: "Produs sub diagonala secundara", link: "/problems/bac/Produs sub diagonala secundara", icon: "fa-solid fa-circle-check" },
                 { title: "Eliminarea diagonalei secundare", link: "/problems/bac/Eliminarea diagonalei secundare", icon: "fa-solid fa-circle-check" },
                 { title: "Coloana minimului", link: "/problems/bac/Coloana minimului", icon: "fa-solid fa-circle-check" },
+                { title: "Simetrica", link: "/problems/bac/Simetrica", icon: "fa-solid fa-circle-check" },
+
             ]
         }, {
             title: "Subprograme",

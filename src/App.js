@@ -242,6 +242,7 @@ import AscendingVerify from './frontend/problems/bac/for/AscendingVerify.js';
 import MaxNrAndApp from './frontend/problems/bac/for/MaxNrAndApp.js';
 import MultiplyApp from './frontend/problems/bac/for/MultiplyApp.js';
 import ElementsRearange from './frontend/problems/bac/for/ElementsRearange.js';
+import ParitarArray from './frontend/problems/bac/for/ParitarArray.js';
 
 //matrice bac
 import DiffValuesMatrix from './frontend/problems/bac/matrix/DiffValuesMatrix.js';
@@ -250,6 +251,7 @@ import EvenNumbersMatrix from './frontend/problems/bac/matrix/EvenNumbersMatrix.
 import LastDigitProduct from './frontend/problems/bac/matrix/LastDigitProduct.js';
 import SecDiagDelete from './frontend/problems/bac/matrix/SecDiagDelete.js';
 import MinColumn from './frontend/problems/bac/matrix/MinColumn.js';
+import Symmetric from './frontend/problems/bac/matrix/Symmetric.js';
 
 //subprograme bac
 import EvenNumbersSum from './frontend/problems/bac/subprograme/EvenNumbersSum.js';
@@ -267,6 +269,8 @@ import KPows from './frontend/problems/bac/while/KPows.js';
 //char bac
 import ConsonantDelete from './frontend/problems/bac/char/ConsonantDelete.js';
 import PhoneNrEdit from './frontend/problems/bac/char/PhoneNrEdit.js';
+
+
 
 
 
@@ -570,6 +574,8 @@ function App() {
               <Route path="/problems/bac/Cifra maxima si nr de aparitii" element={<MaxNrAndApp />} />
               <Route path="/problems/bac/Determinarea numerelor cu aparitii multiple" element={<MultiplyApp />} />
               <Route path="/problems/bac/Rearanjarea elementelor" element={<ElementsRearange />} />
+              <Route path="/problems/bac/Sir paritar" element={<ParitarArray />} />
+
 
               {/*PROBLEME MATRICI*/}
               <Route path="/problems/bac/Matrice cu valori diferite" element={<DiffValuesMatrix />} />
@@ -578,6 +584,8 @@ function App() {
               <Route path="/problems/bac/Produs sub diagonala secundara" element={<LastDigitProduct />} />
               <Route path="/problems/bac/Eliminarea diagonalei secundare" element={<SecDiagDelete />} />
               <Route path="/problems/bac/Coloana minimului" element={<MinColumn />} />
+              <Route path="/problems/bac/Simetrica" element={<Symmetric />} />
+
 
 
               {/*PROBLEME SUBPROGRAME*/}
