@@ -53,7 +53,7 @@ function EqualsAreaParcel() {
             problemName="Parcele de arie egala"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Major impar"
             testPassed={testPassed}
         />
     )

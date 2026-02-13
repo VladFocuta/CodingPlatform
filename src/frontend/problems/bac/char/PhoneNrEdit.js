@@ -55,7 +55,7 @@ function PhoneNrEdit() {
             problemName="Formatarea numerelor de telefon"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Cuvinte de n litere"
             testPassed={testPassed}
         />
     )

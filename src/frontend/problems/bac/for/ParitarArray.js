@@ -49,7 +49,7 @@ function ParitarArray() {
             problemName="Sir paritar"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Scara crescatoare"
             testPassed={testPassed}
         />
     )

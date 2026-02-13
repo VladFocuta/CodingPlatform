@@ -243,6 +243,7 @@ import MaxNrAndApp from './frontend/problems/bac/for/MaxNrAndApp.js';
 import MultiplyApp from './frontend/problems/bac/for/MultiplyApp.js';
 import ElementsRearange from './frontend/problems/bac/for/ElementsRearange.js';
 import ParitarArray from './frontend/problems/bac/for/ParitarArray.js';
+import AscendingLadder from './frontend/problems/bac/for/AscendingLadder.js';
 
 //matrice bac
 import DiffValuesMatrix from './frontend/problems/bac/matrix/DiffValuesMatrix.js';
@@ -262,6 +263,7 @@ import IrreducibleFractions from './frontend/problems/bac/subprograme/Irreducibl
 import MinNumberMaxDigit from './frontend/problems/bac/subprograme/MinNumberMaxDigit.js';
 import SeqReplace from './frontend/problems/bac/subprograme/SeqReplace.js';
 import EqualsAreaParcel from './frontend/problems/bac/subprograme/EqualsAreaParcel.js';
+import MajorOdd from './frontend/problems/bac/subprograme/MajorOdd.js';
 
 //while bac
 import KPows from './frontend/problems/bac/while/KPows.js';
@@ -269,6 +271,9 @@ import KPows from './frontend/problems/bac/while/KPows.js';
 //char bac
 import ConsonantDelete from './frontend/problems/bac/char/ConsonantDelete.js';
 import PhoneNrEdit from './frontend/problems/bac/char/PhoneNrEdit.js';
+import NLettersWords from './frontend/problems/bac/char/NLettersWords.js';
+
+
 
 
 
@@ -575,7 +580,7 @@ function App() {
               <Route path="/problems/bac/Determinarea numerelor cu aparitii multiple" element={<MultiplyApp />} />
               <Route path="/problems/bac/Rearanjarea elementelor" element={<ElementsRearange />} />
               <Route path="/problems/bac/Sir paritar" element={<ParitarArray />} />
-
+              <Route path="/problems/bac/Scara crescatoare" element={<AscendingLadder />} />
 
               {/*PROBLEME MATRICI*/}
               <Route path="/problems/bac/Matrice cu valori diferite" element={<DiffValuesMatrix />} />
@@ -597,6 +602,7 @@ function App() {
               <Route path="/problems/bac/Numar minim cu cifra maxima" element={<MinNumberMaxDigit />} />
               <Route path="/problems/bac/Inlocuire secventa" element={<SeqReplace />} />
               <Route path="/problems/bac/Parcele de arie egala" element={<EqualsAreaParcel />} />
+              <Route path="/problems/bac/Major impar" element={<MajorOdd />} />
 
 
               {/*PROBLEME WHILE*/}
@@ -605,7 +611,7 @@ function App() {
               {/*PROBLEME CHAR*/}
               <Route path="/problems/bac/Eliminarea consoanelor" element={<ConsonantDelete />} />
               <Route path="/problems/bac/Formatarea numerelor de telefon" element={<PhoneNrEdit />} />
-
+              <Route path="/problems/bac/Cuvinte de n litere" element={<NLettersWords />} />
 
             </Routes>
           </NotificationProvider>
