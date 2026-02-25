@@ -24,6 +24,8 @@ function BacScreen() {
                 { title: "Rearanjarea elementelor", link: "/problems/bac/Rearanjarea elementelor", icon: "fa-solid fa-circle-check" },
                 { title: "Sir paritar", link: "/problems/bac/Sir paritar", icon: "fa-solid fa-circle-check" },
                 { title: "Scara crescatoare", link: "/problems/bac/Scara crescatoare", icon: "fa-solid fa-circle-check" },
+                { title: "Secventa paritara", link: "/problems/bac/Secventa paritara", icon: "fa-solid fa-circle-check" },
+
 
             ]
         }, {
@@ -50,6 +52,8 @@ function BacScreen() {
                 { title: "Inlocuire secventa", link: "/problems/bac/Inlocuire secventa", icon: "fa-solid fa-circle-check" },
                 { title: "Parcele de arie egala", link: "/problems/bac/Parcele de arie egala", icon: "fa-solid fa-circle-check" },
                 { title: "Major impar", link: "/problems/bac/Major impar", icon: "fa-solid fa-circle-check" },
+                { title: "Schimb", link: "/problems/bac/Schimb", icon: "fa-solid fa-circle-check" },
+
 
             ]
         }, {
@@ -58,7 +62,7 @@ function BacScreen() {
                 { title: "Eliminarea consoanelor", link: "/problems/bac/Eliminarea consoanelor", icon: "fa-solid fa-circle-check" },
                 { title: "Formatarea numerelor de telefon", link: "/problems/bac/Formatarea numerelor de telefon", icon: "fa-solid fa-circle-check" },
                 { title: "Cuvinte de n litere", link: "/problems/bac/Cuvinte de n litere", icon: "fa-solid fa-circle-check" },
-
+                { title: "Vocala prietena", link: "/problems/bac/Vocala prietena", icon: "fa-solid fa-circle-check" },
             ]
         },]
 

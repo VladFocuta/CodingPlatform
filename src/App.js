@@ -244,6 +244,7 @@ import MultiplyApp from './frontend/problems/bac/for/MultiplyApp.js';
 import ElementsRearange from './frontend/problems/bac/for/ElementsRearange.js';
 import ParitarArray from './frontend/problems/bac/for/ParitarArray.js';
 import AscendingLadder from './frontend/problems/bac/for/AscendingLadder.js';
+import ParitarSequence from './frontend/problems/bac/for/ParitarSequence.js';
 
 //matrice bac
 import DiffValuesMatrix from './frontend/problems/bac/matrix/DiffValuesMatrix.js';
@@ -264,6 +265,8 @@ import MinNumberMaxDigit from './frontend/problems/bac/subprograme/MinNumberMaxD
 import SeqReplace from './frontend/problems/bac/subprograme/SeqReplace.js';
 import EqualsAreaParcel from './frontend/problems/bac/subprograme/EqualsAreaParcel.js';
 import MajorOdd from './frontend/problems/bac/subprograme/MajorOdd.js';
+import Change from './frontend/problems/bac/subprograme/Change.js';
+
 
 //while bac
 import KPows from './frontend/problems/bac/while/KPows.js';
@@ -272,6 +275,9 @@ import KPows from './frontend/problems/bac/while/KPows.js';
 import ConsonantDelete from './frontend/problems/bac/char/ConsonantDelete.js';
 import PhoneNrEdit from './frontend/problems/bac/char/PhoneNrEdit.js';
 import NLettersWords from './frontend/problems/bac/char/NLettersWords.js';
+import FriendlyVow from './frontend/problems/bac/char/FriendlyVow.js';
+
+
 
 
 
@@ -581,6 +587,8 @@ function App() {
               <Route path="/problems/bac/Rearanjarea elementelor" element={<ElementsRearange />} />
               <Route path="/problems/bac/Sir paritar" element={<ParitarArray />} />
               <Route path="/problems/bac/Scara crescatoare" element={<AscendingLadder />} />
+              <Route path="/problems/bac/Secventa paritara" element={<ParitarSequence />} />
+
 
               {/*PROBLEME MATRICI*/}
               <Route path="/problems/bac/Matrice cu valori diferite" element={<DiffValuesMatrix />} />
@@ -603,7 +611,7 @@ function App() {
               <Route path="/problems/bac/Inlocuire secventa" element={<SeqReplace />} />
               <Route path="/problems/bac/Parcele de arie egala" element={<EqualsAreaParcel />} />
               <Route path="/problems/bac/Major impar" element={<MajorOdd />} />
-
+              <Route path="/problems/bac/Schimb" element={<Change />} />
 
               {/*PROBLEME WHILE*/}
               <Route path="/problems/bac/Puteri ale lui k" element={<KPows />} />
@@ -612,6 +620,8 @@ function App() {
               <Route path="/problems/bac/Eliminarea consoanelor" element={<ConsonantDelete />} />
               <Route path="/problems/bac/Formatarea numerelor de telefon" element={<PhoneNrEdit />} />
               <Route path="/problems/bac/Cuvinte de n litere" element={<NLettersWords />} />
+              <Route path="/problems/bac/Vocala prietena" element={<FriendlyVow />} />
+
 
             </Routes>
           </NotificationProvider>

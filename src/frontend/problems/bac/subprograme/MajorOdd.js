@@ -50,7 +50,7 @@ function MajorOdd() {
             problemName="Major impar"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Schimb"
             testPassed={testPassed}
         />
     )

@@ -48,7 +48,7 @@ function NLettersWords() {
             problemName="Cuvinte de n litere"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Vocala prietena"
             testPassed={testPassed}
         />
     )

@@ -55,7 +55,7 @@ function AscendingLadder() {
             problemName="Scara crescatoare"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Secventa paritara"
             testPassed={testPassed}
         />
     )
