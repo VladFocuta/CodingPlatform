@@ -254,6 +254,7 @@ import LastDigitProduct from './frontend/problems/bac/matrix/LastDigitProduct.js
 import SecDiagDelete from './frontend/problems/bac/matrix/SecDiagDelete.js';
 import MinColumn from './frontend/problems/bac/matrix/MinColumn.js';
 import Symmetric from './frontend/problems/bac/matrix/Symmetric.js';
+import BeachSand from './frontend/problems/bac/matrix/BeachSand.js';
 
 //subprograme bac
 import EvenNumbersSum from './frontend/problems/bac/subprograme/EvenNumbersSum.js';
@@ -270,12 +271,15 @@ import Change from './frontend/problems/bac/subprograme/Change.js';
 
 //while bac
 import KPows from './frontend/problems/bac/while/KPows.js';
+import DistinctValues from './frontend/problems/bac/while/DistinctValues.js';
 
 //char bac
 import ConsonantDelete from './frontend/problems/bac/char/ConsonantDelete.js';
 import PhoneNrEdit from './frontend/problems/bac/char/PhoneNrEdit.js';
 import NLettersWords from './frontend/problems/bac/char/NLettersWords.js';
 import FriendlyVow from './frontend/problems/bac/char/FriendlyVow.js';
+
+
 
 
 
@@ -598,7 +602,7 @@ function App() {
               <Route path="/problems/bac/Eliminarea diagonalei secundare" element={<SecDiagDelete />} />
               <Route path="/problems/bac/Coloana minimului" element={<MinColumn />} />
               <Route path="/problems/bac/Simetrica" element={<Symmetric />} />
-
+              <Route path="/problems/bac/Innisiparea unei plaje" element={<BeachSand />} />
 
 
               {/*PROBLEME SUBPROGRAME*/}
@@ -615,6 +619,8 @@ function App() {
 
               {/*PROBLEME WHILE*/}
               <Route path="/problems/bac/Puteri ale lui k" element={<KPows />} />
+              <Route path="/problems/bac/Valori distincte" element={<DistinctValues />} />
+
 
               {/*PROBLEME CHAR*/}
               <Route path="/problems/bac/Eliminarea consoanelor" element={<ConsonantDelete />} />

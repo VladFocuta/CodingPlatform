@@ -49,7 +49,7 @@ function KPows() {
             problemName="Puteri ale lui k"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Valori distincte"
             testPassed={testPassed}
         />
     )

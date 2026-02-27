@@ -48,7 +48,7 @@ function Symmetric() {
             problemName="Simetrica"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Innisiparea unei plaje"
             testPassed={testPassed}
         />
     )

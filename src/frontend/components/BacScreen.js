@@ -12,6 +12,8 @@ function BacScreen() {
             title: "While",
             lessons: [
                 { title: "Puteri ale lui k", link: "/problems/bac/Puteri ale lui k", icon: "fa-solid fa-circle-check" },
+                { title: "Valori distincte", link: "/problems/bac/Valori distincte", icon: "fa-solid fa-circle-check" },
+
             ]
         },
         {
@@ -38,7 +40,7 @@ function BacScreen() {
                 { title: "Eliminarea diagonalei secundare", link: "/problems/bac/Eliminarea diagonalei secundare", icon: "fa-solid fa-circle-check" },
                 { title: "Coloana minimului", link: "/problems/bac/Coloana minimului", icon: "fa-solid fa-circle-check" },
                 { title: "Simetrica", link: "/problems/bac/Simetrica", icon: "fa-solid fa-circle-check" },
-
+                { title: "Innisiparea unei plaje", link: "/problems/bac/Innisiparea unei plaje", icon: "fa-solid fa-circle-check" },
             ]
         }, {
             title: "Subprograme",
