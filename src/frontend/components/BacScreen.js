@@ -41,6 +41,8 @@ function BacScreen() {
                 { title: "Coloana minimului", link: "/problems/bac/Coloana minimului", icon: "fa-solid fa-circle-check" },
                 { title: "Simetrica", link: "/problems/bac/Simetrica", icon: "fa-solid fa-circle-check" },
                 { title: "Innisiparea unei plaje", link: "/problems/bac/Innisiparea unei plaje", icon: "fa-solid fa-circle-check" },
+                { title: "Eliminarea diagonalei principale", link: "/problems/bac/Eliminarea diagonalei principale", icon: "fa-solid fa-circle-check" },
+
             ]
         }, {
             title: "Subprograme",

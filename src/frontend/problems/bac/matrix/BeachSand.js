@@ -54,7 +54,7 @@ function BeachSand() {
             problemName="Innisiparea unei plaje"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Eliminarea diagonalei principale"
             testPassed={testPassed}
         />
     )

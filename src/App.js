@@ -255,6 +255,7 @@ import SecDiagDelete from './frontend/problems/bac/matrix/SecDiagDelete.js';
 import MinColumn from './frontend/problems/bac/matrix/MinColumn.js';
 import Symmetric from './frontend/problems/bac/matrix/Symmetric.js';
 import BeachSand from './frontend/problems/bac/matrix/BeachSand.js';
+import MainDiagDelete from './frontend/problems/bac/matrix/MainDiagDelete.js';
 
 //subprograme bac
 import EvenNumbersSum from './frontend/problems/bac/subprograme/EvenNumbersSum.js';
@@ -278,27 +279,6 @@ import ConsonantDelete from './frontend/problems/bac/char/ConsonantDelete.js';
 import PhoneNrEdit from './frontend/problems/bac/char/PhoneNrEdit.js';
 import NLettersWords from './frontend/problems/bac/char/NLettersWords.js';
 import FriendlyVow from './frontend/problems/bac/char/FriendlyVow.js';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -603,7 +583,7 @@ function App() {
               <Route path="/problems/bac/Coloana minimului" element={<MinColumn />} />
               <Route path="/problems/bac/Simetrica" element={<Symmetric />} />
               <Route path="/problems/bac/Innisiparea unei plaje" element={<BeachSand />} />
-
+              <Route path="/problems/bac/Eliminarea diagonalei principale" element={<MainDiagDelete />} />
 
               {/*PROBLEME SUBPROGRAME*/}
               <Route path="/problems/bac/Suma numerelor pare" element={<EvenNumbersSum />} />
