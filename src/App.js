@@ -268,7 +268,7 @@ import SeqReplace from './frontend/problems/bac/subprograme/SeqReplace.js';
 import EqualsAreaParcel from './frontend/problems/bac/subprograme/EqualsAreaParcel.js';
 import MajorOdd from './frontend/problems/bac/subprograme/MajorOdd.js';
 import Change from './frontend/problems/bac/subprograme/Change.js';
-
+import Rest from './frontend/problems/bac/subprograme/Rest.js';
 
 //while bac
 import KPows from './frontend/problems/bac/while/KPows.js';
@@ -279,6 +279,8 @@ import ConsonantDelete from './frontend/problems/bac/char/ConsonantDelete.js';
 import PhoneNrEdit from './frontend/problems/bac/char/PhoneNrEdit.js';
 import NLettersWords from './frontend/problems/bac/char/NLettersWords.js';
 import FriendlyVow from './frontend/problems/bac/char/FriendlyVow.js';
+import SurnameSearch from './frontend/problems/bac/char/SurnameSearch.js';
+
 
 
 
@@ -596,6 +598,8 @@ function App() {
               <Route path="/problems/bac/Parcele de arie egala" element={<EqualsAreaParcel />} />
               <Route path="/problems/bac/Major impar" element={<MajorOdd />} />
               <Route path="/problems/bac/Schimb" element={<Change />} />
+              <Route path="/problems/bac/Rest" element={<Rest />} />
+
 
               {/*PROBLEME WHILE*/}
               <Route path="/problems/bac/Puteri ale lui k" element={<KPows />} />
@@ -607,7 +611,7 @@ function App() {
               <Route path="/problems/bac/Formatarea numerelor de telefon" element={<PhoneNrEdit />} />
               <Route path="/problems/bac/Cuvinte de n litere" element={<NLettersWords />} />
               <Route path="/problems/bac/Vocala prietena" element={<FriendlyVow />} />
-
+              <Route path="/problems/bac/Cautare prenume" element={<SurnameSearch />} />
 
             </Routes>
           </NotificationProvider>

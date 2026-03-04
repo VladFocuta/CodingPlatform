@@ -59,7 +59,7 @@ function FriendlyVow() {
             problemName="Vocala prietena"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Cautare prenume"
             testPassed={testPassed}
         />
     )

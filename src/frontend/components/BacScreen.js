@@ -57,7 +57,7 @@ function BacScreen() {
                 { title: "Parcele de arie egala", link: "/problems/bac/Parcele de arie egala", icon: "fa-solid fa-circle-check" },
                 { title: "Major impar", link: "/problems/bac/Major impar", icon: "fa-solid fa-circle-check" },
                 { title: "Schimb", link: "/problems/bac/Schimb", icon: "fa-solid fa-circle-check" },
-
+                { title: "Rest", link: "/problems/bac/Rest", icon: "fa-solid fa-circle-check" },
 
             ]
         }, {
@@ -67,6 +67,7 @@ function BacScreen() {
                 { title: "Formatarea numerelor de telefon", link: "/problems/bac/Formatarea numerelor de telefon", icon: "fa-solid fa-circle-check" },
                 { title: "Cuvinte de n litere", link: "/problems/bac/Cuvinte de n litere", icon: "fa-solid fa-circle-check" },
                 { title: "Vocala prietena", link: "/problems/bac/Vocala prietena", icon: "fa-solid fa-circle-check" },
+                { title: "Cautare prenume", link: "/problems/bac/Cautare prenume", icon: "fa-solid fa-circle-check" },
             ]
         },]
 

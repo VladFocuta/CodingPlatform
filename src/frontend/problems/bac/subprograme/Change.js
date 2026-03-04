@@ -49,7 +49,7 @@ function Change() {
             problemName="Schimb"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Rest"
             testPassed={testPassed}
         />
     )
