@@ -48,7 +48,7 @@ function DistinctValues() {
             problemName="Valori distincte"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Inversarea pozitiilor cifrelor impare"
             testPassed={testPassed}
         />
     )

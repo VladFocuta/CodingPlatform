@@ -53,7 +53,7 @@ function ParitarSequence() {
             problemName="Secventa paritara"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Suma in functie de paritate"
             testPassed={testPassed}
         />
     )

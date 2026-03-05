@@ -47,7 +47,7 @@ function Rest() {
             problemName="Rest"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Cub perfect"
             testPassed={testPassed}
         />
     )

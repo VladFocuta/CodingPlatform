@@ -245,6 +245,7 @@ import ElementsRearange from './frontend/problems/bac/for/ElementsRearange.js';
 import ParitarArray from './frontend/problems/bac/for/ParitarArray.js';
 import AscendingLadder from './frontend/problems/bac/for/AscendingLadder.js';
 import ParitarSequence from './frontend/problems/bac/for/ParitarSequence.js';
+import ParitySum from './frontend/problems/bac/for/ParitySum.js';
 
 //matrice bac
 import DiffValuesMatrix from './frontend/problems/bac/matrix/DiffValuesMatrix.js';
@@ -269,17 +270,21 @@ import EqualsAreaParcel from './frontend/problems/bac/subprograme/EqualsAreaParc
 import MajorOdd from './frontend/problems/bac/subprograme/MajorOdd.js';
 import Change from './frontend/problems/bac/subprograme/Change.js';
 import Rest from './frontend/problems/bac/subprograme/Rest.js';
+import PerfectCube from './frontend/problems/bac/subprograme/PerfectCube.js';
 
 //while bac
 import KPows from './frontend/problems/bac/while/KPows.js';
 import DistinctValues from './frontend/problems/bac/while/DistinctValues.js';
-
+import ReverseOddNumbers from './frontend/problems/bac/while/ReverseOddNumbers.js';
 //char bac
 import ConsonantDelete from './frontend/problems/bac/char/ConsonantDelete.js';
 import PhoneNrEdit from './frontend/problems/bac/char/PhoneNrEdit.js';
 import NLettersWords from './frontend/problems/bac/char/NLettersWords.js';
 import FriendlyVow from './frontend/problems/bac/char/FriendlyVow.js';
 import SurnameSearch from './frontend/problems/bac/char/SurnameSearch.js';
+
+
+
 
 
 
@@ -574,7 +579,7 @@ function App() {
               <Route path="/problems/bac/Sir paritar" element={<ParitarArray />} />
               <Route path="/problems/bac/Scara crescatoare" element={<AscendingLadder />} />
               <Route path="/problems/bac/Secventa paritara" element={<ParitarSequence />} />
-
+              <Route path="/problems/bac/Suma in functie de paritate" element={<ParitySum />} />
 
               {/*PROBLEME MATRICI*/}
               <Route path="/problems/bac/Matrice cu valori diferite" element={<DiffValuesMatrix />} />
@@ -599,12 +604,12 @@ function App() {
               <Route path="/problems/bac/Major impar" element={<MajorOdd />} />
               <Route path="/problems/bac/Schimb" element={<Change />} />
               <Route path="/problems/bac/Rest" element={<Rest />} />
-
+              <Route path="/problems/bac/Cub perfect" element={<PerfectCube />} />
 
               {/*PROBLEME WHILE*/}
               <Route path="/problems/bac/Puteri ale lui k" element={<KPows />} />
               <Route path="/problems/bac/Valori distincte" element={<DistinctValues />} />
-
+              <Route path="/problems/bac/Inversarea pozitiilor cifrelor impare" element={<ReverseOddNumbers />} />
 
               {/*PROBLEME CHAR*/}
               <Route path="/problems/bac/Eliminarea consoanelor" element={<ConsonantDelete />} />

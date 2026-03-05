@@ -13,6 +13,7 @@ function BacScreen() {
             lessons: [
                 { title: "Puteri ale lui k", link: "/problems/bac/Puteri ale lui k", icon: "fa-solid fa-circle-check" },
                 { title: "Valori distincte", link: "/problems/bac/Valori distincte", icon: "fa-solid fa-circle-check" },
+                { title: "Inversarea pozitiilor cifrelor impare", link: "/problems/bac/Inversarea pozitiilor cifrelor impare", icon: "fa-solid fa-circle-check" },
 
             ]
         },
@@ -27,7 +28,7 @@ function BacScreen() {
                 { title: "Sir paritar", link: "/problems/bac/Sir paritar", icon: "fa-solid fa-circle-check" },
                 { title: "Scara crescatoare", link: "/problems/bac/Scara crescatoare", icon: "fa-solid fa-circle-check" },
                 { title: "Secventa paritara", link: "/problems/bac/Secventa paritara", icon: "fa-solid fa-circle-check" },
-
+                { title: "Suma in functie de paritate", link: "/problems/bac/Suma in functie de paritate", icon: "fa-solid fa-circle-check" },
 
             ]
         }, {
@@ -58,7 +59,7 @@ function BacScreen() {
                 { title: "Major impar", link: "/problems/bac/Major impar", icon: "fa-solid fa-circle-check" },
                 { title: "Schimb", link: "/problems/bac/Schimb", icon: "fa-solid fa-circle-check" },
                 { title: "Rest", link: "/problems/bac/Rest", icon: "fa-solid fa-circle-check" },
-
+                { title: "Cub perfect", link: "/problems/bac/Cub perfect", icon: "fa-solid fa-circle-check" },
             ]
         }, {
             title: "Siruri de caractere",
