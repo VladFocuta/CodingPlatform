@@ -14,6 +14,9 @@ function BacScreen() {
                 { title: "Puteri ale lui k", link: "/problems/bac/Puteri ale lui k", icon: "fa-solid fa-circle-check" },
                 { title: "Valori distincte", link: "/problems/bac/Valori distincte", icon: "fa-solid fa-circle-check" },
                 { title: "Inversarea pozitiilor cifrelor impare", link: "/problems/bac/Inversarea pozitiilor cifrelor impare", icon: "fa-solid fa-circle-check" },
+                { title: "Prelucrarea cifrelor pare", link: "/problems/bac/Prelucrarea cifrelor pare", icon: "fa-solid fa-circle-check" },
+                { title: "Produsul cifrelor impare", link: "/problems/bac/Produsul cifrelor impare", icon: "fa-solid fa-circle-check" },
+                { title: "Numere cu cifre impare intr-un interval", link: "/problems/bac/Numere cu cifre impare intr-un interval", icon: "fa-solid fa-circle-check" },
 
             ]
         },

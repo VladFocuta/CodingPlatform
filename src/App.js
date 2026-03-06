@@ -276,12 +276,19 @@ import PerfectCube from './frontend/problems/bac/subprograme/PerfectCube.js';
 import KPows from './frontend/problems/bac/while/KPows.js';
 import DistinctValues from './frontend/problems/bac/while/DistinctValues.js';
 import ReverseOddNumbers from './frontend/problems/bac/while/ReverseOddNumbers.js';
+import EvenNumbersProcessing from './frontend/problems/bac/while/EvenNumbersProcessing.js';
+import OddNumbersProduct from './frontend/problems/bac/while/OddNumbersProduct.js';
+import OddNumbersInterval from './frontend/problems/bac/while/OddNumbersInterval.js';
+
 //char bac
 import ConsonantDelete from './frontend/problems/bac/char/ConsonantDelete.js';
 import PhoneNrEdit from './frontend/problems/bac/char/PhoneNrEdit.js';
 import NLettersWords from './frontend/problems/bac/char/NLettersWords.js';
 import FriendlyVow from './frontend/problems/bac/char/FriendlyVow.js';
 import SurnameSearch from './frontend/problems/bac/char/SurnameSearch.js';
+
+
+
 
 
 
@@ -610,6 +617,9 @@ function App() {
               <Route path="/problems/bac/Puteri ale lui k" element={<KPows />} />
               <Route path="/problems/bac/Valori distincte" element={<DistinctValues />} />
               <Route path="/problems/bac/Inversarea pozitiilor cifrelor impare" element={<ReverseOddNumbers />} />
+              <Route path="/problems/bac/Prelucrarea cifrelor pare" element={<EvenNumbersProcessing />} />
+              <Route path="/problems/bac/Produsul cifrelor impare" element={<OddNumbersProduct />} />
+              <Route path="/problems/bac/Numere cu cifre impare intr-un interval" element={<OddNumbersInterval />} />
 
               {/*PROBLEME CHAR*/}
               <Route path="/problems/bac/Eliminarea consoanelor" element={<ConsonantDelete />} />
