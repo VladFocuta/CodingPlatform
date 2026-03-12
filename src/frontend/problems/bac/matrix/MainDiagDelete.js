@@ -56,7 +56,7 @@ function MainDiagDelete() {
             problemName="Eliminarea diagonalei principale"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Multiplii pe diagonala principala"
             testPassed={testPassed}
         />
     )

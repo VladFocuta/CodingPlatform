@@ -46,7 +46,7 @@ function ParitySum() {
             problemName="Suma in functie de paritate"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Pereche asemenea"
             testPassed={testPassed}
         />
     )

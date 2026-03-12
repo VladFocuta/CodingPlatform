@@ -48,7 +48,7 @@ function SurnameSearch() {
             problemName="Cautare prenume"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Primele k cuvinte"
             testPassed={testPassed}
         />
     )

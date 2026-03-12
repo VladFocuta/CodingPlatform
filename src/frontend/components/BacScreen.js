@@ -17,6 +17,7 @@ function BacScreen() {
                 { title: "Prelucrarea cifrelor pare", link: "/problems/bac/Prelucrarea cifrelor pare", icon: "fa-solid fa-circle-check" },
                 { title: "Produsul cifrelor impare", link: "/problems/bac/Produsul cifrelor impare", icon: "fa-solid fa-circle-check" },
                 { title: "Numere cu cifre impare intr-un interval", link: "/problems/bac/Numere cu cifre impare intr-un interval", icon: "fa-solid fa-circle-check" },
+                { title: "Termenii sirului mai mici sau egali cu y", link: "/problems/bac/Termenii sirului mai mici sau egali cu y", icon: "fa-solid fa-circle-check" },
 
             ]
         },
@@ -32,6 +33,7 @@ function BacScreen() {
                 { title: "Scara crescatoare", link: "/problems/bac/Scara crescatoare", icon: "fa-solid fa-circle-check" },
                 { title: "Secventa paritara", link: "/problems/bac/Secventa paritara", icon: "fa-solid fa-circle-check" },
                 { title: "Suma in functie de paritate", link: "/problems/bac/Suma in functie de paritate", icon: "fa-solid fa-circle-check" },
+                { title: "Pereche asemenea", link: "/problems/bac/Pereche asemenea", icon: "fa-solid fa-circle-check" },
 
             ]
         }, {
@@ -46,6 +48,8 @@ function BacScreen() {
                 { title: "Simetrica", link: "/problems/bac/Simetrica", icon: "fa-solid fa-circle-check" },
                 { title: "Innisiparea unei plaje", link: "/problems/bac/Innisiparea unei plaje", icon: "fa-solid fa-circle-check" },
                 { title: "Eliminarea diagonalei principale", link: "/problems/bac/Eliminarea diagonalei principale", icon: "fa-solid fa-circle-check" },
+                { title: "Multiplii pe diagonala principala", link: "/problems/bac/Multiplii pe diagonala principala", icon: "fa-solid fa-circle-check" },
+                { title: "Elemente situate pe linia k", link: "/problems/bac/Elemente situate pe linia k", icon: "fa-solid fa-circle-check" },
 
             ]
         }, {
@@ -63,6 +67,9 @@ function BacScreen() {
                 { title: "Schimb", link: "/problems/bac/Schimb", icon: "fa-solid fa-circle-check" },
                 { title: "Rest", link: "/problems/bac/Rest", icon: "fa-solid fa-circle-check" },
                 { title: "Cub perfect", link: "/problems/bac/Cub perfect", icon: "fa-solid fa-circle-check" },
+                { title: "Divizori primi la putere impara", link: "/problems/bac/Divizori primi la putere impara", icon: "fa-solid fa-circle-check" },
+                { title: "Impar oglindite", link: "/problems/bac/Impar oglindite", icon: "fa-solid fa-circle-check" },
+
             ]
         }, {
             title: "Siruri de caractere",
@@ -72,6 +79,8 @@ function BacScreen() {
                 { title: "Cuvinte de n litere", link: "/problems/bac/Cuvinte de n litere", icon: "fa-solid fa-circle-check" },
                 { title: "Vocala prietena", link: "/problems/bac/Vocala prietena", icon: "fa-solid fa-circle-check" },
                 { title: "Cautare prenume", link: "/problems/bac/Cautare prenume", icon: "fa-solid fa-circle-check" },
+                { title: "Primele k cuvinte", link: "/problems/bac/Primele k cuvinte", icon: "fa-solid fa-circle-check" },
+
             ]
         },]
 

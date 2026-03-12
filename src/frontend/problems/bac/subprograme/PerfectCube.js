@@ -46,7 +46,7 @@ function PerfectCube() {
             problemName="Cub perfect"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Divizori primi la putere impara"
             testPassed={testPassed}
         />
     )

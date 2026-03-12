@@ -246,6 +246,7 @@ import ParitarArray from './frontend/problems/bac/for/ParitarArray.js';
 import AscendingLadder from './frontend/problems/bac/for/AscendingLadder.js';
 import ParitarSequence from './frontend/problems/bac/for/ParitarSequence.js';
 import ParitySum from './frontend/problems/bac/for/ParitySum.js';
+import AlikePair from './frontend/problems/bac/for/AlikePair.js';
 
 //matrice bac
 import DiffValuesMatrix from './frontend/problems/bac/matrix/DiffValuesMatrix.js';
@@ -257,6 +258,8 @@ import MinColumn from './frontend/problems/bac/matrix/MinColumn.js';
 import Symmetric from './frontend/problems/bac/matrix/Symmetric.js';
 import BeachSand from './frontend/problems/bac/matrix/BeachSand.js';
 import MainDiagDelete from './frontend/problems/bac/matrix/MainDiagDelete.js';
+import MainDiagMultiply from './frontend/problems/bac/matrix/MainDiagMultiply.js';
+import KLineElements from './frontend/problems/bac/matrix/KLineElements.js';
 
 //subprograme bac
 import EvenNumbersSum from './frontend/problems/bac/subprograme/EvenNumbersSum.js';
@@ -271,6 +274,8 @@ import MajorOdd from './frontend/problems/bac/subprograme/MajorOdd.js';
 import Change from './frontend/problems/bac/subprograme/Change.js';
 import Rest from './frontend/problems/bac/subprograme/Rest.js';
 import PerfectCube from './frontend/problems/bac/subprograme/PerfectCube.js';
+import PrimeDivOddSqrt from './frontend/problems/bac/subprograme/PrimeDivOddSqrt.js';
+import OddReverse from './frontend/problems/bac/subprograme/OddReverse.js';
 
 //while bac
 import KPows from './frontend/problems/bac/while/KPows.js';
@@ -279,6 +284,7 @@ import ReverseOddNumbers from './frontend/problems/bac/while/ReverseOddNumbers.j
 import EvenNumbersProcessing from './frontend/problems/bac/while/EvenNumbersProcessing.js';
 import OddNumbersProduct from './frontend/problems/bac/while/OddNumbersProduct.js';
 import OddNumbersInterval from './frontend/problems/bac/while/OddNumbersInterval.js';
+import ArrrayTermsY from './frontend/problems/bac/while/ArrrayTermsY.js';
 
 //char bac
 import ConsonantDelete from './frontend/problems/bac/char/ConsonantDelete.js';
@@ -286,11 +292,7 @@ import PhoneNrEdit from './frontend/problems/bac/char/PhoneNrEdit.js';
 import NLettersWords from './frontend/problems/bac/char/NLettersWords.js';
 import FriendlyVow from './frontend/problems/bac/char/FriendlyVow.js';
 import SurnameSearch from './frontend/problems/bac/char/SurnameSearch.js';
-
-
-
-
-
+import FirstKWords from './frontend/problems/bac/char/FirstKWords.js';
 
 
 
@@ -587,6 +589,8 @@ function App() {
               <Route path="/problems/bac/Scara crescatoare" element={<AscendingLadder />} />
               <Route path="/problems/bac/Secventa paritara" element={<ParitarSequence />} />
               <Route path="/problems/bac/Suma in functie de paritate" element={<ParitySum />} />
+              <Route path="/problems/bac/Pereche asemenea" element={<AlikePair />} />
+
 
               {/*PROBLEME MATRICI*/}
               <Route path="/problems/bac/Matrice cu valori diferite" element={<DiffValuesMatrix />} />
@@ -598,6 +602,9 @@ function App() {
               <Route path="/problems/bac/Simetrica" element={<Symmetric />} />
               <Route path="/problems/bac/Innisiparea unei plaje" element={<BeachSand />} />
               <Route path="/problems/bac/Eliminarea diagonalei principale" element={<MainDiagDelete />} />
+              <Route path="/problems/bac/Multiplii pe diagonala principala" element={<MainDiagMultiply />} />
+              <Route path="/problems/bac/Elemente situate pe linia k" element={<KLineElements />} />
+
 
               {/*PROBLEME SUBPROGRAME*/}
               <Route path="/problems/bac/Suma numerelor pare" element={<EvenNumbersSum />} />
@@ -612,6 +619,9 @@ function App() {
               <Route path="/problems/bac/Schimb" element={<Change />} />
               <Route path="/problems/bac/Rest" element={<Rest />} />
               <Route path="/problems/bac/Cub perfect" element={<PerfectCube />} />
+              <Route path="/problems/bac/Divizori primi la putere impara" element={<PrimeDivOddSqrt />} />
+              <Route path="/problems/bac/Impar oglindite" element={<OddReverse />} />
+
 
               {/*PROBLEME WHILE*/}
               <Route path="/problems/bac/Puteri ale lui k" element={<KPows />} />
@@ -620,6 +630,9 @@ function App() {
               <Route path="/problems/bac/Prelucrarea cifrelor pare" element={<EvenNumbersProcessing />} />
               <Route path="/problems/bac/Produsul cifrelor impare" element={<OddNumbersProduct />} />
               <Route path="/problems/bac/Numere cu cifre impare intr-un interval" element={<OddNumbersInterval />} />
+              <Route path="/problems/bac/Termenii sirului mai mici sau egali cu y" element={<ArrrayTermsY />} />
+
+
 
               {/*PROBLEME CHAR*/}
               <Route path="/problems/bac/Eliminarea consoanelor" element={<ConsonantDelete />} />
@@ -627,6 +640,8 @@ function App() {
               <Route path="/problems/bac/Cuvinte de n litere" element={<NLettersWords />} />
               <Route path="/problems/bac/Vocala prietena" element={<FriendlyVow />} />
               <Route path="/problems/bac/Cautare prenume" element={<SurnameSearch />} />
+              <Route path="/problems/bac/Primele k cuvinte" element={<FirstKWords />} />
+
 
             </Routes>
           </NotificationProvider>
