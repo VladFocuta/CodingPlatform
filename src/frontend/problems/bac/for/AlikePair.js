@@ -50,7 +50,7 @@ function AlikePair() {
             problemName="Pereche asemenea"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Numar munte"
             testPassed={testPassed}
         />
     )

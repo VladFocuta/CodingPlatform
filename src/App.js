@@ -247,6 +247,7 @@ import AscendingLadder from './frontend/problems/bac/for/AscendingLadder.js';
 import ParitarSequence from './frontend/problems/bac/for/ParitarSequence.js';
 import ParitySum from './frontend/problems/bac/for/ParitySum.js';
 import AlikePair from './frontend/problems/bac/for/AlikePair.js';
+import MountainNumber from './frontend/problems/bac/for/MountainNumber.js';
 
 //matrice bac
 import DiffValuesMatrix from './frontend/problems/bac/matrix/DiffValuesMatrix.js';
@@ -293,6 +294,7 @@ import NLettersWords from './frontend/problems/bac/char/NLettersWords.js';
 import FriendlyVow from './frontend/problems/bac/char/FriendlyVow.js';
 import SurnameSearch from './frontend/problems/bac/char/SurnameSearch.js';
 import FirstKWords from './frontend/problems/bac/char/FirstKWords.js';
+
 
 
 
@@ -590,7 +592,7 @@ function App() {
               <Route path="/problems/bac/Secventa paritara" element={<ParitarSequence />} />
               <Route path="/problems/bac/Suma in functie de paritate" element={<ParitySum />} />
               <Route path="/problems/bac/Pereche asemenea" element={<AlikePair />} />
-
+              <Route path="/problems/bac/Numar munte" element={<MountainNumber />} />
 
               {/*PROBLEME MATRICI*/}
               <Route path="/problems/bac/Matrice cu valori diferite" element={<DiffValuesMatrix />} />
