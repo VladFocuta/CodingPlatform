@@ -51,7 +51,7 @@ function MountainNumber() {
             problemName="Numar munte"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Interclasare"
             testPassed={testPassed}
         />
     )

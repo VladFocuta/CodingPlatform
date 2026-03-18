@@ -35,7 +35,8 @@ function BacScreen() {
                 { title: "Suma in functie de paritate", link: "/problems/bac/Suma in functie de paritate", icon: "fa-solid fa-circle-check" },
                 { title: "Pereche asemenea", link: "/problems/bac/Pereche asemenea", icon: "fa-solid fa-circle-check" },
                 { title: "Numar munte", link: "/problems/bac/Numar munte", icon: "fa-solid fa-circle-check" },
-
+                { title: "Interclasare", link: "/problems/bac/Interclasare", icon: "fa-solid fa-circle-check" },
+                { title: "Interclasare2", link: "/problems/bac/Interclasare2", icon: "fa-solid fa-circle-check" },
             ]
         }, {
             title: "Matrici",
