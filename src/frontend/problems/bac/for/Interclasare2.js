@@ -53,7 +53,7 @@ function Interclasare2() {
             problemName="Interclasare2"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Targ de jucarii"
             testPassed={testPassed}
         />
     )

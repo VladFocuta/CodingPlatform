@@ -250,6 +250,11 @@ import AlikePair from './frontend/problems/bac/for/AlikePair.js';
 import MountainNumber from './frontend/problems/bac/for/MountainNumber.js';
 import Interclasare from './frontend/problems/bac/for/Interclasare.js';
 import Interclasare2 from './frontend/problems/bac/for/Interclasare2.js';
+import ToysFairtrade from './frontend/problems/bac/for/ToysFairtrade.js';
+import InterclasareX from './frontend/problems/bac/for/InterclasareX.js';
+import MissingNmb from './frontend/problems/bac/for/MissingNmb.js';
+import DescendingsDigits from './frontend/problems/bac/for/DescendingsDigits.js';
+
 
 
 //matrice bac
@@ -297,6 +302,11 @@ import NLettersWords from './frontend/problems/bac/char/NLettersWords.js';
 import FriendlyVow from './frontend/problems/bac/char/FriendlyVow.js';
 import SurnameSearch from './frontend/problems/bac/char/SurnameSearch.js';
 import FirstKWords from './frontend/problems/bac/char/FirstKWords.js';
+import SubNumber from './frontend/problems/bac/for/SubNumber.js';
+
+
+
+
 
 
 
@@ -600,6 +610,13 @@ function App() {
               <Route path="/problems/bac/Numar munte" element={<MountainNumber />} />
               <Route path="/problems/bac/Interclasare" element={<Interclasare />} />
               <Route path="/problems/bac/Interclasare2" element={<Interclasare2 />} />
+              <Route path="/problems/bac/Targ de jucarii" element={<ToysFairtrade />} />
+              <Route path="/problems/bac/Interclasare X" element={<InterclasareX />} />
+              <Route path="/problems/bac/Numarul lipsa" element={<MissingNmb />} />
+              <Route path="/problems/bac/Cifre descrescatoare" element={<DescendingsDigits />} />
+              <Route path="/problems/bac/Sub-numar" element={<SubNumber />} />
+
+
 
               {/*PROBLEME MATRICI*/}
               <Route path="/problems/bac/Matrice cu valori diferite" element={<DiffValuesMatrix />} />

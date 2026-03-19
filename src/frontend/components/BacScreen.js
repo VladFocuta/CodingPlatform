@@ -37,6 +37,12 @@ function BacScreen() {
                 { title: "Numar munte", link: "/problems/bac/Numar munte", icon: "fa-solid fa-circle-check" },
                 { title: "Interclasare", link: "/problems/bac/Interclasare", icon: "fa-solid fa-circle-check" },
                 { title: "Interclasare2", link: "/problems/bac/Interclasare2", icon: "fa-solid fa-circle-check" },
+                { title: "Targ de jucarii", link: "/problems/bac/Targ de jucarii", icon: "fa-solid fa-circle-check" },
+                { title: "Interclasare X", link: "/problems/bac/Interclasare X", icon: "fa-solid fa-circle-check" },
+                { title: "Numarul lipsa", link: "/problems/bac/Numarul lipsa", icon: "fa-solid fa-circle-check" },
+                { title: "Cifre descrescatoare", link: "/problems/bac/Cifre descrescatoare", icon: "fa-solid fa-circle-check" },
+                { title: "Sub-numar", link: "/problems/bac/Sub-numar", icon: "fa-solid fa-circle-check" },
+
             ]
         }, {
             title: "Matrici",
