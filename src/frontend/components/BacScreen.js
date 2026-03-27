@@ -42,7 +42,10 @@ function BacScreen() {
                 { title: "Numarul lipsa", link: "/problems/bac/Numarul lipsa", icon: "fa-solid fa-circle-check" },
                 { title: "Cifre descrescatoare", link: "/problems/bac/Cifre descrescatoare", icon: "fa-solid fa-circle-check" },
                 { title: "Sub-numar", link: "/problems/bac/Sub-numar", icon: "fa-solid fa-circle-check" },
-
+                { title: "Inlocuire maxim", link: "/problems/bac/Inlocuire maxim", icon: "fa-solid fa-circle-check" },
+                { title: "Pachete de carti", link: "/problems/bac/Pachete de carti", icon: "fa-solid fa-circle-check" },
+                { title: "Q interogari", link: "/problems/bac/Q interogari", icon: "fa-solid fa-circle-check" },
+                { title: "Q interogari2", link: "/problems/bac/Q interogari2", icon: "fa-solid fa-circle-check" },
             ]
         }, {
             title: "Matrici",

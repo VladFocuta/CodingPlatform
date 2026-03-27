@@ -254,8 +254,10 @@ import ToysFairtrade from './frontend/problems/bac/for/ToysFairtrade.js';
 import InterclasareX from './frontend/problems/bac/for/InterclasareX.js';
 import MissingNmb from './frontend/problems/bac/for/MissingNmb.js';
 import DescendingsDigits from './frontend/problems/bac/for/DescendingsDigits.js';
-
-
+import MaxReplace from './frontend/problems/bac/for/MaxReplace.js';
+import BooksPackages from './frontend/problems/bac/for/BooksPackages.js';
+import QQuestions from './frontend/problems/bac/for/QQuestions.js';
+import QQuestions2 from './frontend/problems/bac/for/QQuestions2.js';
 
 //matrice bac
 import DiffValuesMatrix from './frontend/problems/bac/matrix/DiffValuesMatrix.js';
@@ -303,6 +305,10 @@ import FriendlyVow from './frontend/problems/bac/char/FriendlyVow.js';
 import SurnameSearch from './frontend/problems/bac/char/SurnameSearch.js';
 import FirstKWords from './frontend/problems/bac/char/FirstKWords.js';
 import SubNumber from './frontend/problems/bac/for/SubNumber.js';
+
+
+
+
 
 
 
@@ -615,8 +621,10 @@ function App() {
               <Route path="/problems/bac/Numarul lipsa" element={<MissingNmb />} />
               <Route path="/problems/bac/Cifre descrescatoare" element={<DescendingsDigits />} />
               <Route path="/problems/bac/Sub-numar" element={<SubNumber />} />
-
-
+              <Route path="/problems/bac/Inlocuire maxim" element={<MaxReplace />} />
+              <Route path="/problems/bac/Pachete de carti" element={<BooksPackages />} />
+              <Route path="/problems/bac/Q interogari" element={<QQuestions />} />
+              <Route path="/problems/bac/Q interogari2" element={<QQuestions2 />} />
 
               {/*PROBLEME MATRICI*/}
               <Route path="/problems/bac/Matrice cu valori diferite" element={<DiffValuesMatrix />} />

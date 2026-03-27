@@ -51,7 +51,7 @@ function SubNumber() {
             problemName="Sub-numar"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Inlocuire maxim"
             testPassed={testPassed}
         />
     )
