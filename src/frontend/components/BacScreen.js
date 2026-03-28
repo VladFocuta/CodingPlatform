@@ -44,6 +44,7 @@ function BacScreen() {
                 { title: "Sub-numar", link: "/problems/bac/Sub-numar", icon: "fa-solid fa-circle-check" },
                 { title: "Inlocuire maxim", link: "/problems/bac/Inlocuire maxim", icon: "fa-solid fa-circle-check" },
                 { title: "Pachete de carti", link: "/problems/bac/Pachete de carti", icon: "fa-solid fa-circle-check" },
+                { title: "Clasament", link: "/problems/bac/Clasament", icon: "fa-solid fa-circle-check" },
                 { title: "Q interogari", link: "/problems/bac/Q interogari", icon: "fa-solid fa-circle-check" },
                 { title: "Q interogari2", link: "/problems/bac/Q interogari2", icon: "fa-solid fa-circle-check" },
             ]

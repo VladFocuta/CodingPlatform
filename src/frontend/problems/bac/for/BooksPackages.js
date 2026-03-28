@@ -51,7 +51,7 @@ function BooksPackages() {
             problemName="Pachete de carti"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/bac/Q interogari"
+            nextRoute="/problems/bac/Clasament"
             testPassed={testPassed}
         />
     )

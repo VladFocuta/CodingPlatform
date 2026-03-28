@@ -16,7 +16,7 @@ function OddNumbersProduct() {
     const problemContent = (
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <h4>Se citește de la tastatură două numere naturale n (1 &lt;= n &lt; 10<sup>6</sup>), k (0 &lt; k).<br />
+                <h4>Se citesc de la tastatură două numere naturale n (1 &lt;= n &lt; 10<sup>6</sup>), k (0 &lt; k).<br />
                     Să se determine și să se afișeze produsul cifrelor impare dintre ultimele k cifre ale numărului n.
                     Dacă nu există astfel de cifre, să se afișeze <strong style={{ color: 'red' }}>1</strong>.
                     <br /><br />
