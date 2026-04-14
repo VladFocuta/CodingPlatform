@@ -70,15 +70,16 @@ function Adv() {
                         <p>Sesiuni 1 la 1, personalizate</p>
                     </div>
 
-                    <div className="glass price-card">
+                    <div className="glass price-card" style={{borderColor: 'red'}}>
                         <h3>Standard</h3>
-                        <strong>250 lei / lună</strong>
+                        <strong>59 lei / lună</strong>
                         <p>Acces complet la platformă</p>
+                        <p>Recomandat pentru pregătire BAC</p>
                     </div>
 
                     <div className="glass price-card premium">
                         <h3>Premium ⭐</h3>
-                        <strong>450 lei / lună</strong>
+                        <strong>199 lei / lună</strong>
                         <p>Feedback zilnic + call 1 la 1</p>
                     </div>
                 </div>
