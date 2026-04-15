@@ -18,7 +18,7 @@ function DescendingsDigits() {
                 <h4>
                     Se dau n numere naturale cu cel mult 9 cifre fiecare. Să se afişeze, în ordine descrescătoare, toate cifrele care apar în numerele date.<br />
                     Se citesc cel mult 10.000 de numere, dispuse pe mai multe linii.<br />
-                    Se vor afișa cifrele determinate, ordonate descrescător, câte 20 pe o linie, valorile de pe fiecare linie fiind separate prin spaţii. Ultima linie a fişierului poate conţine mai puţin de 20 de cifre.
+                    Se vor afișa cifrele determinate, ordonate descrescător, câte 20 pe o linie, valorile de pe fiecare linie fiind separate prin spaţii. Ultima linie poate conţine mai puţin de 20 de cifre.
 
                     <br /><br />
                     Exemplu:
