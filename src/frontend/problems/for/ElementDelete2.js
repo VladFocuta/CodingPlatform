@@ -48,7 +48,7 @@ function ElementDelete2() {
             problemName="Stergerea unui element 2.0"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Inserarea unui element"
+            nextRoute="/problems/Eliminare numere prime"
             testPassed={testPassed}
         />
     )

@@ -136,8 +136,15 @@ function Main() {
         { title: "Afisam descrescator", link: "/problems/Afisam descrescator", icon: "fa-solid fa-circle-check", index: 45 },
         { title: "Stergerea unui element", link: "/problems/Stergerea unui element", icon: "fa-solid fa-circle-check", index: 46 },
         { title: "Stergerea unui element 2.0", link: "/problems/Stergerea unui element 2.0", icon: "fa-solid fa-circle-check", index: 47 },
+        { title: "Eliminare numere prime", link: "/problems/Eliminare numere prime", icon: "fa-solid fa-circle-check", index: 47 },
+        { title: "Eliminare minim", link: "/problems/Eliminare minim", icon: "fa-solid fa-circle-check", index: 47 },
+        { title: "Eliminare numere repetate", link: "/problems/Eliminare numere repetate", icon: "fa-solid fa-circle-check", index: 47 },
+       
+
         { title: "Inserarea unui element", link: "/problems/Inserarea unui element", icon: "fa-solid fa-circle-check", index: 48 },
         { title: "Inserarea unui element 2.0", link: "/problems/Inserarea unui element 2.0", icon: "fa-solid fa-circle-check", index: 49 },
+        { title: "Duplicare minim", link: "/problems/Duplicare minim", icon: "fa-solid fa-circle-check", index: 49 },
+
         { title: "Bubble Sort", link: "/problems/Bubble Sort", icon: "fa-solid fa-circle-check", index: 50 },
         { title: "Insertion Sort", link: "/problems/Insertion Sort", icon: "fa-solid fa-circle-check", index: 51 },
         { title: "Selection Sort", link: "/problems/Selection Sort", icon: "fa-solid fa-circle-check", index: 52 },
@@ -378,7 +385,7 @@ function Main() {
           {user && <h1 style={{ color: 'white', marginTop: '30px', marginBottom: '20px' }}>Bun venit, {user.displayName}!</h1>}
 
 
-          <div className='userInfo' style={{width: '70%'}}>
+          <div className='userInfo' style={{ width: '70%' }}>
             <div className='profile-picture'></div>
             {
               mode === 'baze' ? (
@@ -397,13 +404,13 @@ function Main() {
             <div className="btn-group" role="group" aria-label="Basic mixed styles example">
               <span
                 data-bs-toggle="tooltip"
-                
+
               >
                 <button
                   type="button"
                   className={mode === 'baze' ? "btn btn-danger" : "btn btn-light"}
                   onClick={bazeIsPressed}
-                  
+
                 >
                   Baze
                 </button>
@@ -411,13 +418,13 @@ function Main() {
 
               <span
                 data-bs-toggle="tooltip"
-                
+
               >
                 <button
                   type="button"
                   className={mode === 'bac' ? "btn btn-success" : "btn btn-light"}
                   onClick={bacIsPressed}
-                  
+
                 >
                   Bac
                 </button>

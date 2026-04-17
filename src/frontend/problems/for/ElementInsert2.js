@@ -48,7 +48,7 @@ function ElementInsert2() {
             problemName="Inserarea unui element 2.0"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Bubble Sort"
+            nextRoute="/problems/Duplicare minim"
             testPassed={testPassed}
         />
     )
