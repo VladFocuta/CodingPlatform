@@ -71,6 +71,12 @@ import DeleteRepeatNumbers from './frontend/problems/for/DeleteRepeatNumbers.js'
 import BubbleSort from './frontend/problems/for/BubbleSort';
 import InsertionSort from './frontend/problems/for/InsertionSort';
 import SelectionSort from './frontend/problems/for/SelectionSort';
+import TenDivide from './frontend/problems/for/TenDivide.js';
+import PrimeSort from './frontend/problems/for/PrimeSort.js';
+import SortPrimePair from './frontend/problems/for/SortPrimePair.js';
+import SortMaxAndMin from './frontend/problems/for/SortMaxAndMin.js';
+
+
 import LinearSearch from './frontend/problems/for/LinearSearch';
 import BinarySearch from './frontend/problems/for/BinarySearch';
 import Stiva from './frontend/problems/for/Stiva.js';
@@ -323,22 +329,6 @@ import SubNumber from './frontend/problems/bac/for/SubNumber.js';
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function App() {
 
   return (
@@ -447,6 +437,12 @@ function App() {
               <Route path="/problems/Bubble Sort" element={<BubbleSort />} />
               <Route path="/problems/Insertion Sort" element={<InsertionSort />} />
               <Route path="/problems/Selection Sort" element={<SelectionSort />} />
+              <Route path="/problems/Divizibile cu 10" element={<TenDivide />} />
+              <Route path="/problems/Sortare prime" element={<PrimeSort />} />
+              <Route path="/problems/Prime cu ultimul" element={<SortPrimePair />} />
+              <Route path="/problems/Sortare intre maxim si minim" element={<SortMaxAndMin />} />
+
+
               <Route path="/problems/Linear Search" element={<LinearSearch />} />
               <Route path="/problems/Binary Search" element={<BinarySearch />} />
               <Route path="/problems/Stiva" element={<Stiva />} />

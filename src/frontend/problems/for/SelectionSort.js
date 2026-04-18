@@ -92,7 +92,7 @@ int main() {
             problemPoints={1}
             problemContent={problemContent}
             lecture={true}
-            nextRoute="/problems/Linear Search" />
+            nextRoute="/problems/Divizibile cu 10" />
     )
 }
 
