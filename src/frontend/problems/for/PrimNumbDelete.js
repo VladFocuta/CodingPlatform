@@ -28,7 +28,7 @@ function PrimNumbDelete() {
                     <h4>Date de intrare: <br /> 6  <br /> 11 2 4 1 17 18
                         <br />
                     </h4>
-                    <h4> Date de iesire:  <br />4 18
+                    <h4> Date de iesire:  <br />4 1 18
                     </h4>
                 </div>
 
