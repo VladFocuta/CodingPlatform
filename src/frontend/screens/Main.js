@@ -139,7 +139,7 @@ function Main() {
         { title: "Eliminare numere prime", link: "/problems/Eliminare numere prime", icon: "fa-solid fa-circle-check", index: 47 },
         { title: "Eliminare minim", link: "/problems/Eliminare minim", icon: "fa-solid fa-circle-check", index: 47 },
         { title: "Eliminare numere repetate", link: "/problems/Eliminare numere repetate", icon: "fa-solid fa-circle-check", index: 47 },
-
+        { title: "Permutari circulare", link: "/problems/Permutari circulare", icon: "fa-solid fa-circle-check", index: 47 },
 
         { title: "Inserarea unui element", link: "/problems/Inserarea unui element", icon: "fa-solid fa-circle-check", index: 48 },
         { title: "Inserarea unui element 2.0", link: "/problems/Inserarea unui element 2.0", icon: "fa-solid fa-circle-check", index: 49 },
@@ -152,6 +152,7 @@ function Main() {
         { title: "Sortare prime", link: "/problems/Sortare prime", icon: "fa-solid fa-circle-check", index: 52 },
         { title: "Prime cu ultimul", link: "/problems/Prime cu ultimul", icon: "fa-solid fa-circle-check", index: 52 },
         { title: "Sortare intre maxim si minim", link: "/problems/Sortare intre maxim si minim", icon: "fa-solid fa-circle-check", index: 52 },
+
 
 
         { title: "Linear Search", link: "/problems/Linear Search", icon: "fa-solid fa-circle-check", index: 53 },

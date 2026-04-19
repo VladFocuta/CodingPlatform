@@ -60,13 +60,15 @@ import EvenPositions from './frontend/problems/for/EvenPositions';
 import Decrement from './frontend/problems/for/Decrement';
 import ElementDelete from './frontend/problems/for/ElementDelete';
 import ElementDelete2 from './frontend/problems/for/ElementDelete2';
-import ElementInsert from './frontend/problems/for/ElementInsert';
-import ElementInsert2 from './frontend/problems/for/ElementInsert2';
-import DuplicateMin from './frontend/problems/for/DuplicateMin.js';
-
 import PrimNumbDelete from './frontend/problems/for/PrimNumbDelete.js';
 import MinDelete from './frontend/problems/for/MinDelete.js';
 import DeleteRepeatNumbers from './frontend/problems/for/DeleteRepeatNumbers.js';
+import PermCircle from './frontend/problems/for/PermCircle.js';
+
+
+import ElementInsert from './frontend/problems/for/ElementInsert';
+import ElementInsert2 from './frontend/problems/for/ElementInsert2';
+import DuplicateMin from './frontend/problems/for/DuplicateMin.js';
 
 import BubbleSort from './frontend/problems/for/BubbleSort';
 import InsertionSort from './frontend/problems/for/InsertionSort';
@@ -329,6 +331,7 @@ import SubNumber from './frontend/problems/bac/for/SubNumber.js';
 
 
 
+
 function App() {
 
   return (
@@ -429,6 +432,8 @@ function App() {
               <Route path="/problems/Eliminare numere prime" element={<PrimNumbDelete />} />
               <Route path="/problems/Eliminare minim" element={<MinDelete />} />
               <Route path="/problems/Eliminare numere repetate" element={<DeleteRepeatNumbers />} />
+              <Route path="/problems/Permutari circulare" element={<PermCircle />} />
+
 
               <Route path="/problems/Inserarea unui element" element={<ElementInsert />} />
               <Route path="/problems/Inserarea unui element 2.0" element={<ElementInsert2 />} />
