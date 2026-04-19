@@ -10,6 +10,7 @@ import Logo from "../components/Logo";
 function Register() {
     const [errors, setErrors] = useState([]);
     const [loading, setIsLoading] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
     const { registerUser } = UserAuth();
     const auth = getAuth();
@@ -95,8 +96,8 @@ function Register() {
                     </div>
 
                     <div className='input-box'>
-                        <input type='password' placeholder='Parola' required onChange={handleInput} name='password' value={values.password} />
-                        <FaLock className='icon' />
+                        <input type={showPassword ? "text" : "password"} placeholder='Parola' required onChange={handleInput} name='password' value={values.password} />
+                        <FaLock className='icon' style={{ cursor: "pointer" }} onClick={() => setShowPassword(!showPassword)} />
                         {errors.password && <span className='text-danger'>{errors.password}</span>}
                     </div>
 

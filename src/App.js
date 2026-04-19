@@ -1,6 +1,7 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom'
 import Home from './frontend/screens/Home';
+import Reviews from './frontend/screens/Reviews.js';
 import NavBar from './frontend/components/NavBar';
 import Main from './frontend/screens/Main';
 import Login from './frontend/screens/Login';
@@ -337,6 +338,7 @@ import SubNumber from './frontend/problems/bac/for/SubNumber.js';
 
 
 
+
 function App() {
 
   return (
@@ -357,7 +359,7 @@ function App() {
               <Route path="/policy/terms and conditions" element={<TermsAndConditions />} />
               <Route path="/contact-succes" element={<ContactSucces />} />
               <Route path="/informatica" element={<SimpleAddPage />} />
-
+              <Route path="/reviews" element={<Reviews />} />
 
               <Route path="/Main" element={<Main />} />
               <Route path="/Login" element={<Login />} />

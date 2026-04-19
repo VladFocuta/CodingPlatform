@@ -9,6 +9,7 @@ import { auth } from "../../backend/firebaseConfig/firebaseConfig";
 function Login() {
 
     const [wrongCredentials, setWrongCredentials] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const [values, setValues] = useState({
         email: '',
         password: ''
@@ -76,8 +77,8 @@ function Login() {
 
                     </div>
                     <div className='input-box'>
-                        <input type='password' placeholder='Parola' name="password" required onChange={handleInput} />
-                        <FaLock className='icon' />
+                        <input type={showPassword ? "text" : "password"} placeholder='Parola' name="password" required onChange={handleInput} />
+                        <FaLock className='icon' style={{ cursor: "pointer" }} onClick={() => setShowPassword(!showPassword)} />
 
                     </div>
 
