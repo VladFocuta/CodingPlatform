@@ -139,7 +139,10 @@ function Main() {
         { title: "Eliminare numere prime", link: "/problems/Eliminare numere prime", icon: "fa-solid fa-circle-check", index: 47 },
         { title: "Eliminare minim", link: "/problems/Eliminare minim", icon: "fa-solid fa-circle-check", index: 47 },
         { title: "Eliminare numere repetate", link: "/problems/Eliminare numere repetate", icon: "fa-solid fa-circle-check", index: 47 },
+        { title: "Permutare la stanga", link: "/problems/Permutare la stanga", icon: "fa-solid fa-circle-check", index: 47 },
         { title: "Permutari circulare", link: "/problems/Permutari circulare", icon: "fa-solid fa-circle-check", index: 47 },
+        { title: "Permutari circulare2.0", link: "/problems/Permutari circulare2.0", icon: "fa-solid fa-circle-check", index: 47 },
+        { title: "Suma permutari", link: "/problems/Suma permutari", icon: "fa-solid fa-circle-check", index: 47 },
 
         { title: "Inserarea unui element", link: "/problems/Inserarea unui element", icon: "fa-solid fa-circle-check", index: 48 },
         { title: "Inserarea unui element 2.0", link: "/problems/Inserarea unui element 2.0", icon: "fa-solid fa-circle-check", index: 49 },

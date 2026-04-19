@@ -63,8 +63,10 @@ import ElementDelete2 from './frontend/problems/for/ElementDelete2';
 import PrimNumbDelete from './frontend/problems/for/PrimNumbDelete.js';
 import MinDelete from './frontend/problems/for/MinDelete.js';
 import DeleteRepeatNumbers from './frontend/problems/for/DeleteRepeatNumbers.js';
+import LeftPerm from './frontend/problems/for/LeftPerm.js';
 import PermCircle from './frontend/problems/for/PermCircle.js';
-
+import PermCircle2 from './frontend/problems/for/PermCircle2.js';
+import PermSum from './frontend/problems/for/PermSum.js';
 
 import ElementInsert from './frontend/problems/for/ElementInsert';
 import ElementInsert2 from './frontend/problems/for/ElementInsert2';
@@ -332,6 +334,9 @@ import SubNumber from './frontend/problems/bac/for/SubNumber.js';
 
 
 
+
+
+
 function App() {
 
   return (
@@ -432,8 +437,10 @@ function App() {
               <Route path="/problems/Eliminare numere prime" element={<PrimNumbDelete />} />
               <Route path="/problems/Eliminare minim" element={<MinDelete />} />
               <Route path="/problems/Eliminare numere repetate" element={<DeleteRepeatNumbers />} />
+              <Route path="/problems/Permutare la stanga" element={<LeftPerm />} />
               <Route path="/problems/Permutari circulare" element={<PermCircle />} />
-
+              <Route path="/problems/Permutari circulare2.0" element={<PermCircle2 />} />
+              <Route path="/problems/Suma permutari" element={<PermSum />} />
 
               <Route path="/problems/Inserarea unui element" element={<ElementInsert />} />
               <Route path="/problems/Inserarea unui element 2.0" element={<ElementInsert2 />} />

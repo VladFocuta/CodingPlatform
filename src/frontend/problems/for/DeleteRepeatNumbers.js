@@ -50,7 +50,7 @@ function DeleteRepeatNumbers() {
             problemName="Eliminare numere repetate"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Permutari circulare"
+            nextRoute="/problems/Permutare la stanga"
             testPassed={testPassed}
         />
     )
