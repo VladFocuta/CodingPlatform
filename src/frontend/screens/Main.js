@@ -147,6 +147,10 @@ function Main() {
         { title: "Inserarea unui element", link: "/problems/Inserarea unui element", icon: "fa-solid fa-circle-check", index: 48 },
         { title: "Inserarea unui element 2.0", link: "/problems/Inserarea unui element 2.0", icon: "fa-solid fa-circle-check", index: 49 },
         { title: "Duplicare minim", link: "/problems/Duplicare minim", icon: "fa-solid fa-circle-check", index: 49 },
+        { title: "Inserare element par", link: "/problems/Inserare element par", icon: "fa-solid fa-circle-check", index: 49 },
+        { title: "Inserare patrat perfect", link: "/problems/Inserare patrat perfect", icon: "fa-solid fa-circle-check", index: 49 },
+        { title: "Inserare medie aritmetica", link: "/problems/Inserare medie aritmetica", icon: "fa-solid fa-circle-check", index: 49 },
+        { title: "Inserare medie aritmetica2.0", link: "/problems/Inserare medie aritmetica", icon: "fa-solid fa-circle-check", index: 49 },
 
         { title: "Bubble Sort", link: "/problems/Bubble Sort", icon: "fa-solid fa-circle-check", index: 50 },
         { title: "Insertion Sort", link: "/problems/Insertion Sort", icon: "fa-solid fa-circle-check", index: 51 },

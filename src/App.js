@@ -59,6 +59,8 @@ import Arrays from './frontend/problems/for/Arrays';
 import ArrayProduct from './frontend/problems/for/ArrayProduct';
 import EvenPositions from './frontend/problems/for/EvenPositions';
 import Decrement from './frontend/problems/for/Decrement';
+
+//stergere
 import ElementDelete from './frontend/problems/for/ElementDelete';
 import ElementDelete2 from './frontend/problems/for/ElementDelete2';
 import PrimNumbDelete from './frontend/problems/for/PrimNumbDelete.js';
@@ -69,10 +71,15 @@ import PermCircle from './frontend/problems/for/PermCircle.js';
 import PermCircle2 from './frontend/problems/for/PermCircle2.js';
 import PermSum from './frontend/problems/for/PermSum.js';
 
+//inserare
 import ElementInsert from './frontend/problems/for/ElementInsert';
 import ElementInsert2 from './frontend/problems/for/ElementInsert2';
 import DuplicateMin from './frontend/problems/for/DuplicateMin.js';
-
+import InsertEvenElement from './frontend/problems/for/InsertEvenElement.js';
+import InsertPerfectSquare from './frontend/problems/for/InsertPerfectSquare.js';
+import InsertAverage from './frontend/problems/for/InsertAverage.js';
+import InsertAverage2 from './frontend/problems/for/InsertAverage2.js';
+//sortare
 import BubbleSort from './frontend/problems/for/BubbleSort';
 import InsertionSort from './frontend/problems/for/InsertionSort';
 import SelectionSort from './frontend/problems/for/SelectionSort';
@@ -339,6 +346,10 @@ import SubNumber from './frontend/problems/bac/for/SubNumber.js';
 
 
 
+
+
+
+
 function App() {
 
   return (
@@ -434,6 +445,7 @@ function App() {
               <Route path="/problems/Produsul numerelor" element={<ArrayProduct />} />
               <Route path="/problems/Pozitii pare" element={<EvenPositions />} />
               <Route path="/problems/Afisam descrescator" element={<Decrement />} />
+              {/*stergere*/}
               <Route path="/problems/Stergerea unui element" element={<ElementDelete />} />
               <Route path="/problems/Stergerea unui element 2.0" element={<ElementDelete2 />} />
               <Route path="/problems/Eliminare numere prime" element={<PrimNumbDelete />} />
@@ -444,10 +456,16 @@ function App() {
               <Route path="/problems/Permutari circulare2.0" element={<PermCircle2 />} />
               <Route path="/problems/Suma permutari" element={<PermSum />} />
 
+              {/*inserare*/}
               <Route path="/problems/Inserarea unui element" element={<ElementInsert />} />
               <Route path="/problems/Inserarea unui element 2.0" element={<ElementInsert2 />} />
               <Route path="/problems/Duplicare minim" element={<DuplicateMin />} />
+              <Route path="/problems/Inserare element par" element={<InsertEvenElement />} />
+              <Route path="/problems/Inserare patrat perfect" element={<InsertPerfectSquare />} />
+              <Route path="/problems/Inserare medie aritmetica" element={<InsertAverage />} />
+              <Route path="/problems/Inserare medie aritmetica2.0" element={<InsertAverage2 />} />
 
+              {/*sortare*/}
               <Route path="/problems/Bubble Sort" element={<BubbleSort />} />
               <Route path="/problems/Insertion Sort" element={<InsertionSort />} />
               <Route path="/problems/Selection Sort" element={<SelectionSort />} />

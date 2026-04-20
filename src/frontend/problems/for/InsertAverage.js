@@ -2,34 +2,34 @@ import React, { useState } from 'react'
 import Test from '../../components/Test'
 import ProblemPage from '../../components/functions/ProblemPage'
 
-function DuplicateMin() {
+function InsertAverage() {
     const [testPassed, setTestPassed] = useState(false);
 
     const testCases = [
-        { params: ['7', '7 9 4 2 1 6 1'], expected: '7 9 4 2 1 1 6 1 1' },
-        { params: ['6', '9 0 1 2 5 13'], expected: '9 0 0 1 2 5 13' },
-        { params: ['6', '1 1 1 1 1 1'], expected: '1 1 1 1 1 1 1 1 1 1 1 1' },
+        { params: ['6', '2 34 5 7 8 12'], expected: '2 18 34 5 6 7 8 10 12' },
+        { params: ['4', '2 4 6 8'], expected: '2 3 4 5 6 7 8' },
+        { params: ['3', '1 2 5'], expected: '1 2 5' },
     ];
 
 
     const problemContent = (
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <h4>Se dă un vector cu n elemente numere naturale. Să se transforme vectorul, duplicând fiecare apariție a valorii minime.<br />
-                    Programul citește de la tastatură numărul n, iar apoi n numere naturale, separate prin spaţii, reprezentând elementele vectorul.<br />
-                    Programul afișează pe ecran, separate prin spații, elementele vectorului obținut în urma duplicărilor.
+                <h4>Se dau n numere întregi. Să se insereze între oricare două numere de aceeași paritate media lor aritmetică.<br />
+                    Programul citește de la tastatură numărul n, iar apoi n numere întregi, separate prin spații.<br />
+                    Programul va afișa pe ecran elementele noului șir de numere obținut după inserarea elementelor, separate prin câte un spațiu.
                     <br /><br />
                     Menţiuni:<br />
-                    0 &lt; n ≤ 1000<br />
-                    elementele vectorului vor fi mai mici decât 2<sup>30</sup>
+                    1 ≤ n ≤ 100<br />
+                    -1.000.000.000 ≤ elementele șirului ≤ 1.000.000.000
                     <br /><br />
                     Exemplu:
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
-                    <h4>Date de intrare: <br /> 7 <br />7 9 4 2 1 6 1
+                    <h4>Date de intrare: <br /> 6 <br />2 34 5 7 8 12
                         <br />
                     </h4>
-                    <h4> Date de iesire:<br /> 7 9 4 2 1 1 6 1 1
+                    <h4> Date de iesire:<br /> 2 18 34 5 6 7 8 10 12
                     </h4>
                 </div>
 
@@ -39,19 +39,19 @@ function DuplicateMin() {
                 <Test
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    problemName="Duplicare minim" />
+                    problemName="Inserare medie aritmetica" />
             </div>
         </>
     )
     return (
         <ProblemPage
-            problemName="Duplicare minim"
+            problemName="Inserare medie aritmetica"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Inserare element par"
+            nextRoute="/problems/Inserare medie aritmetica2.0"
             testPassed={testPassed}
         />
     )
 }
 
-export default DuplicateMin
+export default InsertAverage
