@@ -50,7 +50,7 @@ function QQuestions2() {
             problemName="Q interogari2"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/P Puteri"
             testPassed={testPassed}
         />
     )

@@ -10,6 +10,8 @@ function Main() {
   const { userProgressPoints, problemsSolved, admin, capitols, credits } = UserProgressData() || {};
   const [mode, setMode] = useState('baze');
 
+
+
   useEffect(() => {
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
     [...tooltipTriggerList].map(el => new bootstrap.Tooltip(el));
@@ -49,7 +51,6 @@ function Main() {
   }
 
   const combinedLessons = [...freeLessons, ...(capitols || [])];
-  const totalPoints = Math.floor((userProgressPoints / 184) * 100);
 
   const sections = [
     {
@@ -170,6 +171,7 @@ function Main() {
         { title: "Inversarea unei secvente", link: "/problems/Inversarea unei secvente", icon: "fa-solid fa-circle-check", index: 54 },
         { title: "Sir de frecventa", link: "/problems/Sir de frecventa", icon: "fa-solid fa-circle-check", index: 54 },
         { title: "Numarari de aparitii", link: "/problems/Numarari de aparitii", icon: "fa-solid fa-circle-check", index: 54 },
+        { title: "Max prim", link: "/problems/Max prim", icon: "fa-solid fa-circle-check", index: 54 },
 
       ]
     }, {
@@ -392,6 +394,19 @@ function Main() {
 
   ];
 
+  const bazeLessons = sections
+    .filter(section => admin || combinedLessons.includes(section.title))
+    .flatMap(section => section.lessons.map(lesson => lesson.title));
+  const solvedBaze = problemsSolved.filter(title =>
+    bazeLessons.includes(title)
+  );
+  const totalBaze = bazeLessons.length;
+  const solvedCount = solvedBaze.length;
+
+  const totalProblems = sections
+    .filter(section => admin || combinedLessons.includes(section.title))
+    .reduce((total, section) => total + section.lessons.length, 0);
+  const totalPoints = Math.floor((userProgressPoints / totalProblems) * 100);
   return (
     <>
       {loggedIn ? (
@@ -409,12 +424,13 @@ function Main() {
               )
             }
 
-
             <div style={{ width: '70%', alignSelf: 'center', marginRight: '20px' }} className="progress" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
               <div className={mode === 'baze' ? "progress-bar bg-danger" : "progress-bar bg-success"} style={{ width: totalPoints ? `${totalPoints}%` : '0%' }}>
                 {totalPoints}%
               </div>
             </div>
+
+            {mode === "baze" ? <strong>{solvedCount} / {totalBaze} rezolvate</strong> : ""}
             <div className="btn-group" role="group" aria-label="Basic mixed styles example">
               <span
                 data-bs-toggle="tooltip"

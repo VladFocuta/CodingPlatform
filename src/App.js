@@ -91,12 +91,19 @@ import SortMaxAndMin from './frontend/problems/for/SortMaxAndMin.js';
 
 import LinearSearch from './frontend/problems/for/LinearSearch';
 import BinarySearch from './frontend/problems/for/BinarySearch';
+
+//stiva
 import Stiva from './frontend/problems/for/Stiva.js';
 import StackStimulating from './frontend/problems/for/StackStimulating.js';
 import ElementsSumStack from './frontend/problems/for/ElementsSumStack.js';
 import SequenceReverse from './frontend/problems/for/SequenceReverse.js';
+
+//sir de frecventa
 import FrequenceArray from './frontend/problems/for/FrequenceArray.js';
 import FreqCounter from './frontend/problems/for/FreqCounter.js';
+import MaxPrime from './frontend/problems/for/MaxPrime.js';
+
+
 
 import DescendingSort from './frontend/problems/for-recap/DescendingSort';
 import SortAndDelete from './frontend/problems/for-recap/SortAndDelete';
@@ -283,7 +290,8 @@ import BooksPackages from './frontend/problems/bac/for/BooksPackages.js';
 import QQuestions from './frontend/problems/bac/for/QQuestions.js';
 import QQuestions2 from './frontend/problems/bac/for/QQuestions2.js';
 import Clasament from './frontend/problems/bac/for/Clasament.js';
-
+import PPow from './frontend/problems/bac/for/PPow.js';
+import RProgress from './frontend/problems/bac/for/RProgress.js';
 
 //matrice bac
 import DiffValuesMatrix from './frontend/problems/bac/matrix/DiffValuesMatrix.js';
@@ -331,6 +339,8 @@ import FriendlyVow from './frontend/problems/bac/char/FriendlyVow.js';
 import SurnameSearch from './frontend/problems/bac/char/SurnameSearch.js';
 import FirstKWords from './frontend/problems/bac/char/FirstKWords.js';
 import SubNumber from './frontend/problems/bac/for/SubNumber.js';
+
+
 
 
 
@@ -474,15 +484,22 @@ function App() {
               <Route path="/problems/Prime cu ultimul" element={<SortPrimePair />} />
               <Route path="/problems/Sortare intre maxim si minim" element={<SortMaxAndMin />} />
 
-
+              {/*cautare*/}
               <Route path="/problems/Linear Search" element={<LinearSearch />} />
               <Route path="/problems/Binary Search" element={<BinarySearch />} />
+
+              {/*stiva*/}
               <Route path="/problems/Stiva" element={<Stiva />} />
               <Route path="/problems/Simulare stiva" element={<StackStimulating />} />
               <Route path="/problems/Suma elementelor din stiva" element={<ElementsSumStack />} />
               <Route path="/problems/Inversarea unei secvente" element={<SequenceReverse />} />
+
+              {/*sir de frecventa*/}
               <Route path="/problems/Sir de frecventa" element={<FrequenceArray />} />
               <Route path="/problems/Numarari de aparitii" element={<FreqCounter />} />
+              <Route path="/problems/Max prim" element={<MaxPrime />} />
+
+
 
               <Route path="/problems/Sortare descrescatoare" element={<DescendingSort />} />
               <Route path="/problems/Sortare si eliminare duplicate" element={<SortAndDelete />} />
@@ -673,8 +690,8 @@ function App() {
               <Route path="/problems/bac/Clasament" element={<Clasament />} />
               <Route path="/problems/bac/Q interogari" element={<QQuestions />} />
               <Route path="/problems/bac/Q interogari2" element={<QQuestions2 />} />
-
-
+              <Route path="/problems/bac/P Puteri" element={<PPow />} />
+              <Route path="/problems/bac/Progresie R" element={<RProgress />} />
 
               {/*PROBLEME MATRICI*/}
               <Route path="/problems/bac/Matrice cu valori diferite" element={<DiffValuesMatrix />} />

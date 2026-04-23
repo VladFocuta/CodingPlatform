@@ -2,34 +2,33 @@ import React, { useState } from 'react'
 import Test from '../../components/Test'
 import ProblemPage from '../../components/functions/ProblemPage'
 
-function FreqCounter() {
+function MaxPrime() {
     const [testPassed, setTestPassed] = useState(false);
 
     const testCases = [
-        { params: ['7', '1 5 3 5 1 2 8'], expected: '1 5' },
-        { params: ['5', '1 2 3 4 5'], expected: 'Nu exista' },
-        { params: ['6', '10 0 3 100 99 10'], expected: '10' },
-        { params: ['4', '1 1 1 1'], expected: '1' },
-        { params: ['6', '1 2 1 2 1 2'], expected: '1 2' },
+        { params: ['7', '1 5 3 5 1 2 8'], expected: '5 2' },
+        { params: ['5', '1 0 2 2 2'], expected: '2 3' },
+        { params: ['3', '1 2 3'], expected: '3 1' },
+        { params: ['4', '7 7 7 7'], expected: '7 4' },
+       
     ];
 
     const problemContent = (
         <>
             <div className='userInfo' style={{ marginTop: '40px', width: '100%', flexDirection: 'column' }}>
-                <h4>Se dă un număr natural n și un vector cu n numere naturale, fiecare cu valoarea cuprinsă între 0 și 100.<br />
-                    Să se construiască șirul de frecvență al numerelor citite.<br />
-                    Să se afișeze toate valorile care apar de cel puțin două ori, în ordine crescătoare.<br />
-                    Dacă nu există astfel de valori, să se afișeze mesajul: <strong style={{ color: 'red' }}>Nu exista</strong>.<br />
-                    De la tastatură se citește n și apoi cele n elemente.
+                <h4>Să se scrie un program care citeşte un număr natural n și n numere naturale, fiecare cu valoarea cuprinsă între [0,9].<br />
+                    Determină cel mai mare număr prim citit şi numărul său de apariții.
                     <br /><br />
-
+                    Menţiuni:<br />
+                    1 &lt;= n &lt;= 1.000.000<br />
+                    vectorul va conţine cel puţin un număr prim<br /><br />
                     Exemplu:
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
                     <h4>Date de intrare: <br /> 7  <br />1 5 3 5 1 2 8
                         <br />
                     </h4>
-                    <h4> Date de iesire:  <br />1 5
+                    <h4> Date de iesire:  <br />5 2
                     </h4>
                 </div>
 
@@ -39,19 +38,19 @@ function FreqCounter() {
                 <Test
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    problemName="Numarari de aparitii" />
+                    problemName="Max prim" />
             </div>
         </>
     )
     return (
         <ProblemPage
-            problemName="Numarari de aparitii"
+            problemName="Max prim"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/problems/Max prim"
+            nextRoute="/Main"
             testPassed={testPassed}
         />
     )
 }
 
-export default FreqCounter
+export default MaxPrime
