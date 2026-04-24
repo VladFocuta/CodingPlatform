@@ -49,6 +49,8 @@ function BacScreen() {
                 { title: "Q interogari2", link: "/problems/bac/Q interogari2", icon: "fa-solid fa-circle-check" },
                 { title: "P Puteri", link: "/problems/bac/P Puteri", icon: "fa-solid fa-circle-check" },
                 { title: "Progresie R", link: "/problems/bac/Progresie R", icon: "fa-solid fa-circle-check" },
+                { title: "Scriere zecimala", link: "/problems/bac/Scriere zecimala", icon: "fa-solid fa-circle-check" },
+                { title: "Secvente", link: "/problems/bac/Secvente", icon: "fa-solid fa-circle-check" },
 
             ]
         }, {

@@ -49,7 +49,7 @@ function RProgress() {
             problemName="Progresie R"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Scriere zecimala"
             testPassed={testPassed}
         />
     )

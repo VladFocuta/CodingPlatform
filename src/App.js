@@ -292,6 +292,8 @@ import QQuestions2 from './frontend/problems/bac/for/QQuestions2.js';
 import Clasament from './frontend/problems/bac/for/Clasament.js';
 import PPow from './frontend/problems/bac/for/PPow.js';
 import RProgress from './frontend/problems/bac/for/RProgress.js';
+import DecimalNotation from './frontend/problems/bac/for/DecimalNotation.js';
+import Sequence from './frontend/problems/bac/for/Sequence.js';
 
 //matrice bac
 import DiffValuesMatrix from './frontend/problems/bac/matrix/DiffValuesMatrix.js';
@@ -339,6 +341,8 @@ import FriendlyVow from './frontend/problems/bac/char/FriendlyVow.js';
 import SurnameSearch from './frontend/problems/bac/char/SurnameSearch.js';
 import FirstKWords from './frontend/problems/bac/char/FirstKWords.js';
 import SubNumber from './frontend/problems/bac/for/SubNumber.js';
+
+
 
 
 
@@ -692,6 +696,8 @@ function App() {
               <Route path="/problems/bac/Q interogari2" element={<QQuestions2 />} />
               <Route path="/problems/bac/P Puteri" element={<PPow />} />
               <Route path="/problems/bac/Progresie R" element={<RProgress />} />
+              <Route path="/problems/bac/Scriere zecimala" element={<DecimalNotation />} />
+              <Route path="/problems/bac/Secvente" element={<Sequence />} />
 
               {/*PROBLEME MATRICI*/}
               <Route path="/problems/bac/Matrice cu valori diferite" element={<DiffValuesMatrix />} />
