@@ -51,6 +51,8 @@ function BacScreen() {
                 { title: "Progresie R", link: "/problems/bac/Progresie R", icon: "fa-solid fa-circle-check" },
                 { title: "Scriere zecimala", link: "/problems/bac/Scriere zecimala", icon: "fa-solid fa-circle-check" },
                 { title: "Secvente", link: "/problems/bac/Secvente", icon: "fa-solid fa-circle-check" },
+                { title: "Capacitate maxima", link: "/problems/bac/Capacitate maxima", icon: "fa-solid fa-circle-check" },
+                { title: "Subsiruri", link: "/problems/bac/Subsiruri", icon: "fa-solid fa-circle-check" },
 
             ]
         }, {

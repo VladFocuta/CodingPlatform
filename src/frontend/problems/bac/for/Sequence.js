@@ -53,7 +53,7 @@ function Sequence() {
             problemName="Secvente"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Capacitate maxima"
             testPassed={testPassed}
         />
     )
