@@ -7,6 +7,7 @@ function PrimeNumber() {
 
     const testCases = [
         { params: [2], expected: "Numarul este prim"},
+        { params: [1], expected: "Nu este prim"},
         { params: [4], expected: "Nu este prim" },
         { params: [293], expected: "Numarul este prim" },
         { params: [31], expected: "Numarul este prim" },

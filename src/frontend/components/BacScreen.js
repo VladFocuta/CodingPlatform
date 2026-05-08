@@ -69,6 +69,13 @@ function BacScreen() {
                 { title: "Eliminarea diagonalei principale", link: "/problems/bac/Eliminarea diagonalei principale", icon: "fa-solid fa-circle-check" },
                 { title: "Multiplii pe diagonala principala", link: "/problems/bac/Multiplii pe diagonala principala", icon: "fa-solid fa-circle-check" },
                 { title: "Elemente situate pe linia k", link: "/problems/bac/Elemente situate pe linia k", icon: "fa-solid fa-circle-check" },
+                { title: "Produs pe diagonala secundara", link: "/problems/bac/Produs pe diagonala secundara", icon: "fa-solid fa-circle-check" },
+                { title: "Produs maxim", link: "/problems/bac/Produs maxim", icon: "fa-solid fa-circle-check" },
+                { title: "Conturul matricei", link: "/problems/bac/Conturul matricei", icon: "fa-solid fa-circle-check" },
+                { title: "Conturul matricei2.0", link: "/problems/bac/Conturul matricei2.0", icon: "fa-solid fa-circle-check" },
+                { title: "Interschimbare minima", link: "/problems/bac/Interschimbare minima", icon: "fa-solid fa-circle-check" },
+
+
 
             ]
         }, {

@@ -309,6 +309,11 @@ import BeachSand from './frontend/problems/bac/matrix/BeachSand.js';
 import MainDiagDelete from './frontend/problems/bac/matrix/MainDiagDelete.js';
 import MainDiagMultiply from './frontend/problems/bac/matrix/MainDiagMultiply.js';
 import KLineElements from './frontend/problems/bac/matrix/KLineElements.js';
+import SecDiagProduct from './frontend/problems/bac/matrix/SecDiagProduct.js';
+import MaxProduct from './frontend/problems/bac/matrix/MaxProduct.js';
+import MatrixOutline from './frontend/problems/bac/matrix/MatrixOutline.js';
+import MatrixOutline2 from './frontend/problems/bac/matrix/MatrixOutline2.js';
+import MinInterchange from './frontend/problems/bac/matrix/MinInterchange.js';
 
 //subprograme bac
 import EvenNumbersSum from './frontend/problems/bac/subprograme/EvenNumbersSum.js';
@@ -343,6 +348,11 @@ import FriendlyVow from './frontend/problems/bac/char/FriendlyVow.js';
 import SurnameSearch from './frontend/problems/bac/char/SurnameSearch.js';
 import FirstKWords from './frontend/problems/bac/char/FirstKWords.js';
 import SubNumber from './frontend/problems/bac/for/SubNumber.js';
+
+
+
+
+
 
 
 
@@ -716,6 +726,12 @@ function App() {
               <Route path="/problems/bac/Eliminarea diagonalei principale" element={<MainDiagDelete />} />
               <Route path="/problems/bac/Multiplii pe diagonala principala" element={<MainDiagMultiply />} />
               <Route path="/problems/bac/Elemente situate pe linia k" element={<KLineElements />} />
+              <Route path="/problems/bac/Produs pe diagonala secundara" element={<SecDiagProduct />} />
+              <Route path="/problems/bac/Produs maxim" element={<MaxProduct />} />
+              <Route path="/problems/bac/Conturul matricei" element={<MatrixOutline />} />
+              <Route path="/problems/bac/Conturul matricei2.0" element={<MatrixOutline2 />} />
+              <Route path="/problems/bac/Interschimbare minima" element={<MinInterchange />} />
+
 
 
               {/*PROBLEME SUBPROGRAME*/}

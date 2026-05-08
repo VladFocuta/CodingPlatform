@@ -151,7 +151,7 @@ function Main() {
         { title: "Inserare element par", link: "/problems/Inserare element par", icon: "fa-solid fa-circle-check", index: 49 },
         { title: "Inserare patrat perfect", link: "/problems/Inserare patrat perfect", icon: "fa-solid fa-circle-check", index: 49 },
         { title: "Inserare medie aritmetica", link: "/problems/Inserare medie aritmetica", icon: "fa-solid fa-circle-check", index: 49 },
-        { title: "Inserare medie aritmetica2.0", link: "/problems/Inserare medie aritmetica", icon: "fa-solid fa-circle-check", index: 49 },
+        { title: "Inserare medie aritmetica2.0", link: "/problems/Inserare medie aritmetica2.0", icon: "fa-solid fa-circle-check", index: 49 },
 
         { title: "Bubble Sort", link: "/problems/Bubble Sort", icon: "fa-solid fa-circle-check", index: 50 },
         { title: "Insertion Sort", link: "/problems/Insertion Sort", icon: "fa-solid fa-circle-check", index: 51 },

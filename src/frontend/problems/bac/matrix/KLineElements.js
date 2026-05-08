@@ -51,7 +51,7 @@ function KLineElements() {
             problemName="Elemente situate pe linia k"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Produs pe diagonala secundara"
             testPassed={testPassed}
         />
     )
