@@ -51,7 +51,7 @@ function MinInterchange() {
             problemName="Interschimbare minima"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Suma coloanelor k"
             testPassed={testPassed}
         />
     )

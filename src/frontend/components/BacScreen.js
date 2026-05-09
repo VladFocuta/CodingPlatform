@@ -74,7 +74,7 @@ function BacScreen() {
                 { title: "Conturul matricei", link: "/problems/bac/Conturul matricei", icon: "fa-solid fa-circle-check" },
                 { title: "Conturul matricei2.0", link: "/problems/bac/Conturul matricei2.0", icon: "fa-solid fa-circle-check" },
                 { title: "Interschimbare minima", link: "/problems/bac/Interschimbare minima", icon: "fa-solid fa-circle-check" },
-
+                { title: "Suma coloanelor k", link: "/problems/bac/Suma coloanelor k", icon: "fa-solid fa-circle-check" },
 
 
             ]

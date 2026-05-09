@@ -314,6 +314,7 @@ import MaxProduct from './frontend/problems/bac/matrix/MaxProduct.js';
 import MatrixOutline from './frontend/problems/bac/matrix/MatrixOutline.js';
 import MatrixOutline2 from './frontend/problems/bac/matrix/MatrixOutline2.js';
 import MinInterchange from './frontend/problems/bac/matrix/MinInterchange.js';
+import KColumnSum from './frontend/problems/bac/matrix/KColumnSum.js';
 
 //subprograme bac
 import EvenNumbersSum from './frontend/problems/bac/subprograme/EvenNumbersSum.js';
@@ -348,6 +349,7 @@ import FriendlyVow from './frontend/problems/bac/char/FriendlyVow.js';
 import SurnameSearch from './frontend/problems/bac/char/SurnameSearch.js';
 import FirstKWords from './frontend/problems/bac/char/FirstKWords.js';
 import SubNumber from './frontend/problems/bac/for/SubNumber.js';
+
 
 
 
@@ -731,6 +733,8 @@ function App() {
               <Route path="/problems/bac/Conturul matricei" element={<MatrixOutline />} />
               <Route path="/problems/bac/Conturul matricei2.0" element={<MatrixOutline2 />} />
               <Route path="/problems/bac/Interschimbare minima" element={<MinInterchange />} />
+              <Route path="/problems/bac/Suma coloanelor k" element={<KColumnSum />} />
+
 
 
 

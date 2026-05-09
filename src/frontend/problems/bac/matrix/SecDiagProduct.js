@@ -29,9 +29,9 @@ function SecDiagProduct() {
 
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', borderBottom: '1px solid white' }}>
-                    <h4>Date de intrare:<br />5 4 <br />2 4 3 5 6<br />8 0 9 8 7<br />2 6 9 0 5<br />6 1 3 6 9<br />7 3 9 4 2
+                    <h4>Date de intrare:<br />5 <br />6 3 85 13 15<br />33 1 9 7 11<br />19 2 4 5 0<br />2 5 25 3 1<br />1 99 56 34 76
                     </h4>
-                    <h4> Date de iesire: <br />2 4 3 6 6<br />8 0 9 1 7<br />2 6 9 3 5<br />5 8 0 6 9 <br /> 7 3 9 4 2</h4>
+                    <h4> Date de iesire: <br />4</h4>
 
                 </div>
 
