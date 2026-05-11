@@ -296,6 +296,7 @@ import DecimalNotation from './frontend/problems/bac/for/DecimalNotation.js';
 import Sequence from './frontend/problems/bac/for/Sequence.js';
 import MaxCapacity from './frontend/problems/bac/for/MaxCapacity.js';
 import KSubString from './frontend/problems/bac/for/KSubString.js';
+import IntervalXY from './frontend/problems/bac/for/IntervalXY.js';
 
 //matrice bac
 import DiffValuesMatrix from './frontend/problems/bac/matrix/DiffValuesMatrix.js';
@@ -349,6 +350,7 @@ import FriendlyVow from './frontend/problems/bac/char/FriendlyVow.js';
 import SurnameSearch from './frontend/problems/bac/char/SurnameSearch.js';
 import FirstKWords from './frontend/problems/bac/char/FirstKWords.js';
 import SubNumber from './frontend/problems/bac/for/SubNumber.js';
+
 
 
 
@@ -715,6 +717,9 @@ function App() {
               <Route path="/problems/bac/Secvente" element={<Sequence />} />
               <Route path="/problems/bac/Capacitate maxima" element={<MaxCapacity />} />
               <Route path="/problems/bac/Subsiruri" element={<KSubString />} />
+              <Route path="/problems/bac/Interval X Y" element={<IntervalXY />} />
+
+
 
               {/*PROBLEME MATRICI*/}
               <Route path="/problems/bac/Matrice cu valori diferite" element={<DiffValuesMatrix />} />

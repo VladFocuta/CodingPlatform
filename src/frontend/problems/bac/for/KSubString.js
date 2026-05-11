@@ -59,7 +59,7 @@ function KSubString() {
             problemName="Subsiruri"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Interval X Y"
             testPassed={testPassed}
         />
     )

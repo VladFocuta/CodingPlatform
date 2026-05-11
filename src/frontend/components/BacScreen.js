@@ -53,6 +53,8 @@ function BacScreen() {
                 { title: "Secvente", link: "/problems/bac/Secvente", icon: "fa-solid fa-circle-check" },
                 { title: "Capacitate maxima", link: "/problems/bac/Capacitate maxima", icon: "fa-solid fa-circle-check" },
                 { title: "Subsiruri", link: "/problems/bac/Subsiruri", icon: "fa-solid fa-circle-check" },
+                { title: "Interval X Y", link: "/problems/bac/Interval X Y", icon: "fa-solid fa-circle-check" },
+
 
             ]
         }, {
