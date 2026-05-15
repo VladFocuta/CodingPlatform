@@ -50,7 +50,7 @@ function KColumnSum() {
             problemName="Suma coloanelor k"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Linii si coloane de suma egala"
             testPassed={testPassed}
         />
     )

@@ -77,7 +77,9 @@ function BacScreen() {
                 { title: "Conturul matricei2.0", link: "/problems/bac/Conturul matricei2.0", icon: "fa-solid fa-circle-check" },
                 { title: "Interschimbare minima", link: "/problems/bac/Interschimbare minima", icon: "fa-solid fa-circle-check" },
                 { title: "Suma coloanelor k", link: "/problems/bac/Suma coloanelor k", icon: "fa-solid fa-circle-check" },
-
+                { title: "Linii si coloane de suma egala", link: "/problems/bac/Linii si coloane de suma egala", icon: "fa-solid fa-circle-check" },
+                { title: "Generare sir Fibonacci2.0", link: "/problems/bac/Generare sir Fibonacci2.0", icon: "fa-solid fa-circle-check" },
+                { title: "Medie aritmetica sub diagonala principala", link: "/problems/bac/Medie aritmetica sub diagonala principala", icon: "fa-solid fa-circle-check" },
 
             ]
         }, {
