@@ -80,7 +80,13 @@ function BacScreen() {
                 { title: "Linii si coloane de suma egala", link: "/problems/bac/Linii si coloane de suma egala", icon: "fa-solid fa-circle-check" },
                 { title: "Generare sir Fibonacci2.0", link: "/problems/bac/Generare sir Fibonacci2.0", icon: "fa-solid fa-circle-check" },
                 { title: "Medie aritmetica sub diagonala principala", link: "/problems/bac/Medie aritmetica sub diagonala principala", icon: "fa-solid fa-circle-check" },
-
+                { title: "Generare matrice 1", link: "/problems/bac/Generare matrice 1", icon: "fa-solid fa-circle-check" },
+                { title: "Generare matrice 2", link: "/problems/bac/Generare matrice 2", icon: "fa-solid fa-circle-check" },
+                { title: "Generare matrice 3", link: "/problems/bac/Generare matrice 3", icon: "fa-solid fa-circle-check" },
+                { title: "Generare matrice 4", link: "/problems/bac/Generare matrice 4", icon: "fa-solid fa-circle-check" },
+                { title: "Generare matrice 5", link: "/problems/bac/Generare matrice 5", icon: "fa-solid fa-circle-check" },
+                { title: "Generare matrice 6", link: "/problems/bac/Generare matrice 6", icon: "fa-solid fa-circle-check" },
+                { title: "Generare matrice 7", link: "/problems/bac/Generare matrice 7", icon: "fa-solid fa-circle-check" },
             ]
         }, {
             title: "Subprograme",

@@ -319,6 +319,13 @@ import KColumnSum from './frontend/problems/bac/matrix/KColumnSum.js';
 import RowsAndColsEqualSum from './frontend/problems/bac/matrix/RowsAndColsEqualSum.js';
 import GenerateFibonacciArray2 from './frontend/problems/bac/matrix/GenerateFibonacciArray2.js';
 import MainDiagAverage from './frontend/problems/bac/matrix/MainDiagAverage.js';
+import GetMat1 from './frontend/problems/bac/matrix/GetMat1.js';
+import GenMat2 from './frontend/problems/bac/matrix/GenMat2.js';
+import GenMat3 from './frontend/problems/bac/matrix/GenMat3.js';
+import GenMat4 from './frontend/problems/bac/matrix/GenMat4.js';
+import GenMat5 from './frontend/problems/bac/matrix/GenMat5.js';
+import GenMat6 from './frontend/problems/bac/matrix/GenMat6.js';
+import GenMat7 from './frontend/problems/bac/matrix/GenMat7.js';
 
 //subprograme bac
 import EvenNumbersSum from './frontend/problems/bac/subprograme/EvenNumbersSum.js';
@@ -353,6 +360,12 @@ import FriendlyVow from './frontend/problems/bac/char/FriendlyVow.js';
 import SurnameSearch from './frontend/problems/bac/char/SurnameSearch.js';
 import FirstKWords from './frontend/problems/bac/char/FirstKWords.js';
 import SubNumber from './frontend/problems/bac/for/SubNumber.js';
+
+
+
+
+
+
 
 
 
@@ -722,8 +735,13 @@ function App() {
               <Route path="/problems/bac/Linii si coloane de suma egala" element={<RowsAndColsEqualSum />} />
               <Route path="/problems/bac/Generare sir Fibonacci2.0" element={<GenerateFibonacciArray2 />} />
               <Route path="/problems/bac/Medie aritmetica sub diagonala principala" element={<MainDiagAverage />} />
-
-
+              <Route path="/problems/bac/Generare matrice 1" element={<GetMat1 />} />
+              <Route path="/problems/bac/Generare matrice 2" element={<GenMat2 />} />
+              <Route path="/problems/bac/Generare matrice 3" element={<GenMat3 />} />
+              <Route path="/problems/bac/Generare matrice 4" element={<GenMat4 />} />
+              <Route path="/problems/bac/Generare matrice 5" element={<GenMat5 />} />
+              <Route path="/problems/bac/Generare matrice 6" element={<GenMat6 />} />
+              <Route path="/problems/bac/Generare matrice 7" element={<GenMat7 />} />
 
               {/*PROBLEME SUBPROGRAME*/}
               <Route path="/problems/bac/Suma numerelor pare" element={<EvenNumbersSum />} />

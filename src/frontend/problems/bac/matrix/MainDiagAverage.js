@@ -54,7 +54,7 @@ function MainDiagAverage() {
             problemName="Medie aritmetica sub diagonala principala"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/bac/Generare matrice 1"
             testPassed={testPassed}
         />
     )
