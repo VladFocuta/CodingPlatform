@@ -20,11 +20,11 @@ function Reviews() {
 
                     <strong className="card-title">Clasa a 9-a</strong>
                     <strong>ℹ️ Profil: Mate-info</strong>
-                    <strong>ℹ️ Nivel initial: 5</strong>
+                    <strong>ℹ️ Nivel inițial: 5</strong>
                     <strong>ℹ️ Nivel actual: 8</strong>
-                    <strong>ℹ️ Durata meditatiilor: 2 luni</strong>
+                    <strong>ℹ️ Durata meditațiilor: 2 luni</strong>
                     <br />
-                    <strong >Parerea personală:<br /> In aproximativ 2 luni am reusit sa recuperez materia din urma cu ajutorul meditatiilor.
+                    <strong style={{ borderBottom: '1px solid #00bcd4' }}>💭 Părerea personală:</strong><strong > In aproximativ 2 luni am reusit sa recuperez materia din urma cu ajutorul meditatiilor.
                         Pot spune ca individual nu am lucrat foarte mult si probabil ca daca as fi facut-o, ar fi durat si mai putin.
                         Apreciez calmitatea si claritatea cu care imi sunt explicate notiunile pe care nu le stiu.</strong><br />
                     <p>09/11/2026 12:16</p>
@@ -40,11 +40,11 @@ function Reviews() {
 
                     <strong className="card-title">Clasa a 10-a</strong>
                     <strong>ℹ️ Profil: Științele naturii</strong>
-                    <strong>ℹ️ Nivel initial: 5</strong>
+                    <strong>ℹ️ Nivel inițial: 5</strong>
                     <strong>ℹ️ Nivel actual: 10</strong>
-                    <strong>ℹ️ Durata meditatiilor: 1 an si o luna</strong>
+                    <strong>ℹ️ Durata meditațiilor: 1 an si o luna</strong>
                     <br />
-                    <strong >Parerea personală:<br /> Pe platforma aceasta am reusit sa invat sa scriu cod deoarece la clasa doamna profesoara nu are timp sa se ocupe de toti elevii,prefera sa lucreze cu cei care prind informatia mult mai repede. Din fericire,aici am gasit multa rabdare si explicatii mult mai clare. Recomand cu incredere!</strong>
+                    <strong style={{ borderBottom: '1px solid #00bcd4' }}>💭 Părerea personală:</strong> <strong >Pe platforma aceasta am reusit sa invat sa scriu cod deoarece la clasa doamna profesoara nu are timp sa se ocupe de toti elevii,prefera sa lucreze cu cei care prind informatia mult mai repede. Din fericire,aici am gasit multa rabdare si explicatii mult mai clare. Recomand cu incredere!</strong>
                     <br /><p>05/11/2026 18:22</p>
                 </div>
             )
@@ -58,11 +58,11 @@ function Reviews() {
 
                     <strong className="card-title">Clasa a 9-a</strong>
                     <strong>ℹ️ Profil: Mate-info</strong>
-                    <strong>ℹ️ Nivel initial: 6</strong>
+                    <strong>ℹ️ Nivel inițial: 6</strong>
                     <strong>ℹ️ Nivel actual: 9</strong>
-                    <strong>ℹ️ Durata meditatiilor: 4 luni</strong>
+                    <strong>ℹ️ Durata meditațiilor: 4 luni</strong>
                     <br />
-                    <strong >Parerea personală:<br /> Chiar daca la inceput informatica mi s-a parut o materie foarte grea,am reusit sa inteleg foarte bine logica din spatele codului si asta mi-a imbunatatit notele. Problemele de pe platforma sunt foarte asemanatoare cu cele de la clasa si faptul ca pot primi rezultatul pe loc la fiecare problema, este un mare avantaj. Va multumesc pentru sprijinul acordat!</strong>
+                    <strong >💭 Parerea personală:<br /> Chiar daca la inceput informatica mi s-a parut o materie foarte grea,am reusit sa inteleg foarte bine logica din spatele codului si asta mi-a imbunatatit notele. Problemele de pe platforma sunt foarte asemanatoare cu cele de la clasa si faptul ca pot primi rezultatul pe loc la fiecare problema, este un mare avantaj. Va multumesc pentru sprijinul acordat!</strong>
                     <br /><p>02/11/2026 10:43</p>
                 </div>
             )
@@ -76,11 +76,11 @@ function Reviews() {
 
                     <strong className="card-title">Clasa a 12-a</strong>
                     <strong>ℹ️ Profil: Mate-info</strong>
-                    <strong>ℹ️ Nivel initial: 7</strong>
+                    <strong>ℹ️ Nivel inițial: 7</strong>
                     <strong>ℹ️ Nivel actual: 10</strong>
-                    <strong>ℹ️ Durata meditatiilor: 10 luni</strong>
+                    <strong>ℹ️ Durata meditațiilor: 10 luni</strong>
                     <br />
-                    <strong >Parerea personală:<br /> Am folosit platforma pentru a ma pregati pentru bac. M-a ajutat foarte mult ca exista optiunea
+                    <strong >💭 Parerea personală:<br /> Am folosit platforma pentru a ma pregati pentru bac. M-a ajutat foarte mult ca exista optiunea
                         de a lucra problemele pe care le facem la clasa dar si probleme care se regasesc la bac. La orele de meditatii am consolidat informatia de care nu eram sigura, si in afara meditatiilor am reusit sa rezolv singura problemele de la bac.
                         Va multumesc mult!</strong>
                     <br /><p>31/10/2026 15:03</p>

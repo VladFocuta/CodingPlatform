@@ -1,0 +1,19 @@
+.last-problem-solved {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 15px;
+    
+    gap: 5px;
+}
+
+.last-problem-solved span {
+    font-size: 15px;
+    opacity: 0.8;
+}
+
+.last-problem-solved strong {
+    font-size: 15px;
+    color: #10B981;
+}

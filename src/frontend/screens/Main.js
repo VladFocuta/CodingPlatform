@@ -11,6 +11,10 @@ function Main() {
   const [mode, setMode] = useState('baze');
   const [showReviewReminder, setShowReviewReminder] = useState(false);
 
+  const lastSolvedProblem = problemsSolved?.length > 0
+    ? problemsSolved[problemsSolved.length - 1]
+    : null;
+
   useEffect(() => {
     if (!loggedIn || reviewed !== false) {
       setShowReviewReminder(false);
@@ -464,35 +468,44 @@ function Main() {
             </div>
 
             {mode === "baze" ? <strong>{solvedCount} / {totalBaze} rezolvate</strong> : ""}
-            <div className="btn-group" role="group" aria-label="Basic mixed styles example">
-              <span
-                data-bs-toggle="tooltip"
-
-              >
-                <button
-                  type="button"
-                  className={mode === 'baze' ? "btn btn-danger" : "btn btn-light"}
-                  onClick={bazeIsPressed}
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <div className="btn-group" role="group" aria-label="Basic mixed styles example">
+                <span
+                  data-bs-toggle="tooltip"
 
                 >
-                  Baze
-                </button>
-              </span>
+                  <button
+                    type="button"
+                    className={mode === 'baze' ? "btn btn-danger" : "btn btn-light"}
+                    onClick={bazeIsPressed}
 
-              <span
-                data-bs-toggle="tooltip"
+                  >
+                    Baze
+                  </button>
+                </span>
 
-              >
-                <button
-                  type="button"
-                  className={mode === 'bac' ? "btn btn-success" : "btn btn-light"}
-                  onClick={bacIsPressed}
+                <span
+                  data-bs-toggle="tooltip"
 
                 >
-                  Bac
-                </button>
-              </span>
+                  <button
+                    type="button"
+                    className={mode === 'bac' ? "btn btn-success" : "btn btn-light"}
+                    onClick={bacIsPressed}
+
+                  >
+                    Bac
+                  </button>
+                </span>
+              </div>
+              {lastSolvedProblem && (
+                <div className="last-problem-solved">
+                  <span>🏆 Ultima problemă rezolvată:</span>
+                  <strong>{lastSolvedProblem}</strong>
+                </div>
+              )}
             </div>
+
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column' }}>
