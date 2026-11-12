@@ -52,10 +52,22 @@
     }
 }
 
+@keyframes border-to-yellow {
+    from {
+        border-bottom-color: white;
+    }
+    to {
+        border-bottom-color: yellow;
+    }
+}
+
 .animate-border-green {
     animation: border-to-green 0.5s forwards;
 }
 
 .animate-border-red {
     animation: border-to-red 0.5s forwards;
+}
+.animate-border-yellow {
+    animation: border-to-yellow 0.5s forwards;
 }

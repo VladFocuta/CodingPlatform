@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom'
 import Home from './frontend/screens/Home';
-import Reviews from './frontend/screens/Reviews.js';
+import Reviews from './frontend/screens/Reviews.js';//ecranul cu recenzii
 import NavBar from './frontend/components/NavBar';
 import Main from './frontend/screens/Main';
 import Login from './frontend/screens/Login';
@@ -360,6 +360,8 @@ import FriendlyVow from './frontend/problems/bac/char/FriendlyVow.js';
 import SurnameSearch from './frontend/problems/bac/char/SurnameSearch.js';
 import FirstKWords from './frontend/problems/bac/char/FirstKWords.js';
 import SubNumber from './frontend/problems/bac/for/SubNumber.js';
+import ReviewSucces from './frontend/components/advertisement/ReviewSucces.js';
+
 
 
 
@@ -393,6 +395,7 @@ function App() {
               <Route path="/policy/policy and confidentiality" element={<PolicyAndConf />} />
               <Route path="/policy/terms and conditions" element={<TermsAndConditions />} />
               <Route path="/contact-succes" element={<ContactSucces />} />
+              <Route path="/review-succes" element={<ReviewSucces />} />
               <Route path="/informatica" element={<SimpleAddPage />} />
               <Route path="/reviews" element={<Reviews />} />
 

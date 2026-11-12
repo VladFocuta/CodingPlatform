@@ -1,7 +1,7 @@
-import React, { createContext, useContext, useLayoutEffect, useState, useEffect, useMemo } from 'react'
+import React, { createContext, useContext, useLayoutEffect, useState, useEffect, useMemo, useCallback } from 'react'
 import { db } from '../../../backend/firebaseConfig/firebaseConfig'
 import { UserAuth } from '../../../backend/firebaseConfig/authProvider'
-import { getDoc, doc, onSnapshot } from 'firebase/firestore'
+import { getDoc, doc, onSnapshot, updateDoc } from 'firebase/firestore'
 
 
 const AuthContext = createContext();
@@ -10,10 +10,12 @@ export const UserProgress = ({ children }) => {
     const { user } = UserAuth();
     const userId = user?.uid;
     const [userProgressPoints, setUserProgressPoints] = useState(null);
+    const [reviewed, setReviewed] = useState(null);
     const [problemsSolved, setProblemsSolved] = useState([]);
     const [admin, setAdmin] = useState(null);
     const [capitols, setCapitols] = useState('');
     const [credits, setCredits] = useState(0);
+    const [loading, setLoading] = useState(true);
 
     useLayoutEffect(() => {
         if (!userId) {
@@ -29,13 +31,17 @@ export const UserProgress = ({ children }) => {
                 setProblemsSolved(data.solvedProblem);
                 setCapitols(data.capitols);
                 setCredits(data.credits);
+                setReviewed(data.reviewed ?? false);
             } else {
                 setUserProgressPoints(null);
                 setCapitols("");
                 setProblemsSolved([]);
+                setReviewed(null);
             }
+            setLoading(false);
         }, (error) => {
             console.error('Error while fetching user progress:', error);
+            setLoading(false);
         });
 
         return () => unsubscribeProgress()
@@ -64,14 +70,34 @@ export const UserProgress = ({ children }) => {
 
     }, [userId])
 
+    const updateReviewed = useCallback(async (value) => {
+        if (!userId) return;
+
+        try {
+            const userProgressRef = doc(db, 'solvedProblems', userId);
+
+            await updateDoc(userProgressRef, {
+                reviewed: value
+            });
+
+        } catch (error) {
+            console.error('Error updating reviewed status:', error);
+            throw error;
+        }
+    }, [userId]);
+
     const contextValue = useMemo(() => ({
         userProgressPoints,
         problemsSolved,
         setUserProgressPoints,
         admin,
         capitols,
-        credits
-    }), [userProgressPoints, problemsSolved, admin, capitols, credits]);
+        credits,
+        reviewed,
+        setReviewed,
+        updateReviewed,
+        loading
+    }), [userProgressPoints, problemsSolved, admin, capitols, credits, reviewed, setReviewed, updateReviewed, loading]);
 
     return (
         <AuthContext.Provider value={contextValue}>

@@ -21,6 +21,7 @@ import './frontend/styling/adv-page.css';
 import './frontend/styling/contact-form.css';
 import './frontend/styling/home-glass.css';
 import './frontend/styling/dashboard-page.css';
+import './frontend/styling/review-reminder.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

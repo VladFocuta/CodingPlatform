@@ -7,10 +7,34 @@ import BacScreen from "../components/BacScreen";
 
 function Main() {
   const { user, loggedIn } = UserAuth();
-  const { userProgressPoints, problemsSolved, admin, capitols, credits } = UserProgressData() || {};
+  const { userProgressPoints, problemsSolved, admin, capitols, credits, reviewed } = UserProgressData() || {};
   const [mode, setMode] = useState('baze');
+  const [showReviewReminder, setShowReviewReminder] = useState(false);
 
+  useEffect(() => {
+    if (!loggedIn || reviewed !== false) {
+      setShowReviewReminder(false);
+      return;
+    }
 
+    const interval = setInterval(() => {
+      setShowReviewReminder(true);
+    }, 15 * 60 * 1000);
+
+    return () => clearInterval(interval);
+
+  }, [loggedIn, reviewed]);
+
+  useEffect(() => {
+    if (!showReviewReminder) return;
+
+    const timeout = setTimeout(() => {
+      setShowReviewReminder(false);
+    }, 10000);
+
+    return () => clearTimeout(timeout);
+
+  }, [showReviewReminder]);
 
   useEffect(() => {
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
@@ -415,7 +439,16 @@ function Main() {
 
 
           <div className='userInfo' style={{ width: '70%' }}>
-            <div className='profile-picture'></div>
+            <div className="review-container">
+              {showReviewReminder && loggedIn && reviewed === false && (
+                <div className="review-reminder">
+                  Ne-ar ajuta mult părerea ta! ⭐
+                  <a href="/reviews">Lasă-ne o recenzie</a>
+                </div>
+              )}
+
+              <div className="profile-picture"></div>
+            </div>
             {
               mode === 'baze' ? (
                 <h3>Invata bazele programarii:</h3>

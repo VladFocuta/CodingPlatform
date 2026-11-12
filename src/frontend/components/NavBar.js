@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { TbLogout } from "react-icons/tb";
 import { RiHomeSmileLine } from "react-icons/ri";
+import { FaStar } from "react-icons/fa";
 import { UserAuth } from "../../backend/firebaseConfig/authProvider";
 import { useNotification } from './contexts/NewCommentsContext';
 import { UserProgressData } from './contexts/userProgress';
@@ -10,6 +11,7 @@ import { storeLeftMinutes, updateLimitAccess } from '../../backend/functions/han
 function NavBar() {
   const [homeHovered, setHomeHovered] = useState(false);
   const [logoutHovered, setLogoutHovered] = useState(false);
+  const [reviewsHovered, setReviewsHovered] = useState(false);
   const navigate = useNavigate();
   const { logout, loggedIn, setLoggedIn, user } = UserAuth();
   const { newMessagesCount } = useNotification();
@@ -75,8 +77,9 @@ function NavBar() {
             <>
               <button onClick={handleRegisterScreen} className='costum-button'>Înregistrează-te</button>
               <button onClick={handleLoginScreen} className='costum-button'>Loghează-te</button>
+              <button onClick={() => navigate('/reviews')} className='costum-button'>Recenzii</button>
               <button onClick={() => navigate('/advertisement/adv')} className='costum-button'>De ce să te înscrii?</button>
-              
+
             </>
           )}
 
@@ -140,20 +143,37 @@ function NavBar() {
                   />
                 </button>
                 {loggedIn && (
-                  <button
-                    className={`costumButton ${logoutHovered ? "animate-border-red" : ""
-                      }`}
-                    style={{ borderBottom: "1px solid white", marginBottom: "7px" }}
-                    onMouseEnter={() => setLogoutHovered(true)}
-                    onMouseLeave={() => setLogoutHovered(false)}
-                    onClick={handleLogOut}
-                  >
-                    Logout
-                    <TbLogout
-                      size={20}
-                      style={{ marginLeft: "3px", position: "absolute", top: "100px" }}
-                    />
-                  </button>
+                  <>
+                    <button
+                      className={`costumButton ${logoutHovered ? "animate-border-red" : ""
+                        }`}
+                      style={{ borderBottom: "1px solid white", marginBottom: "7px" }}
+                      onMouseEnter={() => setLogoutHovered(true)}
+                      onMouseLeave={() => setLogoutHovered(false)}
+                      onClick={handleLogOut}
+                    >
+                      Logout
+                      <TbLogout
+                        size={20}
+                        style={{ marginLeft: "3px", position: "absolute", top: "100px" }}
+                      />
+                    </button>
+
+                    <button
+                      className={`costumButton ${reviewsHovered ? "animate-border-yellow" : ""
+                        }`}
+                      style={{ borderBottom: "1px solid white", marginBottom: "7px" }}
+                      onMouseEnter={() => setReviewsHovered(true)}
+                      onMouseLeave={() => setReviewsHovered(false)}
+                      onClick={() => navigate('/reviews')}
+                    >
+                      Recenzii
+                      <FaStar
+                        size={18}
+                        style={{ marginLeft: "5px", marginBottom: "3px" }}
+                      />
+                    </button>
+                  </>
                 )}
 
 
