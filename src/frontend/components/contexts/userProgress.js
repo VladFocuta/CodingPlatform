@@ -19,14 +19,24 @@ export const UserProgress = ({ children }) => {
 
     useLayoutEffect(() => {
         if (!userId) {
+            setLoading(false);
+            setReviewed(false);
+            setUserProgressPoints(null);
+            setProblemsSolved([]);
+            setAdmin(null);
+            setCapitols('');
+            setCredits(0);
             return;
         }
 
-        const userProgressRef = doc(db, 'solvedProblems', userId)
-        const unsubscribeProgress = onSnapshot(userProgressRef, (docSnapshot) => {
+        setLoading(true);
 
+        const userProgressRef = doc(db, 'solvedProblems', userId);
+
+        const unsubscribeProgress = onSnapshot(userProgressRef, (docSnapshot) => {
             if (docSnapshot.exists()) {
                 const data = docSnapshot.data();
+
                 setUserProgressPoints(data.pointsPerChapter);
                 setProblemsSolved(data.solvedProblem);
                 setCapitols(data.capitols);
@@ -36,16 +46,17 @@ export const UserProgress = ({ children }) => {
                 setUserProgressPoints(null);
                 setCapitols("");
                 setProblemsSolved([]);
-                setReviewed(null);
+                setReviewed(false);
             }
+
             setLoading(false);
         }, (error) => {
             console.error('Error while fetching user progress:', error);
             setLoading(false);
         });
 
-        return () => unsubscribeProgress()
-    }, [userId])
+        return () => unsubscribeProgress();
+    }, [userId]);
 
     useEffect(() => {
         const fetchAdmin = async () => {
