@@ -16,6 +16,24 @@ function Reviews() {
             text: (
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                     <strong className="card-title">⭐️⭐️⭐️⭐️⭐️</strong>
+                    <strong className="card-title">Adela</strong>
+
+                    <strong className="card-title">Clasa a 10-a</strong>
+                    <strong>ℹ️ Profil: Mate-info</strong>
+                    <strong>ℹ️ Nivel inițial: 7</strong>
+                    <strong>ℹ️ Nivel actual: 9</strong>
+                    <strong>ℹ️ Durata meditațiilor: un an</strong>
+                    <br />
+                    <strong style={{ borderBottom: '1px solid #00bcd4' }}>💭 Părerea personală:</strong><strong > Un profesor excelent, foarte bine pregătit și organizat. Ședințele m-au ajutat enorm să îmi îmbunătățesc logica de programare și să înțeleg rezolvarea problemelor pas cu pas. Progres vizibil încă de la primele ședințe!</strong><br />
+                    <p>13/11/2026 15:52</p>
+                </div>
+            )
+        },
+        {
+
+            text: (
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <strong className="card-title">⭐️⭐️⭐️⭐️⭐️</strong>
                     <strong className="card-title">Alexandru Matei</strong>
 
                     <strong className="card-title">Clasa a 9-a</strong>
