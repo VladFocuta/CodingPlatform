@@ -153,7 +153,7 @@ function Main() {
         { title: "Numarul de factori primi", link: "/problems/Numarul de factori primi", icon: "fa-solid fa-circle-check", index: 40 },
         { title: "Cele mai mici doua cifre impare", link: "/problems/Cele mai mici doua cifre impare", icon: "fa-solid fa-circle-check", index: 40 },
         { title: "Inserare cifra dupa cifrele pare", link: "/problems/Inserare cifra dupa cifrele pare", icon: "fa-solid fa-circle-check", index: 40 },
-
+        { title: "Cel mai mic si cel mai mare divizor impar", link: "/problems/Cel mai mic si cel mai mare divizor impar", icon: "fa-solid fa-circle-check", index: 40 },
 
       ]
     },

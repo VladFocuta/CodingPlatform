@@ -35,17 +35,17 @@ function InserareCifraDupaCifrelePare() {
                 <Test
                     testCases={testCases}
                     testPassedSet={setTestPassed}
-                    problemName="Inserarea cifrei dupa cifrele pare" />
+                    problemName="Inserare cifra dupa cifrele pare" />
             </div>
         </>
     )
 
     return (
         <ProblemPage
-            problemName="Inserarea cifrei dupa cifrele pare"
+            problemName="Inserare cifra dupa cifrele pare"
             problemPoints={2}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/Cel mai mic si cel mai mare divizor impar"
             testPassed={testPassed}
         />
     )

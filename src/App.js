@@ -56,7 +56,7 @@ import PerfectNumbers from './frontend/problems/while-recap/PerfectNumbers';
 import InterchangeHalfNumber from './frontend/problems/while-recap/InterchangeHalfNumber';
 import CeleMaiMiciDouaCifreImpare from './frontend/problems/while-recap/CeleMaiMiciDouaCifreImpare.js';
 import InserareCifraDupaCifrelePare from './frontend/problems/while-recap/InserareCifraDupaCifrelePare.js';
-
+import CelMaiMicSiCelMaiMareDivizorImpar from './frontend/problems/while-recap/CelMaiMicSiCelMaiMareDivizorImpar.js';
 
 import ForLecture from './frontend/problems/for/ForLecture';
 import Arrays from './frontend/problems/for/Arrays';
@@ -382,6 +382,7 @@ import ReviewSucces from './frontend/components/advertisement/ReviewSucces.js';
 
 
 
+
 function App() {
 
   return (
@@ -472,6 +473,8 @@ function App() {
               <Route path="/problems/Numarul de factori primi" element={<PrimeFactorsNumb />} />
               <Route path="/problems/Cele mai mici doua cifre impare" element={<CeleMaiMiciDouaCifreImpare />} />
               <Route path="/problems/Inserare cifra dupa cifrele pare" element={<InserareCifraDupaCifrelePare />} />
+              <Route path="/problems/Cel mai mic si cel mai mare divizor impar" element={<CelMaiMicSiCelMaiMareDivizorImpar />} />
+
 
 
               <Route path="/problems/Divizori comuni" element={<CommonDividers />} />
