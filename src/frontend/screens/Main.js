@@ -151,6 +151,8 @@ function Main() {
         { title: "Perechi de numere prime", link: "/problems/Perechi de numere prime", icon: "fa-solid fa-circle-check", index: 40 },
         { title: "Suma numerelor cu prima cifra k", link: "/problems/Suma numerelor cu prima cifra k", icon: "fa-solid fa-circle-check", index: 40 },
         { title: "Numarul de factori primi", link: "/problems/Numarul de factori primi", icon: "fa-solid fa-circle-check", index: 40 },
+        { title: "Cele mai mici doua cifre impare", link: "/problems/Cele mai mici doua cifre impare", icon: "fa-solid fa-circle-check", index: 40 },
+        { title: "Inserare cifra dupa cifrele pare", link: "/problems/Inserare cifra dupa cifrele pare", icon: "fa-solid fa-circle-check", index: 40 },
 
 
       ]

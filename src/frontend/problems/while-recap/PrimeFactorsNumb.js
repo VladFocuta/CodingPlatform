@@ -47,7 +47,7 @@ function PrimeFactorsNumb() {
             problemName="Numarul de factori primi"
             problemPoints={1}
             problemContent={problemContent}
-            nextRoute="/Main"
+            nextRoute="/problems/Cele mai mici doua cifre impare"
             testPassed={testPassed}
         />
     )
