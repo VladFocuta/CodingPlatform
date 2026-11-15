@@ -16,6 +16,24 @@ function Reviews() {
             text: (
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                     <strong className="card-title">⭐️⭐️⭐️⭐️⭐️</strong>
+                    <strong className="card-title">Enescu Andrei</strong>
+
+                    <strong className="card-title">Clasa a 10-a</strong>
+                    <strong>ℹ️ Profil: Stiinte ale naturii</strong>
+                    <strong>ℹ️ Nivel inițial: scazut spre foarte scazut</strong>
+                    <strong>ℹ️ Nivel actual: printre cei mai buni din clasa</strong>
+                    <strong>ℹ️ Durata meditațiilor: doua luni</strong>
+                    <br />
+                    <strong style={{ borderBottom: '1px solid #00bcd4' }}>💭 Părerea personală:</strong><strong > Foarte buna, platforma este foarte bine facuta si usor de navigat.</strong><br />
+                    <p>15/11/2026 20:09</p>
+                </div>
+            )
+        },
+        {
+
+            text: (
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <strong className="card-title">⭐️⭐️⭐️⭐️⭐️</strong>
                     <strong className="card-title">Adela</strong>
 
                     <strong className="card-title">Clasa a 10-a</strong>
