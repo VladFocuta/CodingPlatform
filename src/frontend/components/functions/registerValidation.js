@@ -2,7 +2,7 @@
 export const registerValidation = (values) => {
     let error = {};
     const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}/;
+    const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/;
 
     if (values.name === "") {
         error.name = "Please enter your name";
@@ -21,7 +21,7 @@ export const registerValidation = (values) => {
     if (values.password === "") {
         error.password = "Please enter a password";
     } else if (!password_pattern.test(values.password)) {
-        error.password = "The password must have at least an upper letter, one number and the min. size of 8";
+        error.password = "Password must be at least 8 characters long, must contain at least one uppercase and lowercase letter, least one number, at least one special character.";
     } else {
         error.password = "";
     }

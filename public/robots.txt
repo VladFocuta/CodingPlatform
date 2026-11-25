@@ -1,7 +1,12 @@
-# robots.txt pentru codersro.com
-# Permite tuturor roboților să acceseze toate paginile
+
+# CODers - reguli pentru motoarele de căutare
 
 User-agent: *
 Allow: /
 
+# Permite indexarea în ChatGPT Search
+User-agent: OAI-SearchBot
+Allow: /
+
+# Sitemap
 Sitemap: https://codersro.com/sitemap.xml

@@ -50,7 +50,9 @@ function Register() {
         const validationErrors = registerValidation(values);
         setErrors(validationErrors);
         const hasErrors = Object.values(validationErrors).some(error => error);
-        if (hasErrors) return;
+        if (hasErrors) {
+            return;
+        }
 
         try {
             console.log("Încep înregistrarea...");
@@ -63,6 +65,7 @@ function Register() {
             navigate('/Main');
         } catch (e) {
             console.log(e.message);
+
         } finally {
             setIsLoading(false);
         }
@@ -102,7 +105,7 @@ function Register() {
                     </div>
 
                     {/* ✅ Checkbox Politica de Confidențialitate */}
-                    <div className='input-box checkbox' style={{ height: '20px' }}>
+                    <div className='input-box checkbox' style={{ height: '20px', marginTop: errors.password ? '100px' : '0px' }}>
                         <input
                             type="checkbox"
                             name="acceptTerms"
